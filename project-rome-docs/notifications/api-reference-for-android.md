@@ -1,0 +1,10 @@
+# <a name="android-user-notifications-api-reference"></a>Android ユーザー通知 API リファレンス
+
+次の名前空間には、アプリを受信し、アプリ サーバーがユーザーを対象とする Microsoft Graph を使用して発行するユーザーへの通知を管理できるようにする Api が含まれます。 
+
+## <a name="namespaces"></a>名前空間
+
+#### <a name="basehttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesbase"></a>[ベース](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.base)
+#### <a name="corehttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicescore"></a>[コア](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core)
+#### <a name="usernotifications-httpsdocsmicrosoftcomen-usjavaapicommicrosoftconnecteddevicesusernotifications"></a>[UserNotifications]( https://docs.microsoft.com/en-us/java/api/com.microsoft.connecteddevices.usernotifications)
+#### <a name="userdatahttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesuserdata"></a>[UserData](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.userdata)
