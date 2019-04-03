@@ -1,0 +1,9 @@
+# <a name="android-commanding-api-reference"></a><span data-ttu-id="4c57f-101">Android のコマンド実行の API リファレンス</span><span class="sxs-lookup"><span data-stu-id="4c57f-101">Android Commanding API reference</span></span>
+
+<span data-ttu-id="4c57f-102">次の名前空間では、アプリを検出し、リモート デバイスとアプリケーションでリモート アプリの起動およびメッセージングのリモート接続を許可します。</span><span class="sxs-lookup"><span data-stu-id="4c57f-102">The following namespaces allow apps to discover and connect with remote devices and applications through remote app launching and remote messaging.</span></span>
+
+## <a name="namespaces"></a><span data-ttu-id="4c57f-103">名前空間</span><span class="sxs-lookup"><span data-stu-id="4c57f-103">Namespaces</span></span>
+
+#### <a name="connecteddeviceshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevices"></a>[<span data-ttu-id="4c57f-104">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="4c57f-104">ConnectedDevices</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices)
+#### <a name="remotesystemshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesremotesystems"></a>[<span data-ttu-id="4c57f-105">RemoteSystems</span><span class="sxs-lookup"><span data-stu-id="4c57f-105">RemoteSystems</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.remotesystems)
+#### <a name="remotesystemscommandinghttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesremotesystemscommanding"></a>[<span data-ttu-id="4c57f-106">RemoteSystems.Commanding</span><span class="sxs-lookup"><span data-stu-id="4c57f-106">RemoteSystems.Commanding</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.remotesystems.commanding)

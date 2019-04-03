@@ -1,0 +1,7 @@
+# <a name="implementing-remote-sessions-for-windows"></a><span data-ttu-id="43fc1-101">Windows のリモート セッションを実装します。</span><span class="sxs-lookup"><span data-stu-id="43fc1-101">Implementing Remote Sessions for Windows</span></span>
+
+<span data-ttu-id="43fc1-102">Microsoft のドキュメント サイトの UWP セクションでは、Windows 関連の操作方法に関するページ、およびプロジェクト ローマの API ページが含まれます。</span><span class="sxs-lookup"><span data-stu-id="43fc1-102">The Windows related how-to and API pages for Project Rome are included in the UWP section of the Microsoft docs site.</span></span> <span data-ttu-id="43fc1-103">リモート セッションの Windows アプリを実装する方法については、次の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="43fc1-103">Check out the following articles to learn how to implement Remote Sessions for Windows apps:</span></span>
+
+[<span data-ttu-id="43fc1-104">Windows に指示する方法</span><span class="sxs-lookup"><span data-stu-id="43fc1-104">How to guide for Windows</span></span>](https://docs.microsoft.com/windows/uwp/launch-resume/remote-sessions)
+
+[<span data-ttu-id="43fc1-105">Windows の API リファレンス</span><span class="sxs-lookup"><span data-stu-id="43fc1-105">API reference for Windows</span></span>](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)
