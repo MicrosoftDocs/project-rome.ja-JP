@@ -1,0 +1,13 @@
+# <a name="usernotifications-namespace"></a><span data-ttu-id="bead4-101">UserNotifications 名前空間</span><span class="sxs-lookup"><span data-stu-id="bead4-101">UserNotifications namespace</span></span>
+```
+ConnectedDevicesUserDataUserActivities.h
+```
+
+<span data-ttu-id="bead4-102">UserActivities 名前空間には、Windows スタイルのユーザー アクティビティをアプリケーションが作成および公開できるようにする API が含まれています。</span><span class="sxs-lookup"><span data-stu-id="bead4-102">The UserActivities namespace contains APIs that allow applications to create and publish Windows-style User Activities.</span></span> <span data-ttu-id="bead4-103">ユーザー アクティビティの機能の詳細については、 [UWP UserActivities 名前空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)に関する記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bead4-103">For more information on the User Activities feature, see the [UWP UserActivities namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities).</span></span>
+
+#### <a name="mcduseractivitymcduseractivitymd"></a>[<span data-ttu-id="bead4-104">MCDUserActivity</span><span class="sxs-lookup"><span data-stu-id="bead4-104">MCDUserActivity</span></span>](MCDUserActivity.md)
+#### <a name="mcduseractivityattributionmcduseractivityattributionmd"></a>[<span data-ttu-id="bead4-105">MCDUserActivityAttribution</span><span class="sxs-lookup"><span data-stu-id="bead4-105">MCDUserActivityAttribution</span></span>](MCDUserActivityAttribution.md)
+#### <a name="mcduseractivitychannelmcduseractivitychannelmd"></a>[<span data-ttu-id="bead4-106">MCDUserActivityChannel</span><span class="sxs-lookup"><span data-stu-id="bead4-106">MCDUserActivityChannel</span></span>](MCDUserActivityChannel.md)
+#### <a name="mcduseractivitysessionmcduseractivitysessionmd"></a>[<span data-ttu-id="bead4-107">MCDUserActivitySession</span><span class="sxs-lookup"><span data-stu-id="bead4-107">MCDUserActivitySession</span></span>](MCDUserActivitySession.md)
+#### <a name="mcduseractivitysessionhistoryitemmcduseractivitysessionhistoryitemmd"></a>[<span data-ttu-id="bead4-108">MCDUserActivitySessionHistoryItem</span><span class="sxs-lookup"><span data-stu-id="bead4-108">MCDUserActivitySessionHistoryItem</span></span>](MCDUserActivitySessionHistoryItem.md)
+#### <a name="mcduseractivityvisualelementsmcduseractivityvisualelementsmd"></a>[<span data-ttu-id="bead4-109">MCDUserActivityVisualElements</span><span class="sxs-lookup"><span data-stu-id="bead4-109">MCDUserActivityVisualElements</span></span>](MCDUserActivityVisualElements.md)
