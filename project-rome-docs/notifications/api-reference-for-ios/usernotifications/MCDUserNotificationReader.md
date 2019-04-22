@@ -3,11 +3,11 @@ title: MCDUserNotificationReader
 description: このクラスは、新しいユーザー通知の受信およびユーザーへの通知は提供します。 更新します。 ユーザーが接続されているデバイスのプラットフォームで永続化の通知のコレクションへのアクセスも提供します。
 keywords: microsoft、windows、リレーのデバイス、iOS に関する「方法」に関する「方法」の iPhone
 ms.openlocfilehash: 486e98c30c82a7607569d252c84e4314738df6c9
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909024"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59800734"
 ---
 # <a name="class-mcdusernotificationreader"></a>クラス `MCDUserNotificationReader`
 

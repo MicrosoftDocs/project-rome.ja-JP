@@ -3,11 +3,11 @@ title: MCDEvent
 description: このインターフェイスは、単純なイベント モデルを提供します。 イベントは、EventListeners によって消費される項目を生成します。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: eabe9464a104593b06460153ed30f42f7cc103eb
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907254"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801394"
 ---
 # <a name="class-mcdevent"></a>クラス `MCDEvent` 
 

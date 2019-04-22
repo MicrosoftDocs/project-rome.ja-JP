@@ -3,11 +3,11 @@ title: UserNotificationReaderOptions
 description: このクラスは、新しいユーザー通知と既存の通知の更新プログラムを受け取るだけなど、通知リーダーでオプションを提供するアプリを使用できます。
 keywords: microsoft、windows、グラフの通知、Windows の操作方法
 ms.openlocfilehash: dda9187dccd013f719d564f62b51fd9ac7be8444
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909684"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801384"
 ---
 # <a name="class-usernotificationreaderoptions"></a>クラス `UserNotificationReaderOptions`
 

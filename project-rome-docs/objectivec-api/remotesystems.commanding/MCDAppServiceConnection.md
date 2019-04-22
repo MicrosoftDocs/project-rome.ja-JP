@@ -3,10 +3,10 @@ title: MCDAppServiceConnection
 description: このクラスは、特定のリモート アプリ サービスへの接続を管理します。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 22e253f137642ad609a22af33aa62e2ef9543503
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58908544"
 ---
 # <a name="class-mcdappserviceconnection"></a>クラス `MCDAppServiceConnection`

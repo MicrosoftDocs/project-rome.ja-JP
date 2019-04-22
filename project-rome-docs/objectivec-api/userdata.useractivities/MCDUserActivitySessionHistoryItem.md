@@ -3,11 +3,11 @@ title: MCDUserActivitySessionHistoryItem
 description: このクラスは、特定の活動に従事するユーザーが開始および終了の時間を提供します。
 keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 3a480d9d0d028973554c13ee162b359502c8a772
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907404"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801634"
 ---
 # <a name="class-mcduseractivitysessionhistoryitem"></a>クラス `MCDUserActivitySessionHistoryItem`
 

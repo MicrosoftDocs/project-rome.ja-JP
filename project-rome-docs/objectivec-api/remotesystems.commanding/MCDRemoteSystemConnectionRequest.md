@@ -3,10 +3,10 @@ title: MCDRemoteSystemConnectionRequest
 description: 特定のリモート デバイスやアプリケーションとの通信の試行を表すクラス。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 54ed7deb1fa2b1c87a3195e61c2ce031d6e0cea9
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58907134"
 ---
 # <a name="class-mcdremotesystemconnectionrequest"></a>クラス `MCDRemoteSystemConnectionRequest` 

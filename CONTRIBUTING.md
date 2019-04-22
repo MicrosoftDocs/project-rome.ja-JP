@@ -35,10 +35,10 @@ Git の使用に慣れていない場合は、次を参照してください。�
 ### <a name="submit-your-contribution-by-issuing-a-pull-request-pr"></a>プル要求 (PR) を発行して内容を送信します。
 
 ローカル git リポジトリに変更を保存した後をコミットし、独自のローカル フォークしたリポジトリにプッシュするコマンド ラインで、次のコマンドを入力します。
-- `git status`:このコマンドでは、これらの変更しようとしたことを確認するように変更したファイルの種類を示します。 
-- `git add -A`:このコマンドは、インデックスの変更に、すべての変更を追加します。 特定のファイルの変更のみを追加する場合は、コマンドを入力:`git add <yourfile.md>`します。
-- `git commit -m "your commit message"`:このコマンドは、行った変更を説明する短いメッセージと共に、前の手順で追加した変更をコミットする git に指示します。
-- `git push origin <yourbranchname>`:このコマンドは、指定したブランチに変更を ("origin") の GitHub のフォークをリモート リポジトリにプッシュします。
+- `git status` :このコマンドでは、これらの変更しようとしたことを確認するように変更したファイルの種類を示します。 
+- `git add -A` :このコマンドは、インデックスの変更に、すべての変更を追加します。 特定のファイルの変更のみを追加する場合は、コマンドを入力:`git add <yourfile.md>`します。
+- `git commit -m "your commit message"` :このコマンドは、行った変更を説明する短いメッセージと共に、前の手順で追加した変更をコミットする git に指示します。
+- `git push origin <yourbranchname>` :このコマンドは、指定したブランチに変更を ("origin") の GitHub のフォークをリモート リポジトリにプッシュします。
 
 電子メールが、リモート リポジトリに投稿物をプッシュした後送信される*発行オープンのビルド サービス*投稿物が正常にビルドされたかどうかを通知して、エラーや、リポジトリにある警告へのリンクを提供します。壊れたリンクなど。 サイトで事前設定コンテンツを表示するレポートのリンクをクリックします。 PR を送信する準備が完了したら、変更はエラーと警告のオフの場合、
 - プロジェクト ローマ リポジトリのフォークに移動: https://github.com/  **\<your github エイリアス\>**/project-rome します。
@@ -53,7 +53,7 @@ PR が送信されると、Windows 10 の docs チームのメンバーを確認
 
 必ず、トピック タイトルと問題のページの URL が含まれます。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の資料
 - [作成と GitHub の書式設定の概要](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 
 ## <a name="additional-resources-for-microsoft-employees"></a>Microsoft の従業員向けの他のリソース

@@ -3,11 +3,11 @@ title: MCDConnectedDevicesNotification
 description: 通知を処理の結果。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 2a60e2cab26c3d2df39314aa5b61a65de1529356
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58908714"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59800604"
 ---
 # <a name="class-mcdconnecteddevicesnotification"></a>クラス `MCDConnectedDevicesNotification` 
 

@@ -3,10 +3,10 @@ title: MCDUserActivity
 description: このクラスは、1 人のユーザー アクティビティのインスタンスを表します。
 keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: f01889f5e41c761fe359ed1fa90befee4a8aca46
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58907424"
 ---
 # <a name="class-mcduseractivity"></a>クラス `MCDUserActivity`

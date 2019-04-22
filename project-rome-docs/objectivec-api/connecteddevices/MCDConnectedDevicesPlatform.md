@@ -3,11 +3,11 @@ title: MCDConnectedDevicesPlatform
 description: 接続されているデバイス プラットフォームを表し、アプリの接続を管理するクラスです。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 33fdb6f7dfd7d11831da1f7710215e35306d79d1
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909744"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801784"
 ---
 # <a name="class-mcdconnecteddevicesplatform"></a>クラス `MCDConnectedDevicesPlatform` 
 
@@ -74,7 +74,7 @@ APNs 通知処理にはが含まれています。
 
 MCDConnectedDevicesProcessNotificationOperation クラスのインスタンス。
 
-### <a name="start"></a>スタート
+### <a name="start"></a>start
 `- (void) start;`
 
 プラットフォームを起動します。

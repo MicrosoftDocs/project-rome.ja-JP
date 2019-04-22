@@ -3,11 +3,11 @@ title: MCDEventSubscription
 description: このインターフェイスは、単純なイベントのサブスクリプションを提供します。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: ce5a5782f80b54e78a6e3890cd68d9e92c52226c
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909474"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801620"
 ---
 # <a name="class-mcdeventsubscription"></a>クラス `MCDEventSubscription` 
 

@@ -3,11 +3,11 @@ title: MCDUserDataFeedSyncScope
 description: このクラスは、アプリがユーザー固有接続されたデバイスの特定の機能を使用する場合に接続されているデバイス プラットフォームのバックエンドと同期されるユーザー データを表します。
 keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 941381a61c9b17c837c25b089f7c7073d581c4a8
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907174"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801004"
 ---
 # <a name="class-mcduserdatafeedsyncscope"></a>クラス `MCDUserDataFeedSyncScope`
 

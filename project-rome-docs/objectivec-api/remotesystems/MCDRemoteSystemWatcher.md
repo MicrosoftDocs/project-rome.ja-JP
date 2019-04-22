@@ -3,11 +3,11 @@ title: MCDRemoteSystemWatcher
 description: リモート システムを検出するために使用するクラスです。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 88bb52465de165224c62270e0630dfb72f47b31f
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58908834"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801094"
 ---
 # <a name="class-mcdremotesystemwatcher"></a>クラス `MCDRemoteSystemWatcher`
 

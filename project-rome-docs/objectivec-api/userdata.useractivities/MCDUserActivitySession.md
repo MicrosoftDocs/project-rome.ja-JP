@@ -3,11 +3,11 @@ title: MCDUserActivitySession
 description: このクラスは、ユーザー アクティビティの追跡 ([MCDUserActivity](MCDUserActivity.md)インスタンス)、ユーザーはそのアクティビティに関与して中にします。
 keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 2ae85e637bb059e811a60e5bde5f33ea767c8314
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909634"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59800664"
 ---
 # <a name="class-mcduseractivitysession"></a>クラス `MCDUserActivitySession`
 

@@ -3,11 +3,11 @@ title: UserNotificationChannel
 description: このクラスは、ユーザー通知のライフ サイクルを管理します。
 keywords: microsoft、windows、グラフの通知、Windows の操作方法
 ms.openlocfilehash: ee30f0eab2bb212dddf1de401a91f0487c512705
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907484"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801444"
 ---
 # <a name="class-usernotificationchannel"></a>クラス `UserNotificationChannel`
 

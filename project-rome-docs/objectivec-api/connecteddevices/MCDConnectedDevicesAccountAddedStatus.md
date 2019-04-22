@@ -3,11 +3,11 @@ title: MCDConnectedDevicesAccountAddedStatus
 description: 追加アカウントの操作の状態を記述する値が含まれています。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: d7fadec0c3e69eedab23df18d803ee85fd37644b
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907204"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801564"
 ---
 # <a name="enum-mcdconnecteddevicesaccountaddedstatus"></a>列挙型 `MCDConnectedDevicesAccountAddedStatus`
 

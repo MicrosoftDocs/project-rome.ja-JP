@@ -6,10 +6,10 @@ keywords: microsoft、windows、プロジェクト、ローマをコマンド、
 ms.assetid: 2fd14dd0-0f1f-49ee-83e3-468737810c81
 ms.localizationpriority: medium
 ms.openlocfilehash: 78cb712d3b1cbbd3d613a45cd42af491eaa33afc
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58907764"
 ---
 # <a name="implementing-device-relay-for-android"></a>Android 用のデバイスのリレーの実装

@@ -3,11 +3,11 @@ title: MCDConnectedDevicesAccountManager
 description: SDK アカウントに関連するすべての機能の 1 つのエントリ ポイントを提供します。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: c265a0c7114704ea6f9ae9818eb9abdb39b5437f
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58908394"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801644"
 ---
 # <a name="class-mcdconnecteddevicesaccountmanager"></a>クラス `MCDConnectedDevicesAccountManager` 
 

@@ -3,11 +3,11 @@ title: MCDUserNotificationStatusFilter
 description: 通知のリーダーを作成するときに、読み取り状態フィルターを示す値が含まれています。 のみ読み取りをアプリがすべての通知を受信するかどうかを指定しますまたは、未読のものだけです。
 keywords: microsoft、windows、グラフの通知、iOS に関する「方法」に関する「方法」の iPhone
 ms.openlocfilehash: 09e165c98a557b16214d7c1103734d6e17407b6f
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909144"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801494"
 ---
 # <a name="enum-mcdusernotificationstatusfilter"></a>列挙型 `MCDUserNotificationStatusFilter`
 

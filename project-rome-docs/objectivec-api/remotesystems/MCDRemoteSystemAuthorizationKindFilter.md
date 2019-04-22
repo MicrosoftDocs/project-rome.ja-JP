@@ -3,11 +3,11 @@ title: MCDRemoteSystemAuthorizationKindFilter
 description: リモート システムの承認の種類に基づいてフィルター処理するために使用するクラスです。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: da68c7a0eacd2018332d5e2fe5c8e3c906f473f8
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907644"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801254"
 ---
 # <a name="class-mcdremotesystemauthorizationkindfilter"></a>クラス `MCDRemoteSystemAuthorizationKindFilter` 
 

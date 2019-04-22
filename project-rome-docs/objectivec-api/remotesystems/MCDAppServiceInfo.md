@@ -3,11 +3,11 @@ title: MCDAppServiceInfo
 description: このクラスには、リモート デバイスまたはアプリケーションに属している app service について説明します。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 5cb01d664a07653387b523eeec68ebd50bbc2798
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907114"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801164"
 ---
 # <a name="class-mcdappserviceinfo"></a>クラス `MCDAppServiceInfo` 
 

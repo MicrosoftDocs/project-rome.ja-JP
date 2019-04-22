@@ -3,11 +3,11 @@ title: UserNotificationReader
 description: このクラスは、新しいユーザー通知の受信およびユーザーへの通知は提供します。 更新します。 ユーザーが接続されているデバイスのプラットフォームで永続化の通知のコレクションへのアクセスも提供します。
 keywords: microsoft、windows、ユーザー通知では、windows に関する「方法」
 ms.openlocfilehash: 3a929939be7e2dd9ecd9db65322efadaea3013d5
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58907374"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801424"
 ---
 # <a name="class-usernotificationreader"></a>クラス `UserNotificationReader`
 

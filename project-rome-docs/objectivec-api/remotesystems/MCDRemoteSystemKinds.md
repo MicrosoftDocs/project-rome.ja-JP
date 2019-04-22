@@ -3,11 +3,11 @@ title: MCDRemoteSystemKinds
 description: リモート システムのデバイスの種類を表す文字列フィールドが含まれています。
 keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
 ms.openlocfilehash: 701bc4662fc8d46009889645bab6e4ee83fdb959
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58909564"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801274"
 ---
 # <a name="class-mcdremotesystemkinds"></a>クラス `MCDRemoteSystemKinds` 
 
@@ -34,7 +34,7 @@ Holographic デバイスの種類の正規名。
 
 ハブのデバイスの種類の正規名。
 
-### <a name="phone"></a>電話
+### <a name="phone"></a>[電話]
 `@property(class, readonly, readonly, nonnull) NSString* phone;`
 
 Phone デバイスの種類の正規名。
