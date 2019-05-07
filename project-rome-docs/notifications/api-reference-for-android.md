@@ -4,7 +4,6 @@
 
 ## <a name="namespaces"></a>名前空間
 
-#### <a name="basehttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesbase"></a>[ベース](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.base)
-#### <a name="corehttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicescore"></a>[コア](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core)
+#### <a name="connecteddeviceshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevices"></a>[ConnectedDevices](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices)
 #### <a name="usernotifications-httpsdocsmicrosoftcomen-usjavaapicommicrosoftconnecteddevicesusernotifications"></a>[UserNotifications]( https://docs.microsoft.com/en-us/java/api/com.microsoft.connecteddevices.usernotifications)
 #### <a name="userdatahttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesuserdata"></a>[UserData](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.userdata)

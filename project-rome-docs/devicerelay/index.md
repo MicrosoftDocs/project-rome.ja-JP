@@ -4,11 +4,11 @@ description: ローカル デバイスを使用してリモート デバイス�
 ms.topic: overview
 ms.custom: seodec2018
 ms.openlocfilehash: ac8df447549b643207f796e0eeca05012c210897
-ms.sourcegitcommit: 75680b384946e11257bb2a33044a3172dec5220e
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58906914"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59801464"
 ---
 # <a name="device-relay"></a>デバイス リレー
 
