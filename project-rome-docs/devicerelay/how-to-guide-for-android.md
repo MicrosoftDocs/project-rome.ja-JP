@@ -209,7 +209,7 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
 ```
 によって送信される URI は、特定の状態またはリモート デバイス上の構成でのアプリを起動できます。 これにより、中断することがなく別のデバイスで映画を見てなど、ユーザーのタスクを継続する能力。 
 
-ユース ケースに応じてを対象となるシステム上のアプリを取り扱うことが、URI の場合を対象にする必要があります。 または複数のアプリで処理できます。 **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと**[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。
+ユース ケースに応じてを対象となるシステム上のアプリを取り扱うことが、URI の場合を対象にする必要があります。 または複数のアプリで処理できます。 **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。
 
 ### <a name="b-remote-app-services"></a>B) リモート アプリ サービス
 
