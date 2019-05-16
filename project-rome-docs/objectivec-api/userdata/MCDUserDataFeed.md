@@ -15,7 +15,7 @@ ms.locfileid: "58908994"
 @interface MCDUserDataFeed : NSObject
 ```
 
-このクラスは、接続されているデバイス プラットフォームのバックエンドでユーザーに固有のデータを同期する責任を負います。 同期されるデータによって異なりますが**[MCDUserDataFeedSyncScope](MCDUserDataFeedSyncScope.md)** のインスタンスが含まれています。
+このクラスは、接続されているデバイス プラットフォームのバックエンドでユーザーに固有のデータを同期する責任を負います。 同期されるデータによって異なりますが **[MCDUserDataFeedSyncScope](MCDUserDataFeedSyncScope.md)** のインスタンスが含まれています。
 
 ## <a name="properties"></a>プロパティ
 

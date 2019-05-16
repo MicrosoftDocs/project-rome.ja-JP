@@ -15,7 +15,7 @@ ms.locfileid: "59801404"
 @interface MCDRemoteSystemConnectionInfo : NSObject
 ```  
 
-に関する情報を提供するクラスを指定した**[MCDAppServiceConnection](MCDAppServiceConnection.md)** インスタンス。
+に関する情報を提供するクラスを指定した **[MCDAppServiceConnection](MCDAppServiceConnection.md)** インスタンス。
 
 ## <a name="properties"></a>プロパティ
 

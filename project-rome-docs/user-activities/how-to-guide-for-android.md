@@ -238,4 +238,4 @@ operation.whenCompleteAsync(new AsyncOperation.ResultBiConsumer<UserActivitySess
 });
 ```
 
-アプリが設定されている一覧を指定する必要がありますので**UserActivitySessionHistoryItem**秒。 基になるこれらの各配信できます**UserActivity** (を参照してください**[UserActivitySessionHistoryItem](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_session_history_item)** 詳細については)、これをユーザーに表示できます。
+アプリが設定されている一覧を指定する必要がありますので**UserActivitySessionHistoryItem**秒。 基になるこれらの各配信できます**UserActivity** (を参照してください **[UserActivitySessionHistoryItem](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_session_history_item)** 詳細については)、これをユーザーに表示できます。
