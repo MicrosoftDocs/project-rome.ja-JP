@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 75bed30e890e6fd2b819d1f28effb3b1df153c39
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58908574"
+---
 # <a name="implementing-user-activities-for-windows"></a><span data-ttu-id="488c0-101">Windows 用のユーザー アクティビティの実装</span><span class="sxs-lookup"><span data-stu-id="488c0-101">Implementing User Activities for Windows</span></span>
 
 <span data-ttu-id="488c0-102">Microsoft のドキュメント サイトの UWP セクションでは、Windows 関連の操作方法に関するページ、およびプロジェクト ローマの API ページが含まれます。</span><span class="sxs-lookup"><span data-stu-id="488c0-102">The Windows related how-to and API pages for Project Rome are included in the UWP section of the Microsoft docs site.</span></span> <span data-ttu-id="488c0-103">ユーザー アクティビティの Windows アプリを実装する方法については、次の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="488c0-103">Check out the following articles to learn how to implement User Activities for Windows apps:</span></span>

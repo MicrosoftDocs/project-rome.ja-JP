@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f81fbbffb2ec54f8d9a252a00fc3822f1f3f9582
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59800854"
+---
 ### <a name="associate-the-connected-devices-platform-with-the-native-push-notification-for-each-platform"></a><span data-ttu-id="81ece-101">接続されているデバイス プラットフォームを各プラットフォームのネイティブ プッシュ通知に関連付けます。</span><span class="sxs-lookup"><span data-stu-id="81ece-101">Associate the Connected Devices Platform with the native push notification for each platform.</span></span> 
 
 <span data-ttu-id="81ece-102">ようにアプリのクライアントは既に触れましたが、各クライアント側の SDK プラットフォームとデバイスの接続されているプラットフォームのグラフを許可するには、登録プロセス中に使用されているネイティブのプッシュ通知のパイプラインに関する知識を提供する必要がありますアプリケーション サーバーは、MS Graph Api を使用してユーザーを対象とした通知を発行するときのアプリのクライアント エンドポイントは各にファンアウト通知を通知サービス。</span><span class="sxs-lookup"><span data-stu-id="81ece-102">Like previously mentioned, the app clients need to provide knowledge about the native push notification pipeline being used for each platform to the client-side SDK and the Connected Devices Platform during the registration process, in order to allow Graph notification service to fan-out notifications to each app client endpoint when your app server publishes a user-targeting notification via MS Graph APIs.</span></span>

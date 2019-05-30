@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: dfe29b92cbab51382f4440b4929c2082cfb9b062
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58909694"
+---
 ### <a name="add-the-sdk"></a><span data-ttu-id="af446-101">SDK を追加します。</span><span class="sxs-lookup"><span data-stu-id="af446-101">Add the SDK</span></span>
 
 <span data-ttu-id="af446-102">Windows での Graph 通知 SDK が使用できる組み込みの OS の Windows SDK の代わりに NuGet パッケージを使用して、開発者がより下位レベルのサポートとより柔軟なリリース スケジュールするには。</span><span class="sxs-lookup"><span data-stu-id="af446-102">For Windows, Graph Notification SDK is made available to developers through a NuGet package instead of built-in OS Windows SDK in order to have better down-level support and more flexible release schedule.</span></span> <span data-ttu-id="af446-103">NuGet パッケージが nuget.org で msgraphsdkteam によって公開されたを見つかります[ここ](https://www.nuget.org/profiles/msgraphsdkteam)します。</span><span class="sxs-lookup"><span data-stu-id="af446-103">The NuGet package is published by msgraphsdkteam on nuget.org and can be found [here](https://www.nuget.org/profiles/msgraphsdkteam).</span></span> 

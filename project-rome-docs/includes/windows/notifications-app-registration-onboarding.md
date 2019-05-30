@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8e259cf4bd303a51165868fe0aa6d2a062f52c76
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58907394"
+---
 ### <a name="msa-and-aad-authentication-registration"></a><span data-ttu-id="bf5ee-101">MSA と AAD 認証の登録</span><span class="sxs-lookup"><span data-stu-id="bf5ee-101">MSA and AAD Authentication Registration</span></span>
 
 <span data-ttu-id="bf5ee-102">Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証の登録は Nearby 共有を除く、通知を含む SDK のすべての機能に必要な Api。</span><span class="sxs-lookup"><span data-stu-id="bf5ee-102">Microsoft Account (MSA) or Azure Active Directory (AAD) authentication registration is required for all features of the SDK including Notifications, except for the Nearby sharing APIs.</span></span> 

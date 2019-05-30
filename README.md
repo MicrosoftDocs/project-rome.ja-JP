@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: b1d31543a0e39ac6af0188c00d072fe7d41560dd
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59800354"
+---
 > <span data-ttu-id="94c70-101">**注:** このリポジトリの内容が公開されている、 [Docs.Microsoft.com サイト](https://docs.microsoft.com/windows/project-rome/)プロジェクト ローマの。</span><span class="sxs-lookup"><span data-stu-id="94c70-101">**Note:** The contents of this repository are published on the [Docs.Microsoft.com site](https://docs.microsoft.com/windows/project-rome/) for Project Rome.</span></span>
 
 ## <a name="what-is-this"></a><span data-ttu-id="94c70-102">これは何ですか。</span><span class="sxs-lookup"><span data-stu-id="94c70-102">What is this?</span></span>

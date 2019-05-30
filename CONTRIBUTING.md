@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: efd862261f2d1a6cce52214b56135d2c40f632c6
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58907444"
+---
 # <a name="contributing-to-the-project-rome-documentation"></a><span data-ttu-id="d1c07-101">プロジェクトのローマ ドキュメントへの投稿</span><span class="sxs-lookup"><span data-stu-id="d1c07-101">Contributing to the Project Rome documentation</span></span>
 
 <span data-ttu-id="d1c07-102">ドキュメントに関心をありがとうございます。</span><span class="sxs-lookup"><span data-stu-id="d1c07-102">Thank you for your interest in our documentation.</span></span> <span data-ttu-id="d1c07-103">編集、追加、および、ドキュメントを向上させる方法、フィードバックを歓迎いたします。このページは、基本的な手順と貢献するためのガイドラインについて説明します。</span><span class="sxs-lookup"><span data-stu-id="d1c07-103">We appreciate your feedback, edits, additions and help with improving our docs. This page covers the basic steps and guidelines for contributing.</span></span>

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 41b9bbc7f5ace516d947c3fe4d58b97654ac90bd
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58906734"
+---
 # <a name="remotesystems-namespace"></a><span data-ttu-id="2bb01-101">RemoteSystems 名前空間</span><span class="sxs-lookup"><span data-stu-id="2bb01-101">RemoteSystems namespace</span></span>
 ```
 ConnectedDevicesRemoteSystems.h

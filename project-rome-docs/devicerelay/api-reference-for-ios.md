@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 4a5620319d06e4a9cbe22be3cb1c4de733c473c3
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58907164"
+---
 # <a name="ios-device-relay-api-reference"></a><span data-ttu-id="4ed32-101">iOS デバイスの Relay API リファレンス</span><span class="sxs-lookup"><span data-stu-id="4ed32-101">iOS Device Relay API reference</span></span>
 
 <span data-ttu-id="4ed32-102">次の Api では、アプリを検出し、リモート デバイスとアプリケーションでリモート アプリの起動およびメッセージングのリモート接続を許可します。</span><span class="sxs-lookup"><span data-stu-id="4ed32-102">The following APIs allow apps to discover and connect with remote devices and applications through remote app launching and remote messaging.</span></span>
