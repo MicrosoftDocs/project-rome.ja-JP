@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 6c87f1a68699de7852af56d7536f08b1a5f9bc14
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58907564"
+---
 ### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでのクロス デバイス エクスペリエンスのアプリを登録します。
 次に、アプリケーションを登録する必要があります、[クロス デバイス エクスペリエンスの機能、Microsoft 開発者向けダッシュ ボードの](https://developer.microsoft.com/dashboard/crossplatform/web)します。 これは、上記の手順で説明した MSA と AAD のアプリ登録から別のプロシージャです。 このプロセスの主な目的は、接続されているデバイス プラットフォームによって認識され、同時に、ネイティブを使用して通知を送信する Microsoft Graph の通知を承認するクロス プラットフォーム アプリの id によるプラットフォームの特定のアプリ id にマップするにはプッシュ通知サービスが OS プラットフォームごとに対応します。 この場合、グラフの通知 WNS – Windows Notification Service を使用して Windows UWP アプリのエンドポイントに通知を送信することができます。 Dev Center のダッシュ ボードに移動して、左側にあるナビゲーション ウィンドウで、クロス デバイス エクスペリエンスに移動して次のように示すように、新しいクロス デバイス アプリの構成を選択します。
 ![デベロッパー センター ダッシュ ボード-クロス デバイス エクスペリエンス](../../notifications/media/dev_center_portal/dev_center_portal_1_overview.png)

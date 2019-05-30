@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: dfe29b92cbab51382f4440b4929c2082cfb9b062
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58909694"
+---
 ### <a name="add-the-sdk"></a>SDK を追加します。
 
 Windows での Graph 通知 SDK が使用できる組み込みの OS の Windows SDK の代わりに NuGet パッケージを使用して、開発者がより下位レベルのサポートとより柔軟なリリース スケジュールするには。 NuGet パッケージが nuget.org で msgraphsdkteam によって公開されたを見つかります[ここ](https://www.nuget.org/profiles/msgraphsdkteam)します。 

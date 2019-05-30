@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: efd862261f2d1a6cce52214b56135d2c40f632c6
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58907444"
+---
 # <a name="contributing-to-the-project-rome-documentation"></a>プロジェクトのローマ ドキュメントへの投稿
 
 ドキュメントに関心をありがとうございます。 編集、追加、および、ドキュメントを向上させる方法、フィードバックを歓迎いたします。このページは、基本的な手順と貢献するためのガイドラインについて説明します。

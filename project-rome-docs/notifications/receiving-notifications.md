@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 3f5ac416eb651ed6d79d53cb864d201dd2f73db7
+ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58907594"
+---
 # <a name="receiving-notifications-using-the-project-rome-sdk"></a>プロジェクトのローマ SDK を使用して通知を受け取る
 
 MSGraph 通知を受信するプロセスは、さまざまな開発プラットフォーム間で揃えられます。 言語の SDK の違いに基づき、別のガイドラインがあります。 アプリで通知の取得を有効にする方法については、以下のプラットフォームを選択します。
