@@ -143,7 +143,7 @@ mDisplayText = "Created by OneSDK Sample App";
 mActivationUri = "http://contoso.com");
 ```
 > [!TIP] 
-> 上記のプロパティでは、構成できるその他の多くの機能があります。 UserActivity をカスタマイズできるさまざまな方法の詳細について、次を参照してください、  **[MCDUserActivity](../objectivec-api/userdata.useractivities/MCDUserActivity.md)**、  **[MCDUserActivityVisualElements](../objectivec-api/userdata.useractivities/MCDUserActivityVisualElements.md) 。**、および**[MCDUserActivityAttribution](../objectivec-api/userdata.useractivities/MCDUserActivityAttribution.md)** クラス。 参照してください、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices)ユーザー アクティビティをデザインする方法の詳細な推奨事項のガイド。
+> 上記のプロパティでは、構成できるその他の多くの機能があります。 UserActivity をカスタマイズできるさまざまな方法の詳細について、次を参照してください、 **[MCDUserActivity](../objectivec-api/userdata.useractivities/MCDUserActivity.md)** 、 **[MCDUserActivityVisualElements](../objectivec-api/userdata.useractivities/MCDUserActivityVisualElements.md)。** 、 および **[MCDUserActivityAttribution](../objectivec-api/userdata.useractivities/MCDUserActivityAttribution.md)** クラス。 参照してください、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices)ユーザー アクティビティをデザインする方法の詳細な推奨事項のガイド。
 
 ## <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティを更新します。
 
@@ -215,4 +215,4 @@ mActivationUri = "http://contoso.com");
 }
 ```
 
-アプリが設定されている一覧を指定する必要がありますので**MCDUserActivitySessionHistoryItem**秒。 基になるこれらの各配信できます**MCDUserActivity** (を参照してください**[MCDUserActivitySessionHistoryItem](../objectivec-api/userdata.useractivities/MCDUserActivitySessionHistoryItem.md)** 詳細については)、これをユーザーに表示できます。
+アプリが設定されている一覧を指定する必要がありますので**MCDUserActivitySessionHistoryItem**秒。 基になるこれらの各配信できます **MCDUserActivity** (を参照してください **[MCDUserActivitySessionHistoryItem](../objectivec-api/userdata.useractivities/MCDUserActivitySessionHistoryItem.md)** 詳細については)、これをユーザーに表示できます。
