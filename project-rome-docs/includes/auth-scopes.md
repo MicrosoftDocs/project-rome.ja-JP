@@ -3,12 +3,12 @@ title: インクルード ファイル
 description: インクルード ファイル
 ms.assetid: 93f45482-14e4-4aec-8185-ee05b592215f
 ms.localizationpriority: medium
-ms.openlocfilehash: d94808ae1e97d12649f24ed89ad17a7962665d5e
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: a6e92df6114443827b22dc85cf877d631e5fcfdf
+ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59804499"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755785"
 ---
 ### <a name="set-up-authentication-and-account-management"></a>認証とアカウントの管理を設定します。
 
@@ -19,6 +19,9 @@ ms.locfileid: "59804499"
 MSA を使用している場合は、サインイン要求に、次のスコープを含める必要があります。: `"wl.offline_access"`、 `"ccs.ReadWrite"`、 `"dds.read"`、 `"dds.register"`、 `"wns.connect"`、 `"asimovrome.telemetry"`、および`"https://activity.windows.com/UserActivity.ReadWrite.CreatedByApp"`します。 
 
 AAD アカウントを使用している場合は次のユーザーを要求する必要があります: `"https://cdpcs.access.microsoft.com"`、 `"https://cs.dds.microsoft.com"`、 `"https://wns.windows.com/"`、および`"https://activity.microsoft.com"`します。
+
+> [!NOTE]
+> デバイスの Relay Api では、azure Active Directory (AAD) アカウントはサポートされていません。
 
 指定されたを使用するかどうか**ConnectedDevicesAccountManager**実装または AAD アプリの登録、Azure portal で次のアクセス許可を指定する必要がありますを使用している場合、not (portal.azure.com > AzureActive Directory > アプリの登録)。 
 * Microsoft アクティビティ フィードのサービス 

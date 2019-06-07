@@ -3,12 +3,12 @@ title: インクルード ファイル
 description: インクルード ファイル
 ms.assetid: 93f45482-14e4-4aec-8185-ee05b592215f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aa6b0d971feb7d2f9f8d31708fda31d05b5aca9
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: b8a0de450431adce084919290d49f6326d23d51b
+ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59804503"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755796"
 ---
 ### <a name="set-up-authentication-and-account-management"></a>認証とアカウントの管理を設定します。
 
@@ -17,6 +17,9 @@ ms.locfileid: "59804503"
 提供されたコードを使用しない場合は、実装する必要があります。、 **[MCDConnectedDevicesAccountManager](../objectivec-api/connecteddevices/MCDConnectedDevicesAccountManager.md)** インターフェイスを自分でします。
 
 MSA を使用している場合は、サインイン要求に、次のスコープを含める: `"wl.offline_access"`、 `"ccs.ReadWrite"`、 `"dds.read"`、 `"dds.register"`、 `"wns.connect"`、 `"asimovrome.telemetry"`、および`"https://activity.windows.com/UserActivity.ReadWrite.CreatedByApp"`します。
+
+> [!NOTE]
+> デバイスの Relay Api では、azure Active Directory (AAD) アカウントはサポートされていません。
 
 AAD アカウントを使用している場合は次のユーザーを要求する必要があります: `"https://cdpcs.access.microsoft.com"`、 `"https://cs.dds.microsoft.com"`、 `"https://wns.windows.com/"`、および`"https://activity.microsoft.com"`します。
 

@@ -4,16 +4,19 @@ description: インクルード ファイル
 ms.topic: include
 ms.assetid: bbef84bf-a6b7-44be-879d-0fa6065e37b1
 ms.localizationpriority: medium
-ms.openlocfilehash: 598807ac37079456ac28948a9f5bc419e65095a3
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: ea97fbf5fad21b342300a283136a642c5a16672e
+ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58907514"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755722"
 ---
 ### <a name="msa-and-aad-authentication-registration"></a>MSA と AAD 認証の登録
 
 Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証の登録は Nearby 共有を除く、通知を含む SDK のすべての機能に必要な Api。 
+
+> [!NOTE]
+> デバイスの Relay Api では、azure Active Directory (AAD) アカウントはサポートされていません。
 
 MSA をあり、1 つを使用する実行されていない、上のレジスタ[account.microsoft.com](https://account.microsoft.com/account)します。
 

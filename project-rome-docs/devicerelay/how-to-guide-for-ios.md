@@ -5,12 +5,12 @@ ms.topic: article
 keywords: microsoft、windows、プロジェクト、ローマ、コマンド実行の ios
 ms.assetid: b5d426db-a0ca-4888-b2cb-cb7fdb1c6c0d
 ms.localizationpriority: medium
-ms.openlocfilehash: 11596720d9363f0ef29fd9c7bf0ccc5b4db62fae
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: c9c3e8bf580884c6f0c3b6ccdf177f163f05c03a
+ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58907734"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755810"
 ---
 # <a name="implementing-device-relay-for-ios"></a>Ios デバイスのリレーを実装します。
 
@@ -183,7 +183,7 @@ App Services Api により、任意のコンテンツを含むメッセージを
 IOS アプリでは、その他のデバイス上の app services と対話するデバイスの接続ポータルを使用できます。 これにより、他のデバイスと通信する方法は多数&mdash;ホスト デバイスの前面にアプリを表示する必要はありませんすべて。
 
 #### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスをセットアップする
-このガイドを使用して、 [Roman テスト アプリの Windows](http://aka.ms/romeapp)そのターゲット アプリケーションのサービスとして。 そのため、次のコードは、特定のリモート システムでは、その特定のアプリ サービスを検索する iOS アプリになります。 このシナリオをテストする場合は、Windows デバイスで Roman テスト アプリをダウンロードし、同じ MSA または前の準備手順で使用する AAD でサインインしているかどうかを確認します。
+このガイドを使用して、 [Roman テスト アプリの Windows](http://aka.ms/romeapp)そのターゲット アプリケーションのサービスとして。 そのため、次のコードは、特定のリモート システムでは、その特定のアプリ サービスを検索する iOS アプリになります。 このシナリオをテストする場合は、Windows デバイスで Roman テスト アプリをダウンロードし、サインインしている同じ MSA 前の準備手順で使用したかどうかを確認します。
 
 UWP アプリ サービスを作成する方法に関する手順については、次を参照してください。[を作成する (UWP) アプリ サービスの使用と](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。 接続されたデバイスと互換性のあるサービスを作成するには、いくつか変更する必要があります。 参照してください、[リモート アプリ サービスの UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)これを行う方法の詳細について。 
 
