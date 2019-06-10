@@ -3,12 +3,12 @@ title: クロスデバイス アプリケーションを構築する
 description: Project Rome を使用した、Windows 10 アプリケーション対応のクロスデバイスおよびクロスプラットフォームの機能について説明します。
 ms.topic: overview
 ms.custom: seodec2018, RS5
-ms.openlocfilehash: 57f6ce29730bd296ee623251d8ef619b114f944b
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: 28e76debcb8d3d74333827062e2345e078374b46
+ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906744"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755730"
 ---
 # <a name="project-rome"></a>Project Rome
 
@@ -47,7 +47,7 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 
 [winredist-sdk]:           https://www.nuget.org/packages/Microsoft.ConnectedDevices.UserNotifications
 [winredist-sdk-badge]:     https://img.shields.io/nuget/v/Microsoft.ConnectedDevices.UserNotifications.svg
-[winredist-sample]:        https://github.com/Microsoft/project-rome/tree/release/1.0.0/Windows/samples
+[winredist-sample]:        https://github.com/microsoft/project-rome/tree/master/Windows/samples
 
 [xamarin-sdk]:             https://www.nuget.org/packages/Microsoft.ConnectedDevices.Xamarin.Droid
 [xamarin-sdk-badge]:       https://img.shields.io/nuget/v/Microsoft.ConnectedDevices.Xamarin.Droid.svg
@@ -55,11 +55,11 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 
 [ios-sdk]:                 https://cocoapods.org/pods/ProjectRomeSdk
 [ios-sdk-badge]:           https://img.shields.io/cocoapods/v/ProjectRomeSdk.svg
-[ios-sample]:              https://github.com/Microsoft/project-rome/tree/release/1.0.0/iOS/samples
+[ios-sample]:              https://github.com/microsoft/project-rome/tree/master/iOS/samples
 
-[android-sdk]:             https://bintray.com/connecteddevices/maven/com.microsoft.connecteddevices:connecteddevices-sdk?version=1.1.0
-[android-sdk-badge]:       https://img.shields.io/bintray/v/connecteddevices/maven/com.microsoft.connecteddevices:connecteddevices-sdk.svg
-[android-sample]:          https://github.com/Microsoft/project-rome/tree/release/1.0.0/Android/samples
+[android-sdk]:             https://bintray.com/connecteddevices/maven/com.microsoft.connecteddevices%3Aconnecteddevices-sdk/_latestVersion
+[android-sdk-badge]:       https://api.bintray.com/packages/connecteddevices/maven/com.microsoft.connecteddevices%3Aconnecteddevices-sdk/images/download.svg
+[android-sample]:          https://github.com/microsoft/project-rome/tree/master/Android/samples
 
 [graph-relay]:             https://developer.microsoft.com/graph/docs/api-reference/beta/resources/project_rome_overview
 [graph-activities]:        https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/activity-feed-api-overview
@@ -79,8 +79,8 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 | :-------------------------------- | :--------------------------------------------------------------- |:---------------------------------------------- | :---------------------------------------------- |
 | **Windows SDK**                   | デバイス リレー、アクティビティ/タイムライン                                | [![SDK][windows-sdk-badge]][windows-sdk]       | [Windows デバイス リレー用 Project Rome サンプル][windows-drsample] <br> [Windows アクティビティ用 Project Rome サンプル][windows-afsample]
 | **Windows (プレビュー)**             |                                    Microsoft Graph 通知 | [![Nuget][winredist-sdk-badge]][winredist-sdk] | [Windows 用 Graph 通知サンプル][winredist-sample] 
-| **Android**             | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 | [![Maven][android-sdk-badge]][android-sdk]     | [Android 用 Project Rome サンプル][android-sample]
-| **iOS**                 | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 | [![CocoaPod][ios-sdk-badge]][ios-sdk]          | [iOS 用 Project Rome サンプル][ios-sample]
+| **Android**             | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 (プレビュー) | [![Maven][android-sdk-badge]][android-sdk]     | [Android 用 Project Rome サンプル][android-sample]
+| **iOS**                 | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 (プレビュー) | [![CocoaPod][ios-sdk-badge]][ios-sdk]          | [iOS 用 Project Rome サンプル][ios-sample]
 | **Android 用 Xamarin (プレビュー)** | デバイス リレー                                                     | [![Nuget][xamarin-sdk-badge]][xamarin-sdk]     | [Android 用 Xamarin サンプル][xamarin-sample]
 | **MSGraph**                       | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 | [![REST][graph-relay-badge]][graph-relay]<br> [![REST][graph-activities-badge]][graph-activities]<br>[![REST][graph-notification-badge]][graph-notification]          | [デバイス リレー][graph-relay-sample]<br>[アクティビティ/タイムライン][graph-activities-sample]<br>[Graph 通知][graph-notification-sample]
 
