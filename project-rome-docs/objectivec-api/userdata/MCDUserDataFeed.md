@@ -2,12 +2,12 @@
 title: MCDUserDataFeed
 description: このクラスは、接続されているデバイス プラットフォームのバックエンドでユーザーに固有のデータを同期する責任を負います。
 keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 66898563bdad8adb2f1ebfe75f010cd5ef1d9ca2
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: cd90c266c3c0293996a4f23059719224579404ff
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58908994"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67132238"
 ---
 # <a name="class-mcduserdatafeed"></a>クラス `MCDUserDataFeed`
 
@@ -61,8 +61,11 @@ UserDataFeed の同期の状態が変更されたときのイベントです。
 
 ## <a name="methods"></a>メソッド
 
+> [!WARNING]
+> この関数は非推奨とされます、'subscribeToSyncScopesWithResultAsync' 代わりにします。
+
 ### <a name="subscribetosyncscopesasync"></a>subscribeToSyncScopesAsync
-`- (void)subscribeToSyncScopesAsync:(NSArray<MCDUserDataFeedSyncScope*>* _Nonnull) syncScopes callback:(nonnull void (^)(BOOL, NSError* _Nullable)) callback;`
+`- (void)subscribeToSyncScopesAsync:(NSArray<MCDUserDataFeedSyncScope*>* _Nonnull) syncScopes callback:(nonnull void (^)(BOOL, NSError* _Nullable)) callback  __attribute__((deprecated("Use subscribeToSyncScopesWithResultAsync instead")));`
 
 追加**MCDUserDataFeedSyncScope**この MCDUserDataFeed するインスタンス。  に従ってこの MCDUserDataFeed が同期されている、 **MCDUserDataFeedSyncScope**インスタンスを指定します。
 
@@ -72,7 +75,20 @@ UserDataFeed の同期の状態が変更されたときのイベントです。
 
 * `callback`
 
-コールバックの結果は、サブスクリプションが成功したかどうかを示します。 
+コールバックの結果は、サブスクリプションが成功したかどうかを示します。
+
+### <a name="subscribetosyncscopeswithresultasync"></a>subscribeToSyncScopesWithResultAsync
+`- (void)subscribeToSyncScopesWithResultAsync:(NSArray<MCDUserDataFeedSyncScope*>* _Nonnull) syncScopes callback:(nonnull void (^)(MCDUserDataFeedSubscribeResult* _Nullable, NSError* _Nullable)) callback;`
+
+追加**MCDUserDataFeedSyncScope**この MCDUserDataFeed するインスタンス。  に従ってこの MCDUserDataFeed が同期されている、 **MCDUserDataFeedSyncScope**インスタンスを指定します。
+
+#### <a name="parameters"></a>パラメーター
+
+* `syncScopes` 配列の**MCDSyncScope**インスタンス。
+
+* `callback`
+
+コールバックの結果は、サブスクリプションが成功したかどうかを示します。
 
 ### <a name="startsync"></a>startSync
 `- (void)startSync;`
