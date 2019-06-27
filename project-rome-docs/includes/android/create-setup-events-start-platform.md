@@ -5,22 +5,22 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ac6a543cc63be9154e40482e587a8f373f56798
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755803"
 ---
-### <a name="create-the-platform"></a>プラットフォームを作成します。
+### <a name="create-the-platform"></a>プラットフォームの作成
 
 
-開始する、プラットフォームを単純にインスタンス化します。
+開始するには、単純にプラットフォームをインスタンス化します。
 
 `ConnectedDevicesPlatform sPlatform = new ConnectedDevicesPlatform(context);`
 
-### <a name="subscribe-to-connecteddevicesaccountmanager-events-to-handle-the-user-account"></a>ユーザー アカウントを処理するために ConnectedDevicesAccountManager イベントにサブスクライブします。 
+### <a name="subscribe-to-connecteddevicesaccountmanager-events-to-handle-the-user-account"></a>ユーザー アカウントを処理するための ConnectedDevicesAccountManager イベントに登録する 
 
-プラットフォームには、プラットフォームへのアクセスに認証されたユーザーが必要です。  購読を依頼する必要があります**ConnectedDevicesAccountManager**のイベントを有効なアカウントが使用されています。 
+プラットフォームは、認証済みのユーザーがプラットフォームにアクセスすることを要求します。  有効なアカウントが使用されていることを保証するために、**ConnectedDevicesAccountManager** イベントに登録する必要があります。 
 
 ```Java
  ConnectedDevicesPlatform sPlatform.getAccountManager().accessTokenRequested().subscribe((accountManager, args) -> {
@@ -37,9 +37,9 @@ ms.locfileid: "66755803"
 ```
 
 
-### <a name="subscribe-to-connecteddevicesnotificationregistrationmanager-events"></a>ConnectedDevicesNotificationRegistrationManager イベントにサブスクライブします。
+### <a name="subscribe-to-connecteddevicesnotificationregistrationmanager-events"></a>ConnectedDevicesNotificationRegistrationManager イベントに登録する
 
-同様に、プラットフォームは通知を使用して、デバイス間でのコマンドを配布します。  そのためにサブスクライブする必要があります、 **ConnectedDevicesNotificationRegistrationManager**のイベントをクラウドの登録状態が使用されているアカウントに対して有効です。  確認の状態を使用して、 **ConnectedDevicesNotificationRegistrationState**
+同様に、プラットフォームは通知を使用してデバイス間でコマンドを配信します。  したがって、使用されているアカウントに対してクラウドの登録状態が有効であることを保証するために、**ConnectedDevicesNotificationRegistrationManager** イベントに登録する必要があります。  **ConnectedDevicesNotificationRegistrationState** を使用して状態を確認する
 
 ```Java
 ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notificationRegistrationStateChanged().subscribe((notificationRegistrationManager, args) -> {
@@ -48,16 +48,16 @@ ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notifica
 
 }
 ```
-### <a name="start-the-platform"></a>プラットフォームを開始します。
-これで、プラットフォームは初期化され、イベント ハンドラーは、配置は、リモート システムのデバイスの検出を開始する準備が完了したらです。  
+### <a name="start-the-platform"></a>プラットフォームの開始
+プラットフォームが初期化され、イベント ハンドラーが配置されたので、リモート システム デバイスの検出を開始する準備ができました。  
 
 `ConnectedDevicesPlatform sPlatform.start();`
 
-### <a name="retrieve-user-accounts-known-to-the-app"></a>アプリに既知のユーザー アカウントを取得します。
+### <a name="retrieve-user-accounts-known-to-the-app"></a>アプリが認識しているユーザー アカウントの取得
 
-アプリに既知のユーザー アカウントの一覧と正しく同期されることを確認することが重要、 **ConnectedDevicesAccountManager**します。
+アプリが認識しているユーザー アカウントの一覧を、確実に **ConnectedDevicesAccountManager** と正しく同期することが重要です。
 
-使用**ConnectedDevicesAccountManager.addAccountAsync**新しいユーザー アカウントを追加します。
+**ConnectedDevicesAccountManager.addAccountAsync** を使用して新しいユーザー アカウントを追加します。
 
 ```Java
  public synchronized AsyncOperation<ConnectedDevicesAddAccountResult> addAccountToAccountManagerAsync(ConnectedDevicesAccount account) {
@@ -65,7 +65,7 @@ ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notifica
     }
 ```
 
-使用できる、無効なアカウントを削除する**ConnectedDevicesAccountManager.removeAccountAsync**
+無効なアカウントを削除するには、**ConnectedDevicesAccountManager.removeAccountAsync** を使用できます。
 
 ```Java
  public synchronized AsyncOperation<ConnectedDevicesAddAccountResult> removeAccountToAccountManagerAsync(ConnectedDevicesAccount account) {

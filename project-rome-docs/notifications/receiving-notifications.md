@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 3f5ac416eb651ed6d79d53cb864d201dd2f73db7
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58907594"
 ---
-# <a name="receiving-notifications-using-the-project-rome-sdk"></a>プロジェクトのローマ SDK を使用して通知を受け取る
+# <a name="receiving-notifications-using-the-project-rome-sdk"></a>Project Rome SDK を使用して通知を受信する
 
-MSGraph 通知を受信するプロセスは、さまざまな開発プラットフォーム間で揃えられます。 言語の SDK の違いに基づき、別のガイドラインがあります。 アプリで通知の取得を有効にする方法については、以下のプラットフォームを選択します。
+MSGraph 通知を受信するプロセスは、さまざまな開発プラットフォーム間で共通しています。 SDK の言語の違いに応じて、個別のガイドラインがあります。 アプリで通知の取得を有効にする方法については、以下からプラットフォームを選択してください。
 
 * [Windows](how-to-guide-for-windows.md)
 * [Android](how-to-guide-for-android.md)

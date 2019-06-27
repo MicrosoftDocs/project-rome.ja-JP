@@ -1,30 +1,30 @@
 ---
-title: Ios デバイスのリレー機能を実装します。
-description: このガイドでは、リモート デバイスとアプリを検出してアプリを起動し、またはアプリ サービスと対話する方法を説明します。
+title: iOS のデバイス リレー機能の実装
+description: このガイドでは、リモートのデバイスやアプリを検出してから、アプリを起動したり、アプリ サービスと対話したりする方法について説明します。
 ms.topic: article
-keywords: microsoft、windows、プロジェクト、ローマ、コマンド実行の ios
+keywords: microsoft, windows, project rome, コマンド実行, ios
 ms.assetid: b5d426db-a0ca-4888-b2cb-cb7fdb1c6c0d
 ms.localizationpriority: medium
 ms.openlocfilehash: c9c3e8bf580884c6f0c3b6ccdf177f163f05c03a
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755810"
 ---
-# <a name="implementing-device-relay-for-ios"></a>Ios デバイスのリレーを実装します。
+# <a name="implementing-device-relay-for-ios"></a>iOS のデバイス リレーの実装
 
-プロジェクト ローマのデバイスのリレー機能は、2 つの主な機能をサポートする Api のセットで構成されています。 リモートの起動 (コマンドの実行とも呼ばれます) と app services。
+Project Rome のデバイス リレー機能は、2 つの主な機能であるリモート起動 (コマンド実行とも呼びます) とアプリ サービスをサポートする一連の API で構成されています。
 
-リモート起動の Api は、ローカル デバイスからリモート デバイス上のプロセスが開始されるシナリオをサポートします。 たとえば、ユーザーは、携帯電話、車のラジオをリッスンする可能性がありますが自宅のステレオにフックされているが、Xbox に再生を転送する電話を使用するホーム取得すると。
+リモート起動 API は、リモート デバイス上のプロセスがローカル デバイスから開始されるシナリオをサポートします。 たとえば、ユーザーが車に乗りながら電話でラジオを聴きますが、帰宅したらホーム ステレオに接続した Xbox に電話を使用して再生を転送することがあります。
 
-App Services Api により、任意のコンテンツを含むメッセージを送信できる 2 つのデバイス間で永続的なパイプラインを確立するために使用できます。 などの写真をモバイル デバイスで実行されているアプリを共有では、写真を取得するために、ユーザーの PC に接続を確立する可能性があります。
+アプリケーションは App Services API を使用して 2 つのデバイス間に永続的なパイプラインを確立し、任意の内容を含むメッセージをこのパイプライン経由で送信することができます。 たとえば、モバイル デバイス上で実行されている写真共有アプリが、写真を取得するためにユーザーの PC との接続を確立することができます。
 
-プロジェクトのローマの機能は、接続されているデバイス プラットフォームと呼ばれる、基になるプラットフォームでサポートされます。 このガイドは、接続されているデバイス プラットフォームの使用を開始するために必要な手順について説明し、プラットフォームを使用して実装する方法を説明しますデバイス リレー機能に関連します。
+Project Rome の機能は、Connected Devices Platform と呼ばれる基盤プラットフォームによってサポートされます。 このガイドでは、Connected Devices Platform を初めて使用するために必要な手順と、このプラットフォームを使用してデバイス リレー関連機能を実装する方法について説明します。
 
-この手順はからコードを参照、[プロジェクト ローマ iOS サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/iOS/samples)GitHub に用意されています。  
+この手順では、GitHub から入手できる [Project Rome iOS サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/iOS/samples)のコードを参照します。  
 
-## <a name="setting-up-the-connected-devices-platform-and-notifications"></a>接続されているデバイス プラットフォームと通知を設定します。
+## <a name="setting-up-the-connected-devices-platform-and-notifications"></a>Connected Devices Platform と通知の設定
 
 [!INCLUDE [ios/preliminary-setup](../includes/ios/preliminary-setup.md)]
 
@@ -32,19 +32,19 @@ App Services Api により、任意のコンテンツを含むメッセージを
 
 [!INCLUDE [ios/dev-center-onboarding](../includes/ios/notifications-dev-center-onboarding.md)]
 
-## <a name="using-the-platform"></a>プラットフォームを使用します。
+## <a name="using-the-platform"></a>プラットフォームの使用
 
 [!INCLUDE [ios/create-setup-events-start-platform](../includes/ios/create-setup-events-start-platform.md)]
 
-### <a name="discover-remote-devices-and-apps"></a>リモート デバイスとアプリを検出します。
+### <a name="discover-remote-devices-and-apps"></a>リモートのデバイスとアプリの検出
 
-**MCDRemoteSystemWatcher**インスタンスは、このセクションのコア機能を処理します。 リモート システムを検出するには、クラスで宣言します。
+**MCDRemoteSystemWatcher** インスタンスは、このセクションのコア機能を処理します。 これは、リモート システムを検出するクラスの中で宣言します。
 
 `MCDRemoteSystemWatcher* _watcher;`
 
-ウォッチャーを作成して、デバイスの検出を開始する前にどのような種類のデバイスのアプリの対象を決定する検索フィルターを追加したい場合があります。 これらは、ユーザーの入力またはユース ケースに応じて、アプリにハードコーディングで決定できます。
+ウォッチャーを作成してデバイスの検出を開始する前に、検出フィルターを追加して、どのような種類のデバイスをアプリでターゲットにするかを決定することができます。 ユース ケースに応じて、これらはユーザーの入力によって決定、またはアプリにハードコードすることができます。
 
-サンプル アプリから次のコードでは、作成して、アプリを解析し、検出されたデバイスとの対話を許可する watcher のインスタンスを開始する方法を示します。
+サンプル アプリの次のコードは、検出されたデバイスをアプリで解析し、それらと対話するためのウォッチャー インスタンスを作成して起動する方法を示しています。
 
 ```ObjectiveC
 // Start watcher with filter for transport types, form factors
@@ -75,7 +75,7 @@ App Services Api により、任意のコンテンツを含むメッセージを
 }
 ```
 
-ここで、イベント ハンドラー メソッドを定義します。
+ここでは、イベント ハンドラー メソッドを定義します。
 
 ```ObjectiveC
 // Handle when RemoteSystems are added
@@ -128,22 +128,22 @@ App Services Api により、任意のコンテンツを含むメッセージを
 }
 ```
 
-アプリが検出されたデバイスのセットを維持することをお勧めします。 (によって表される**MCDRemoteSystem**インスタンス) と、UI で使用可能なデバイスと (表示名とデバイスの種類) などのアプリに関する情報を表示します。 
+(**MCDRemoteSystem** インスタンスで表される) 検出されたデバイスのセットをアプリで管理し、利用可能なデバイスとそのアプリについての情報 (表示名やデバイスの種類など) を UI に表示することをお勧めします。 
 
-1 回`[_watcher start]`が呼び出されると、リモート システムの使用状況の監視を開始して接続されているデバイスが検出された、更新、または検出されたデバイスのセットから削除されるときにイベントが発生します。 はスキャン継続的に、バック グラウンドでため、監視を停止することをお勧め (で`[_watcher stop]`) とが不要になったため、不要なネットワーク通信とバッテリの消耗します。
+`[_watcher start]` が呼び出されると、リモート システムのアクティビティの監視が始まります。接続デバイスが検出、更新、または検出済みデバイスのセットから削除されると、イベントが発生します。 バックグラウンドで継続的にスキャンされるため、不必要なネットワーク通信やバッテリの消耗を避けるために、不要になったら (`[_watcher stop]` を使用して) ウォッチャーを停止することをお勧めします。
 
-## <a name="example-use-case-implementing-remote-launching-and-remote-app-services"></a>ユース ケースの例: リモート起動して、リモート アプリ サービスを実装します。
-この時点で、コードにしておくの作業一覧**MCDRemoteSystem**使用可能なデバイスを参照するオブジェクト。 これらのデバイスで何は、アプリの機能によって異なります。 相互作用の主な型では、リモート起動してリモート アプリのサービスが。 これらは、次のセクションで説明します。
+## <a name="example-use-case-implementing-remote-launching-and-remote-app-services"></a>ユース ケースの例: リモート起動とリモート アプリ サービスの実装
+コードのこの時点で、利用可能なデバイスを参照する **MCDRemoteSystem** オブジェクトの有効な一覧があるはずです。 これらのデバイスに対して何をするかは、アプリの機能によって異なります。 主な種類の対話は、リモート起動とリモート アプリ サービスです。 これらについては、以降のセクションで説明します。
 
 ### <a name="a-remote-launching"></a>A) リモート起動
 
-次のコードのいずれかを選択する方法を示しています、 **MCDRemoteSystem**オブジェクト (理想的にはこれは、UI コントロールを介して) し、使用して**MCDRemoteLauncher**アプリと互換性のあるを渡すことで、上のアプリを起動するにはURI。
+次のコードは、**MCDRemoteSystem** オブジェクトのいずれかを選択し (UI コントロールを使って行われるのが理想的です)、**MCDRemoteLauncher** を使用して、アプリと互換性のある URI を渡してそのデバイス上でアプリを起動する方法を示しています。
 
-リモートからの起動 (である場合、ホスト デバイスが起動する URI スキーム用の既定のアプリで指定された URI) リモート デバイスを対象にできることを確認することが重要_または_にそのデバイスにリモート アプリケーションを特定します。
+重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス_または_そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。
 
-検出をデバイス レベルで最初に実行前のセクションで示したように、(、 **MCDRemoteSystem**デバイスを表します) を呼び出すことができますが、`getApplications`メソッドを**MCDRemoteSystem**インスタンスの配列を取得する**MCDRemoteSystemApp** (準備手順で、独自のアプリを登録したのと同様に、接続されているデバイス プラットフォームを使用する登録されているリモート デバイスでアプリを表すオブジェクト上記の場合)。 両方**MCDRemoteSystem**と**MCDRemoteSystemApp**作成に使用できます、 **MCDRemoteSystemConnectionRequest**URI の起動に必要なものであります。
+前のセクションで説明したように、検出はまずデバイス レベルで行われます (**MCDRemoteSystem** はデバイスを表します) が、**MCDRemoteSystem** インスタンスの `getApplications` メソッドを呼び出して **MCDRemoteSystemApp** オブジェクトの配列を取得することができます。これらのオブジェクトが表すのは、(前述の準備手順で独自のアプリを登録したのと同様に) Connected Devices Platform を使用するように登録されている、リモート デバイス上のアプリです。 **MCDRemoteSystem** と **MCDRemoteSystemApp** のどちらを使用しても、URI を起動するために必要な **MCDRemoteSystemConnectionRequest** を作成できます。
 
-サンプルを次のコードでは、接続要求経由で URI のリモートの起動を示します。
+サンプルの次のコードは、接続要求を経由した URI のリモート起動を示しています。
 
 ```ObjectiveC
 // Send a remote launch of a uri to RemoteSystemApplication
@@ -174,23 +174,23 @@ App Services Api により、任意のコンテンツを含むメッセージを
 }
 ```
 
-によって送信される URI は、特定の状態またはリモート デバイス上の構成でのアプリを起動できます。 これにより、中断することがなく別のデバイスで映画を見てなど、ユーザーのタスクを継続する能力。
+送信する URI に応じて、特定の状態または構成でリモート デバイス上でアプリを起動できます。 これにより、映画を観るなどのユーザー タスクを、中断することなく別のデバイス上で継続することができます。
 
-によって、使用を対象となるシステム上のアプリを取り扱うことが、URI の場合を対象にする必要があります。 または複数のアプリで処理できます。 **[MCDRemoteLauncher](../objectivec-api/remotesystems.commanding/MCDRemoteLauncher.md)** クラスと **[MCDRemoteLauncherOptions](../objectivec-api/remotesystems.commanding/MCDRemoteLauncherOptions.md)** クラスは、これを行う方法を説明します。
+用途によっては、ターゲット システム上のどのアプリも URI を処理できない、または複数のアプリがそれを処理できる状況への対応が必要な場合があります。 **[MCDRemoteLauncher](../objectivec-api/remotesystems.commanding/MCDRemoteLauncher.md)** クラスと **[MCDRemoteLauncherOptions](../objectivec-api/remotesystems.commanding/MCDRemoteLauncherOptions.md)** クラスは、これを行う方法を説明します。
 
 ### <a name="b-remote-app-services"></a>B) リモート アプリ サービス
 
-IOS アプリでは、その他のデバイス上の app services と対話するデバイスの接続ポータルを使用できます。 これにより、他のデバイスと通信する方法は多数&mdash;ホスト デバイスの前面にアプリを表示する必要はありませんすべて。
+iOS アプリは Connected Devices ポータルを使用して、他のデバイス上のアプリ サービスと対話できます。 これにより、他のデバイスと通信するための多くの方法が提供されます&mdash;アプリをホスト デバイスの前面に出す必要はまったくありません。
 
 #### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスをセットアップする
-このガイドを使用して、 [Roman テスト アプリの Windows](http://aka.ms/romeapp)そのターゲット アプリケーションのサービスとして。 そのため、次のコードは、特定のリモート システムでは、その特定のアプリ サービスを検索する iOS アプリになります。 このシナリオをテストする場合は、Windows デバイスで Roman テスト アプリをダウンロードし、サインインしている同じ MSA 前の準備手順で使用したかどうかを確認します。
+このガイドでは、[Windows 用の Roman テスト アプリ](http://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、iOS アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。
 
-UWP アプリ サービスを作成する方法に関する手順については、次を参照してください。[を作成する (UWP) アプリ サービスの使用と](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。 接続されたデバイスと互換性のあるサービスを作成するには、いくつか変更する必要があります。 参照してください、[リモート アプリ サービスの UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)これを行う方法の詳細について。 
+独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
 
-#### <a name="open-an-app-service-connection-on-the-client-device"></a>クライアント デバイスにアプリ サービスの接続を開く
-IOS アプリには、リモート デバイスまたはアプリケーションへの参照を取得する必要があります。 このシナリオの起動セクションなどを使用する必要を**MCDRemoteSystemConnectionRequest**、いずれかから構築できますが、 **MCDRemoteSystem**または**MCDRemoteSystemApp**システムで利用可能なアプリを表します。
+#### <a name="open-an-app-service-connection-on-the-client-device"></a>クライアント デバイス上でアプリ サービス接続を開く
+iOS アプリは、リモートのデバイスまたはアプリケーションへの参照を取得する必要があります。 起動のセクションと同様、このシナリオでは **MCDRemoteSystemConnectionRequest** を使用する必要があります。これは **MCDRemoteSystem** から、またはシステム上の利用可能なアプリを表す **MCDRemoteSystemApp** から作成できます。
 
-アプリは 2 つの文字列でその対象となるアプリ サービスを識別する必要がありますさらに、: *app service の名前*と*パッケージ識別子*します。 アプリのサービス プロバイダーのソース コードにあるこれらは (を参照してください[を作成する (UWP) アプリ サービスの使用と](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)詳細については)。 これらの文字列を構築して、 **MCDAppServiceDescription**にフィードするが、 **MCDAppServiceConnection**インスタンス。
+さらにアプリは、*アプリ サービス名*と*パッケージ識別子*の 2 つの文字列によって、そのターゲットであるアプリ サービスを識別する必要があります。 これらはアプリ サービス プロバイダーのソース コードに含まれています。詳細については、[アプリ サービスの作成と利用 (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 これらの文字列が合わさって **MCDAppServiceDescription** になり、これが **MCDAppServiceConnection** インスタンスに渡されます。
 
 ```ObjectiveC
 // Step #1:  Establish an app service connection
@@ -239,14 +239,14 @@ IOS アプリには、リモート デバイスまたはアプリケーション
 ```
 
 
-#### <a name="create-a-message-to-send-to-the-app-service"></a>App service に送信するメッセージを作成します。
+#### <a name="create-a-message-to-send-to-the-app-service"></a>アプリ サービスに送信するメッセージの作成
 
-送信するメッセージを格納する変数を宣言します。 Ios では、リモート アプリ サービスに送信するメッセージはで、 **NSDictionary**型。
+送信するメッセージを格納する変数を宣言します。 iOS では、リモート アプリ サービスに送信するメッセージは **NSDictionary** 型になります。
 
 > [!NOTE]
-> 接続されているデバイス プラットフォームを変換、アプリが他のプラットフォーム上の app services を通信する場合、 **NSDictionary**受信側のプラットフォームで同等のコンストラクトにします。 たとえば、 **[NSDictionary](https://developer.apple.com/documentation/foundation/nsdictionary)** アプリ サービスに変換します Windows にこのアプリから送信される、 [ **ValueSet** ](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) (.NET のオブジェクト。Framework)、app service によって、解釈できます。 その他の方向に渡された情報には、逆の変換が行われます。
+> アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **NSDictionary** を、受信側プラットフォームでの同等のコンストラクトに変換します。 たとえば、このアプリから Windows アプリ サービスに送信される **[NSDictionary](https://developer.apple.com/documentation/foundation/nsdictionary)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) オブジェクトに変換されます。 反対方向に渡される情報には、逆の変換が行われます。
 
-次のメソッドは、Windows 用の欧文テスト アプリの app service で解釈できるメッセージを提案します。
+次のメソッドは、Windows 用の Roman テスト アプリのアプリ サービスによって解釈できるメッセージを作成します。
 
 ```ObjectiveC
 // Create a message to send
@@ -261,13 +261,13 @@ IOS アプリには、リモート デバイスまたはアプリケーション
 ```
 
 > [!IMPORTANT]
-> **NSDictionary**アプリとアプリのリモート サービスのシナリオでのサービス間で渡されるオブジェクトは、次の形式に従う必要があります。キーである必要があります**NSString**秒、および値可能性があります。**NSString**、数値型 (整数または浮動小数点) をボックス化、ブール値、ボックス化**NSDate**、 **NSUUID**、これらの型、またはその他のいずれかの同種のアレイ**NSDictionary**この仕様に一致するオブジェクト。 
+> リモート アプリ サービスのシナリオでアプリとサービスの間で受け渡しされる **NSDictionary** オブジェクトは、次の形式に従う必要があります。キーは **NSString** である必要があり、次の値を入れることができます: **NSString**、ボックス数値型 (整数または浮動小数点数)、ボックス ブール値、**NSDate**、**NSUUID**、上記いずれかの型と同種の配列、またはこの仕様を満たすその他の **NSDictionary** オブジェクト。 
 
-#### <a name="send-messages-to-the-app-service"></a>App service へのメッセージを送信します。
+#### <a name="send-messages-to-the-app-service"></a>アプリ サービスにメッセージを送信する
 
-アプリ サービスの接続が確立され、メッセージが作成された、app service に送信は単純なとを接続インスタンスおよびメッセージへの参照を持つアプリで任意の場所から実行できます。
+アプリ サービス接続が確立されてメッセージが作成されたら、それをアプリ サービスに送信するのは簡単であり、接続インスタンスとメッセージへの参照があるアプリ内のどこからでも実行できます。
 
-このサンプルを次のコードでは、app service と応答の処理へのメッセージの送信を示します。
+サンプルの次のコードは、アプリ サービスへのメッセージ送信と応答の処理を示しています。
 
 ```ObjectiveC
 //  Send a message using the app service connection
@@ -315,13 +315,13 @@ IOS アプリには、リモート デバイスまたはアプリケーション
 }
 ```
 
-ローマ アプリの場合、応答には、この非常に単純なユース ケースでは、メッセージの応答の転送中の合計時間を取得する日付を比較できるように、作成された日付が含まれます。
+Roman アプリの場合、応答にはそれが作成された日付が含まれているため、この非常に単純なユース ケースでは、日付を比較してメッセージ応答の合計転送時間を取得できます。
 
-リモート アプリ サービスで、1 つのメッセージ交換を終了します。
+以上で、リモート アプリ サービスとの 1 回のメッセージ交換が終了します。
 
-#### <a name="finish-app-service-communication"></a>アプリ サービスの通信を完了します。
+#### <a name="finish-app-service-communication"></a>アプリ サービス通信の終了
 
-アプリが終了すると、ターゲット デバイスのアプリのサービスと対話する 2 つのデバイス間の接続を閉じます。
+アプリがターゲット デバイスのアプリ サービスとの対話を終了したら、2 つのデバイス間の接続を閉じます。
 
 ```ObjectiveC
 - (void)appServiceConnection:(__unused MCDAppServiceConnection*)connection closedWithStatus:(MCDAppServiceClosedStatus)status
@@ -333,7 +333,7 @@ IOS アプリには、リモート デバイスまたはアプリケーション
 ```
 
 ## <a name="related-topics"></a>関連トピック
-* [API リファレンスのページ](api-reference-for-ios.md) 
-* [iOS アプリをサンプルします。](https://github.com/Microsoft/project-rome/tree/master/iOS/samples) 
-* [(UWP) アプリのリモート サービスと通信します。](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
-* [作成し、app service (UWP) を使用する](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。
+* [API リファレンス ページ](api-reference-for-ios.md) 
+* [iOS サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/iOS/samples) 
+* [リモート アプリ サービスとの通信 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
+* [アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)

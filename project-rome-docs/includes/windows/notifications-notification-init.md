@@ -1,21 +1,21 @@
 ---
 ms.openlocfilehash: f81fbbffb2ec54f8d9a252a00fc3822f1f3f9582
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59800854"
 ---
-### <a name="associate-the-connected-devices-platform-with-the-native-push-notification-for-each-platform"></a>接続されているデバイス プラットフォームを各プラットフォームのネイティブ プッシュ通知に関連付けます。 
+### <a name="associate-the-connected-devices-platform-with-the-native-push-notification-for-each-platform"></a>Connected Devices Platform を各プラットフォームのネイティブのプッシュ通知に関連付けます。 
 
-ようにアプリのクライアントは既に触れましたが、各クライアント側の SDK プラットフォームとデバイスの接続されているプラットフォームのグラフを許可するには、登録プロセス中に使用されているネイティブのプッシュ通知のパイプラインに関する知識を提供する必要がありますアプリケーション サーバーは、MS Graph Api を使用してユーザーを対象とした通知を発行するときのアプリのクライアント エンドポイントは各にファンアウト通知を通知サービス。
-上記の手順で、初期化せず、プラットフォーム**NotificationProvider**パラメーター。 ここでは、作成して実装するオブジェクトで渡す必要があります**NotificationProvider**します。 参照してください**GraphNotificationProvider.cs**の詳細についてはサンプルです。 
+既に触れたように、アプリ クライアントは、登録プロセスの間、各プラットフォームで使用されているネイティブのプッシュ通知パイプラインに関する情報を、クライアント側 SDK と Connected Devices Platform に提供する必要があります。これは、ユーザーをターゲットにした通知をアプリ サーバーが MS Graph API を使って発行したときに、Graph の通知サービスが個々のアプリ クライアント エンドポイントに通知を拡散できるようにするためです。
+上記の手順では、**NotificationProvider** パラメーターなしでプラットフォームを初期化しました。 ここでは、**NotificationProvider** を実装するオブジェクトを作成して渡す必要があります。 詳細については、サンプルの **GraphNotificationProvider.cs** を参照してください。 
 
 
 
-実装でこの登録を配信**NotificationProvider**します。 次に、**プラットフォーム**初期化呼び出しがローカルに提供する必要があります**プラットフォーム**プッシュ通知サービスにアクセスできる、MS Graph の通知サーバー側からデータを受信するアプリを許可します。 
+**NotificationProvider** の実装でこの登録を配信します。 次に、**Platform** の初期化呼び出しで、プッシュ通知サービスへのアクセスをローカルの **Platform** に提供して、サーバー側の MS Graph 通知からアプリがデータを受信できるようにする必要があります。 
 
-### <a name="pass-incoming-push-notifications-to-the-client-sdk"></a>クライアント SDK にプッシュ通知の受信を渡す
-ここで、PushNotificationTrigger、または、リスナーのでネイティブのバック グラウンド タスクが登録されている Windows 内で受信 UserNotification ペイロードを処理できる、 [PushNotificationReceived イベント](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannel.pushnotificationreceived)します。 
+### <a name="pass-incoming-push-notifications-to-the-client-sdk"></a>着信プッシュ通知をクライアント SDK に渡す
+これで、着信 UserNotification ペイロードを、PushNotificationTrigger に登録された Windows ネイティブのバックグラウンド タスク内で、または [PushNotificationReceived イベント](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannel.pushnotificationreceived)のリスナーで処理できます。 
 
-コンプライアンス、セキュリティ、潜在的な最適化などの理由から、グラフの通知サーバー側から受信した WNS 生通知に最初に、アプリ サーバーによって公開されたデータは含まれませんが、ショルダー タップ可能性があります多くの場合。 アプリ サーバーによって発行された実際の通知コンテンツの取得は、クライアント側 SDK の Api の背後に表示されません。 この場合、SDK は常に、SDK に着信 WNS 生の通知ペイロードを渡すアプリ クライアントを確認します。 これにより、これはグラフの通知シナリオを通知するかどうか、またはしない場合に WNS 未加工のプッシュは、他の目的で、アプリのクライアントによっても使用できます) を決定する SDK ができます。 
+コンプライアンス、セキュリティ、潜在的な最適化などの理由から、サーバー側の Graph 通知から受信する WNS 直接通知は、多くの場合、アプリ サーバーによって最初に公開される一切のデータを含まないショルダー タップである可能性があります。 アプリ サーバーによって発行された実際の通知内容の取得は、クライアント側の SDK API の背後に隠されています。 この場合、SDK は常に、着信 WNS 直接通知ペイロードを SDK に渡すことをアプリ クライアントに求めます。 SDK はこれによって、(WNS 直接プッシュがアプリ クライアントによって他の目的にも使用される可能性がある場合に) これが Graph 通知のシナリオ用の通知であるかどうかを判断できます。 

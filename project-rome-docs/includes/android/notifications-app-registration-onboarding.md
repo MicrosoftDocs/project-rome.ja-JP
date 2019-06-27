@@ -5,32 +5,32 @@ ms.topic: include
 ms.assetid: bbef84bf-a6b7-44be-879d-0fa6065e37b1
 ms.localizationpriority: medium
 ms.openlocfilehash: ea97fbf5fad21b342300a283136a642c5a16672e
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755722"
 ---
-### <a name="msa-and-aad-authentication-registration"></a>MSA と AAD 認証の登録
+### <a name="msa-and-aad-authentication-registration"></a>MSA および AAD 認証登録
 
-Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証の登録は Nearby 共有を除く、通知を含む SDK のすべての機能に必要な Api。 
+Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証登録は、近距離共有 API を除いた、通知を含む SDK のすべての機能に必要です。 
 
 > [!NOTE]
-> デバイスの Relay Api では、azure Active Directory (AAD) アカウントはサポートされていません。
+> Azure Active Directory (AAD) アカウントは、Device Relay API ではサポートされていません。
 
-MSA をあり、1 つを使用する実行されていない、上のレジスタ[account.microsoft.com](https://account.microsoft.com/account)します。
+MSA をまだ所有しておらず、使用したい場合は、[account.microsoft.com](https://account.microsoft.com/account) で登録してください。
 
-次に場合は、ユーザーの認証と identity framework として MSA を使用する必要がありますにアプリを登録 Microsoft 次の手順で、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)(Microsoft があるない場合開発者アカウントを作成する必要がいずれか最初)。 アプリのクライアント ID の文字列を受信する必要があります。場所を忘れないでくださいまたはこれを保存してください。 後でこのグラフの通知のオンボード中に使用されます。 MSA の認証を使用してアプリを次に示すように、Live SDK アプリケーションとして登録する必要があることに注意してください。
+次に、ユーザー用の認証および ID フレームワークとして MSA を使用している場合、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)の指示に従って、アプリを Microsoft に登録する必要があります (Microsoft 開発者アカウントを所有していない場合は、最初に作成する必要があります)。 アプリのクライアント ID 文字列が届くはずです。必ず、場所を覚えておくか保存しておいてください。 これは後で Graph 通知のオンボーディング中に使用されます。 次に示すように、MSA 認証を使用するアプリは Live SDK アプリケーションとして登録する必要があることに注意してください。
 ![アプリケーション登録ポータル](../../notifications/media/msa_app_registration/app_registration_portal.png)
 
-職場アカウントまたは学校アカウントの認証と identity framework として AAD を使用するアプリを作成している場合は、経由でアプリを登録する必要があります[Azure Active Directory 認証ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)に示すように、クライアント ID を取得するには以下に。 
- ![AAD 登録ポータル](../../notifications/media/aad_registration_portal/aad_registration_portal.png)グラフ通知およびその他の接続されているデバイス プラットフォームの機能を使用するために必要ないくつかのアクセス許可がある新しいアプリの登録を作成する場合。 以下をご覧ください。 
-![AAD の登録ポータル: 設定 – 必要なアクセス許可](../../notifications/media/aad_registration_portal/aad_registration_portal_permissions.png)
-* 次のように示すユーザー サインイン権限を追加します。
-![必要なアクセス許可-AAD のユーザー プロファイル](../../notifications/media/aad_registration_portal/permissions_1_user.png)
-* デバイスについては、次のように表示されるコマンドのサービスのアクセス許可を追加します。
-![必要なアクセス許可-デバイス](../../notifications/media/aad_registration_portal/permissions_2_devices.png)
-* アクティビティ フィード サービスの Api、次のように表示される通知のグラフのアクセス許可を追加します。
-![必要なアクセス許可-デバイス](../../notifications/media/aad_registration_portal/permissions_3_graph_notifications.png)
-* 最後に、Windows で実行中の UWP アプリを含むクロス プラットフォーム アプリケーションを作成する場合は作成に次のように示すように、Windows 通知サービスのアクセス許可を追加してください。 
-![必要なアクセス許可-WNS](../../notifications/media/aad_registration_portal/permissions_4_wns_push.png)
+職場アカウントまたは学校アカウントの認証および ID フレームワークとして AAD を使用するアプリを作成している場合は、次に示すように、クライアント ID を取得するために [Azure Active Directory 認証ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)経由でアプリを登録する必要があります。 
+ ![AAD 登録ポータル](../../notifications/media/aad_registration_portal/aad_registration_portal.png) 新しいアプリ登録を作成するとき、Graph 通知やその他の Connected Devices Platform の機能を使用するために必要なアクセス許可がいくつかあります。 下記を参照してください。 
+![AAD 登録ポータル – 設定 – 必要なアクセス許可](../../notifications/media/aad_registration_portal/aad_registration_portal_permissions.png)
+* 次に示すように、ユーザーのサインインのアクセス許可を追加します。
+![必要なアクセス許可 – AAD ユーザー プロファイル](../../notifications/media/aad_registration_portal/permissions_1_user.png)
+* 次に示すように、デバイス情報に対するコマンド サービスのアクセス許可を追加します。
+![必要なアクセス許可 – デバイス](../../notifications/media/aad_registration_portal/permissions_2_devices.png)
+* 次に示すように、アクティビティ フィード サービス API の下に Graph 通知のアクセス許可を追加します。
+![必要なアクセス許可 – デバイス](../../notifications/media/aad_registration_portal/permissions_3_graph_notifications.png)
+* 最後に、Windows で動作する UWP アプリを含むクロスプラットフォーム アプリケーションを作成している場合は、次に示すように、Windows 通知サービスのアクセス許可を必ず追加してください。 
+![必要なアクセス許可 – WNS](../../notifications/media/aad_registration_portal/permissions_4_wns_push.png)

@@ -5,19 +5,19 @@ ms.topic: include
 ms.assetid: dc4d7bbd-bc87-42b1-9924-52c7bfcd5b5f
 ms.localizationpriority: medium
 ms.openlocfilehash: d8e94884c742015b08d87e83a9384cbb577695c4
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58907924"
 ---
-## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の暫定的なセットアップ
+## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の準備段階のセットアップ
 
-### <a name="register-your-app-for-push-notifications"></a>プッシュ通知をアプリを登録します。
+### <a name="register-your-app-for-push-notifications"></a>プッシュ通知のためにアプリを登録する
 
-Google にアプリケーションを登録[Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/android/client)をサポートします。 送信者は受信した ID とサーバーのキーをメモしてください。後で必要があります。 
+[Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/android/client) のサポートのために、アプリケーションを Google に登録します。 受け取った送信者 ID とサーバー キーは、後で必要になるので必ずメモしておいてください。 
 
-登録されると、接続されているデバイス プラットフォームと、アプリでプッシュ通知機能を関連付ける必要があります。
+登録したら、アプリ内で、プッシュ通知機能を Connected Devices Platform に関連付ける必要があります。
 
 ```Java
 notificationRegistration = new ConnectedDevicesNotificationRegistration();
@@ -31,41 +31,41 @@ mConnectedDevicesPlatform.getNotificationRegistrationManager().registerForAccoun
 });
 ```
 
-### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでのクロス デバイス エクスペリエンスのアプリを登録します。
-Android デバイスへの通信を必要とする場合のアプリを登録する必要があります、[クロス デバイス エクスペリエンスの機能、Microsoft 開発者向けダッシュ ボードの](https://developer.microsoft.com/dashboard/crossplatform/web)します。 これは、上記 MSA と AAD のアプリ登録から別のプロシージャです。  このプロセスの主な目的は、接続されているデバイス プラットフォームによって認識され、同時に、ネイティブのプッシュ通知を使用して通知を送信するプラットフォームを承認するクロス プラットフォーム アプリの id によるプラットフォームの特定のアプリ id にマップするには各モバイル プラットフォームに対応するサービス。 この場合、その、Firebase Cloud Messaging を使用して iOS アプリのエンドポイントへの通信を有効にできます。
+### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでクロスデバイス エクスペリエンスのためにアプリを登録する
+Android デバイスとの通信が必要な場合、[Microsoft デベロッパー ダッシュボードのクロスデバイス エクスペリエンス機能](https://developer.microsoft.com/dashboard/crossplatform/web)用にアプリを登録する必要があります。 これは、上記の MSA および AAD アプリ登録とは異なる手順です。  このプロセスの主な目的は、プラットフォーム固有のアプリ ID を、Connected Devices Platform によって認識されるクロスプラットフォームのアプリ ID にマップすること、またそれと同時に、プラットフォームにおいて、各モバイル プラットフォームに対応したネイティブのプッシュ通知サービスを使用して通知を送信するのを認可することです。 この場合、それによって、Firebase Cloud Messaging 経由で iOS アプリのエンドポイントと通信できるようになります。
 
-Dev Center のダッシュ ボードに移動して、左側にあるナビゲーション ウィンドウで、クロス デバイス エクスペリエンスに移動して次のように示すように、新しいクロス デバイス アプリの構成を選択します。
-![デベロッパー センター ダッシュ ボード-クロス デバイス エクスペリエンス](../../notifications/media/dev_center_portal/dev_center_portal_1_overview.png)
+次に示すように、デベロッパー センターのダッシュボードに移動し、左側のナビゲーション ウィンドウから [Cross-Device Experiences] (クロスデバイス エクスペリエンス) に移動して、[configuring a new cross-device app] (新しいクロスデバイス アプリの構成) を選択します。
+![デベロッパー センター ダッシュボード – クロスデバイス エクスペリエンス](../../notifications/media/dev_center_portal/dev_center_portal_1_overview.png)
 
-デベロッパー センターで、オンボード プロセスには、次の手順が必要です。
-* サポートされているプラットフォームを選択します: アプリが存在する必要があり、クロス デバイス エクスペリエンスを有効にするプラットフォームを選択します。 Windows、Android、および iOS から選択できます。
-![クロス デバイス エクスペリエンス: サポートされているプラットフォーム](../../notifications/media/dev_center_portal/dev_center_portal_2_supported_platforms.png)
+デベロッパー センターのオンボーディング プロセスでは、次の手順が必要です。
+* サポートされているプラットフォームの選択 – アプリがプレゼンスを持ち、クロスデバイス エクスペリエンスが有効化されるプラットフォームを選択します。 Windows、Android、iOS から選択できます。
+![クロスデバイス エクスペリエンス – サポートされているプラットフォーム](../../notifications/media/dev_center_portal/dev_center_portal_2_supported_platforms.png)
 
-* アプリ Id を提供: 各アプリが、プレゼンスがプラットフォームにアプリ Id を提供します。 
-![クロス デバイス エクスペリエンス: アプリ Id](../../notifications/media/dev_center_portal/dev_center_portal_3_app_ids.png)
+* アプリ ID の指定 – アプリがプレゼンスを持っているプラットフォームごとにアプリ ID を指定します。 
+![クロスデバイス エクスペリエンス – アプリ ID](../../notifications/media/dev_center_portal/dev_center_portal_3_app_ids.png)
 > [!NOTE]
-> プラットフォームごと (最大 10 個) の異なる Id を追加することがあります-これは、同じアプリ、または異なる場合でも、同じユーザーを対象としたアプリケーション サーバーによって送信された同じ通知を受信できるようにアプリの複数のバージョンがある場合、します。 
+> プラットフォームごとに (最大 10 個の) 異なる ID を追加できます。これは、同じアプリの複数のバージョン、または複数の異なるアプリがあり、同じユーザーをターゲットにしてアプリ サーバーから送信された同じ通知をこれらのアプリで受信できるようにしたい場合です。 
 > [!TIP] 
-> Android アプリは、これは、プロジェクトを作成したときに、アプリに割り当てたパッケージ名です。 プロジェクトの概要の下、Firebase コンソールで、パッケージ名が見つかりません] [全般]-> [です。
+> Android アプリの場合、これはプロジェクト作成時にアプリに割り当てたパッケージ名です。 パッケージ名は、Firebase コンソールで [Project Overview] (プロジェクトの概要) -> [General] (全般) から確認できます。
 ![Firebase コンソール – プロジェクトの概要](../../notifications/media/dev_center_portal/firebase_overview.png)
 
-* 指定するか、MSA または AAD アプリの登録からアプリ Id を選択します。 MSA または AAD アプリの登録に対応するこれらのクライアント Id は、上記の前の MSA/AAD アプリ登録の手順で取得されました。 
-![クロス デバイス エクスペリエンス: MSA と AAD アプリの登録](../../notifications/media/dev_center_portal/dev_center_portal_4_msa_aad_connections.png)
+* MSA/AAD アプリ登録のアプリ ID を指定または選択します。 MSA または AAD アプリ登録に対応するこれらのクライアント ID は、前述した以前の MSA/AAD アプリ登録手順で取得しました。 
+![クロスデバイス エクスペリエンス – MSA および AAD アプリ登録](../../notifications/media/dev_center_portal/dev_center_portal_4_msa_aad_connections.png)
 
-* デバイス プラットフォームの機能を活用してそれぞれのエンドポイント、つまり、アプリのクライアントに通知を送信する WNS (Windows UWP) 用、GCM (Android) 用、および APNS (iOS) 用の主要なプラットフォームでネイティブ通知プラットフォームを接続します。 ユーザーを対象とした通知を発行するときに、アプリ サーバーの通知を配信するプラットフォームを有効にするには、これらの通知プラットフォーム用の資格情報を提供します。
-![クロス デバイス エクスペリエンス: プッシュの資格情報](../../notifications/media/dev_center_portal/dev_center_portal_5_push_credentials.png)
+* Connected Devices Platform の機能は、主要プラットフォームの各ネイティブ通知プラットフォーム、具体的には WNS (Windows UWP)、GCM (Android)、および APNS (iOS) を利用してアプリ クライアント エンドポイントに通知を送信します。 ユーザーをターゲットにした通知を発行したときにプラットフォームがアプリ サーバーの通知を配信できるよう、これらの通知プラットフォームの資格情報を指定します。
+![クロスデバイス エクスペリエンス – プッシュ資格情報](../../notifications/media/dev_center_portal/dev_center_portal_5_push_credentials.png)
 > [!NOTE] 
-> Android では、Android のデバイスと通信する前提条件は、クラウド メッセージング サービスを有効にします。 参照してください[設定を Firebase Cloud Messaging クライアント Android でのアプリ](https://firebase.google.com/docs/cloud-messaging/android/client)の詳細。 オンボードを完了すると接続されているデバイス プラットフォームに Windows デベロッパー センターを使用してプッシュの資格情報を提供できます。 
+> Android の場合、Cloud Messaging サービスの有効化は、Android デバイスと通信するための前提条件です。 詳細については、[Android での Firebase Cloud Messaging クライアント アプリの設定](https://firebase.google.com/docs/cloud-messaging/android/client)に関するページを参照してください。 オンボーディングが完了したら、Windows デベロッパー センターから Connected Device Platform にプッシュ資格情報を提供できるようになります。 
 > [!TIP] 
-> Firebase クラウド メッセージング Sender ID に対応する必須の送信者 ID と API キーがレガシ サーバー キーに対応します。 Firebase コンソールで見つかります両方プロジェクト->-> 設定 の Cloud Messaging タブで、スクリーン ショットに示すようにします。
-![Firebase コンソール – Android のプッシュの資格情報](../../notifications/media/dev_center_portal/firebase_push_creds.png)
+> 必要な送信者 ID は Firebase Cloud Messaging の Sender ID に対応し、API キーは Legacy Server Key (従来のサーバー キー) に対応します。 スクリーンショットに示すように、どちらも Firebase コンソールの [Project] (プロジェクト) -> [Settings] (設定) の [Cloud Messaging] タブにあります。
+![Firebase コンソール – Android プッシュ資格情報](../../notifications/media/dev_center_portal/firebase_push_creds.png)
 
-* 最後の手順では、アプリではこのドメインの所有権に登録されているアプリのクロス デバイス アプリ id のように機能することを証明する検証プロセスとして機能するクロス デバイス アプリ ドメインを確認します。
-![クロス デバイス エクスペリエンス: ドメインの確認](../../notifications/media/dev_center_portal/dev_center_portal_6_domain_verification.png)
+* 最後の手順では、クロスデバイス アプリ ドメインを検証します。これには、登録したアプリのクロスデバイス アプリ ID のように機能するこのドメインの所有権をアプリが持っていることを証明する検証プロセスとしての役割があります。
+![クロスデバイス エクスペリエンス – ドメインの確認](../../notifications/media/dev_center_portal/dev_center_portal_6_domain_verification.png)
 
-### <a name="process-notifications-as-they-are-received-by-the-app"></a>アプリで受信した通知を処理します。
+### <a name="process-notifications-as-they-are-received-by-the-app"></a>アプリで受信した通知の処理
 
-Microsoft Windows デベロッパー センターでのクロス デバイス エクスペリエンスが検証されるでやり取りされるようにアプリが通知を処理できますを確認します。 
+Microsoft Windows デベロッパー センター内でクロスデバイス エクスペリエンスが検証されたら、通知を受信したときにアプリがそれを処理できることを確認します。 
 
 ```Java
     ensurePlatformInitialized().thenAccept((ConnectedDevicesPlatform platform) -> {

@@ -5,31 +5,31 @@ ms.topic: include
 ms.assetid: fcbcfd8f-6eea-421a-97bb-31ea3c987728
 ms.localizationpriority: medium
 ms.openlocfilehash: 57115d59657d91200d969e2bb05154c3d2499dc7
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801574"
 ---
-## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の暫定的なセットアップ
+## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の準備段階のセットアップ
 
-### <a name="register-your-app-for-push-notifications"></a>プッシュ通知をアプリを登録します。
+### <a name="register-your-app-for-push-notifications"></a>プッシュ通知のためにアプリを登録する
 
-通知のサポートを Google にアプリケーションを登録します。 送信者は受信した ID とサーバーのキーをメモしてください。後で必要があります。 
+通知のサポートのためにアプリケーションを Google に登録します。 受け取った送信者 ID とサーバー キーは、後で必要になるので必ずメモしておいてください。 
 
-### <a name="register-your-app-for-cross-device-connected-devices-platform-access"></a>デバイス間の接続されているデバイス プラットフォーム アクセス用アプリを登録します。
+### <a name="register-your-app-for-cross-device-connected-devices-platform-access"></a>Connected Devices Platform へのクロスデバイス アクセスのためにアプリを登録する
 
-次に、アプリを登録、[クロス デバイス エクスペリエンスの機能、Microsoft 開発者向けダッシュ ボードの](https://developer.microsoft.com/dashboard/crossplatform/web)します。 これは、上記の準備手順で説明した、Windows デベロッパー センターの登録から別のプロシージャです。 これには、ネイティブのプッシュ通知サービスを使用して通知を送信する接続されているデバイス プラットフォームが認証されます。 デベロッパー センターで、オンボード プロセスが必要です。
-* アプリのクライアント id。
-* Google Cloud Messaging のキー。 これは必要です (デバイスがロックされているかスリープ状態にあります) 上のアプリにデータとコマンドを配信するにはプッシュ通知の形式でします。 
+次に、[Microsoft デベロッパー ダッシュボードのクロスデバイス エクスペリエンス機能](https://developer.microsoft.com/dashboard/crossplatform/web)用にアプリを登録します。 これは、先の準備手順で説明した Windows デベロッパー センターへの登録とは異なる手続きです。 これは、Connected Devices Platform がネイティブのプッシュ通知サービスを使用して通知を送信することを承認します。 デベロッパーセンターのオンボーディング プロセスに必要なものは次のとおりです。
+* アプリのクライアント ID。
+* Google Cloud Messaging キー。 これは、プッシュ通知の形式でデータやコマンドを (ロックまたはスリープ状態になる可能性があるデバイス上の) アプリに配信するために必要です。 
 
-### <a name="configure-your-app-to-be-notification-compatible"></a>アプリ通知互換性を構成します
+### <a name="configure-your-app-to-be-notification-compatible"></a>通知互換性のためにアプリを構成する
 
-開発者向けダッシュ ボードのワークフローが完了した後には、プッシュ通知を受信できるように、アプリの実際のコードを変更する必要があります。 参照してください[設定を Firebase Cloud Messaging クライアント Android でのアプリ](https://firebase.google.com/docs/cloud-messaging/android/client)これを行う方法がない場合。
+デベロッパー ダッシュボードでワークフローを完了したら、アプリの実際のコードを変更して、アプリでプッシュ通知を受信可能にする必要があります。 この方法がわからない場合は、[Android での Firebase Cloud Messaging クライアント アプリの設定](https://firebase.google.com/docs/cloud-messaging/android/client)に関するページを参照してください。
 
-### <a name="associate-the-notification-service-with-the-local-platform"></a>ローカルのプラットフォーム通知サービスを関連付ける
+### <a name="associate-the-notification-service-with-the-local-platform"></a>通知サービスをローカルのプラットフォームに関連付ける
 
-最後に、接続されているデバイス プラットフォームと、アプリでプッシュ通知機能を関連付ける必要があります。 上記の手順で、初期化、プラットフォームを`null` *notificationProvider*パラメーター。 ここでは、作成して実装するオブジェクトで渡す必要があります **[NotificationProvider](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core._notification_provider)** します。 重要なことに注意するは、`getNotificationRegistrationAsync`メソッドを返す必要があります、 **[NotificationRegistration](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core._notification_registration)** インスタンス。 **NotificationRegistration**通知サービスのアクセス トークン (および関連する情報) に接続されているデバイス プラットフォームを提供する責任を負います。
+最後に、アプリ内で、プッシュ通知機能を Connected Devices Platform に関連付ける必要があります。 上記の手順では、`null` *notificationProvider* パラメーターを使用してプラットフォームを初期化しました。 ここでは、 **[NotificationProvider](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core._notification_provider)** を実装するオブジェクトを作成して渡す必要があります。 主な注意点は、`getNotificationRegistrationAsync` メソッドが **[NotificationRegistration](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core._notification_registration)** インスタンスを返す必要があることです。 **NotificationRegistration** の役割は、通知サービス用のアクセス トークン (および関連情報) を Connected Devices Platform に提供することです。
 
 
 ```Java
@@ -47,9 +47,9 @@ private NotificationRegistration mNotificationRegistration;
 mNotificationRegistration = new NotificationRegistration(NotificationType.FCM, token, FCM_SENDER_ID, "MyAppName");
 ```
 
-実装でこの登録を配信**NotificationProvider**します。 次に、**プラットフォーム**初期化呼び出しがローカルに提供する必要があります**プラットフォーム**プッシュ通知サービスにアクセスできる、サーバー側の接続されたデバイスからデータを受信するアプリを許可します。プラットフォームの起動要求とその他のデバイスからアプリ サービスのメッセージを中継します。 
+**NotificationProvider** の実装でこの登録を配信します。 その後は、**Platform** の初期化呼び出しによって、プッシュ通知サービスへのアクセスがローカルの **Platform** に提供され、アプリがサーバー側の Connected Devices Platform からデータを受信できるようになります。このプラットフォームは、他のデバイスからの起動要求およびアプリ サービス メッセージを中継します。 
 
-すべて行う必要があるようになりましたが、ネイティブのリスナーを拡張サービス クラス ([FirebaseMessagingService](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)ここでは、このガイドで使用されるため、Firebase Cloud Messaging) の特殊なオーバー ロードで、 `onMessageReceived` (メソッド通知の処理方法の場合)。
+ここで行う必要があるのは、`onMessageReceived` メソッド (通知処理メソッド) の特殊なオーバーロードによって、ネイティブ リスナー サービス クラス (この場合は [FirebaseMessagingService](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessagingService)。このガイドでは Firebase Cloud Messaging を使用するため) を拡張することだけです。
 
 ```Java
 /**
@@ -73,4 +73,4 @@ public void onMessageReceived(String from, Bundle data) {
 }
 ```
 
-アプリは、接続されているデバイス プラットフォームから通知を処理することがようになりました。
+アプリで Connected Devices Platform からの通知を処理できるようになりました。

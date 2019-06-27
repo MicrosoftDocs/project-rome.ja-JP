@@ -1,28 +1,28 @@
 ---
-title: コマンドのリモート デバイスとアプリ (Android)
-description: このガイドでは、リモート デバイスとアプリを検出してアプリを起動し、またはアプリ サービスと対話する方法を説明します。
+title: リモートのデバイスとアプリのコマンド実行 (Android)
+description: このガイドでは、リモートのデバイスやアプリを検出してから、アプリを起動したり、アプリ サービスと対話したりする方法について説明します。
 ms.topic: article
-keywords: microsoft、windows、プロジェクト、ローマをコマンド、android
+keywords: microsoft, windows, project rome, コマンド実行, android
 ms.assetid: 2fd14dd0-0f1f-49ee-83e3-468737810c81
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ca9caf60c59c619d1f7ec4e7b3af529acbb2ffc
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755754"
 ---
-# <a name="implementing-device-relay-for-android"></a>Android 用のデバイスのリレーの実装
+# <a name="implementing-device-relay-for-android"></a>Android のデバイス リレーの実装
 
-プロジェクト ローマのデバイスのリレー機能は、2 つの主な機能をサポートする Api のセットで構成されています。 リモートの起動 (コマンドの実行とも呼ばれます) と app services。
+Project Rome のデバイス リレー機能は、2 つの主な機能であるリモート起動 (コマンド実行とも呼びます) とアプリ サービスをサポートする一連の API で構成されています。
 
-リモート起動の Api は、ローカル デバイスからリモート デバイス上のプロセスが開始されるシナリオをサポートします。 たとえば、ユーザーは、携帯電話、車のラジオをリッスンする可能性がありますが自宅のステレオにフックされているが、Xbox に再生を転送する電話を使用するホーム取得すると。
+リモート起動 API は、リモート デバイス上のプロセスがローカル デバイスから開始されるシナリオをサポートします。 たとえば、ユーザーが車に乗りながら電話でラジオを聴きますが、帰宅したらホーム ステレオに接続した Xbox に電話を使用して再生を転送することがあります。
 
-App Services Api により、任意のコンテンツを含むメッセージを送信できる 2 つのデバイス間で永続的なパイプラインを確立するために使用できます。 などの写真をモバイル デバイスで実行されているアプリを共有では、写真を取得するために、ユーザーの PC に接続を確立する可能性があります。
+アプリケーションは App Services API を使用して 2 つのデバイス間に永続的なパイプラインを確立し、任意の内容を含むメッセージをこのパイプライン経由で送信することができます。 たとえば、モバイル デバイス上で実行されている写真共有アプリが、写真を取得するためにユーザーの PC との接続を確立することができます。
 
-プロジェクトのローマの機能は、接続されているデバイス プラットフォームと呼ばれる、基になるプラットフォームでサポートされます。 このガイドは、接続されているデバイス プラットフォームの使用を開始するために必要な手順について説明し、プラットフォームを使用して、デバイスのリレーを実装する方法を説明します機能に関連します。
+Project Rome の機能は、Connected Devices Platform と呼ばれる基盤プラットフォームによってサポートされます。 このガイドでは、Connected Devices Platform を初めて使用するために必要な手順と、このプラットフォームを使用してデバイス リレー関連機能を実装する方法について説明します。
 
-この手順はからコードを参照、[プロジェクト ローマ Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples)します。
+この手順では、[Project Rome Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples)のコードを参照します。
 
 [!INCLUDE [android/dev-reqs](../includes/android/dev-reqs.md)]
 
@@ -32,19 +32,19 @@ App Services Api により、任意のコンテンツを含むメッセージを
 
 [!INCLUDE [android/dev-center-onboarding](../includes/android/notifications-dev-center-onboarding.md)]
 
-## <a name="using-the-platform"></a>プラットフォームを使用します。
+## <a name="using-the-platform"></a>プラットフォームの使用
 
 [!INCLUDE [android/create-setup-events-start-platform](../includes/android/create-setup-events-start-platform.md)]
 
-### <a name="discover-remote-devices-and-apps"></a>リモート デバイスとアプリを検出します。
+### <a name="discover-remote-devices-and-apps"></a>リモートのデバイスとアプリの検出
 
-A **RemoteSystemWatcher**インスタンスは、このセクションのコア機能を処理します。 リモート システムを検出するには、クラスで宣言します。
+**RemoteSystemWatcher** インスタンスは、このセクションのコア機能を処理します。 これは、リモート システムを検出するクラスの中で宣言します。
 
 ```Java
 private RemoteSystemWatcher mWatcher = null;
 ```
 
-ウォッチャーを作成して、デバイスの検出を開始する前にどのような種類のデバイスのアプリの対象を決定する検索フィルターを追加したい場合があります。 これらは、ユーザーの入力またはユース ケースに応じて、アプリにハードコーディングで決定できます。
+ウォッチャーを作成してデバイスの検出を開始する前に、検出フィルターを追加して、どのような種類のデバイスをアプリでターゲットにするかを決定することができます。 ユース ケースに応じて、これらはユーザーの入力によって決定、またはアプリにハードコードすることができます。
 
 ```Java
 private void onStartWatcherClicked() {
@@ -96,7 +96,7 @@ private void onStartWatcherClicked() {
     // ...
 ```
 
-この時点では、アプリは、アプリが解析し、検出されたデバイスと対話する方法を決定する監視オブジェクトを初期化できます。
+この時点で、アプリはウォッチャー オブジェクトを初期化できます。これによって、検出されたデバイスをアプリで解析する方法、またそれらのデバイスとアプリが対話する方法が決まります。
 
 ```Java
     // ...
@@ -108,9 +108,9 @@ private void onStartWatcherClicked() {
     // ...
 ```
 
-アプリが検出されたデバイスのセットを保持することをお勧め (によって表される**RemoteSystem**インスタンス) と、UI で使用可能なデバイスと (表示名とデバイスの種類) などのアプリに関する情報を表示します。 
+(**RemoteSystem** インスタンスで表される) 検出されたデバイスのセットをアプリで管理し、利用可能なデバイスとそのアプリについての情報 (表示名やデバイスの種類など) を UI に表示することをお勧めします。 
 
-次のクラスのスタブは、watcher のインスタンスのイベント リスナーとして使用できます。
+次のクラス スタブは、ウォッチャー インスタンスのイベント リスナーとして使用できます。
 
 ```Java
 private class RemoteSystemAddedListener implements EventListener<RemoteSystemWatcher, RemoteSystem> {
@@ -142,7 +142,7 @@ private class RemoteSystemWatcherErrorOccurredListener implements EventListener<
 }
 ```
 
-1 回`mWatcher.start`が呼び出されると、リモート システムの使用状況の監視を開始してデバイスの検出、更新、または検出されたデバイスのセットから削除されるときにイベントを発生させます。 これはスキャン継続的に、バック グラウンドでため不要なネットワーク通信とバッテリの消耗を回避するためにこれが不要になったときに、監視を停止することをお勧めします。
+`mWatcher.start` が呼び出されると、リモート システムのアクティビティの監視が始まります。デバイスが検出、更新、または検出済みデバイスのセットから削除されると、イベントが発生します。 バックグラウンドで継続的にスキャンされるため、不必要なネットワーク通信やバッテリの消耗を避けるために、不要になったらウォッチャーを停止することをお勧めします。
 
 ```Java
 // if you call this from the activity's onPause method, you ensure that
@@ -154,17 +154,17 @@ public void stopWatcher() {
     mWatcher.stop();
 }
 ```
-## <a name="example-use-case-implementing-remote-launching-and-remote-app-services"></a>ユース ケースの例: リモート起動して、リモート アプリ サービスを実装します。
+## <a name="example-use-case-implementing-remote-launching-and-remote-app-services"></a>ユース ケースの例: リモート起動とリモート アプリ サービスの実装
 
-この時点で、コードにしておくの作業一覧**RemoteSystem**使用可能なデバイスを参照するオブジェクト。 これらのデバイスで何は、アプリの機能によって異なります。 相互作用の主な型では、リモート起動してリモート アプリのサービスが。 これらは、次のセクションで説明します。
+コードのこの時点で、利用可能なデバイスを参照する **RemoteSystem** オブジェクトの有効な一覧があるはずです。 これらのデバイスに対して何をするかは、アプリの機能によって異なります。 主な種類の対話は、リモート起動とリモート アプリ サービスです。 これらについては、以降のセクションで説明します。
 
 ### <a name="a-remote-launching"></a>A) リモート起動
 
-次のコードは、これらのデバイス (理想的にはこれは、UI コントロールを介して) のいずれかを選択し、使用する方法を示しています。 **RemoteLauncher**を、アプリと互換性のある URI を渡すことによって、上のアプリを起動します。 
+次のコードは、これらのデバイスのいずれかを選択し (UI コントロールを使って行われるのが理想的です)、**RemoteLauncher** を使用して、アプリと互換性のある URI を渡してそのデバイス上でアプリを起動する方法を示しています。 
 
-リモートからの起動 (である場合、ホスト デバイスが起動する URI スキーム用の既定のアプリで指定された URI) リモート デバイスを対象にできることを確認することが重要_または_にそのデバイスにリモート アプリケーションを特定します。 
+重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス_または_そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。 
 
-検出をデバイス レベルで最初に実行前のセクションで示したように、(、 **RemoteSystem**デバイスを表します)、呼び出すことができますが、`getApplications`メソッドを**RemoteSystem**インスタンスを取得する、配列**RemoteSystemApp** (上記の準備手順では、独自のアプリを登録) と同様に、接続されているデバイス プラットフォームを使用する登録されているリモート デバイスでアプリを表すオブジェクト。 両方**RemoteSystem**と**RemoteSystemApp**作成に使用できます、 **RemoteSystemConnectionRequest**URI の起動に必要なものであります。
+前のセクションで説明したように、検出はまずデバイス レベルで行われます (**RemoteSystem** はデバイスを表します) が、**RemoteSystem** インスタンスの `getApplications` メソッドを呼び出して **RemoteSystemApp** オブジェクトの配列を取得することができます。これらのオブジェクトが表すのは、(前述の準備手順で独自のアプリを登録したのと同様に) Connected Devices Platform を使用するように登録されている、リモート デバイス上のアプリです。 **RemoteSystem** と **RemoteSystemApp** のどちらを使用しても、URI を起動するために必要な **RemoteSystemConnectionRequest** を作成できます。
 
 ```java
 // this could be a RemoteSystemApp instead. Either way, it 
@@ -187,7 +187,7 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
     AsyncOperation<RemoteLaunchUriStatus> resultOperation = remoteLauncher.launchUriAsync(new RemoteSystemConnectionRequest(target), uri);
     // ...
 ```
-使用して、返された**AsyncOperation**起動試行の結果を処理します。
+起動試行の結果を処理するには、返された **AsyncOperation** を使用します。
 
 ```Java
     // ...
@@ -207,21 +207,21 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
     });
 }
 ```
-によって送信される URI は、特定の状態またはリモート デバイス上の構成でのアプリを起動できます。 これにより、中断することがなく別のデバイスで映画を見てなど、ユーザーのタスクを継続する能力。 
+送信する URI に応じて、特定の状態または構成でリモート デバイス上でアプリを起動できます。 これにより、映画を観るなどのユーザー タスクを、中断することなく別のデバイス上で継続することができます。 
 
-ユース ケースに応じてを対象となるシステム上のアプリを取り扱うことが、URI の場合を対象にする必要があります。 または複数のアプリで処理できます。 **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。
+ユース ケースによっては、ターゲット システム上のどのアプリも URI を処理できない、または複数のアプリがそれを処理できる状況への対応が必要な場合があります。 **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。
 
 ### <a name="b-remote-app-services"></a>B) リモート アプリ サービス
 
-Android アプリで接続されているデバイス ポータルを使用できるその他のデバイス上の app services と対話します。 これにより、他のデバイスと通信する方法は多数&mdash;ホスト デバイスの前面にアプリを表示する必要はありませんすべて。 
+Android アプリは Connected Devices ポータルを使用して、他のデバイス上のアプリ サービスと対話できます。 これにより、他のデバイスと通信するための多くの方法が提供されます&mdash;アプリをホスト デバイスの前面に出す必要はまったくありません。 
 
 #### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスをセットアップする
-このガイドを使用して、 [Roman テスト アプリの Windows](http://aka.ms/romeapp)そのターゲット アプリケーションのサービスとして。 そのため、次のコードは、特定のリモート システムでは、その特定のアプリ サービスを検索する Android アプリになります。 このシナリオをテストする場合は、Windows デバイスで Roman テスト アプリをダウンロードし、サインインしている同じ MSA 前の準備手順で使用したかどうかを確認します。 
+このガイドでは、[Windows 用の Roman テスト アプリ](http://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、Android アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。 
 
-UWP アプリ サービスを作成する方法に関する手順については、次を参照してください。[を作成する (UWP) アプリ サービスの使用と](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。 接続されたデバイスと互換性のあるサービスを作成するには、いくつか変更する必要があります。 参照してください、[リモート アプリ サービスの UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)これを行う方法の詳細について。 
+独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
 
-#### <a name="open-an-app-service-connection-on-the-client-device"></a>クライアント デバイスにアプリ サービスの接続を開く
-Android アプリでは、リモート デバイスまたはアプリケーションへの参照を取得する必要があります。 このシナリオの起動セクションなどを使用する必要を**RemoteSystemConnectionRequest**、いずれかから構築できますが、 **RemoteSystem**または**RemoteSystemApp**システムで利用可能なアプリを表します。
+#### <a name="open-an-app-service-connection-on-the-client-device"></a>クライアント デバイス上でアプリ サービス接続を開く
+Android アプリは、リモートのデバイスまたはアプリケーションへの参照を取得する必要があります。 起動のセクションと同様、このシナリオでは **RemoteSystemConnectionRequest** を使用する必要があります。これは **RemoteSystem** から、またはシステム上の利用可能なアプリを表す **RemoteSystemApp** から作成できます。
 
 
 ```Java
@@ -230,7 +230,7 @@ Android アプリでは、リモート デバイスまたはアプリケーシ�
 // connection is opened.
 private RemoteSystem target = null;
 ```
-アプリは 2 つの文字列を使用して、対象となるアプリ サービスを特定する必要がありますさらに、: *app service の名前*と*パッケージ識別子*します。 アプリのサービス プロバイダーのソース コードにあるこれらは (を参照してください[を作成する (UWP) アプリ サービスの使用と](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)Windows app services についてこの文字列を取得する方法の詳細について)。 これらの文字列を構築して、 **AppServiceDescription**にフィードするが、 **AppServiceConnection**インスタンス。
+さらにアプリは、*アプリ サービス名*と*パッケージ識別子*の 2 つの文字列を使用して、そのターゲットであるアプリ サービスを識別する必要があります。 これらはアプリ サービス プロバイダーのソース コードに含まれています。この文字列を Windows アプリ サービス用に取得する方法については、[アプリ サービスの作成と利用 (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 これらの文字列が合わさって **AppServiceDescription** になり、これが **AppServiceConnection** インスタンスに渡されます。
 
 ```Java
 // this is defined below
@@ -294,17 +294,17 @@ private void openAppServiceConnection()
 }
 ```
 
-#### <a name="create-a-message-to-send-to-the-app-service"></a>App service に送信するメッセージを作成します。
+#### <a name="create-a-message-to-send-to-the-app-service"></a>アプリ サービスに送信するメッセージの作成
 
-送信するメッセージを格納する変数を宣言します。 Android では、リモート アプリ サービスに送信するメッセージはで、**マップ**型。
+送信するメッセージを格納する変数を宣言します。 Android では、リモート アプリ サービスに送信するメッセージは **Map** 型になります。
 
 ```Java
 private Map<String, Object> mMessagePayload = null;
 ```
 > [!NOTE]
-> 接続されているデバイス プラットフォームを変換、アプリが他のプラットフォーム上の app services を通信する場合、**マップ**受信側のプラットフォームに一致するコンス トラクターにします。 たとえば、 **[マップ](https://developer.android.com/reference/java/util/Map)** アプリ サービスに変換します Windows にこのアプリから送信される、 [ **ValueSet** ](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) (.NET Framework にある) のオブジェクト。これは、app service でし解釈できます。 その他の方向に渡された情報には、逆の変換が行われます。
+> アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **Map** を受信側プラットフォームでそれに対応するコンストラクトに変換します。 たとえば、このアプリから Windows アプリ サービスに送信される **[Map](https://developer.android.com/reference/java/util/Map)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) オブジェクトに変換されます。 反対方向に渡される情報には、逆の変換が行われます。
 
-次のメソッドは、Windows 用の欧文テスト アプリの app service で解釈できるメッセージを作成します。
+次のメソッドは、Windows 用の Roman テスト アプリのアプリ サービスによって解釈できるメッセージを作成します。
 
 ```Java
 /**
@@ -326,11 +326,11 @@ private void onMessageButtonClicked()
 ```
 
 > [!IMPORTANT]
-> **マップ**アプリとアプリのリモート サービスのシナリオでのサービス間で渡されることは、次の形式に従う必要があります。キーは、文字列である必要があり、値があります。文字列、ブール値、android.graphics.Point、android.graphics.Rect、java.util.Date、java.util.UUID、これらの型、またはその他のいずれかの同種の配列 (整数または浮動小数点)、ボックス化された数値の型がボックス化**マップ**オブジェクトこの仕様を満たしています。
+> リモート アプリ サービスのシナリオでアプリとサービスの間で受け渡しされる **Map** は、次の形式に従う必要があります。キーは文字列である必要があり、次の値を入れることができます: 文字列、ボックス数値型 (整数または浮動小数点数)、ボックス ブール値、android.graphics.Point、android.graphics.Rect、java.util.Date、java.util.UUID、上記いずれかの型と同種の配列、またはこの仕様を満たすその他の **Map** オブジェクト。
 
-#### <a name="send-message-to-the-app-service"></a>App service へのメッセージを送信します。
+#### <a name="send-message-to-the-app-service"></a>アプリ サービスにメッセージを送信する
 
-アプリ サービスの接続が確立され、メッセージが作成された、app service に送信は単純なとでアプリを app service の接続インスタンスおよびメッセージへの参照を持つ任意の場所から実行できます。
+アプリ サービス接続が確立されてメッセージが作成されたら、それをアプリ サービスに送信するのは簡単であり、そのアプリ サービス接続インスタンスとメッセージへの参照があるアプリ内のどこからでも実行できます。
 
 
 ```java
@@ -375,7 +375,7 @@ private void sendMessage(final AppServiceConnection connection, Map<String, Obje
 }
 ```
 
-アプリ サービスの応答を受信して、次の方法で解釈されます。
+アプリ サービスの応答は、次のメソッドによって受信および解釈されます。
 
 ```Java
 private void handleAppServiceResponse(AppServiceResponse appServiceResponse, long messageId)
@@ -402,13 +402,13 @@ private void handleAppServiceResponse(AppServiceResponse appServiceResponse, lon
     }
 }
 ```
-ローマ アプリの場合、応答には、この非常に単純なユース ケースでは、メッセージの応答の転送中の合計時間を取得する日付を比較できるように、作成された日付が含まれます。
+Roman アプリの場合、応答にはそれが作成された日付が含まれているため、この非常に単純なユース ケースでは、日付を比較してメッセージ応答の合計転送時間を取得できます。
 
-これは、リモート アプリ サービスで、1 つのメッセージ交換を終了します。
+これで、リモート アプリ サービスとの 1 回のメッセージ交換が終了します。
 
-#### <a name="finish-app-service-communication"></a>アプリ サービスの通信を完了します。
+#### <a name="finish-app-service-communication"></a>アプリ サービス通信の終了
 
-アプリが終了すると、ターゲット デバイスのアプリのサービスと対話する 2 つのデバイス間の接続を閉じます。
+アプリがターゲット デバイスのアプリ サービスとの対話を終了したら、2 つのデバイス間の接続を閉じます。
 
 ```java
 // Close the given AppService connection
@@ -419,7 +419,7 @@ private void closeAppServiceConnection()
 ```
 
 ### <a name="related-topics"></a>関連トピック
-* [API リファレンスのページ](api-reference-for-android.md) 
-* [Android のサンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples) 
-* [(UWP) アプリのリモート サービスと通信します。](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
-* [作成し、app service (UWP) を使用する](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。
+* [API リファレンス ページ](api-reference-for-android.md) 
+* [Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples) 
+* [リモート アプリ サービスとの通信 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
+* [アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)

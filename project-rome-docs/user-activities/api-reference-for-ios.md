@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 5cd99bbc88f1d18edcdd78dfc7e36fa8f324e7da
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58907454"
 ---
-# <a name="ios-user-activities-api-reference"></a>iOS ユーザー アクティビティの API リファレンス
+# <a name="ios-user-activities-api-reference"></a>iOS ユーザー アクティビティ API リファレンス
 
-次の Api を使用すると、アプリを作成し、Windows スタイルのユーザー アクティビティを発行します。
+次の API を使用すると、アプリで Windows スタイルのユーザー アクティビティを作成および公開できます。
 
 ## <a name="api-groups"></a>API グループ
 

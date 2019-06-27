@@ -5,21 +5,21 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 559752038bb8d73c95d853dcc39be061e64b322f
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59800294"
 ---
-### <a name="create-the-platform"></a>プラットフォームを作成します。
+### <a name="create-the-platform"></a>プラットフォームの作成
 
-開始する、プラットフォームを単純にインスタンス化します。
+開始するには、単純にプラットフォームをインスタンス化します。
 
 `ConnectedDevicesPlatform sPlatform = new ConnectedDevicesPlatform(context);`
 
-## <a name="subscribe-to-connecteddevicesaccountmanager-events-to-handle-the-user-account"></a>ユーザー アカウントを処理するために ConnectedDevicesAccountManager イベントにサブスクライブします。 
+## <a name="subscribe-to-connecteddevicesaccountmanager-events-to-handle-the-user-account"></a>ユーザー アカウントを処理するための ConnectedDevicesAccountManager イベントに登録する 
 
-プラットフォームには、プラットフォームへのアクセスに認証されたユーザーが必要です。  購読を依頼する必要があります**ConnectedDevicesAccountManager**のイベントを有効なアカウントが使用されています。 
+プラットフォームは、認証済みのユーザーがプラットフォームにアクセスすることを要求します。  有効なアカウントが使用されていることを保証するために、**ConnectedDevicesAccountManager** イベントに登録する必要があります。 
 
 ```Java
  ConnectedDevicesPlatform sPlatform.getAccountManager().accessTokenRequested().subscribe((accountManager, args) -> {
@@ -38,9 +38,9 @@ ms.locfileid: "59800294"
 ```
 
 
-### <a name="subscribe-to-connecteddevicesnotificationregistrationmanager-events"></a>ConnectedDevicesNotificationRegistrationManager イベントにサブスクライブします。
+### <a name="subscribe-to-connecteddevicesnotificationregistrationmanager-events"></a>ConnectedDevicesNotificationRegistrationManager イベントに登録する
 
-同様に、プラットフォームは通知を使用して、デバイス間でのコマンドを配布します。  そのためにサブスクライブする必要があります、 **ConnectedDevicesNotificationRegistrationManager**のイベントをクラウドの登録状態が使用されているアカウントに対して有効です。  確認の状態を使用して、 **ConnectedDevicesNotificationRegistrationState**
+同様に、プラットフォームは通知を使用してデバイス間でコマンドを配信します。  したがって、使用されているアカウントに対してクラウドの登録状態が有効であることを保証するために、**ConnectedDevicesNotificationRegistrationManager** イベントに登録する必要があります。  **ConnectedDevicesNotificationRegistrationState** を使用して状態を確認する
 
 ```Java
 ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notificationRegistrationStateChanged().subscribe((notificationRegistrationManager, args) -> {

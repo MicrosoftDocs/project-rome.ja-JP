@@ -1,23 +1,23 @@
 ---
 ms.openlocfilehash: dfe29b92cbab51382f4440b4929c2082cfb9b062
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58909694"
 ---
-### <a name="add-the-sdk"></a>SDK を追加します。
+### <a name="add-the-sdk"></a>SDK の追加
 
-Windows での Graph 通知 SDK が使用できる組み込みの OS の Windows SDK の代わりに NuGet パッケージを使用して、開発者がより下位レベルのサポートとより柔軟なリリース スケジュールするには。 NuGet パッケージが nuget.org で msgraphsdkteam によって公開されたを見つかります[ここ](https://www.nuget.org/profiles/msgraphsdkteam)します。 
+Windows では、下位レベルのサポート強化と、より柔軟なリリース スケジュールのために、OS 組み込みの Windows SDK の代わりに、Graph Notification SDK が NuGet パッケージを通じて開発者に提供されます。 NuGet パッケージは msgraphsdkteam によって nuget.org で公開されており、[ここ](https://www.nuget.org/profiles/msgraphsdkteam)から入手できます。 
 
-など、UWP アプリから NuGet パッケージの使用の詳細については、これらのリンクを参照してください。 
-* [Nuget.org からパッケージを使用します。](https://docs.microsoft.com/en-us/azure/devops/artifacts/nuget/upstream-sources?view=vsts&tabs=new-nav)
-* [クイック スタート:インストールして、Visual Studio でパッケージを使用](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
-
-
+UWP アプリから NuGet パッケージをインクルードして使用する方法については、以下のリンクを参照してください。 
+* [Use packages from nuget.org](https://docs.microsoft.com/en-us/azure/devops/artifacts/nuget/upstream-sources?view=vsts&tabs=new-nav) \(nuget.org からのパッケージを使用する\)
+* [クイック スタート: Visual Studio でパッケージをインストールして使用する](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio)
 
 
-実装するシナリオ、に応じてを多く必要はありませんすべての名前空間。 グラフの通知を具体的には、必要があります、次のように名前空間。
+
+
+実装するシナリオによっては、すべての名前空間が必要とは限りません。 特にグラフ通知の場合は、次に示す名前空間が必要です。
 
 
 ```C#
@@ -28,19 +28,19 @@ using Microsoft.ConnectedDevices.UserNotifications;
 ```
 
 
-### <a name="initialize-the-connected-devices-platform"></a>接続されているデバイス プラットフォームを初期化します。
+### <a name="initialize-the-connected-devices-platform"></a>Connected Devices Platform の初期化
 
-接続されたデバイスの機能を使用できますが、前に、プラットフォームは、アプリ内で初期化しなければなりません。 初期化の手順は、メインのクラスで発生する必要があります**OnLaunched**または**onActivated**メソッド、その他の接続されたデバイス シナリオを実行する前に必要なためです。 
+Connected Devices の機能を使用できるようになる前に、アプリ内でプラットフォームを初期化する必要があります。 他の Connected Devices のシナリオが実行可能になる前に初期化手順が必要なため、main クラスの **OnLaunched** または **onActivated** メソッドで初期化手順を実行する必要があります。 
 
-インスタンス化する必要があります、 **ConnectedDevicesPlatform**クラス。 **ConnectedDevicesPlatform**コンス トラクターは 3 つのパラメーターを受け取ります。**コンテキスト**アプリの場合、 **NotificationProvider**、および**UserAccountProvider**します。
+**ConnectedDevicesPlatform** クラスをインスタンス化する必要があります。 **ConnectedDevicesPlatform** コンストラクターは、アプリの **Context**、**NotificationProvider**、および **UserAccountProvider** の 3 つのパラメーターを取ります。
 
-**NotificationProvider**パラメーターは特定のシナリオでのみ必要です。 Microsoft Graph の通知を使用する場合が必要です。 ここでは空のままにし、クライアントのネイティブのプッシュ チャネルを使用してユーザーを中心とした通知の受信を処理するために SDK を有効にする方法に関する次のセクションで詳細を確認します。
+**NotificationProvider** パラメーターは特定のシナリオでのみ必要です。 Microsoft Graph の通知を使用する場合は必須です。 今は空のままにしておきます。次のセクションで、ネイティブのプッシュ チャネル経由で受信したユーザー向けの通知をクライアント SDK で処理できるようにする方法を確認してください。
 
-**UserAccountProvider**接続されているデバイス プラットフォームに現在のユーザーのアクセス用の OAuth 2.0 アクセス トークンを提供するが必要です。 アプリが実行され、更新トークンのプラットフォームで管理された期限切れには、最初に呼び出されます。 
+**UserAccountProvider** は、Connected Devices Platform への現在のユーザーのアクセスのための OAuth 2.0 アクセス トークンを配信するために必要です。 これは、アプリの初回実行時と、プラットフォーム管理の更新トークンの有効期限が切れたときに呼び出されます。 
 
-簡単に、プラットフォームをオンボード開発者を支援するために提供していますアカウント プロバイダーの実装のサンプル コードでの Windows を確認してくださいチェック**MicrosoftAccountProvider.cs**の詳細。 
+プラットフォームへの開発者のオンボーディング支援をより簡単にするために、Windows 向けのアカウント プロバイダーの実装をサンプル コードで提供しました。詳細については、**MicrosoftAccountProvider.cs** を確認してください。 
 
-作成し、**プラットフォーム**インスタンス。 
+次に、**Platform** インスタンスを作成できます。 
 
 ```C#
 
@@ -67,7 +67,7 @@ public async Task InstantiatePlatform()
 
 ```
 
-アプリがフォア グラウンドを終了するときは、プラットフォームをシャット ダウンする必要があります。
+アプリがフォアグラウンドを終了したら、プラットフォームをシャットダウンする必要があります。
 
 ```C#
 

@@ -5,15 +5,15 @@ ms.topic: include
 ms.assetid: cf4bc236-1a9c-4192-b3fe-2d78331316c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 6de00cdfd4595f67a655a672dc46fea75806a51f
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801604"
 ---
-### <a name="add-the-sdk"></a>SDK を追加します。
+### <a name="add-the-sdk"></a>SDK の追加
 
-IOS アプリに接続されているデバイス プラットフォームを追加する最も簡単な方法を使用して、 [CocoaPods](https://cocoapods.org/)依存関係マネージャーです。 IOS プロジェクトの移動*Podfile*し、次のエントリを挿入します。
+Connected Devices Platform を iOS アプリに追加する最も簡単な方法は、[CocoaPods](https://cocoapods.org/) 依存関係マネージャーを使用することです。 iOS プロジェクトの *Podfile* に移動し、次のエントリを挿入します。
 
 ```ObjectiveC
 platform :ios, "10.0"
@@ -29,21 +29,21 @@ target 'iOSSample' do
 ```
 
 > [!NOTE]
-> CocoaPod を使用するために使用する必要があります、 _.xcworkspace_プロジェクト内のファイル。
+> CocoaPod を利用するためには、プロジェクト内の _.xcworkspace_ ファイルを使用する必要があります。
 
-## <a name="initialize-the-connected-devices-platform"></a>接続されたデバイス プラットフォームを初期化します。
+## <a name="initialize-the-connected-devices-platform"></a>Connected Devices Platform の初期化
 
-接続されたデバイスの機能を使用できますが、前に、プラットフォームは、アプリ内で初期化しなければなりません。 
+Connected Devices の機能を使用できるようになる前に、アプリ内でプラットフォームを初期化する必要があります。 
 
-インスタンス化する必要があります、 **MCDPlatform**クラス。 **MCDPlatform**の`platformWithAccountProvider:`メソッドは 2 つのパラメーターを受け取ります。 を**MCDUserAccountProvider**と**MCDNotificationProvider**します。 **MCDNotificationProvider**パラメーターは、リモート アプリのホスト、およびユーザーのアクティビティは、このガイドで扱わないのみ必要です。 ままでかまいません`nil`今のところです。
+**MCDPlatform** クラスをインスタンス化する必要があります。 **MCDPlatform** の `platformWithAccountProvider:` メソッドは、**MCDUserAccountProvider** と **MCDNotificationProvider** の 2 つのパラメーターを取ります。 **MCDNotificationProvider** パラメーターは、リモート アプリ ホスティングおよびユーザー アクティビティのみに必要であり、これらの機能についてはこのガイドでは扱いません。 今のところは `nil` のままでかまいません。
 
-**MCDUserAccountProvider**接続されているデバイス プラットフォームに現在のユーザーのアクセス用の OAuth 2.0 アクセス トークンを提供するが必要です。 アプリが実行され、更新トークンのプラットフォームで管理された期限切れには、最初に呼び出されます。 
+**MCDUserAccountProvider** は、Connected Devices Platform への現在のユーザーのアクセスのための OAuth 2.0 アクセス トークンを配信するために必要です。 これは、アプリの初回実行時と、プラットフォーム管理の更新トークンの有効期限が切れたときに呼び出されます。 
 
-簡単に、プラットフォームをオンボード開発者を支援するために提供していますアカウント Android および iOS 用のプロバイダーの実装。 これらの実装にある、[認証プロバイダーのサンプル](https://github.com/Microsoft/project-rome/tree/master/iOS/samples/account-provider-sample)、OAuth 2.0 アクセス トークンを取得し、アプリのトークンを更新するために使用できます。
+プラットフォームへの開発者のオンボーディングがもっと簡単になるよう、Android および iOS 用のアカウント プロバイダーの実装を提供しています。 [認証プロバイダーのサンプル](https://github.com/Microsoft/project-rome/tree/master/iOS/samples/account-provider-sample)にあるこれらの実装を使用して、アプリ用の OAuth 2.0 アクセス トークンおよび更新トークンを取得できます。
 
 [!INCLUDE [auth-scopes](../auth-scopes.md)]
 
-サンプル アプリから次のコードは、プラットフォームの初期化を示しています。
+サンプル アプリの次のコードは、プラットフォームの初期化を示しています。
 
 ```ObjectiveC
 - (void)initializePlatform
@@ -67,4 +67,4 @@ target 'iOSSample' do
 }
 ```
 
-アプリが呼び出すことによって、フォア グラウンドを終了するときに、プラットフォームをシャット ダウン、`shutdownAsync:`メソッド。
+アプリがフォアグラウンドを終了したら、`shutdownAsync:` メソッドを呼び出してプラットフォームをシャットダウンします。

@@ -1,30 +1,30 @@
 ---
-title: 発行およびユーザー アクティビティ (iOS) の読み取り
-description: このガイドでは、作成、発行、および iOS アプリでの Windows ベースのユーザー アクティビティを読み取る方法を示します。
+title: ユーザー アクティビティの発行と読み取り (iOS)
+description: このガイドでは、iOS アプリで Windows ベースのユーザー アクティビティの作成、発行、読み取りを行う方法を示します。
 ms.topic: article
-keywords: microsoft、windows、ローマ、ユーザー アクティビティ、ios をプロジェクトします。
+keywords: microsoft, windows, project rome, ユーザー アクティビティ, ios
 ms.assetid: 445f1dd4-f3c7-46e4-a7cd-42a1fb411172
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cc19463a5e036ab76288760aa70d86f1861675b
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801674"
 ---
-# <a name="implementing-user-activities-for-ios"></a>IOS 用のユーザー アクティビティの実装
+# <a name="implementing-user-activities-for-ios"></a>iOS のユーザー アクティビティの実装
 
-ユーザー アクティビティとは、アプリケーション内のユーザーのタスクを表すデータ構造です。 これらによってようには後で続行するのには現在のタスクのスナップショットを保存します。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能では、スクロール可能なすべての最近のアクティビティの一覧、テキストとグラフィックス カードとして表される Windows ユーザーを表示します。 ユーザー アクティビティの詳細については一般に、表示[デバイス間であってもユーザーの利用状況を引き続き](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)します。 活動を作成または更新する場合の推奨事項を参照してください、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices)ガイド。
+ユーザー アクティビティは、アプリケーション内でのユーザーのタスクを表すデータ構造です。 現在のタスクのスナップショットを保存して後で続行することを可能にします。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能は Windows ユーザーに、ユーザーの最近のアクティビティすべてを、テキストとグラフィックスを使ったカードで表現したスクロール可能リストで表示します。 ユーザー アクティビティ全般の詳細については、[デバイス間でのユーザー アクティビティの継続](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)に関する記事を参照してください。 アクティビティの作成または更新の推奨されるタイミングについては、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
-プロジェクト ローマ sdk では、iOS アプリではのみにユーザー アクティビティ タイムラインなどの Windows 機能で使用するために発行しないことができますが、エンドポイントとして機能、タイムラインと同様に、ユーザーにアクティビティを読み取ることができます。 これにより、クロス デバイス アプリ、プラットフォームとデバイスではなく、ユーザーの存在のエクスペリエンスを完全に克服できます。
+iOS アプリは Project Rome SDK によって、タイムラインなどの Windows 機能で使用するユーザー アクティビティを発行できるだけでなく、エンドポイントとして機能して、タイムラインと同様にアクティビティをユーザーに読み戻すこともできます。 これによりクロスデバイス アプリは、プラットフォームの枠を完全に超えて、デバイスではなくユーザーをフォローするエクスペリエンスを提示することができます。
 
-プロジェクトのローマの機能は、接続されているデバイス プラットフォームと呼ばれる、基になるプラットフォームでサポートされます。 このガイドでは、接続されているデバイス プラットフォームの使用を開始するために必要な手順について説明し、プラットフォームを使用して、ユーザー アクティビティの関連機能を実装する方法を説明します。
+Project Rome の機能は、Connected Devices Platform と呼ばれる基盤プラットフォームによってサポートされます。 このガイドでは、Connected Devices Platform を初めて使用するために必要な手順と、このプラットフォームを使用してユーザー アクティビティ関連機能を実装する方法について説明します。
 
-この手順はからコードを参照、[プロジェクト ローマ iOS サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/iOS/samples)GitHub に用意されています。  
+この手順では、GitHub から入手できる [Project Rome iOS サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/iOS/samples)のコードを参照します。  
 
-参照してください、 [API リファレンス](api-reference-for-ios.md)これらのシナリオに関連するリファレンス ドキュメントへのリンクについてのページ。
+これらのシナリオに関連したリファレンス ドキュメントへのリンクは、[API リファレンス](api-reference-for-ios.md)のページを参照してください。
 
-## <a name="setting-up-the-connected-devices-platform-and-notifications"></a>接続されているデバイス プラットフォームと通知を設定します。
+## <a name="setting-up-the-connected-devices-platform-and-notifications"></a>Connected Devices Platform と通知の設定
 
 [!INCLUDE [ios/preliminary-setup](../includes/ios/preliminary-setup.md)]
 
@@ -32,18 +32,18 @@ ms.locfileid: "59801674"
 
 [!INCLUDE [ios/dev-center-onboarding](../includes/ios/notifications-dev-center-onboarding.md)]
 
-## <a name="using-the-platform"></a>プラットフォームを使用します。
+## <a name="using-the-platform"></a>プラットフォームの使用
 
 [!INCLUDE [ios/create-setup-events-start-platform](../includes/ios/create-setup-events-start-platform.md)]
 
-### <a name="initialize-a-user-activity-channel"></a>ユーザー アクティビティのチャネルを初期化します。
+### <a name="initialize-a-user-activity-channel"></a>ユーザー アクティビティ チャネルの初期化
 
-アプリでは、ユーザー アクティビティの機能を実装するには、ユーザー アクティビティを MCDUserActivityChannel を作成してフィードを初期化する必要があります。 これを上記のプラットフォーム初期化手順のように扱う必要があります: チェックし、場合によって、アプリがフォア グラウンドに (ただし、プラットフォーム初期化前にいない) されるたびを再実行する必要があります。
+ユーザー アクティビティ機能をアプリで実装するには、まず、MCDUserActivityChannel を作成することでユーザー アクティビティ フィードを初期化する必要があります。 これは、前述したプラットフォーム初期化手順のように扱う必要があります。(プラットフォーム初期化の前ではないタイミングで) アプリがフォアグラウンドになるたびにチェックし、場合によってはやり直す必要があります。
 
-サインイン ユーザーのアカウントは、この手順の必要があります。 上記としてに、MCDUserAccount(s) を簡単に取得するのに認証プロバイダーのサンプルからクラスを使用できます。 Microsoft 開発者向けダッシュ ボードの登録の過程で取得したクロス プラットフォーム アプリ ID を取得するも必要になります。
-サンプル アプリから次のメソッドには、MCDUserActivityChannel を初期化します。
+この手順にはサインインしたユーザー アカウントが必要になります。 上記のように、認証プロバイダー サンプルのクラスを使用して MCDUserAccount を簡単に取得できます。 Microsoft デベロッパー ダッシュボードへの登録時に取得したクロスプラットフォーム アプリ ID も必要になります。
+サンプル アプリの次のメソッドは MCDUserActivityChannel を初期化します。
 
-サンプル アプリから次のメソッドには、MCDUserActivityChannel を初期化します。
+サンプル アプリの次のメソッドは MCDUserActivityChannel を初期化します。
 
 ```ObjectiveC
 
@@ -63,11 +63,11 @@ else
     self.createActivityStatusField.text = @"Need to be logged in!";
 }
 ```
-この時点では、チャネルで、MCDUserActivityChannel 参照が必要です。
+この時点で、MCDUserActivityChannel の参照がチャネルにあるはずです。
 
-### <a name="create-and-publish-a-user-activity"></a>作成して、ユーザー アクティビティを発行します。
+### <a name="create-and-publish-a-user-activity"></a>ユーザー アクティビティの作成と発行
 
-次のサンプル コードに示す、新しい**MCDUserActivity**インスタンスが作成されます。
+次のサンプル コードは、新しい **MCDUserActivity** インスタンスがどのように作成されるかを示しています。
 
 ```ObjectiveC
 - (IBAction)createActivityButton:(id)sender
@@ -101,7 +101,7 @@ else
 }
 ```
 
-次のメソッドのビジュアルのデータで、 **MCDUserActivity**アクティビティを発行する前に設定されます。 アクティブ化の URI は、アクティビティが (たとえば、タイムラインで選択した) ときにアクティブになったときに実行するアクションを決定します。 表示テキスト表示されます他のデバイスで表示したとき (たとえば Windows タイムライン) のアクティビティ。 IconUri は、web リンク アイコン イメージです。
+次のメソッドでは、アクティビティが発行される前に **MCDUserActivity** の視覚的データが設定されます。 アクティブ化 URI は、アクティビティがアクティブ化されたとき (たとえば、タイムラインで選択されたとき) にどのようなアクションが実行されるかを決定します。 表示テキストは、(たとえば Windows タイムラインで) アクティビティを表示するときに他のデバイス上で表示されます。 iconUri はアイコン画像への Web リンクです。
 
 
 ```ObjectiveC
@@ -116,7 +116,7 @@ else
     // ...
 ```
 
-1 回、 **MCDUserActivity**設定は、このデータは、発行操作が行わします。
+このデータが **MCDUserActivity** に設定されると、発行操作が行われます。
 
 ```ObjectiveC
     // ...
@@ -143,15 +143,15 @@ mDisplayText = "Created by OneSDK Sample App";
 mActivationUri = "http://contoso.com");
 ```
 > [!TIP] 
-> 上記のプロパティでは、構成できるその他の多くの機能があります。 UserActivity をカスタマイズできるさまざまな方法の詳細について、次を参照してください、 **[MCDUserActivity](../objectivec-api/userdata.useractivities/MCDUserActivity.md)** 、 **[MCDUserActivityVisualElements](../objectivec-api/userdata.useractivities/MCDUserActivityVisualElements.md)。** 、 および **[MCDUserActivityAttribution](../objectivec-api/userdata.useractivities/MCDUserActivityAttribution.md)** クラス。 参照してください、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices)ユーザー アクティビティをデザインする方法の詳細な推奨事項のガイド。
+> 上記のプロパティに加えて、他にも多くの機能を構成できます。 UserActivity のさまざまなカスタマイズ方法の詳細については、 **[MCDUserActivity](../objectivec-api/userdata.useractivities/MCDUserActivity.md)** 、 **[MCDUserActivityVisualElements](../objectivec-api/userdata.useractivities/MCDUserActivityVisualElements.md)** 、および **[MCDUserActivityAttribution](../objectivec-api/userdata.useractivities/MCDUserActivityAttribution.md)** の各クラスを参照してください。 ユーザー アクティビティの設計方法に関する推奨事項の詳細については、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
-## <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティを更新します。
+## <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティの更新
 
-既存のアクティビティ (新しい engagement、変更されたページで、およびなど) 発生時に、その情報を更新する場合、これを行うを使用して、 **MCDUserActivitySession**します。 
+既存のアクティビティがあり、(新しいエンゲージメントがあった、ページが変更されたなどの理由で) その情報を更新したい場合、**MCDUserActivitySession** を使用して行うことができます。 
 
-アプリのプロパティに、必要な変更を行うセッションを作成したら、 **UserActivity**します。 変更を完了すると、セッションを閉じます。 
+セッションを作成したら、アプリで **UserActivity** のプロパティに必要な変更を加えることができます。 変更が完了したら、セッションを閉じます。 
 
-サンプル アプリから次のメソッドは、オンとオフのセッションを切り替えます。
+サンプル アプリの次のメソッドは、セッションのオンとオフを切り替えます。
 
 ```ObjectiveC
 - (IBAction)manageSessionButton:(id)sender
@@ -181,11 +181,11 @@ mActivationUri = "http://contoso.com");
 ```
 
 
-**MCDUserActivitySession**を作成する方法として考えることができます、 **MCDUserActivitySessionHistoryItem** (次のセクションで説明)。 新しいを作成するのではなく**MCDUserActivity**ページごとに新しいセッションを作成するユーザーは、新しいページに移動するたびに単純にできます。 これにより、読みやすいより直感的な構成されたアクティビティ。
+**MCDUserActivitySession** は、**MCDUserActivitySessionHistoryItem** (次のセクションで説明します) を作成する方法と考えることができます。 ユーザーが新しいページに移動するたびに新しい **MCDUserActivity**を作成する代わりに、ページごとに新しいセッションを作成するだけで済みます。 これにより、より直感的で整ったアクティビティ読み取りエクスペリエンスが実現します。
 
-## <a name="read-user-activities"></a>ユーザー アクティビティを読み取り
+## <a name="read-user-activities"></a>ユーザー アクティビティの読み取り
 
-アプリは、ユーザー アクティビティを読み取るし、タイムラインの Windows 機能と同様、ユーザーに提示します。 同一のユーザー アクティビティの読み取りを設定するに使用する**MCDUserActivityChannel**前のインスタンス。 このインスタンスを公開できます**MCDUserActivitySessionHistoryItem**インスタンスで、ユーザーの関与を特定の期間中に、特定のアクティビティを表します。
+アプリは Windows タイムライン機能と同様に、ユーザー アクティビティを読み取ってユーザーに表示できます。 ユーザー アクティビティの読み取りを設定するには、以前と同じ **MCDUserActivityChannel** インスタンスを使用します。 このインスタンスは **MCDUserActivitySessionHistoryItem** インスタンスを公開することができ、これは、特定のアクティビティにおける特定期間中のユーザーのエンゲージメントを表します。
 
 ```ObjectiveC
 - (IBAction)readActivityButton:(id)sender
@@ -215,4 +215,4 @@ mActivationUri = "http://contoso.com");
 }
 ```
 
-アプリが設定されている一覧を指定する必要がありますので**MCDUserActivitySessionHistoryItem**秒。 基になるこれらの各配信できます **MCDUserActivity** (を参照してください **[MCDUserActivitySessionHistoryItem](../objectivec-api/userdata.useractivities/MCDUserActivitySessionHistoryItem.md)** 詳細については)、これをユーザーに表示できます。
+この時点で、アプリには **MCDUserActivitySessionHistoryItem** の設定済みリストがあるはずです。 これらはそれぞれ、基になる **MCDUserActivity** を提供でき (詳細は **[MCDUserActivitySessionHistoryItem](../objectivec-api/userdata.useractivities/MCDUserActivitySessionHistoryItem.md)** を参照)、これをユーザーに表示することができます。

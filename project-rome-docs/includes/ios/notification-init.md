@@ -5,33 +5,33 @@ ms.topic: include
 ms.assetid: 195e419e-ac8d-4e96-8faa-c3659570fa27
 ms.localizationpriority: medium
 ms.openlocfilehash: 1780fa768475015946b5e33add55ac0f9f247f86
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801154"
 ---
-## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の暫定的なセットアップ
+## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の準備段階のセットアップ
 
-### <a name="register-your-app-for-push-notifications"></a>プッシュ通知をアプリを登録します。
+### <a name="register-your-app-for-push-notifications"></a>プッシュ通知のためにアプリを登録する
 
-アプリケーションを登録する[Apple Push Notification](https://developer.apple.com/notifications/)をサポートします。 送信者は受信した ID とサーバーのキーをメモしてください。後で必要があります。 
+[Apple Push Notification](https://developer.apple.com/notifications/) のサポートのためにアプリケーションを登録します。 受け取った送信者 ID とサーバー キーは、後で必要になるので必ずメモしておいてください。 
 
-### <a name="register-your-app-form-cross-device-connected-devices-platform-access"></a>フォーム クロス デバイスのデバイス プラットフォームの接続アクセスをアプリケーションの登録します。
+### <a name="register-your-app-form-cross-device-connected-devices-platform-access"></a>Connected Devices Platform へのクロスデバイス アクセスのためにアプリフォームを登録する
 
-次に、アプリを登録、[クロス デバイス エクスペリエンスの機能、Microsoft 開発者向けダッシュ ボードの](https://developer.microsoft.com/dashboard/crossplatform/web)します。 これは、上記の準備手順で説明した、Windows デベロッパー センターの登録から別のプロシージャです。 これには、ネイティブのプッシュ通知サービスを使用して通知を送信する接続されているデバイス プラットフォームが認証されます。 デベロッパー センターで、オンボード プロセスが必要です。
-* アプリのクライアント id。
-* Apple Push Notification Service のキー。 これは必要です (デバイスがロックされているかスリープ状態にあります) 上のアプリにデータとコマンドを配信するには通知の形式にします。 
+次に、[Microsoft デベロッパー ダッシュボードのクロスデバイス エクスペリエンス機能](https://developer.microsoft.com/dashboard/crossplatform/web)用にアプリを登録します。 これは、先の準備手順で説明した Windows デベロッパー センターへの登録とは異なる手続きです。 これは、Connected Devices Platform がネイティブのプッシュ通知サービスを使用して通知を送信することを承認します。 デベロッパーセンターのオンボーディング プロセスに必要なものは次のとおりです。
+* アプリのクライアント ID。
+* Apple Push Notification サービス キー。 これは、通知の形式でデータやコマンドを (ロックまたはスリープ状態になる可能性があるデバイス上の) アプリに配信するために必要です。 
 
-### <a name="configure-your-app-to-be-notification-compatible"></a>アプリ通知互換性を構成します
+### <a name="configure-your-app-to-be-notification-compatible"></a>通知互換性のためにアプリを構成する
 
-開発者向けダッシュ ボードのワークフローを完了すると、プッシュ通知を受信できるアプリの実際のコードを変更する必要があります。 まず、「リモート通知」を追加することを確認してください**UIBackgroundMode**アプリの_Info.plist_アプリがバック グラウンドで実行中に通知を受信できるようにします。 
+デベロッパー ダッシュボードでワークフローを完了したら、アプリの実際のコードを変更してプッシュ通知を受信可能にする必要があります。 まず、バックグラウンドでの実行中にアプリが通知を受信できるように、"remote-notifications" **UIBackgroundMode** をアプリの _Info.plist_ に追加します。 
 
 TBD
 
-第 2 に、アプリの開始時に、アラート通知を表示するための承認を要求する必要があります。 これは、いずれかを呼び出すことで`-[UIApplication registerUsernotificationSettings:categories:]`または`-[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]`、対象としている iOS のバージョンによって異なります。 呼び出すことによってリモート通知を受信登録できますし、アプリが取得されると、承認、`-[UIApplication registerForRemoteNotifications]`します。 
+次に、アプリが起動したら、アラート通知を表示するために認可を要求する必要があります。 これは、iOS のどのバージョンをターゲットにしているかに応じて、`-[UIApplication registerUsernotificationSettings:categories:]` または `-[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]` のどちらかを呼び出すことによって行われます。 アプリが認可を取得したら、`-[UIApplication registerForRemoteNotifications]` を呼び出してリモート通知の受信登録ができます。 
 
-接続されているデバイス プラットフォームから一部の通知、アラートが表示され、これらのアラートのテキストがローカライズ可能なは、アプリケーションの文字列リソースに挿入する必要があります。 アプリの次のリソース タグを定義する必要があります_en.lproj\Localizable.strings_ファイル。 このファイルを作成する必要があります。 Xcode で、次のように選択します。**新規**ファイルの種類"文字列"を検索し、という名前のファイルを作成、 _Localizable.strings_します。
+Connected Devices Platform からの一部の通知はアラートを表示し、これらのアラートのテキストはローカライズ可能であり、アプリケーションの文字列リソースに挿入する必要があります。 アプリの _en.lproj\Localizable.strings_ ファイルで次のリソース タグを定義する必要があります。 このファイルの作成が必要になる場合があります。 Xcode で **[New] (新規)** を選択し、ファイルの種類 "Strings" を検索し、_Localizable.strings_ という名前のファイルを作成します。
 
 ```ObjectiveC
 /* The text of the toast notification to display when a remote command is received */ 
@@ -42,13 +42,13 @@ TBD
 "ROME_CONNECT_TEXT_MANY" = "Another device wants to launch this app"; 
 ```
 
-### <a name="associate-the-notification-service-with-the-local-platform"></a>ローカルのプラットフォーム通知サービスを関連付ける
+### <a name="associate-the-notification-service-with-the-local-platform"></a>通知サービスをローカルのプラットフォームに関連付ける
 
-最後に、接続されているデバイス プラットフォームと、アプリでプッシュ通知機能を関連付ける必要があります。 定義することがなく、プラットフォームの初期化前の手順で、 *notificationProvider*パラメーター。 ここでは、作成して実装するオブジェクトで渡す必要があります **[MCDNotificationProvider](../../objectivec-api/core/MCDNotificationProvider.md)** します。 重要なことに注意するは、`getNotificationRegistrationAsync:`メソッドを返す必要があります、 **[MCDNotificationRegistration](../../objectivec-api/core/MCDNotificationRegistration.md)** インスタンス。 **MCDNotificationRegistration**通知サービスのアクセス トークン (および関連する情報) に接続されているデバイス プラットフォームを提供する責任を負います。
+最後に、アプリ内で、プッシュ通知機能を Connected Devices Platform に関連付ける必要があります。 上記の手順では、*notificationProvider* パラメーターを定義せずにプラットフォームを初期化しました。 ここでは、 **[MCDNotificationProvider](../../objectivec-api/core/MCDNotificationProvider.md)** を実装するオブジェクトを作成して渡す必要があります。 主な注意点は、`getNotificationRegistrationAsync:` メソッドが **[MCDNotificationRegistration](../../objectivec-api/core/MCDNotificationRegistration.md)** インスタンスを返す必要があることです。 **MCDNotificationRegistration** の役割は、通知サービス用のアクセス トークン (および関連情報) を Connected Devices Platform に提供することです。
 
-実装でこの登録を配信**MCDNotificationProvider**します。 プラットフォームの初期化呼び出しが起動要求とからアプリ サービスのメッセージをリレーするアプリをサーバー側接続されているデバイス プラットフォームからのデータの受信を許可する、プッシュ通知サービスにアクセスできるローカルのプラットフォームを提供し、その他のデバイス。 
+**MCDNotificationProvider** の実装でこの登録を配信します。 その後は、プラットフォーム初期化呼び出しによって、プッシュ通知サービスへのアクセスがローカル プラットフォームに提供され、アプリがサーバー側の Connected Devices Platform からデータを受信できるようになります。このプラットフォームは、他のデバイスからの起動要求およびアプリ サービス メッセージを中継します。 
 
-実装を次に**MCDNotificationProvider**サンプル アプリから。
+次に示すのは、サンプル アプリの **MCDNotificationProvider** の実装です。
 
 ```ObjectiveC
 @implementation NotificationProvider
@@ -100,7 +100,7 @@ TBD
 @end
 ```
 
-この更新プログラムの次のサンプル コード**MCDNotificationProvider**を入力で**MCDNotificationRegistration**します。
+次のサンプル コードは、渡された **MCDNotificationRegistration** でこの **MCDNotificationProvider** を更新します。
 
 ```ObjectiveC
 /*

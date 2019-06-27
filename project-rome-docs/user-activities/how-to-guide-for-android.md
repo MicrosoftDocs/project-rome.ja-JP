@@ -1,26 +1,26 @@
 ---
-title: 発行およびユーザー アクティビティ (Android) の読み取り
-description: このガイドでは、作成、発行、および Android アプリでの Windows ベースのユーザー アクティビティを読み取る方法を示します。
+title: ユーザー アクティビティの発行と読み取り (Android)
+description: このガイドでは、Android アプリで Windows ベースのユーザー アクティビティの作成、発行、読み取りを行う方法を示します。
 ms.topic: article
-keywords: microsoft、windows、ローマ、ユーザー アクティビティ、android をプロジェクトします。
+keywords: microsoft, windows, project rome, ユーザー アクティビティ, android
 ms.assetid: 8cfb7544-913c-48c0-8528-52b93ba8b0c6
 ms.localizationpriority: medium
 ms.openlocfilehash: 67f793341a108853d5b36e062fd04f441efff473
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801534"
 ---
-# <a name="implementing-user-activities-for-android"></a>Android 用のユーザー アクティビティの実装
+# <a name="implementing-user-activities-for-android"></a>Android のユーザー アクティビティの実装
 
-ユーザー アクティビティとは、アプリケーション内のユーザーのタスクを表すデータ構造です。 できることに、後に続くタスクのスナップショットを保存します。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能では、スクロール可能なすべての最近のアクティビティの一覧、テキストとグラフィックス カードとして表される Windows ユーザーを表示します。 ユーザー アクティビティの詳細については一般に、表示[デバイス間であってもユーザーの利用状況を引き続き](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)します。 活動を作成または更新する場合の推奨事項を参照してください、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices)ガイド。
+ユーザー アクティビティは、アプリケーション内でのユーザーのタスクを表すデータ構造です。 タスクのスナップショットを保存して後で続行することを可能にします。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能は Windows ユーザーに、ユーザーの最近のアクティビティすべてを、テキストとグラフィックスを使ったカードで表現したスクロール可能リストで表示します。 ユーザー アクティビティ全般の詳細については、[デバイス間でのユーザー アクティビティの継続](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)に関する記事を参照してください。 アクティビティの作成または更新の推奨されるタイミングについては、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
-プロジェクト ローマ sdk では、Android アプリだけでなくタイムラインなどの Windows 機能で使用するためのユーザー アクティビティの公開ことができますもエンドポイントとして機能してタイムラインは、Windows デバイス上と同様に、ユーザーにアクティビティを読み取り。 これにより、クロス デバイス アプリに、プラットフォームを出し抜くからして、次のデバイスではなく、ユーザー エクスペリエンスを提供できます。  
+Android アプリは Project Rome SDK によって、タイムラインなどの Windows 機能で使用するユーザー アクティビティを発行できるだけでなく、エンドポイントとして機能して、Windows デバイス上のタイムラインと同様にアクティビティをユーザーに読み戻すこともできます。 これによりクロスデバイス アプリは、プラットフォームの枠を超えて、デバイスではなくユーザーをフォローするエクスペリエンスを提供することができます。  
 
-参照してください、 [API リファレンス](api-reference-for-android.md)これらのシナリオに関連するリファレンス ドキュメントへのリンクについてのページ。
+これらのシナリオに関連したリファレンス ドキュメントへのリンクは、[API リファレンス](api-reference-for-android.md)のページを参照してください。
 
-この手順はからコードを参照、[プロジェクト ローマ Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples)します。
+この手順では、[Project Rome Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples)のコードを参照します。
 
 [!INCLUDE [android/dev-reqs](../includes/android/dev-reqs.md)]
 
@@ -30,16 +30,16 @@ ms.locfileid: "59801534"
 
 [!INCLUDE [android/dev-center-onboarding](../includes/android/notifications-dev-center-onboarding.md)]
 
-## <a name="using-the-platform"></a>プラットフォームを使用します。
+## <a name="using-the-platform"></a>プラットフォームの使用
 
 [!INCLUDE [android/create-setup-events-start-platform](../includes/android/create-setup-events-start-platform.md)]
 
-### <a name="initialize-a-user-activity-channel"></a>ユーザー アクティビティのチャネルを初期化します。
+### <a name="initialize-a-user-activity-channel"></a>ユーザー アクティビティ チャネルの初期化
 
-アプリでは、ユーザー アクティビティの機能を実装するには、ユーザー アクティビティを UserActivityChannel を作成してフィードを初期化する必要があります。 これを上記のプラットフォーム初期化手順のように扱う必要があります: チェックし、場合によって、アプリがフォア グラウンドに (ただし、プラットフォーム初期化前にいない) されるたびを再実行する必要があります。
+ユーザー アクティビティ機能をアプリで実装するには、まず、UserActivityChannel を作成することでユーザー アクティビティ フィードを初期化する必要があります。 これは、前述したプラットフォーム初期化手順のように扱う必要があります。(プラットフォーム初期化の前ではないタイミングで) アプリがフォアグラウンドになるたびにチェックし、場合によってはやり直す必要があります。
 
-Microsoft 開発者向けダッシュ ボードの登録の過程で取得したクロス プラットフォーム アプリ ID を取得するも必要になります。
-次のメソッドは、UserActivityChannel を初期化します。
+Microsoft デベロッパー ダッシュボードへの登録時に取得したクロスプラットフォーム アプリ ID も必要になります。
+次のメソッドは UserActivityChannel を初期化します。
 
 ```Java
 private UserActivityChannel mActivityChannel;
@@ -103,12 +103,12 @@ private UserActivityChannel getUserActivityChannel() {
 }
 ```
 
-この時点では、mActivityChannel で UserActivityChannel の参照が必要です。
+この時点で、UserActivityChannel の参照が mActivityChannel にあるはずです。
 
 
-### <a name="create-and-publish-a-user-activity"></a>作成して、ユーザー アクティビティを発行します。
+### <a name="create-and-publish-a-user-activity"></a>ユーザー アクティビティの作成と発行
 
-次に、新しい対象の ID、DisplayText ActivationURI データを設定**UserActivity**します。 ID は一意の文字列である必要があります。 (Windows タイムラインで、たとえば)、アクティビティを表示したときにその、DisplayText が他のデバイスで表示されるので、アクティビティの簡潔な説明は使用する必要があります。 どのようなアクションが実行されるときに、ActivationUri が決定されます、 **UserActivity** (たとえば、タイムラインで選択した) ときにアクティブにします。 次のコードは、サンプル データをこれらのフィールドに格納します。
+次に、新しい **UserActivity** になるものの ID、DisplayText、および ActivationURI データを設定します。 ID は一意の文字列である必要があります。 DisplayText は、(たとえば Windows タイムラインで) アクティビティを表示するときに他のデバイス上で表示されるため、アクティビティの簡潔な説明にする必要があります。 ActivationUri は、**UserActivity** がアクティブ化されたとき (たとえば、タイムラインで選択されたとき) にどのようなアクションが実行されるかを決定します。 次のコードは、サンプル データをこれらのフィールドに格納します。
 
 
 ```Java
@@ -124,7 +124,7 @@ mDisplayText = "Created by OneSDK Sample App";
 mActivationUri = "http://contoso.com");
 ```
 
-次に、新たに作成するメソッドを提供**UserActivity**インスタンス。
+次に、新しい **UserActivity** インスタンスを作成するメソッドを提供します。
 
 ```Java
 // Create the UserActivity (with unique ID) using a custom method. 
@@ -148,7 +148,7 @@ private UserActivity createUserActivity(UserActivityChannel channel, String acti
     return activity;
 }
 ```
-作成したら、 **UserActivity**インスタンス、上記で定義されたデータを入力します。
+**UserActivity** インスタンスを作成したら、上記で定義したデータを入力します。
 
 ```Java
 //set the properties of the UserActivity:
@@ -177,11 +177,11 @@ operation.whenCompleteAsync(new AsyncOperation.ResultBiConsumer<Void, Throwable>
 ```
 
 > [!TIP] 
-> 上記のプロパティでは、構成できるその他の多くの機能があります。 UserActivity をカスタマイズできるさまざまな方法の詳細について、次を参照してください、 **[UserActivity](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity)** 、 **[UserActivityVisualElements](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_visual_elements)。** 、および **[UserActivityAttribution](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_attribution)** クラス。 参照してください、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices)ユーザー アクティビティをデザインする方法の詳細な推奨事項のガイド。
+> 上記のプロパティに加えて、他にも多くの機能を構成できます。 UserActivity のさまざまなカスタマイズ方法の詳細については、 **[UserActivity](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity)** 、 **[UserActivityVisualElements](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_visual_elements)** 、および **[UserActivityAttribution](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_attribution)** の各クラスを参照してください。 ユーザー アクティビティの設計方法に関する推奨事項の詳細については、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
-### <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティを更新します。
+### <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティの更新
 
-既存のアクティビティ (新しい engagement、変更されたページで、およびなど) 発生時に、その情報を更新する場合、これを行うを使用して、 **UserActivitySession**します。
+既存のアクティビティがあり、(新しいエンゲージメントがあった、ページが変更されたなどの理由で) その情報を更新したい場合、**UserActivitySession** を使用して行うことができます。
 
 ```Java
 private UserActivitySession mActivitySession;
@@ -196,7 +196,7 @@ if (mActivity != null)
 }
 ```
 
-アプリのプロパティに、必要な変更を行うセッションを作成したら、 **UserActivity**します。 変更を完了すると、セッションを閉じます。 
+セッションを作成したら、アプリで **UserActivity** のプロパティに必要な変更を加えることができます。 変更が完了したら、セッションを閉じます。 
 
 ```Java
 mActivitySession.close();
@@ -204,11 +204,11 @@ mActivitySession = null;
 Log.d("UserActivityFragment", "Stopping");
 ```
 
-A **UserActivitySession**を作成する方法として考えることができます、 **UserActivitySessionHistoryItem** (次のセクションで説明)。 新しいを作成するのではなく**UserActivity**ページごとに新しいセッションを作成するユーザーは、新しいページに移動するたびに単純にできます。 これにより、読みやすいより直感的な構成されたアクティビティ。
+**UserActivitySession** は、**UserActivitySessionHistoryItem** (次のセクションで説明します) を作成する方法と考えることができます。 ユーザーが新しいページに移動するたびに新しい **UserActivity**を作成する代わりに、ページごとに新しいセッションを作成するだけで済みます。 これにより、より直感的で整ったアクティビティ読み取りエクスペリエンスが実現します。
 
-### <a name="read-user-activities"></a>ユーザー アクティビティを読み取り
+### <a name="read-user-activities"></a>ユーザー アクティビティの読み取り
 
-アプリは、ユーザー アクティビティを読み取るし、タイムラインの Windows 機能と同様、ユーザーに提示します。 ユーザー アクティビティの読み取りを設定すると同じ使用**UserActivityChannel**前のインスタンス。 このインスタンスを公開できます**UserActivitySessionHistoryItem**インスタンスで、ユーザーの関与を特定の期間中に、特定のアクティビティを表します。
+アプリは Windows タイムライン機能と同様に、ユーザー アクティビティを読み取ってユーザーに表示できます。 ユーザー アクティビティの読み取りを設定するには、以前と同じ **UserActivityChannel** インスタンスを使用します。 このインスタンスは **UserActivitySessionHistoryItem** インスタンスを公開することができ、これは、特定のアクティビティにおける特定期間中のユーザーのエンゲージメントを表します。
 
 ```Java
 private ArrayList<UserActivitySessionHistoryItem> mHistoryItems; 
@@ -238,4 +238,4 @@ operation.whenCompleteAsync(new AsyncOperation.ResultBiConsumer<UserActivitySess
 });
 ```
 
-アプリが設定されている一覧を指定する必要がありますので**UserActivitySessionHistoryItem**秒。 基になるこれらの各配信できます**UserActivity** (を参照してください **[UserActivitySessionHistoryItem](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_session_history_item)** 詳細については)、これをユーザーに表示できます。
+この時点で、アプリには **UserActivitySessionHistoryItem** の設定済みリストがあるはずです。 これらはそれぞれ、基になる **UserActivity** を提供でき (詳細は **[UserActivitySessionHistoryItem](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_session_history_item)** を参照)、これをユーザーに表示することができます。

@@ -5,19 +5,19 @@ ms.topic: include
 ms.assetid: 0741073e-62de-4e31-8e3b-cd1a55027c1c
 ms.localizationpriority: medium
 ms.openlocfilehash: b03420e0229bed45fba5a079b955d62165a6b642
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58907604"
 ---
-## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の暫定的なセットアップ
+## <a name="preliminary-setup-for-push-notifications"></a>プッシュ通知の準備段階のセットアップ
 
-### <a name="register-your-app-for-push-notifications"></a>プッシュ通知をアプリを登録します。
+### <a name="register-your-app-for-push-notifications"></a>プッシュ通知のためにアプリを登録する
 
-アプリケーションを Apple の登録[Apple Push Notification](https://developer.apple.com/notifications/)をサポートします。 送信者は受信した ID とサーバーのキーをメモしてください。後で必要があります。 
+[Apple Push Notification](https://developer.apple.com/notifications/) のサポートのためにアプリケーションを Apple に登録します。 受け取った送信者 ID とサーバー キーは、後で必要になるので必ずメモしておいてください。 
 
-登録されると、接続されているデバイス プラットフォームと、アプリでプッシュ通知機能を関連付ける必要があります。
+登録したら、アプリ内で、プッシュ通知機能を Connected Devices Platform に関連付ける必要があります。
 
 ```ObjectiveC
 self.notificationRegistration = [[MCDConnectedDevicesNotificationRegistration alloc] init];
@@ -35,33 +35,33 @@ self.notificationRegistration = [[MCDConnectedDevicesNotificationRegistration al
     self.isRegisteredWithToken = YES;
 ```
 
-### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでのクロス デバイス エクスペリエンスのアプリを登録します。
-IOS デバイスへの通信が必要な場合は、Microsoft Windows デベロッパー センターに登録する必要があります。  次に、アプリケーションを登録する必要があります、[クロス デバイス エクスペリエンスの機能、Microsoft 開発者向けダッシュ ボードの](https://developer.microsoft.com/dashboard/crossplatform/web)します。 これは、上記 MSA と AAD のアプリ登録から別のプロシージャです。 このプロセスの主な目的は、接続されているデバイス プラットフォームによって認識され、同時に、ネイティブのプッシュ通知を使用して通知を送信するプラットフォームを承認するクロス プラットフォーム アプリの id によるプラットフォームの特定のアプリ id にマップするには各モバイル プラットフォームに対応するサービス。 この場合、APNs – Apple Push Notification Service を使用して iOS アプリのエンドポイントへの通信ができます。 Dev Center のダッシュ ボードに移動して、左側にあるナビゲーション ウィンドウで、クロス デバイス エクスペリエンスに移動して新しいクロス デバイス アプリの構成を選択します。
-![デベロッパー センター ダッシュ ボード-クロス デバイス エクスペリエンス](../../notifications/media/dev_center_portal/dev_center_portal_1_overview.png)
+### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでクロスデバイス エクスペリエンスのためにアプリを登録する
+iOS デバイスとの通信が必要な場合、Microsoft Windows デベロッパー センターで登録する必要があります。  次に、[Microsoft デベロッパー ダッシュボードのクロスデバイス エクスペリエンス機能](https://developer.microsoft.com/dashboard/crossplatform/web)用にアプリを登録する必要があります。 これは、上記の MSA および AAD アプリ登録とは異なる手順です。 このプロセスの主な目的は、プラットフォーム固有のアプリ ID を、Connected Devices Platform によって認識されるクロスプラットフォームのアプリ ID にマップすること、またそれと同時に、プラットフォームにおいて、各モバイル プラットフォームに対応したネイティブのプッシュ通知サービスを使用して通知を送信するのを認可することです。 この場合、それによって、APNs (Apple Push Notification Service) 経由で iOS アプリのエンドポイントと通信できるようになります。 デベロッパー センターのダッシュボードに移動し、左側のナビゲーション ウィンドウから [Cross-Device Experiences] (クロスデバイス エクスペリエンス) に移動して、[configuring a new cross-device app] (新しいクロスデバイス アプリの構成) を選択します。
+![デベロッパー センター ダッシュボード – クロスデバイス エクスペリエンス](../../notifications/media/dev_center_portal/dev_center_portal_1_overview.png)
 
-デベロッパー センターで、オンボード プロセスには、次の手順が必要です。
-* サポートされているプラットフォームを選択します: アプリが存在する必要があり、クロス デバイス エクスペリエンスを有効にするプラットフォームを選択します。 Windows、Android、および iOS から選択できます。
-![クロス デバイス エクスペリエンス: サポートされているプラットフォーム](../../notifications/media/dev_center_portal/dev_center_portal_2_supported_platforms.png)
+デベロッパー センターのオンボーディング プロセスでは、次の手順が必要です。
+* サポートされているプラットフォームの選択 – アプリがプレゼンスを持ち、クロスデバイス エクスペリエンスが有効化されるプラットフォームを選択します。 Windows、Android、iOS から選択できます。
+![クロスデバイス エクスペリエンス – サポートされているプラットフォーム](../../notifications/media/dev_center_portal/dev_center_portal_2_supported_platforms.png)
 
-* アプリ Id を提供: 各アプリが、プレゼンスがプラットフォームにアプリ Id を提供します。
-![クロス デバイス エクスペリエンス: アプリ Id](../../notifications/media/dev_center_portal/dev_center_portal_3_app_ids.png)
+* アプリ ID の指定 – アプリがプレゼンスを持っているプラットフォームごとにアプリ ID を指定します。
+![クロスデバイス エクスペリエンス – アプリ ID](../../notifications/media/dev_center_portal/dev_center_portal_3_app_ids.png)
 > [!NOTE]
-> プラットフォームごと (最大 10 個) の異なる Id を追加することがあります-これは、同じアプリ、または異なる場合でも、同じユーザーを対象としたアプリケーション サーバーによって送信された同じ通知を受信できるようにアプリの複数のバージョンがある場合、します。 
+> プラットフォームごとに (最大 10 個の) 異なる ID を追加できます。これは、同じアプリの複数のバージョン、または複数の異なるアプリがあり、同じユーザーをターゲットにしてアプリ サーバーから送信された同じ通知をこれらのアプリで受信できるようにしたい場合です。 
 > [!TIP] 
-> IOS アプリの場合は、これは、プロジェクトを作成したときに、アプリに割り当てたパッケージ名です。 
+> iOS アプリの場合、これはプロジェクト作成時にアプリに割り当てたパッケージ名です。 
 
-* 指定するか、MSA または AAD アプリの登録からアプリ Id を選択します。 MSA または AAD アプリの登録に対応するこれらのクライアント Id は、上記の前の MSA/AAD アプリ登録の手順で取得されました。
-![クロス デバイス エクスペリエンス: MSA と AAD アプリの登録](../../notifications/media/dev_center_portal/dev_center_portal_4_msa_aad_connections.png)
-* デバイス プラットフォームの機能活用して各エンドポイント、つまり、WNS (Windows UWP) 用、GCM (Android) 用および APNs (iOS) のアプリのクライアントに通知を送信する主要なプラットフォームでネイティブ通知プラットフォームの接続されています。 ユーザーを対象とした通知を発行するときに、アプリ サーバーの通知を配信するプラットフォームを有効にするには、これらの通知プラットフォーム用の資格情報を提供します。 
-![クロス デバイス エクスペリエンス: プッシュの資格情報](../../notifications/media/dev_center_portal/dev_center_portal_5_push_credentials.png)
+* MSA/AAD アプリ登録のアプリ ID を指定または選択します。 MSA または AAD アプリ登録に対応するこれらのクライアント ID は、前述した以前の MSA/AAD アプリ登録手順で取得しました。
+![クロスデバイス エクスペリエンス – MSA および AAD アプリ登録](../../notifications/media/dev_center_portal/dev_center_portal_4_msa_aad_connections.png)
+* Connected Devices Platform の機能は、主要プラットフォームの各ネイティブ通知プラットフォーム、具体的には WNS (Windows UWP)、GCM (Android)、および APNs (iOS) を利用してアプリ クライアント エンドポイントに通知を送信します。 ユーザーをターゲットにした通知を発行したときにプラットフォームがアプリ サーバーの通知を配信できるよう、これらの通知プラットフォームの資格情報を指定します。 
+![クロスデバイス エクスペリエンス – プッシュ資格情報](../../notifications/media/dev_center_portal/dev_center_portal_5_push_credentials.png)
 > [!NOTE] 
-> IOS、APNs の有効化は iOS デバイスへの通信をするうえで必須です。 参照してください[APNs の概要](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)の詳細。 オンボードを完了すると接続されているデバイス プラットフォームに Windows デベロッパー センターを使用してプッシュの資格情報を提供できます。 
-* 最後の手順では、アプリではこのドメインの所有権に登録されているアプリのクロス デバイス アプリ id のように機能することを証明する検証プロセスとして機能するクロス デバイス アプリ ドメインを確認します。
-![クロス デバイス エクスペリエンス: ドメインの確認](../../notifications/media/dev_center_portal/dev_center_portal_6_domain_verification.png)
+> iOS の場合、APNs の有効化は iOS デバイスと通信するための前提条件です。 詳細については、[APNs の概要](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)に関する記事を参照してください。 オンボーディングが完了したら、Windows デベロッパー センターから Connected Device Platform にプッシュ資格情報を提供できるようになります。 
+* 最後の手順では、クロスデバイス アプリ ドメインを検証します。これには、登録したアプリのクロスデバイス アプリ ID のように機能するこのドメインの所有権をアプリが持っていることを証明する検証プロセスとしての役割があります。
+![クロスデバイス エクスペリエンス – ドメインの確認](../../notifications/media/dev_center_portal/dev_center_portal_6_domain_verification.png)
 
-### <a name="process-notifications-as-they-are-received-by-the-app"></a>アプリで受信した通知を処理します。
+### <a name="process-notifications-as-they-are-received-by-the-app"></a>アプリで受信した通知の処理
 
-Microsoft Windows デベロッパー センターでのクロス デバイス エクスペリエンスが検証されるでやり取りされるようにアプリが通知を処理できますを確認します。 
+Microsoft Windows デベロッパー センター内でクロスデバイス エクスペリエンスが検証されたら、通知を受信したときにアプリがそれを処理できることを確認します。 
 
 ```ObjectiveC
 `MCDConnectedDevicesProcessNotificationOperation* processOperation = [_platformManager.platform processNotification:notificationInfo];`

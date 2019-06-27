@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 8e4a55e5bc537a82ef8b9d4cb5ef6eba0e6262fe
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58907024"
 ---
-# <a name="android-commanding-api-reference"></a>Android のコマンド実行の API リファレンス
+# <a name="android-commanding-api-reference"></a>Android コマンド実行 API リファレンス
 
-次の名前空間では、アプリを検出し、リモート デバイスとアプリケーションでリモート アプリの起動およびメッセージングのリモート接続を許可します。
+アプリで次の名前空間を使用すると、リモート アプリ起動およびリモート メッセージングによって、リモートのデバイスおよびアプリケーションを検出したり、それらに接続したりできます。
 
 ## <a name="namespaces"></a>名前空間
 

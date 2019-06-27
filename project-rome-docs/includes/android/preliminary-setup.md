@@ -5,30 +5,30 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d1d764c4aae562a1fcafdb490db5a14522cda6
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755749"
 ---
-## <a name="preliminary-setup-for-the-connected-devices-platform-and-notifications"></a>接続されているデバイス プラットフォームと通知の暫定的なセットアップ
+## <a name="preliminary-setup-for-the-connected-devices-platform-and-notifications"></a>Connected Devices Platform と通知の準備段階のセットアップ
 
-リモート接続を実装する前に、いくつかの手順にリモート デバイスに接続するだけでなく送信通知を受信し、機能の Android アプリに付与する必要があります。
+リモート接続を実装する前に、いくつかの手順を実行して、リモート デバイスへの接続機能と通知の送受信機能を Android アプリに提供する必要があります。
 
-### <a name="register-your-app"></a>アプリを登録します。
+### <a name="register-your-app"></a>アプリの登録
 
-Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証は、Project ローマ SDK (近くにある共有 Api の中の例外) のほぼすべての機能に必要です。 MSA をあり、1 つを使用する実行されていない、上のレジスタ[account.microsoft.com](https://account.microsoft.com/account)します。
+Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証は、Project Rome SDK のほとんどすべての機能に必要です (例外は近距離共有 API です)。 MSA をまだ所有しておらず、使用したい場合は、[account.microsoft.com](https://account.microsoft.com/account) で登録してください。
 
 > [!NOTE]
-> デバイスの Relay Api では、azure Active Directory (AAD) アカウントはサポートされていません。
+> Azure Active Directory (AAD) アカウントは、Device Relay API ではサポートされていません。
 
-を、選択した認証メソッドを使用する必要があります、にアプリを登録 Microsoft 次の手順で、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)します。 場合は、Microsoft 開発者アカウントがない、1 つを作成する必要があります。
+選択した認証方法を使用して、また[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)の指示に従ってアプリを Microsoft に登録する必要があります。 Microsoft 開発者アカウントがない場合、作成する必要があります。
 
-MSA を使用してアプリを登録するときにクライアントの ID 文字列を受信する必要があります。 後で、これを保存します。 これで、Microsoft のデバイス プラットフォームの接続されているリソースにアクセスするアプリです。 AAD を使用している場合は、次を参照してください。 [Azure Active Directory 認証ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)については、クライアントの ID 文字列を取得します。
+MSA を使用してアプリを登録したら、クライアント ID 文字列が届くはずです。 これは後で使用しますので、保存しておいてください。 これにより、アプリが Microsoft の Connected Devices Platform リソースにアクセスできるようになります。 AAD を使用している場合は、クライアント ID 文字列を取得する手順について「[Azure Active Directory 認証ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)」を参照してください。
 
-### <a name="add-the-sdk"></a>SDK を追加します。
+### <a name="add-the-sdk"></a>SDK の追加
 
-次のリポジトリの参照を挿入、 *build.gradle*プロジェクトのルートにあるファイル。
+次のリポジトリ参照を、プロジェクトのルートにある *build.gradle* ファイルに挿入します。
 
 ```Java
 allprojects {
@@ -37,7 +37,7 @@ allprojects {
     }
 }
 ```
-次の依存関係を次に、挿入、 _build.gradle_プロジェクト フォルダー内にあるファイル。
+続いて、次の依存関係を、プロジェクト フォルダーにある _build.gradle_ ファイルに挿入します。
 
 ```Java
 dependencies { 
@@ -46,9 +46,9 @@ dependencies {
 }
 ```
 
-プロジェクトの*AndroidManifest.xml*ファイルを内部で次のアクセス許可を追加、`<manifest>`要素 (既に存在するがないとき) 場合。 これにより、インターネットに接続するデバイスで Bluetooth の検出を有効にして、アプリのアクセス許可。
+プロジェクトの *AndroidManifest.xml* ファイルで、`<manifest>` 要素の内側に次のアクセス許可を追加します (まだ存在しない場合)。 これにより、インターネットに接続して、デバイスで Bluetooth 検出を有効にするためのアクセス許可がアプリに付与されます。
 
-Bluetooth 関連のアクセス許可は、Bluetooth の検出を使用するために必要なだけに注意してください。接続されているデバイス プラットフォームの他の機能は必要ありません。 さらに、`ACCESS_COARSE_LOCATION`は Android Sdk 21 で必要な以降のみです。 以降では、Android Sdk 23、開発者が実行時に場所へのアクセスを許可するユーザーを求めもする必要があります。
+Bluetooth 関連のアクセス許可は、Bluetooth 検出を使用するために必要なだけであり、Connected Devices Platform の他の機能には必要ないことに注意してください。 また、`ACCESS_COARSE_LOCATION` は Android SDK 21 以降でのみ必要です。 Android SDK 23 以降では、開発者はユーザーにプロンプトを表示して実行時に位置情報へのアクセスを許可する必要もあります。
 
 
 ```xml
@@ -59,7 +59,7 @@ Bluetooth 関連のアクセス許可は、Bluetooth の検出を使用するた
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-次には、アクティビティ クラスにライブ接続しているデバイス機能に希望します。 インポートは、次のパッケージ。
+次に、Connected Devices 機能を有効にするアクティビティ クラスに移動します。 次のパッケージをインポートします。
 
 ```java
 import com.microsoft.connecteddevices;

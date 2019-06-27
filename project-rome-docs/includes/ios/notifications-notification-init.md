@@ -5,26 +5,26 @@ ms.topic: include
 ms.assetid: 30df8538-1c1f-498f-af25-0be0aed687c8
 ms.localizationpriority: medium
 ms.openlocfilehash: 95b6dd68706a1582a91718a48ba7961cd8d07ddf
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801504"
 ---
-### <a name="todo-configure-your-app-to-be-apns-notification-compatible"></a>APNs 通知と互換性のあるアプリの TODO 構成
+### <a name="todo-configure-your-app-to-be-apns-notification-compatible"></a>TODO: APNs 通知互換性のためにアプリを構成する
 
-開発者向けダッシュ ボードのワークフローを完了すると、プッシュ通知を受信できるアプリの実際のコードを変更する必要があります。 まず、「リモート通知」を追加することを確認してください**UIBackgroundMode**アプリの_Info.plist_アプリがバック グラウンドで実行中に通知を受信できるようにします。 
+デベロッパー ダッシュボードでワークフローを完了したら、アプリの実際のコードを変更してプッシュ通知を受信可能にする必要があります。 まず、バックグラウンドでの実行中にアプリが通知を受信できるように、"remote-notifications" **UIBackgroundMode** をアプリの _Info.plist_ に追加します。 
 
-第 2 に、アプリの開始時に、アラート通知を表示するための承認を要求する必要があります。 これは、いずれかを呼び出すことで`-[UIApplication registerUsernotificationSettings:categories:]`または`-[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]`、対象としている iOS のバージョンによって異なります。 呼び出すことによってリモート通知を受信登録できますし、アプリが取得されると、承認、`-[UIApplication registerForRemoteNotifications]`します。 
+次に、アプリが起動したら、アラート通知を表示するために認可を要求する必要があります。 これは、iOS のどのバージョンをターゲットにしているかに応じて、`-[UIApplication registerUsernotificationSettings:categories:]` または `-[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]` のどちらかを呼び出すことによって行われます。 アプリが認可を取得したら、`-[UIApplication registerForRemoteNotifications]` を呼び出してリモート通知の受信登録ができます。 
 
-### <a name="associate-the-connected-devices-platform-with-apns-native-push-notification-for-ios"></a>IOS の APNs ネイティブ プッシュ通知には、接続されているデバイス プラットフォームを関連付けます。 
-ようにアプリのクライアントは既に触れましたが、グラフを許可するクライアント側の SDK を各モバイル プラットフォームとデバイスの接続されているプラットフォームの登録プロセス中に使用されているネイティブのプッシュ通知のパイプラインに関する知識を提供する必要がありますアプリケーション サーバーは、MS Graph Api を使用してユーザーを対象とした通知を発行するときのアプリのクライアント エンドポイントは各にファンアウト通知を通知サービス。
+### <a name="associate-the-connected-devices-platform-with-apns-native-push-notification-for-ios"></a>Connected Devices Platform を、iOS の APNs ネイティブ プッシュ通知に関連付けます。 
+既に触れたように、アプリ クライアントは、登録プロセスの間、各モバイル プラットフォームで使用されているネイティブのプッシュ通知パイプラインに関する情報を、クライアント側 SDK と Connected Devices Platform に提供する必要があります。これは、ユーザーをターゲットにした通知をアプリ サーバーが MS Graph API を使って発行したときに、Graph の通知サービスが個々のアプリ クライアント エンドポイントに通知を拡散できるようにするためです。
 
-定義することがなく、プラットフォームの初期化前の手順で、 *notificationProvider*パラメーター。 ここでは、作成して実装するオブジェクトで渡す必要があります **[MCDNotificationProvider](../../objectivec-api/core/MCDNotificationProvider.md)** します。 重要なことに注意するは、`getNotificationRegistrationAsync:`メソッドを返す必要があります、 **[MCDNotificationRegistration](../../objectivec-api/core/MCDNotificationRegistration.md)** インスタンス。 **MCDNotificationRegistration**通知サービスのアクセス トークン (および関連する情報) に接続されているデバイス プラットフォームを提供する責任を負います。
+上記の手順では、*notificationProvider* パラメーターを定義せずにプラットフォームを初期化しました。 ここでは、 **[MCDNotificationProvider](../../objectivec-api/core/MCDNotificationProvider.md)** を実装するオブジェクトを作成して渡す必要があります。 主な注意点は、`getNotificationRegistrationAsync:` メソッドが **[MCDNotificationRegistration](../../objectivec-api/core/MCDNotificationRegistration.md)** インスタンスを返す必要があることです。 **MCDNotificationRegistration** の役割は、通知サービス用のアクセス トークン (および関連情報) を Connected Devices Platform に提供することです。
 
-実装でこの登録を配信**MCDNotificationProvider**します。 プラットフォームの初期化呼び出しが起動要求とからアプリ サービスのメッセージをリレーするアプリをサーバー側接続されているデバイス プラットフォームからのデータの受信を許可する、プッシュ通知サービスにアクセスできるローカルのプラットフォームを提供し、その他のデバイス。 
+**MCDNotificationProvider** の実装でこの登録を配信します。 その後は、プラットフォーム初期化呼び出しによって、プッシュ通知サービスへのアクセスがローカル プラットフォームに提供され、アプリがサーバー側の Connected Devices Platform からデータを受信できるようになります。このプラットフォームは、他のデバイスからの起動要求およびアプリ サービス メッセージを中継します。 
 
-実装を次に**MCDNotificationProvider**サンプル アプリから。
+次に示すのは、サンプル アプリの **MCDNotificationProvider** の実装です。
 
 ```ObjectiveC
 @implementation NotificationProvider
@@ -76,7 +76,7 @@ ms.locfileid: "59801504"
 @end
 ```
 
-この更新プログラムの次のサンプル コード**MCDNotificationProvider**を入力で**MCDNotificationRegistration**します。
+次のサンプル コードは、渡された **MCDNotificationRegistration** でこの **MCDNotificationProvider** を更新します。
 
 ```ObjectiveC
 /*
