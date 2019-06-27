@@ -5,22 +5,22 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ac6a543cc63be9154e40482e587a8f373f56798
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755803"
 ---
-### <a name="create-the-platform"></a><span data-ttu-id="8bc77-103">プラットフォームを作成します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-103">Create the platform</span></span>
+### <a name="create-the-platform"></a><span data-ttu-id="da718-103">プラットフォームの作成</span><span class="sxs-lookup"><span data-stu-id="da718-103">Create the platform</span></span>
 
 
-<span data-ttu-id="8bc77-104">開始する、プラットフォームを単純にインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-104">To get started simply instantiate the platform.</span></span>
+<span data-ttu-id="da718-104">開始するには、単純にプラットフォームをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="da718-104">To get started simply instantiate the platform.</span></span>
 
 `ConnectedDevicesPlatform sPlatform = new ConnectedDevicesPlatform(context);`
 
-### <a name="subscribe-to-connecteddevicesaccountmanager-events-to-handle-the-user-account"></a><span data-ttu-id="8bc77-105">ユーザー アカウントを処理するために ConnectedDevicesAccountManager イベントにサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="8bc77-105">Subscribe to ConnectedDevicesAccountManager events to handle the user account</span></span> 
+### <a name="subscribe-to-connecteddevicesaccountmanager-events-to-handle-the-user-account"></a><span data-ttu-id="da718-105">ユーザー アカウントを処理するための ConnectedDevicesAccountManager イベントに登録する</span><span class="sxs-lookup"><span data-stu-id="da718-105">Subscribe to ConnectedDevicesAccountManager events to handle the user account</span></span> 
 
-<span data-ttu-id="8bc77-106">プラットフォームには、プラットフォームへのアクセスに認証されたユーザーが必要です。</span><span class="sxs-lookup"><span data-stu-id="8bc77-106">The platform requires an authenticated user to access the platform.</span></span>  <span data-ttu-id="8bc77-107">購読を依頼する必要があります**ConnectedDevicesAccountManager**のイベントを有効なアカウントが使用されています。</span><span class="sxs-lookup"><span data-stu-id="8bc77-107">You'll need to subscribe to **ConnectedDevicesAccountManager** events to ensure a valid account is being used.</span></span> 
+<span data-ttu-id="da718-106">プラットフォームは、認証済みのユーザーがプラットフォームにアクセスすることを要求します。</span><span class="sxs-lookup"><span data-stu-id="da718-106">The platform requires an authenticated user to access the platform.</span></span>  <span data-ttu-id="da718-107">有効なアカウントが使用されていることを保証するために、**ConnectedDevicesAccountManager** イベントに登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="da718-107">You'll need to subscribe to **ConnectedDevicesAccountManager** events to ensure a valid account is being used.</span></span> 
 
 ```Java
  ConnectedDevicesPlatform sPlatform.getAccountManager().accessTokenRequested().subscribe((accountManager, args) -> {
@@ -37,9 +37,9 @@ ms.locfileid: "66755803"
 ```
 
 
-### <a name="subscribe-to-connecteddevicesnotificationregistrationmanager-events"></a><span data-ttu-id="8bc77-108">ConnectedDevicesNotificationRegistrationManager イベントにサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="8bc77-108">Subscribe to ConnectedDevicesNotificationRegistrationManager events</span></span>
+### <a name="subscribe-to-connecteddevicesnotificationregistrationmanager-events"></a><span data-ttu-id="da718-108">ConnectedDevicesNotificationRegistrationManager イベントに登録する</span><span class="sxs-lookup"><span data-stu-id="da718-108">Subscribe to ConnectedDevicesNotificationRegistrationManager events</span></span>
 
-<span data-ttu-id="8bc77-109">同様に、プラットフォームは通知を使用して、デバイス間でのコマンドを配布します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-109">Similarly, the platform uses notifications to deliver commands between devices.</span></span>  <span data-ttu-id="8bc77-110">そのためにサブスクライブする必要があります、 **ConnectedDevicesNotificationRegistrationManager**のイベントをクラウドの登録状態が使用されているアカウントに対して有効です。</span><span class="sxs-lookup"><span data-stu-id="8bc77-110">Therefore, you must subscribe to the **ConnectedDevicesNotificationRegistrationManager** events to ensure the cloud registration states are valid for the account being used.</span></span>  <span data-ttu-id="8bc77-111">確認の状態を使用して、 **ConnectedDevicesNotificationRegistrationState**</span><span class="sxs-lookup"><span data-stu-id="8bc77-111">Verify the the state using **ConnectedDevicesNotificationRegistrationState**</span></span>
+<span data-ttu-id="da718-109">同様に、プラットフォームは通知を使用してデバイス間でコマンドを配信します。</span><span class="sxs-lookup"><span data-stu-id="da718-109">Similarly, the platform uses notifications to deliver commands between devices.</span></span>  <span data-ttu-id="da718-110">したがって、使用されているアカウントに対してクラウドの登録状態が有効であることを保証するために、**ConnectedDevicesNotificationRegistrationManager** イベントに登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="da718-110">Therefore, you must subscribe to the **ConnectedDevicesNotificationRegistrationManager** events to ensure the cloud registration states are valid for the account being used.</span></span>  <span data-ttu-id="da718-111">**ConnectedDevicesNotificationRegistrationState** を使用して状態を確認する</span><span class="sxs-lookup"><span data-stu-id="da718-111">Verify the the state using **ConnectedDevicesNotificationRegistrationState**</span></span>
 
 ```Java
 ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notificationRegistrationStateChanged().subscribe((notificationRegistrationManager, args) -> {
@@ -48,16 +48,16 @@ ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notifica
 
 }
 ```
-### <a name="start-the-platform"></a><span data-ttu-id="8bc77-112">プラットフォームを開始します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-112">Start the platform</span></span>
-<span data-ttu-id="8bc77-113">これで、プラットフォームは初期化され、イベント ハンドラーは、配置は、リモート システムのデバイスの検出を開始する準備が完了したらです。</span><span class="sxs-lookup"><span data-stu-id="8bc77-113">Now that the platform is initialized and event handlers are in place, you are ready to start discovering remote system devices.</span></span>  
+### <a name="start-the-platform"></a><span data-ttu-id="da718-112">プラットフォームの開始</span><span class="sxs-lookup"><span data-stu-id="da718-112">Start the platform</span></span>
+<span data-ttu-id="da718-113">プラットフォームが初期化され、イベント ハンドラーが配置されたので、リモート システム デバイスの検出を開始する準備ができました。</span><span class="sxs-lookup"><span data-stu-id="da718-113">Now that the platform is initialized and event handlers are in place, you are ready to start discovering remote system devices.</span></span>  
 
 `ConnectedDevicesPlatform sPlatform.start();`
 
-### <a name="retrieve-user-accounts-known-to-the-app"></a><span data-ttu-id="8bc77-114">アプリに既知のユーザー アカウントを取得します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-114">Retrieve user accounts known to the app</span></span>
+### <a name="retrieve-user-accounts-known-to-the-app"></a><span data-ttu-id="da718-114">アプリが認識しているユーザー アカウントの取得</span><span class="sxs-lookup"><span data-stu-id="da718-114">Retrieve user accounts known to the app</span></span>
 
-<span data-ttu-id="8bc77-115">アプリに既知のユーザー アカウントの一覧と正しく同期されることを確認することが重要、 **ConnectedDevicesAccountManager**します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-115">It is important to ensure that the list of user accounts known to the app are properly synchronized with the **ConnectedDevicesAccountManager**.</span></span>
+<span data-ttu-id="da718-115">アプリが認識しているユーザー アカウントの一覧を、確実に **ConnectedDevicesAccountManager** と正しく同期することが重要です。</span><span class="sxs-lookup"><span data-stu-id="da718-115">It is important to ensure that the list of user accounts known to the app are properly synchronized with the **ConnectedDevicesAccountManager**.</span></span>
 
-<span data-ttu-id="8bc77-116">使用**ConnectedDevicesAccountManager.addAccountAsync**新しいユーザー アカウントを追加します。</span><span class="sxs-lookup"><span data-stu-id="8bc77-116">Use **ConnectedDevicesAccountManager.addAccountAsync** to add a new user account.</span></span>
+<span data-ttu-id="da718-116">**ConnectedDevicesAccountManager.addAccountAsync** を使用して新しいユーザー アカウントを追加します。</span><span class="sxs-lookup"><span data-stu-id="da718-116">Use **ConnectedDevicesAccountManager.addAccountAsync** to add a new user account.</span></span>
 
 ```Java
  public synchronized AsyncOperation<ConnectedDevicesAddAccountResult> addAccountToAccountManagerAsync(ConnectedDevicesAccount account) {
@@ -65,7 +65,7 @@ ConnectedDevicesPlatform sPlatform.getNotificationRegistrationManager().notifica
     }
 ```
 
-<span data-ttu-id="8bc77-117">使用できる、無効なアカウントを削除する**ConnectedDevicesAccountManager.removeAccountAsync**</span><span class="sxs-lookup"><span data-stu-id="8bc77-117">To remove an invalid account you can use **ConnectedDevicesAccountManager.removeAccountAsync**</span></span>
+<span data-ttu-id="da718-117">無効なアカウントを削除するには、**ConnectedDevicesAccountManager.removeAccountAsync** を使用できます。</span><span class="sxs-lookup"><span data-stu-id="da718-117">To remove an invalid account you can use **ConnectedDevicesAccountManager.removeAccountAsync**</span></span>
 
 ```Java
  public synchronized AsyncOperation<ConnectedDevicesAddAccountResult> removeAccountToAccountManagerAsync(ConnectedDevicesAccount account) {

@@ -1,28 +1,28 @@
 ---
-title: コマンドのリモート デバイスとアプリ (Android)
-description: このガイドでは、リモート デバイスとアプリを検出してアプリを起動し、またはアプリ サービスと対話する方法を説明します。
+title: リモートのデバイスとアプリのコマンド実行 (Android)
+description: このガイドでは、リモートのデバイスやアプリを検出してから、アプリを起動したり、アプリ サービスと対話したりする方法について説明します。
 ms.topic: article
-keywords: microsoft、windows、プロジェクト、ローマをコマンド、android
+keywords: microsoft, windows, project rome, コマンド実行, android
 ms.assetid: 2fd14dd0-0f1f-49ee-83e3-468737810c81
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ca9caf60c59c619d1f7ec4e7b3af529acbb2ffc
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66755754"
 ---
-# <a name="implementing-device-relay-for-android"></a><span data-ttu-id="c0ae0-104">Android 用のデバイスのリレーの実装</span><span class="sxs-lookup"><span data-stu-id="c0ae0-104">Implementing device relay for Android</span></span>
+# <a name="implementing-device-relay-for-android"></a><span data-ttu-id="9b7b4-104">Android のデバイス リレーの実装</span><span class="sxs-lookup"><span data-stu-id="9b7b4-104">Implementing device relay for Android</span></span>
 
-<span data-ttu-id="c0ae0-105">プロジェクト ローマのデバイスのリレー機能は、2 つの主な機能をサポートする Api のセットで構成されています。 リモートの起動 (コマンドの実行とも呼ばれます) と app services。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-105">The Device Relay functionality of Project Rome consists of a set of APIs that support two main features: remote launching (also known as commanding) and app services.</span></span>
+<span data-ttu-id="9b7b4-105">Project Rome のデバイス リレー機能は、2 つの主な機能であるリモート起動 (コマンド実行とも呼びます) とアプリ サービスをサポートする一連の API で構成されています。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-105">The Device Relay functionality of Project Rome consists of a set of APIs that support two main features: remote launching (also known as commanding) and app services.</span></span>
 
-<span data-ttu-id="c0ae0-106">リモート起動の Api は、ローカル デバイスからリモート デバイス上のプロセスが開始されるシナリオをサポートします。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-106">Remote Launching APIs support scenarios where a process on a remote device is started from a local device.</span></span> <span data-ttu-id="c0ae0-107">たとえば、ユーザーは、携帯電話、車のラジオをリッスンする可能性がありますが自宅のステレオにフックされているが、Xbox に再生を転送する電話を使用するホーム取得すると。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-107">For example, a user might be listening to the radio on their phone in the car, but when they get home they use their phone to transfer playback to their Xbox which is hooked up to the home stereo.</span></span>
+<span data-ttu-id="9b7b4-106">リモート起動 API は、リモート デバイス上のプロセスがローカル デバイスから開始されるシナリオをサポートします。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-106">Remote Launching APIs support scenarios where a process on a remote device is started from a local device.</span></span> <span data-ttu-id="9b7b4-107">たとえば、ユーザーが車に乗りながら電話でラジオを聴きますが、帰宅したらホーム ステレオに接続した Xbox に電話を使用して再生を転送することがあります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-107">For example, a user might be listening to the radio on their phone in the car, but when they get home they use their phone to transfer playback to their Xbox which is hooked up to the home stereo.</span></span>
 
-<span data-ttu-id="c0ae0-108">App Services Api により、任意のコンテンツを含むメッセージを送信できる 2 つのデバイス間で永続的なパイプラインを確立するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-108">App Services APIs allow an application to establish a persistent pipeline between two devices through which messages containing any arbitrary content can be sent.</span></span> <span data-ttu-id="c0ae0-109">などの写真をモバイル デバイスで実行されているアプリを共有では、写真を取得するために、ユーザーの PC に接続を確立する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-109">For example, a photo sharing app running on a mobile device could establish a connection with the user's PC in order to retrieve photos.</span></span>
+<span data-ttu-id="9b7b4-108">アプリケーションは App Services API を使用して 2 つのデバイス間に永続的なパイプラインを確立し、任意の内容を含むメッセージをこのパイプライン経由で送信することができます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-108">App Services APIs allow an application to establish a persistent pipeline between two devices through which messages containing any arbitrary content can be sent.</span></span> <span data-ttu-id="9b7b4-109">たとえば、モバイル デバイス上で実行されている写真共有アプリが、写真を取得するためにユーザーの PC との接続を確立することができます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-109">For example, a photo sharing app running on a mobile device could establish a connection with the user's PC in order to retrieve photos.</span></span>
 
-<span data-ttu-id="c0ae0-110">プロジェクトのローマの機能は、接続されているデバイス プラットフォームと呼ばれる、基になるプラットフォームでサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-110">The features of Project Rome are supported by an underlying platform called the Connected Devices Platform.</span></span> <span data-ttu-id="c0ae0-111">このガイドは、接続されているデバイス プラットフォームの使用を開始するために必要な手順について説明し、プラットフォームを使用して、デバイスのリレーを実装する方法を説明します機能に関連します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-111">This guide provides the necessary steps to get started using the Connected Devices Platform, and then explains how to use the platform to implement Device Relay related features.</span></span>
+<span data-ttu-id="9b7b4-110">Project Rome の機能は、Connected Devices Platform と呼ばれる基盤プラットフォームによってサポートされます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-110">The features of Project Rome are supported by an underlying platform called the Connected Devices Platform.</span></span> <span data-ttu-id="9b7b4-111">このガイドでは、Connected Devices Platform を初めて使用するために必要な手順と、このプラットフォームを使用してデバイス リレー関連機能を実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-111">This guide provides the necessary steps to get started using the Connected Devices Platform, and then explains how to use the platform to implement Device Relay related features.</span></span>
 
-<span data-ttu-id="c0ae0-112">この手順はからコードを参照、[プロジェクト ローマ Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples)します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-112">This steps below will reference code from the [Project Rome Android sample app](https://github.com/Microsoft/project-rome/tree/master/Android/samples).</span></span>
+<span data-ttu-id="9b7b4-112">この手順では、[Project Rome Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples)のコードを参照します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-112">This steps below will reference code from the [Project Rome Android sample app](https://github.com/Microsoft/project-rome/tree/master/Android/samples).</span></span>
 
 [!INCLUDE [android/dev-reqs](../includes/android/dev-reqs.md)]
 
@@ -32,19 +32,19 @@ ms.locfileid: "66755754"
 
 [!INCLUDE [android/dev-center-onboarding](../includes/android/notifications-dev-center-onboarding.md)]
 
-## <a name="using-the-platform"></a><span data-ttu-id="c0ae0-113">プラットフォームを使用します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-113">Using the platform</span></span>
+## <a name="using-the-platform"></a><span data-ttu-id="9b7b4-113">プラットフォームの使用</span><span class="sxs-lookup"><span data-stu-id="9b7b4-113">Using the platform</span></span>
 
 [!INCLUDE [android/create-setup-events-start-platform](../includes/android/create-setup-events-start-platform.md)]
 
-### <a name="discover-remote-devices-and-apps"></a><span data-ttu-id="c0ae0-114">リモート デバイスとアプリを検出します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-114">Discover remote devices and apps</span></span>
+### <a name="discover-remote-devices-and-apps"></a><span data-ttu-id="9b7b4-114">リモートのデバイスとアプリの検出</span><span class="sxs-lookup"><span data-stu-id="9b7b4-114">Discover remote devices and apps</span></span>
 
-<span data-ttu-id="c0ae0-115">A **RemoteSystemWatcher**インスタンスは、このセクションのコア機能を処理します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-115">A **RemoteSystemWatcher** instance will handle the core functionality of this section.</span></span> <span data-ttu-id="c0ae0-116">リモート システムを検出するには、クラスで宣言します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-116">Declare it in the class which is to discover remote systems.</span></span>
+<span data-ttu-id="9b7b4-115">**RemoteSystemWatcher** インスタンスは、このセクションのコア機能を処理します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-115">A **RemoteSystemWatcher** instance will handle the core functionality of this section.</span></span> <span data-ttu-id="9b7b4-116">これは、リモート システムを検出するクラスの中で宣言します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-116">Declare it in the class which is to discover remote systems.</span></span>
 
 ```Java
 private RemoteSystemWatcher mWatcher = null;
 ```
 
-<span data-ttu-id="c0ae0-117">ウォッチャーを作成して、デバイスの検出を開始する前にどのような種類のデバイスのアプリの対象を決定する検索フィルターを追加したい場合があります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-117">Before you create a watcher and start discovering devices, you may wish to add discovery filters to determine which kinds of devices your app will target.</span></span> <span data-ttu-id="c0ae0-118">これらは、ユーザーの入力またはユース ケースに応じて、アプリにハードコーディングで決定できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-118">These can be determined by user input or hard-coded into the app, depending on your use case.</span></span>
+<span data-ttu-id="9b7b4-117">ウォッチャーを作成してデバイスの検出を開始する前に、検出フィルターを追加して、どのような種類のデバイスをアプリでターゲットにするかを決定することができます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-117">Before you create a watcher and start discovering devices, you may wish to add discovery filters to determine which kinds of devices your app will target.</span></span> <span data-ttu-id="9b7b4-118">ユース ケースに応じて、これらはユーザーの入力によって決定、またはアプリにハードコードすることができます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-118">These can be determined by user input or hard-coded into the app, depending on your use case.</span></span>
 
 ```Java
 private void onStartWatcherClicked() {
@@ -96,7 +96,7 @@ private void onStartWatcherClicked() {
     // ...
 ```
 
-<span data-ttu-id="c0ae0-119">この時点では、アプリは、アプリが解析し、検出されたデバイスと対話する方法を決定する監視オブジェクトを初期化できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-119">At this point, the app can initialize the watcher object which determine how your app will parse and interact with devices that are discovered.</span></span>
+<span data-ttu-id="9b7b4-119">この時点で、アプリはウォッチャー オブジェクトを初期化できます。これによって、検出されたデバイスをアプリで解析する方法、またそれらのデバイスとアプリが対話する方法が決まります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-119">At this point, the app can initialize the watcher object which determine how your app will parse and interact with devices that are discovered.</span></span>
 
 ```Java
     // ...
@@ -108,9 +108,9 @@ private void onStartWatcherClicked() {
     // ...
 ```
 
-<span data-ttu-id="c0ae0-120">アプリが検出されたデバイスのセットを保持することをお勧め (によって表される**RemoteSystem**インスタンス) と、UI で使用可能なデバイスと (表示名とデバイスの種類) などのアプリに関する情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-120">It is recommended that your app maintain a set of discovered devices (represented by **RemoteSystem** instances) and display information about available devices and their apps (such as display name and device type) on the UI.</span></span> 
+<span data-ttu-id="9b7b4-120">(**RemoteSystem** インスタンスで表される) 検出されたデバイスのセットをアプリで管理し、利用可能なデバイスとそのアプリについての情報 (表示名やデバイスの種類など) を UI に表示することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-120">It is recommended that your app maintain a set of discovered devices (represented by **RemoteSystem** instances) and display information about available devices and their apps (such as display name and device type) on the UI.</span></span> 
 
-<span data-ttu-id="c0ae0-121">次のクラスのスタブは、watcher のインスタンスのイベント リスナーとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-121">The following class stubs can be used as event listeners for the watcher instance.</span></span>
+<span data-ttu-id="9b7b4-121">次のクラス スタブは、ウォッチャー インスタンスのイベント リスナーとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-121">The following class stubs can be used as event listeners for the watcher instance.</span></span>
 
 ```Java
 private class RemoteSystemAddedListener implements EventListener<RemoteSystemWatcher, RemoteSystem> {
@@ -142,7 +142,7 @@ private class RemoteSystemWatcherErrorOccurredListener implements EventListener<
 }
 ```
 
-<span data-ttu-id="c0ae0-122">1 回`mWatcher.start`が呼び出されると、リモート システムの使用状況の監視を開始してデバイスの検出、更新、または検出されたデバイスのセットから削除されるときにイベントを発生させます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-122">Once `mWatcher.start` is called, it will begin watching for remote system activity and will raise events when devices are discovered, updated, or removed from the set of discovered devices.</span></span> <span data-ttu-id="c0ae0-123">これはスキャン継続的に、バック グラウンドでため不要なネットワーク通信とバッテリの消耗を回避するためにこれが不要になったときに、監視を停止することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-123">It will scan continuously in the background, so it is recommended that you stop the watcher when you no longer need it to avoid unnecessary network communication and battery drain.</span></span>
+<span data-ttu-id="9b7b4-122">`mWatcher.start` が呼び出されると、リモート システムのアクティビティの監視が始まります。デバイスが検出、更新、または検出済みデバイスのセットから削除されると、イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-122">Once `mWatcher.start` is called, it will begin watching for remote system activity and will raise events when devices are discovered, updated, or removed from the set of discovered devices.</span></span> <span data-ttu-id="9b7b4-123">バックグラウンドで継続的にスキャンされるため、不必要なネットワーク通信やバッテリの消耗を避けるために、不要になったらウォッチャーを停止することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-123">It will scan continuously in the background, so it is recommended that you stop the watcher when you no longer need it to avoid unnecessary network communication and battery drain.</span></span>
 
 ```Java
 // if you call this from the activity's onPause method, you ensure that
@@ -154,17 +154,17 @@ public void stopWatcher() {
     mWatcher.stop();
 }
 ```
-## <a name="example-use-case-implementing-remote-launching-and-remote-app-services"></a><span data-ttu-id="c0ae0-124">ユース ケースの例: リモート起動して、リモート アプリ サービスを実装します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-124">Example use case: implementing remote launching and remote app services</span></span>
+## <a name="example-use-case-implementing-remote-launching-and-remote-app-services"></a><span data-ttu-id="9b7b4-124">ユース ケースの例: リモート起動とリモート アプリ サービスの実装</span><span class="sxs-lookup"><span data-stu-id="9b7b4-124">Example use case: implementing remote launching and remote app services</span></span>
 
-<span data-ttu-id="c0ae0-125">この時点で、コードにしておくの作業一覧**RemoteSystem**使用可能なデバイスを参照するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-125">At this point in your code, you should have a working list of **RemoteSystem** objects that refer to available devices.</span></span> <span data-ttu-id="c0ae0-126">これらのデバイスで何は、アプリの機能によって異なります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-126">What you do with these devices will depend on the function of your app.</span></span> <span data-ttu-id="c0ae0-127">相互作用の主な型では、リモート起動してリモート アプリのサービスが。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-127">The main types of interaction are remote launching and remote app services.</span></span> <span data-ttu-id="c0ae0-128">これらは、次のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-128">They are explained in the following sections.</span></span>
+<span data-ttu-id="9b7b4-125">コードのこの時点で、利用可能なデバイスを参照する **RemoteSystem** オブジェクトの有効な一覧があるはずです。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-125">At this point in your code, you should have a working list of **RemoteSystem** objects that refer to available devices.</span></span> <span data-ttu-id="9b7b4-126">これらのデバイスに対して何をするかは、アプリの機能によって異なります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-126">What you do with these devices will depend on the function of your app.</span></span> <span data-ttu-id="9b7b4-127">主な種類の対話は、リモート起動とリモート アプリ サービスです。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-127">The main types of interaction are remote launching and remote app services.</span></span> <span data-ttu-id="9b7b4-128">これらについては、以降のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-128">They are explained in the following sections.</span></span>
 
-### <a name="a-remote-launching"></a><span data-ttu-id="c0ae0-129">A) リモート起動</span><span class="sxs-lookup"><span data-stu-id="c0ae0-129">A) Remote launching</span></span>
+### <a name="a-remote-launching"></a><span data-ttu-id="9b7b4-129">A) リモート起動</span><span class="sxs-lookup"><span data-stu-id="9b7b4-129">A) Remote launching</span></span>
 
-<span data-ttu-id="c0ae0-130">次のコードは、これらのデバイス (理想的にはこれは、UI コントロールを介して) のいずれかを選択し、使用する方法を示しています。 **RemoteLauncher**を、アプリと互換性のある URI を渡すことによって、上のアプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-130">The following code shows how to select one of these devices (ideally this is done through a UI control) and then use **RemoteLauncher** to launch an app on it by passing an app-compatible URI.</span></span> 
+<span data-ttu-id="9b7b4-130">次のコードは、これらのデバイスのいずれかを選択し (UI コントロールを使って行われるのが理想的です)、**RemoteLauncher** を使用して、アプリと互換性のある URI を渡してそのデバイス上でアプリを起動する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-130">The following code shows how to select one of these devices (ideally this is done through a UI control) and then use **RemoteLauncher** to launch an app on it by passing an app-compatible URI.</span></span> 
 
-<span data-ttu-id="c0ae0-131">リモートからの起動 (である場合、ホスト デバイスが起動する URI スキーム用の既定のアプリで指定された URI) リモート デバイスを対象にできることを確認することが重要_または_にそのデバイスにリモート アプリケーションを特定します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-131">It's important to note that a remote launch can target a remote device (in which case the host device will launch the given URI with its default app for that URI scheme) _or_ a specific remote application on that device.</span></span> 
+<span data-ttu-id="9b7b4-131">重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス_または_そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-131">It's important to note that a remote launch can target a remote device (in which case the host device will launch the given URI with its default app for that URI scheme) _or_ a specific remote application on that device.</span></span> 
 
-<span data-ttu-id="c0ae0-132">検出をデバイス レベルで最初に実行前のセクションで示したように、(、 **RemoteSystem**デバイスを表します)、呼び出すことができますが、`getApplications`メソッドを**RemoteSystem**インスタンスを取得する、配列**RemoteSystemApp** (上記の準備手順では、独自のアプリを登録) と同様に、接続されているデバイス プラットフォームを使用する登録されているリモート デバイスでアプリを表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-132">As the previous section demonstrated, discovery happens at the device level first (a **RemoteSystem** represents a device), but you can call the `getApplications` method on a **RemoteSystem** instance to get an array of **RemoteSystemApp** objects, which represent apps on the remote device that have been registered to use the Connected Devices Platform (just as you registered your own app in the preliminary steps above).</span></span> <span data-ttu-id="c0ae0-133">両方**RemoteSystem**と**RemoteSystemApp**作成に使用できます、 **RemoteSystemConnectionRequest**URI の起動に必要なものであります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-133">Both **RemoteSystem** and **RemoteSystemApp** can be used to construct a **RemoteSystemConnectionRequest**, which is what is needed to launch a URI.</span></span>
+<span data-ttu-id="9b7b4-132">前のセクションで説明したように、検出はまずデバイス レベルで行われます (**RemoteSystem** はデバイスを表します) が、**RemoteSystem** インスタンスの `getApplications` メソッドを呼び出して **RemoteSystemApp** オブジェクトの配列を取得することができます。これらのオブジェクトが表すのは、(前述の準備手順で独自のアプリを登録したのと同様に) Connected Devices Platform を使用するように登録されている、リモート デバイス上のアプリです。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-132">As the previous section demonstrated, discovery happens at the device level first (a **RemoteSystem** represents a device), but you can call the `getApplications` method on a **RemoteSystem** instance to get an array of **RemoteSystemApp** objects, which represent apps on the remote device that have been registered to use the Connected Devices Platform (just as you registered your own app in the preliminary steps above).</span></span> <span data-ttu-id="9b7b4-133">**RemoteSystem** と **RemoteSystemApp** のどちらを使用しても、URI を起動するために必要な **RemoteSystemConnectionRequest** を作成できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-133">Both **RemoteSystem** and **RemoteSystemApp** can be used to construct a **RemoteSystemConnectionRequest**, which is what is needed to launch a URI.</span></span>
 
 ```java
 // this could be a RemoteSystemApp instead. Either way, it 
@@ -187,7 +187,7 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
     AsyncOperation<RemoteLaunchUriStatus> resultOperation = remoteLauncher.launchUriAsync(new RemoteSystemConnectionRequest(target), uri);
     // ...
 ```
-<span data-ttu-id="c0ae0-134">使用して、返された**AsyncOperation**起動試行の結果を処理します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-134">Use the returned **AsyncOperation** to handle the result of the launch attempt.</span></span>
+<span data-ttu-id="9b7b4-134">起動試行の結果を処理するには、返された **AsyncOperation** を使用します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-134">Use the returned **AsyncOperation** to handle the result of the launch attempt.</span></span>
 
 ```Java
     // ...
@@ -207,21 +207,21 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
     });
 }
 ```
-<span data-ttu-id="c0ae0-135">によって送信される URI は、特定の状態またはリモート デバイス上の構成でのアプリを起動できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-135">Depending on the URI that is sent, you can launch an app in a specific state or configuration on a remote device.</span></span> <span data-ttu-id="c0ae0-136">これにより、中断することがなく別のデバイスで映画を見てなど、ユーザーのタスクを継続する能力。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-136">This allows for the ability to continue a user task, like watching a movie, on a different device without interruption.</span></span> 
+<span data-ttu-id="9b7b4-135">送信する URI に応じて、特定の状態または構成でリモート デバイス上でアプリを起動できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-135">Depending on the URI that is sent, you can launch an app in a specific state or configuration on a remote device.</span></span> <span data-ttu-id="9b7b4-136">これにより、映画を観るなどのユーザー タスクを、中断することなく別のデバイス上で継続することができます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-136">This allows for the ability to continue a user task, like watching a movie, on a different device without interruption.</span></span> 
 
-<span data-ttu-id="c0ae0-137">ユース ケースに応じてを対象となるシステム上のアプリを取り扱うことが、URI の場合を対象にする必要があります。 または複数のアプリで処理できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-137">Depending on your use case, you may need to cover the cases in which no apps on the targeted system can handle the URI, or multiple apps can handle it.</span></span> <span data-ttu-id="c0ae0-138">**[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-138">The **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** class and **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** class describe how to do this.</span></span>
+<span data-ttu-id="9b7b4-137">ユース ケースによっては、ターゲット システム上のどのアプリも URI を処理できない、または複数のアプリがそれを処理できる状況への対応が必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-137">Depending on your use case, you may need to cover the cases in which no apps on the targeted system can handle the URI, or multiple apps can handle it.</span></span> <span data-ttu-id="9b7b4-138">**[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-138">The **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** class and **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** class describe how to do this.</span></span>
 
-### <a name="b-remote-app-services"></a><span data-ttu-id="c0ae0-139">B) リモート アプリ サービス</span><span class="sxs-lookup"><span data-stu-id="c0ae0-139">B) Remote app services</span></span>
+### <a name="b-remote-app-services"></a><span data-ttu-id="9b7b4-139">B) リモート アプリ サービス</span><span class="sxs-lookup"><span data-stu-id="9b7b4-139">B) Remote app services</span></span>
 
-<span data-ttu-id="c0ae0-140">Android アプリで接続されているデバイス ポータルを使用できるその他のデバイス上の app services と対話します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-140">Your Android app can use the Connected Devices Portal interact with app services on other devices.</span></span> <span data-ttu-id="c0ae0-141">これにより、他のデバイスと通信する方法は多数&mdash;ホスト デバイスの前面にアプリを表示する必要はありませんすべて。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-141">This provides many ways to communicate with other devices&mdash;all without needing to bring an app to the foreground of the host device.</span></span> 
+<span data-ttu-id="9b7b4-140">Android アプリは Connected Devices ポータルを使用して、他のデバイス上のアプリ サービスと対話できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-140">Your Android app can use the Connected Devices Portal interact with app services on other devices.</span></span> <span data-ttu-id="9b7b4-141">これにより、他のデバイスと通信するための多くの方法が提供されます&mdash;アプリをホスト デバイスの前面に出す必要はまったくありません。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-141">This provides many ways to communicate with other devices&mdash;all without needing to bring an app to the foreground of the host device.</span></span> 
 
-#### <a name="set-up-the-app-service-on-the-target-device"></a><span data-ttu-id="c0ae0-142">ターゲット デバイスでアプリ サービスをセットアップする</span><span class="sxs-lookup"><span data-stu-id="c0ae0-142">Set up the app service on the target device</span></span>
-<span data-ttu-id="c0ae0-143">このガイドを使用して、 [Roman テスト アプリの Windows](http://aka.ms/romeapp)そのターゲット アプリケーションのサービスとして。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-143">This guide will use the [Roman Test App for Windows](http://aka.ms/romeapp) as its target app service.</span></span> <span data-ttu-id="c0ae0-144">そのため、次のコードは、特定のリモート システムでは、その特定のアプリ サービスを検索する Android アプリになります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-144">Therefore, the code below will cause an Android app to look for that specific app service on the given remote system.</span></span> <span data-ttu-id="c0ae0-145">このシナリオをテストする場合は、Windows デバイスで Roman テスト アプリをダウンロードし、サインインしている同じ MSA 前の準備手順で使用したかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-145">If you wish to test this scenario,download the Roman Test App on a Windows device and make sure you are signed in with the same MSA that you used in the preliminary steps above.</span></span> 
+#### <a name="set-up-the-app-service-on-the-target-device"></a><span data-ttu-id="9b7b4-142">ターゲット デバイスでアプリ サービスをセットアップする</span><span class="sxs-lookup"><span data-stu-id="9b7b4-142">Set up the app service on the target device</span></span>
+<span data-ttu-id="9b7b4-143">このガイドでは、[Windows 用の Roman テスト アプリ](http://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-143">This guide will use the [Roman Test App for Windows](http://aka.ms/romeapp) as its target app service.</span></span> <span data-ttu-id="9b7b4-144">したがって、次のコードにより、Android アプリは特定のリモート システム上でその特定のアプリ サービスを探します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-144">Therefore, the code below will cause an Android app to look for that specific app service on the given remote system.</span></span> <span data-ttu-id="9b7b4-145">このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-145">If you wish to test this scenario,download the Roman Test App on a Windows device and make sure you are signed in with the same MSA that you used in the preliminary steps above.</span></span> 
 
-<span data-ttu-id="c0ae0-146">UWP アプリ サービスを作成する方法に関する手順については、次を参照してください。[を作成する (UWP) アプリ サービスの使用と](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-146">For instructions on how to write your own UWP app service, see [Create and consume an app service (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).</span></span> <span data-ttu-id="c0ae0-147">接続されたデバイスと互換性のあるサービスを作成するには、いくつか変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-147">You will need to make a few changes in order to make the service compatible with Connected Devices.</span></span> <span data-ttu-id="c0ae0-148">参照してください、[リモート アプリ サービスの UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)これを行う方法の詳細について。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-148">See the [UWP guide for remote app services](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service) for instructions on how to do this.</span></span> 
+<span data-ttu-id="9b7b4-146">独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-146">For instructions on how to write your own UWP app service, see [Create and consume an app service (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).</span></span> <span data-ttu-id="9b7b4-147">サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-147">You will need to make a few changes in order to make the service compatible with Connected Devices.</span></span> <span data-ttu-id="9b7b4-148">これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-148">See the [UWP guide for remote app services](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service) for instructions on how to do this.</span></span> 
 
-#### <a name="open-an-app-service-connection-on-the-client-device"></a><span data-ttu-id="c0ae0-149">クライアント デバイスにアプリ サービスの接続を開く</span><span class="sxs-lookup"><span data-stu-id="c0ae0-149">Open an app service connection on the client device</span></span>
-<span data-ttu-id="c0ae0-150">Android アプリでは、リモート デバイスまたはアプリケーションへの参照を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-150">Your Android app must acquire a reference to a remote device or application.</span></span> <span data-ttu-id="c0ae0-151">このシナリオの起動セクションなどを使用する必要を**RemoteSystemConnectionRequest**、いずれかから構築できますが、 **RemoteSystem**または**RemoteSystemApp**システムで利用可能なアプリを表します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-151">Like the launch section, this scenario requires the use of a **RemoteSystemConnectionRequest**, which can be constructed from either a **RemoteSystem** or a **RemoteSystemApp** representing an available app on the system.</span></span>
+#### <a name="open-an-app-service-connection-on-the-client-device"></a><span data-ttu-id="9b7b4-149">クライアント デバイス上でアプリ サービス接続を開く</span><span class="sxs-lookup"><span data-stu-id="9b7b4-149">Open an app service connection on the client device</span></span>
+<span data-ttu-id="9b7b4-150">Android アプリは、リモートのデバイスまたはアプリケーションへの参照を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-150">Your Android app must acquire a reference to a remote device or application.</span></span> <span data-ttu-id="9b7b4-151">起動のセクションと同様、このシナリオでは **RemoteSystemConnectionRequest** を使用する必要があります。これは **RemoteSystem** から、またはシステム上の利用可能なアプリを表す **RemoteSystemApp** から作成できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-151">Like the launch section, this scenario requires the use of a **RemoteSystemConnectionRequest**, which can be constructed from either a **RemoteSystem** or a **RemoteSystemApp** representing an available app on the system.</span></span>
 
 
 ```Java
@@ -230,7 +230,7 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
 // connection is opened.
 private RemoteSystem target = null;
 ```
-<span data-ttu-id="c0ae0-152">アプリは 2 つの文字列を使用して、対象となるアプリ サービスを特定する必要がありますさらに、: *app service の名前*と*パッケージ識別子*します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-152">Additionally, your app will need to identify its targeted app service using two strings: the *app service name* and *package identifier*.</span></span> <span data-ttu-id="c0ae0-153">アプリのサービス プロバイダーのソース コードにあるこれらは (を参照してください[を作成する (UWP) アプリ サービスの使用と](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)Windows app services についてこの文字列を取得する方法の詳細について)。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-153">These are found in the source code of the app service provider (see [Create and consume an app service (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details on how to get this strings for Windows app services).</span></span> <span data-ttu-id="c0ae0-154">これらの文字列を構築して、 **AppServiceDescription**にフィードするが、 **AppServiceConnection**インスタンス。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-154">Together these strings construct the **AppServiceDescription**, which is fed into an **AppServiceConnection** instance.</span></span>
+<span data-ttu-id="9b7b4-152">さらにアプリは、*アプリ サービス名*と*パッケージ識別子*の 2 つの文字列を使用して、そのターゲットであるアプリ サービスを識別する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-152">Additionally, your app will need to identify its targeted app service using two strings: the *app service name* and *package identifier*.</span></span> <span data-ttu-id="9b7b4-153">これらはアプリ サービス プロバイダーのソース コードに含まれています。この文字列を Windows アプリ サービス用に取得する方法については、[アプリ サービスの作成と利用 (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-153">These are found in the source code of the app service provider (see [Create and consume an app service (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details on how to get this strings for Windows app services).</span></span> <span data-ttu-id="9b7b4-154">これらの文字列が合わさって **AppServiceDescription** になり、これが **AppServiceConnection** インスタンスに渡されます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-154">Together these strings construct the **AppServiceDescription**, which is fed into an **AppServiceConnection** instance.</span></span>
 
 ```Java
 // this is defined below
@@ -294,17 +294,17 @@ private void openAppServiceConnection()
 }
 ```
 
-#### <a name="create-a-message-to-send-to-the-app-service"></a><span data-ttu-id="c0ae0-155">App service に送信するメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-155">Create a message to send to the app service</span></span>
+#### <a name="create-a-message-to-send-to-the-app-service"></a><span data-ttu-id="9b7b4-155">アプリ サービスに送信するメッセージの作成</span><span class="sxs-lookup"><span data-stu-id="9b7b4-155">Create a message to send to the app service</span></span>
 
-<span data-ttu-id="c0ae0-156">送信するメッセージを格納する変数を宣言します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-156">Declare a variable to store the message to send.</span></span> <span data-ttu-id="c0ae0-157">Android では、リモート アプリ サービスに送信するメッセージはで、**マップ**型。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-157">On Android, the messages that you send to remote app services will be of the **Map** type.</span></span>
+<span data-ttu-id="9b7b4-156">送信するメッセージを格納する変数を宣言します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-156">Declare a variable to store the message to send.</span></span> <span data-ttu-id="9b7b4-157">Android では、リモート アプリ サービスに送信するメッセージは **Map** 型になります。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-157">On Android, the messages that you send to remote app services will be of the **Map** type.</span></span>
 
 ```Java
 private Map<String, Object> mMessagePayload = null;
 ```
 > [!NOTE]
-> <span data-ttu-id="c0ae0-158">接続されているデバイス プラットフォームを変換、アプリが他のプラットフォーム上の app services を通信する場合、**マップ**受信側のプラットフォームに一致するコンス トラクターにします。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-158">When your app communicates with app services on other platforms, the Connected Devices Platform translates the **Map** into the matching construct on the receiving platform.</span></span> <span data-ttu-id="c0ae0-159">たとえば、 **[マップ](https://developer.android.com/reference/java/util/Map)** アプリ サービスに変換します Windows にこのアプリから送信される、 [ **ValueSet** ](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) (.NET Framework にある) のオブジェクト。これは、app service でし解釈できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-159">For example, a **[Map](https://developer.android.com/reference/java/util/Map)** sent from this app to a Windows app service gets translated into a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) object (of the .NET Framework), which can then be interpreted by the app service.</span></span> <span data-ttu-id="c0ae0-160">その他の方向に渡された情報には、逆の変換が行われます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-160">Information passed in the other direction undergoes the reverse translation.</span></span>
+> <span data-ttu-id="9b7b4-158">アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **Map** を受信側プラットフォームでそれに対応するコンストラクトに変換します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-158">When your app communicates with app services on other platforms, the Connected Devices Platform translates the **Map** into the matching construct on the receiving platform.</span></span> <span data-ttu-id="9b7b4-159">たとえば、このアプリから Windows アプリ サービスに送信される **[Map](https://developer.android.com/reference/java/util/Map)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) オブジェクトに変換されます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-159">For example, a **[Map](https://developer.android.com/reference/java/util/Map)** sent from this app to a Windows app service gets translated into a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) object (of the .NET Framework), which can then be interpreted by the app service.</span></span> <span data-ttu-id="9b7b4-160">反対方向に渡される情報には、逆の変換が行われます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-160">Information passed in the other direction undergoes the reverse translation.</span></span>
 
-<span data-ttu-id="c0ae0-161">次のメソッドは、Windows 用の欧文テスト アプリの app service で解釈できるメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-161">The following method composes a message that can be interpreted by the Roman Test App's app service for Windows.</span></span>
+<span data-ttu-id="9b7b4-161">次のメソッドは、Windows 用の Roman テスト アプリのアプリ サービスによって解釈できるメッセージを作成します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-161">The following method composes a message that can be interpreted by the Roman Test App's app service for Windows.</span></span>
 
 ```Java
 /**
@@ -326,11 +326,11 @@ private void onMessageButtonClicked()
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="c0ae0-162">**マップ**アプリとアプリのリモート サービスのシナリオでのサービス間で渡されることは、次の形式に従う必要があります。キーは、文字列である必要があり、値があります。文字列、ブール値、android.graphics.Point、android.graphics.Rect、java.util.Date、java.util.UUID、これらの型、またはその他のいずれかの同種の配列 (整数または浮動小数点)、ボックス化された数値の型がボックス化**マップ**オブジェクトこの仕様を満たしています。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-162">The **Map**s that are passed between apps and services in the remote app services scenario must adhere to the following format: Keys must be Strings, and the values may be: Strings, boxed numeric types (integers or floating points), boxed booleans, android.graphics.Point, android.graphics.Rect, java.util.Date, java.util.UUID, homogeneous arrays of any of these types, or other **Map** objects that meet this specification.</span></span>
+> <span data-ttu-id="9b7b4-162">リモート アプリ サービスのシナリオでアプリとサービスの間で受け渡しされる **Map** は、次の形式に従う必要があります。キーは文字列である必要があり、次の値を入れることができます: 文字列、ボックス数値型 (整数または浮動小数点数)、ボックス ブール値、android.graphics.Point、android.graphics.Rect、java.util.Date、java.util.UUID、上記いずれかの型と同種の配列、またはこの仕様を満たすその他の **Map** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-162">The **Map**s that are passed between apps and services in the remote app services scenario must adhere to the following format: Keys must be Strings, and the values may be: Strings, boxed numeric types (integers or floating points), boxed booleans, android.graphics.Point, android.graphics.Rect, java.util.Date, java.util.UUID, homogeneous arrays of any of these types, or other **Map** objects that meet this specification.</span></span>
 
-#### <a name="send-message-to-the-app-service"></a><span data-ttu-id="c0ae0-163">App service へのメッセージを送信します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-163">Send message to the app service</span></span>
+#### <a name="send-message-to-the-app-service"></a><span data-ttu-id="9b7b4-163">アプリ サービスにメッセージを送信する</span><span class="sxs-lookup"><span data-stu-id="9b7b4-163">Send message to the app service</span></span>
 
-<span data-ttu-id="c0ae0-164">アプリ サービスの接続が確立され、メッセージが作成された、app service に送信は単純なとでアプリを app service の接続インスタンスおよびメッセージへの参照を持つ任意の場所から実行できます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-164">Once the app service connection is established and the message is created, sending it to the app service is simple and can be done from anywhere in the app that has a reference to the app service connection instance and the message.</span></span>
+<span data-ttu-id="9b7b4-164">アプリ サービス接続が確立されてメッセージが作成されたら、それをアプリ サービスに送信するのは簡単であり、そのアプリ サービス接続インスタンスとメッセージへの参照があるアプリ内のどこからでも実行できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-164">Once the app service connection is established and the message is created, sending it to the app service is simple and can be done from anywhere in the app that has a reference to the app service connection instance and the message.</span></span>
 
 
 ```java
@@ -375,7 +375,7 @@ private void sendMessage(final AppServiceConnection connection, Map<String, Obje
 }
 ```
 
-<span data-ttu-id="c0ae0-165">アプリ サービスの応答を受信して、次の方法で解釈されます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-165">The app service's response will be received and interpreted by the following method.</span></span>
+<span data-ttu-id="9b7b4-165">アプリ サービスの応答は、次のメソッドによって受信および解釈されます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-165">The app service's response will be received and interpreted by the following method.</span></span>
 
 ```Java
 private void handleAppServiceResponse(AppServiceResponse appServiceResponse, long messageId)
@@ -402,13 +402,13 @@ private void handleAppServiceResponse(AppServiceResponse appServiceResponse, lon
     }
 }
 ```
-<span data-ttu-id="c0ae0-166">ローマ アプリの場合、応答には、この非常に単純なユース ケースでは、メッセージの応答の転送中の合計時間を取得する日付を比較できるように、作成された日付が含まれます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-166">In the Roman App case, the response contains the date it was created, so in this very simple use case, we can compare the dates to get the total transit time of the message response.</span></span>
+<span data-ttu-id="9b7b4-166">Roman アプリの場合、応答にはそれが作成された日付が含まれているため、この非常に単純なユース ケースでは、日付を比較してメッセージ応答の合計転送時間を取得できます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-166">In the Roman App case, the response contains the date it was created, so in this very simple use case, we can compare the dates to get the total transit time of the message response.</span></span>
 
-<span data-ttu-id="c0ae0-167">これは、リモート アプリ サービスで、1 つのメッセージ交換を終了します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-167">This concludes a single message exchange with a remote app service.</span></span>
+<span data-ttu-id="9b7b4-167">これで、リモート アプリ サービスとの 1 回のメッセージ交換が終了します。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-167">This concludes a single message exchange with a remote app service.</span></span>
 
-#### <a name="finish-app-service-communication"></a><span data-ttu-id="c0ae0-168">アプリ サービスの通信を完了します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-168">Finish app service communication</span></span>
+#### <a name="finish-app-service-communication"></a><span data-ttu-id="9b7b4-168">アプリ サービス通信の終了</span><span class="sxs-lookup"><span data-stu-id="9b7b4-168">Finish app service communication</span></span>
 
-<span data-ttu-id="c0ae0-169">アプリが終了すると、ターゲット デバイスのアプリのサービスと対話する 2 つのデバイス間の接続を閉じます。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-169">When your app is finished interacting with the target device's app service, close the connection between the two devices.</span></span>
+<span data-ttu-id="9b7b4-169">アプリがターゲット デバイスのアプリ サービスとの対話を終了したら、2 つのデバイス間の接続を閉じます。</span><span class="sxs-lookup"><span data-stu-id="9b7b4-169">When your app is finished interacting with the target device's app service, close the connection between the two devices.</span></span>
 
 ```java
 // Close the given AppService connection
@@ -418,8 +418,8 @@ private void closeAppServiceConnection()
 }
 ```
 
-### <a name="related-topics"></a><span data-ttu-id="c0ae0-170">関連トピック</span><span class="sxs-lookup"><span data-stu-id="c0ae0-170">Related topics</span></span>
-* [<span data-ttu-id="c0ae0-171">API リファレンスのページ</span><span class="sxs-lookup"><span data-stu-id="c0ae0-171">API reference page</span></span>](api-reference-for-android.md) 
-* [<span data-ttu-id="c0ae0-172">Android のサンプル アプリ</span><span class="sxs-lookup"><span data-stu-id="c0ae0-172">Android sample app</span></span>](https://github.com/Microsoft/project-rome/tree/master/Android/samples) 
-* [<span data-ttu-id="c0ae0-173">(UWP) アプリのリモート サービスと通信します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-173">Communicate with a remote app service (UWP)</span></span>](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
-* <span data-ttu-id="c0ae0-174">[作成し、app service (UWP) を使用する](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)します。</span><span class="sxs-lookup"><span data-stu-id="c0ae0-174">[Create and consume an app service (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).</span></span>
+### <a name="related-topics"></a><span data-ttu-id="9b7b4-170">関連トピック</span><span class="sxs-lookup"><span data-stu-id="9b7b4-170">Related topics</span></span>
+* [<span data-ttu-id="9b7b4-171">API リファレンス ページ</span><span class="sxs-lookup"><span data-stu-id="9b7b4-171">API reference page</span></span>](api-reference-for-android.md) 
+* [<span data-ttu-id="9b7b4-172">Android サンプル アプリ</span><span class="sxs-lookup"><span data-stu-id="9b7b4-172">Android sample app</span></span>](https://github.com/Microsoft/project-rome/tree/master/Android/samples) 
+* [<span data-ttu-id="9b7b4-173">リモート アプリ サービスとの通信 (UWP)</span><span class="sxs-lookup"><span data-stu-id="9b7b4-173">Communicate with a remote app service (UWP)</span></span>](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
+* <span data-ttu-id="9b7b4-174">[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)</span><span class="sxs-lookup"><span data-stu-id="9b7b4-174">[Create and consume an app service (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).</span></span>

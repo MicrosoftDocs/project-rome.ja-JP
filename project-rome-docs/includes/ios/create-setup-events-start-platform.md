@@ -5,21 +5,21 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 60a4e282fc5446e38a80e72979e12daad51b2026
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59804501"
 ---
-### <a name="create-an-instance-of-the-platform"></a><span data-ttu-id="0f8aa-103">プラットフォームのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-103">Create an instance of the platform</span></span>
+### <a name="create-an-instance-of-the-platform"></a><span data-ttu-id="4854a-103">プラットフォームのインスタンスの作成</span><span class="sxs-lookup"><span data-stu-id="4854a-103">Create an instance of the platform</span></span>
 
-<span data-ttu-id="0f8aa-104">開始する、プラットフォームを単純にインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-104">To get started simply instantiate the platform.</span></span>
+<span data-ttu-id="4854a-104">開始するには、単純にプラットフォームをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="4854a-104">To get started simply instantiate the platform.</span></span>
 
 `MCDConnectedDevicesPlatform* platform = [MCDConnectedDevicesPlatform new];`
 
-### <a name="subscribe-to-mcdconnecteddevicesaccountmanager"></a><span data-ttu-id="0f8aa-105">MCDConnectedDevicesAccountManager を購読します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-105">Subscribe to MCDConnectedDevicesAccountManager</span></span>
+### <a name="subscribe-to-mcdconnecteddevicesaccountmanager"></a><span data-ttu-id="4854a-105">MCDConnectedDevicesAccountManager への登録</span><span class="sxs-lookup"><span data-stu-id="4854a-105">Subscribe to MCDConnectedDevicesAccountManager</span></span>
 
-<span data-ttu-id="0f8aa-106">プラットフォームには、プラットフォームへのアクセスに認証されたユーザーが必要です。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-106">The platform requires an authenticated user to access the platform.</span></span>  <span data-ttu-id="0f8aa-107">購読を依頼する必要があります**MCDConnectedDevicesAccountManager**のイベントを有効なアカウントが使用されています。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-107">You'll need to subscribe to **MCDConnectedDevicesAccountManager** events to ensure a valid account is being used.</span></span>
+<span data-ttu-id="4854a-106">プラットフォームは、認証済みのユーザーがプラットフォームにアクセスすることを要求します。</span><span class="sxs-lookup"><span data-stu-id="4854a-106">The platform requires an authenticated user to access the platform.</span></span>  <span data-ttu-id="4854a-107">有効なアカウントが使用されていることを保証するために、**MCDConnectedDevicesAccountManager** イベントに登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4854a-107">You'll need to subscribe to **MCDConnectedDevicesAccountManager** events to ensure a valid account is being used.</span></span>
 
 ```ObjectiveC
 [MCDConnectedDevicesPlatform* platform.accountManager.accessTokenRequested
@@ -41,9 +41,9 @@ ms.locfileid: "59804501"
                  }
 ```
 
-### <a name="subscribe-to-mcdconnecteddevicesnotificationregistrationmanager"></a><span data-ttu-id="0f8aa-108">MCDConnectedDevicesNotificationRegistrationManager を購読します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-108">Subscribe to MCDConnectedDevicesNotificationRegistrationManager</span></span>
+### <a name="subscribe-to-mcdconnecteddevicesnotificationregistrationmanager"></a><span data-ttu-id="4854a-108">MCDConnectedDevicesNotificationRegistrationManager への登録</span><span class="sxs-lookup"><span data-stu-id="4854a-108">Subscribe to MCDConnectedDevicesNotificationRegistrationManager</span></span>
 
-<span data-ttu-id="0f8aa-109">同様に、プラットフォームは通知を使用して、デバイス間でのコマンドを配布します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-109">Similarly, the platform uses notifications to deliver commands between devices.</span></span>  <span data-ttu-id="0f8aa-110">そのためにサブスクライブする必要があります、 **MCDConnectedDevicesNotificationRegistrationManager**のイベントをクラウドの登録状態が使用されているアカウントに対して有効です。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-110">Therefore, you must subscribe to the **MCDConnectedDevicesNotificationRegistrationManager** events to ensure the cloud registration states are valid for the account being used.</span></span>  <span data-ttu-id="0f8aa-111">確認の状態を使用して、 **MCDConnectedDevicesNotificationRegistrationState**</span><span class="sxs-lookup"><span data-stu-id="0f8aa-111">Verify the the state using **MCDConnectedDevicesNotificationRegistrationState**</span></span>
+<span data-ttu-id="4854a-109">同様に、プラットフォームは通知を使用してデバイス間でコマンドを配信します。</span><span class="sxs-lookup"><span data-stu-id="4854a-109">Similarly, the platform uses notifications to deliver commands between devices.</span></span>  <span data-ttu-id="4854a-110">したがって、使用されているアカウントに対してクラウドの登録状態が有効であることを保証するために、**MCDConnectedDevicesNotificationRegistrationManager** イベントに登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4854a-110">Therefore, you must subscribe to the **MCDConnectedDevicesNotificationRegistrationManager** events to ensure the cloud registration states are valid for the account being used.</span></span>  <span data-ttu-id="4854a-111">**MCDConnectedDevicesNotificationRegistrationState** を使用して状態を確認する</span><span class="sxs-lookup"><span data-stu-id="4854a-111">Verify the the state using **MCDConnectedDevicesNotificationRegistrationState**</span></span>
 
 ```ObjectiveC
 [MCDConnectedDevicesPlatform* platform.notificationRegistrationManager.notificationRegistrationStateChanged
@@ -56,16 +56,16 @@ ms.locfileid: "59804501"
 
 ```
 
-### <a name="start-the-platform"></a><span data-ttu-id="0f8aa-112">プラットフォームを開始します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-112">Start the platform</span></span>
-<span data-ttu-id="0f8aa-113">これで、プラットフォームは初期化され、イベント ハンドラーは、配置は、リモート システムのデバイスの検出を開始する準備が完了したらです。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-113">Now that the platform is initialized and event handlers are in place, you are ready to start discovering remote system devices.</span></span>  
+### <a name="start-the-platform"></a><span data-ttu-id="4854a-112">プラットフォームの開始</span><span class="sxs-lookup"><span data-stu-id="4854a-112">Start the platform</span></span>
+<span data-ttu-id="4854a-113">プラットフォームが初期化され、イベント ハンドラーが配置されたので、リモート システム デバイスの検出を開始する準備ができました。</span><span class="sxs-lookup"><span data-stu-id="4854a-113">Now that the platform is initialized and event handlers are in place, you are ready to start discovering remote system devices.</span></span>  
 
 `[MCDConnectedDevicesPlatform* platform start];`
 
-### <a name="retrieve-user-accounts-known-to-the-app"></a><span data-ttu-id="0f8aa-114">アプリに既知のユーザー アカウントを取得します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-114">Retrieve user accounts known to the app</span></span>
+### <a name="retrieve-user-accounts-known-to-the-app"></a><span data-ttu-id="4854a-114">アプリが認識しているユーザー アカウントの取得</span><span class="sxs-lookup"><span data-stu-id="4854a-114">Retrieve user accounts known to the app</span></span>
 
-<span data-ttu-id="0f8aa-115">アプリに既知のユーザー アカウントの一覧と正しく同期されることを確認することが重要、 **MCDConnectedDevicesAccountManager**します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-115">It is important to ensure that the list of user accounts known to the app are properly synchronized with the **MCDConnectedDevicesAccountManager**.</span></span>
+<span data-ttu-id="4854a-115">アプリが認識しているユーザー アカウントの一覧を、確実に **MCDConnectedDevicesAccountManager** と正しく同期することが重要です。</span><span class="sxs-lookup"><span data-stu-id="4854a-115">It is important to ensure that the list of user accounts known to the app are properly synchronized with the **MCDConnectedDevicesAccountManager**.</span></span>
 
-<span data-ttu-id="0f8aa-116">使用**MCDConnectedDevicesAccountManager.addAccountAsync**新しいユーザー アカウントを追加します。</span><span class="sxs-lookup"><span data-stu-id="0f8aa-116">Use **MCDConnectedDevicesAccountManager.addAccountAsync** to add a new user account.</span></span>
+<span data-ttu-id="4854a-116">**MCDConnectedDevicesAccountManager.addAccountAsync** を使用して新しいユーザー アカウントを追加します。</span><span class="sxs-lookup"><span data-stu-id="4854a-116">Use **MCDConnectedDevicesAccountManager.addAccountAsync** to add a new user account.</span></span>
 
 ```ObjectiveC
 [MCDConnectedDevicesPlatform* platform.accountManager
@@ -77,7 +77,7 @@ ms.locfileid: "59804501"
      }
 ```
 
-<span data-ttu-id="0f8aa-117">使用できる、無効なアカウントを削除する**MCDConnectedDevicesAccountManager.removeAccountAsync**</span><span class="sxs-lookup"><span data-stu-id="0f8aa-117">To remove an invalid account you can use **MCDConnectedDevicesAccountManager.removeAccountAsync**</span></span>
+<span data-ttu-id="4854a-117">無効なアカウントを削除するには、**MCDConnectedDevicesAccountManager.removeAccountAsync** を使用できます。</span><span class="sxs-lookup"><span data-stu-id="4854a-117">To remove an invalid account you can use **MCDConnectedDevicesAccountManager.removeAccountAsync**</span></span>
 
 ```ObjectiveC
  [MCDConnectedDevicesPlatform* platform.accountManager

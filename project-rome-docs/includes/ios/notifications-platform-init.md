@@ -5,15 +5,15 @@ ms.topic: include
 ms.assetid: cf4bc236-1a9c-4192-b3fe-2d78331316c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 6de00cdfd4595f67a655a672dc46fea75806a51f
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801604"
 ---
-### <a name="add-the-sdk"></a><span data-ttu-id="9e2e4-103">SDK を追加します。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-103">Add the SDK</span></span>
+### <a name="add-the-sdk"></a><span data-ttu-id="01909-103">SDK の追加</span><span class="sxs-lookup"><span data-stu-id="01909-103">Add the SDK</span></span>
 
-<span data-ttu-id="9e2e4-104">IOS アプリに接続されているデバイス プラットフォームを追加する最も簡単な方法を使用して、 [CocoaPods](https://cocoapods.org/)依存関係マネージャーです。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-104">The simplest way to add the Connected Devices Platform to your iOS app is by using the [CocoaPods](https://cocoapods.org/) dependency manager.</span></span> <span data-ttu-id="9e2e4-105">IOS プロジェクトの移動*Podfile*し、次のエントリを挿入します。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-105">Go to your iOS project's *Podfile* and insert the following entry:</span></span>
+<span data-ttu-id="01909-104">Connected Devices Platform を iOS アプリに追加する最も簡単な方法は、[CocoaPods](https://cocoapods.org/) 依存関係マネージャーを使用することです。</span><span class="sxs-lookup"><span data-stu-id="01909-104">The simplest way to add the Connected Devices Platform to your iOS app is by using the [CocoaPods](https://cocoapods.org/) dependency manager.</span></span> <span data-ttu-id="01909-105">iOS プロジェクトの *Podfile* に移動し、次のエントリを挿入します。</span><span class="sxs-lookup"><span data-stu-id="01909-105">Go to your iOS project's *Podfile* and insert the following entry:</span></span>
 
 ```ObjectiveC
 platform :ios, "10.0"
@@ -29,21 +29,21 @@ target 'iOSSample' do
 ```
 
 > [!NOTE]
-> <span data-ttu-id="9e2e4-106">CocoaPod を使用するために使用する必要があります、 _.xcworkspace_プロジェクト内のファイル。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-106">In order to consume CocoaPod, you must use the _.xcworkspace_ file in your project.</span></span>
+> <span data-ttu-id="01909-106">CocoaPod を利用するためには、プロジェクト内の _.xcworkspace_ ファイルを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01909-106">In order to consume CocoaPod, you must use the _.xcworkspace_ file in your project.</span></span>
 
-## <a name="initialize-the-connected-devices-platform"></a><span data-ttu-id="9e2e4-107">接続されたデバイス プラットフォームを初期化します。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-107">Initialize the Connected Devices platform</span></span>
+## <a name="initialize-the-connected-devices-platform"></a><span data-ttu-id="01909-107">Connected Devices Platform の初期化</span><span class="sxs-lookup"><span data-stu-id="01909-107">Initialize the Connected Devices platform</span></span>
 
-<span data-ttu-id="9e2e4-108">接続されたデバイスの機能を使用できますが、前に、プラットフォームは、アプリ内で初期化しなければなりません。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-108">Before any Connected Devices features can be used, the platform must be initialized within your app.</span></span> 
+<span data-ttu-id="01909-108">Connected Devices の機能を使用できるようになる前に、アプリ内でプラットフォームを初期化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01909-108">Before any Connected Devices features can be used, the platform must be initialized within your app.</span></span> 
 
-<span data-ttu-id="9e2e4-109">インスタンス化する必要があります、 **MCDPlatform**クラス。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-109">You must instantiate the **MCDPlatform** class.</span></span> <span data-ttu-id="9e2e4-110">**MCDPlatform**の`platformWithAccountProvider:`メソッドは 2 つのパラメーターを受け取ります。 を**MCDUserAccountProvider**と**MCDNotificationProvider**します。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-110">The **MCDPlatform**'s `platformWithAccountProvider:` method takes two parameters: a **MCDUserAccountProvider** and a **MCDNotificationProvider**.</span></span> <span data-ttu-id="9e2e4-111">**MCDNotificationProvider**パラメーターは、リモート アプリのホスト、およびユーザーのアクティビティは、このガイドで扱わないのみ必要です。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-111">The **MCDNotificationProvider** parameter is only needed for remote app hosting and User Activities, which are not covered in this guide.</span></span> <span data-ttu-id="9e2e4-112">ままでかまいません`nil`今のところです。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-112">It can be left `nil` for now.</span></span>
+<span data-ttu-id="01909-109">**MCDPlatform** クラスをインスタンス化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01909-109">You must instantiate the **MCDPlatform** class.</span></span> <span data-ttu-id="01909-110">**MCDPlatform** の `platformWithAccountProvider:` メソッドは、**MCDUserAccountProvider** と **MCDNotificationProvider** の 2 つのパラメーターを取ります。</span><span class="sxs-lookup"><span data-stu-id="01909-110">The **MCDPlatform**'s `platformWithAccountProvider:` method takes two parameters: a **MCDUserAccountProvider** and a **MCDNotificationProvider**.</span></span> <span data-ttu-id="01909-111">**MCDNotificationProvider** パラメーターは、リモート アプリ ホスティングおよびユーザー アクティビティのみに必要であり、これらの機能についてはこのガイドでは扱いません。</span><span class="sxs-lookup"><span data-stu-id="01909-111">The **MCDNotificationProvider** parameter is only needed for remote app hosting and User Activities, which are not covered in this guide.</span></span> <span data-ttu-id="01909-112">今のところは `nil` のままでかまいません。</span><span class="sxs-lookup"><span data-stu-id="01909-112">It can be left `nil` for now.</span></span>
 
-<span data-ttu-id="9e2e4-113">**MCDUserAccountProvider**接続されているデバイス プラットフォームに現在のユーザーのアクセス用の OAuth 2.0 アクセス トークンを提供するが必要です。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-113">The **MCDUserAccountProvider** is needed to deliver an OAuth 2.0 access token for the current user's access to the Connected Devices Platform.</span></span> <span data-ttu-id="9e2e4-114">アプリが実行され、更新トークンのプラットフォームで管理された期限切れには、最初に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-114">It will be called the first time the app is run and upon the expiration of a platform-managed refresh token.</span></span> 
+<span data-ttu-id="01909-113">**MCDUserAccountProvider** は、Connected Devices Platform への現在のユーザーのアクセスのための OAuth 2.0 アクセス トークンを配信するために必要です。</span><span class="sxs-lookup"><span data-stu-id="01909-113">The **MCDUserAccountProvider** is needed to deliver an OAuth 2.0 access token for the current user's access to the Connected Devices Platform.</span></span> <span data-ttu-id="01909-114">これは、アプリの初回実行時と、プラットフォーム管理の更新トークンの有効期限が切れたときに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="01909-114">It will be called the first time the app is run and upon the expiration of a platform-managed refresh token.</span></span> 
 
-<span data-ttu-id="9e2e4-115">簡単に、プラットフォームをオンボード開発者を支援するために提供していますアカウント Android および iOS 用のプロバイダーの実装。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-115">In order to help developers onboard with the platform more easily, we have provided account provider implementations for Android and iOS.</span></span> <span data-ttu-id="9e2e4-116">これらの実装にある、[認証プロバイダーのサンプル](https://github.com/Microsoft/project-rome/tree/master/iOS/samples/account-provider-sample)、OAuth 2.0 アクセス トークンを取得し、アプリのトークンを更新するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-116">These implementations, found in the [authentication provider sample](https://github.com/Microsoft/project-rome/tree/master/iOS/samples/account-provider-sample), can be used to obtain the OAuth 2.0 access token and refresh token for your app.</span></span>
+<span data-ttu-id="01909-115">プラットフォームへの開発者のオンボーディングがもっと簡単になるよう、Android および iOS 用のアカウント プロバイダーの実装を提供しています。</span><span class="sxs-lookup"><span data-stu-id="01909-115">In order to help developers onboard with the platform more easily, we have provided account provider implementations for Android and iOS.</span></span> <span data-ttu-id="01909-116">[認証プロバイダーのサンプル](https://github.com/Microsoft/project-rome/tree/master/iOS/samples/account-provider-sample)にあるこれらの実装を使用して、アプリ用の OAuth 2.0 アクセス トークンおよび更新トークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="01909-116">These implementations, found in the [authentication provider sample](https://github.com/Microsoft/project-rome/tree/master/iOS/samples/account-provider-sample), can be used to obtain the OAuth 2.0 access token and refresh token for your app.</span></span>
 
 [!INCLUDE [auth-scopes](../auth-scopes.md)]
 
-<span data-ttu-id="9e2e4-117">サンプル アプリから次のコードは、プラットフォームの初期化を示しています。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-117">The following code from the sample app shows the initialization of the platform.</span></span>
+<span data-ttu-id="01909-117">サンプル アプリの次のコードは、プラットフォームの初期化を示しています。</span><span class="sxs-lookup"><span data-stu-id="01909-117">The following code from the sample app shows the initialization of the platform.</span></span>
 
 ```ObjectiveC
 - (void)initializePlatform
@@ -67,4 +67,4 @@ target 'iOSSample' do
 }
 ```
 
-<span data-ttu-id="9e2e4-118">アプリが呼び出すことによって、フォア グラウンドを終了するときに、プラットフォームをシャット ダウン、`shutdownAsync:`メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e2e4-118">Shut down the platform when your app exits the foreground by calling the `shutdownAsync:` method.</span></span>
+<span data-ttu-id="01909-118">アプリがフォアグラウンドを終了したら、`shutdownAsync:` メソッドを呼び出してプラットフォームをシャットダウンします。</span><span class="sxs-lookup"><span data-stu-id="01909-118">Shut down the platform when your app exits the foreground by calling the `shutdownAsync:` method.</span></span>

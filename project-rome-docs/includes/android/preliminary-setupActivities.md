@@ -5,27 +5,27 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 45aa2364c2b1f7a30e94e2b720a0e4b14d4bff27
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59801664"
 ---
-## <a name="preliminary-setup-for-the-connected-devices-platform"></a><span data-ttu-id="3dbb1-103">接続されているデバイス プラットフォームの暫定的なセットアップ</span><span class="sxs-lookup"><span data-stu-id="3dbb1-103">Preliminary setup for the Connected Devices Platform</span></span>
+## <a name="preliminary-setup-for-the-connected-devices-platform"></a><span data-ttu-id="745fb-103">Connected Devices Platform の準備段階のセットアップ</span><span class="sxs-lookup"><span data-stu-id="745fb-103">Preliminary setup for the Connected Devices Platform</span></span>
 
-<span data-ttu-id="3dbb1-104">リモート接続を実装する前に、いくつかの手順にリモート デバイスに接続する機能の Android アプリに付与する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-104">Before implementing remote connectivity, there are a few steps you'll need to take to give your Android app the capability to connect to remote devices.</span></span>
+<span data-ttu-id="745fb-104">リモート接続を実装する前に、いくつかの手順を実行して、リモート デバイスへの接続機能を Android アプリに提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="745fb-104">Before implementing remote connectivity, there are a few steps you'll need to take to give your Android app the capability to connect to remote devices.</span></span>
 
-### <a name="sign-in"></a><span data-ttu-id="3dbb1-105">サインイン</span><span class="sxs-lookup"><span data-stu-id="3dbb1-105">Sign-in</span></span>
+### <a name="sign-in"></a><span data-ttu-id="745fb-105">サインイン</span><span class="sxs-lookup"><span data-stu-id="745fb-105">Sign-in</span></span>
 
-<span data-ttu-id="3dbb1-106">Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証は Nearby 共有を除く、SDK のすべての機能に必要な Api。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-106">Microsoft Account (MSA) or Azure Active Directory (AAD) authentication is required for all features of the SDK, except for the Nearby sharing APIs.</span></span> 
+<span data-ttu-id="745fb-106">Microsoft アカウント (MSA) または Azure Active Directory (AAD) 認証は、近距離共有 API を除いた SDK のすべての機能に必要です。</span><span class="sxs-lookup"><span data-stu-id="745fb-106">Microsoft Account (MSA) or Azure Active Directory (AAD) authentication is required for all features of the SDK, except for the Nearby sharing APIs.</span></span> 
 
-<span data-ttu-id="3dbb1-107">MSA をあり、1 つを使用する実行されていない、上のレジスタ[account.microsoft.com](https://account.microsoft.com/account)します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-107">If you do not already have an MSA and wish to use one, register on [account.microsoft.com](https://account.microsoft.com/account).</span></span>
+<span data-ttu-id="745fb-107">MSA をまだ所有しておらず、使用したい場合は、[account.microsoft.com](https://account.microsoft.com/account) で登録してください。</span><span class="sxs-lookup"><span data-stu-id="745fb-107">If you do not already have an MSA and wish to use one, register on [account.microsoft.com](https://account.microsoft.com/account).</span></span>
 
-<span data-ttu-id="3dbb1-108">次の手順で次に、Microsoft と、アプリを登録する必要があります、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)(場合は、Microsoft 開発者アカウントがない、1 つを作成する必要があります最初)。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-108">Next, you must register your app with Microsoft by following the instructions on the [Application Registration Portal](https://apps.dev.microsoft.com/) (if you do not have a Microsoft developer account, you must create one first).</span></span> <span data-ttu-id="3dbb1-109">アプリのクライアント ID の文字列を受信する必要があります。後で、これを保存します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-109">You should receive a client ID string for your app; save this for later.</span></span> <span data-ttu-id="3dbb1-110">これで、Microsoft のデバイス プラットフォームの接続されているリソースにアクセスするアプリです。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-110">This will allow your app to access Microsoft's Connected Devices Platform resources.</span></span> <span data-ttu-id="3dbb1-111">AAD を使用している場合は、次を参照してください。 [Azure Active Directory 認証ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)については、クライアントの ID 文字列を取得します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-111">If you're using AAD, see [Azure Active Directory Authentication Libraries](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) for instructions on getting the client ID string.</span></span>
+<span data-ttu-id="745fb-108">次に、[アプリケーション登録ポータル](https://apps.dev.microsoft.com/)の指示に従って、アプリを Microsoft に登録する必要があります (Microsoft 開発者アカウントを所有していない場合は、最初に作成する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="745fb-108">Next, you must register your app with Microsoft by following the instructions on the [Application Registration Portal](https://apps.dev.microsoft.com/) (if you do not have a Microsoft developer account, you must create one first).</span></span> <span data-ttu-id="745fb-109">アプリのクライアント ID 文字列を受け取ります。これは、保存しておいて後で使用します。</span><span class="sxs-lookup"><span data-stu-id="745fb-109">You should receive a client ID string for your app; save this for later.</span></span> <span data-ttu-id="745fb-110">これにより、アプリが Microsoft の Connected Devices Platform リソースにアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="745fb-110">This will allow your app to access Microsoft's Connected Devices Platform resources.</span></span> <span data-ttu-id="745fb-111">AAD を使用している場合は、クライアント ID 文字列を取得する手順について「[Azure Active Directory 認証ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="745fb-111">If you're using AAD, see [Azure Active Directory Authentication Libraries](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) for instructions on getting the client ID string.</span></span>
 
-### <a name="add-the-sdk"></a><span data-ttu-id="3dbb1-112">SDK を追加します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-112">Add the SDK</span></span>
+### <a name="add-the-sdk"></a><span data-ttu-id="745fb-112">SDK の追加</span><span class="sxs-lookup"><span data-stu-id="745fb-112">Add the SDK</span></span>
 
-<span data-ttu-id="3dbb1-113">次のリポジトリの参照を挿入、 *build.gradle*プロジェクトのルートにあるファイル。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-113">Insert the following repository references into the *build.gradle* file at the root of your project.</span></span>
+<span data-ttu-id="745fb-113">次のリポジトリ参照を、プロジェクトのルートにある *build.gradle* ファイルに挿入します。</span><span class="sxs-lookup"><span data-stu-id="745fb-113">Insert the following repository references into the *build.gradle* file at the root of your project.</span></span>
 
 ```Java
 allprojects {
@@ -36,7 +36,7 @@ allprojects {
     }
 }
 ```
-<span data-ttu-id="3dbb1-114">次の依存関係を次に、挿入、 _build.gradle_プロジェクト フォルダー内にあるファイル。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-114">Then, insert the following dependency into the _build.gradle_ file that is in your project folder.</span></span>
+<span data-ttu-id="745fb-114">続いて、次の依存関係を、プロジェクト フォルダーにある _build.gradle_ ファイルに挿入します。</span><span class="sxs-lookup"><span data-stu-id="745fb-114">Then, insert the following dependency into the _build.gradle_ file that is in your project folder.</span></span>
 
 ```Java
 dependencies { 
@@ -45,9 +45,9 @@ dependencies {
 }
 ```
 
-<span data-ttu-id="3dbb1-115">アプリで ProGuard を使用する場合は、これらの新しい Api の ProGuard のルールを追加します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-115">If you wish to use ProGuard in your app, add the ProGuard Rules for these new APIs.</span></span> <span data-ttu-id="3dbb1-116">という名前のファイルを作成する*proguard rules.txt*で、*アプリ*フォルダー、プロジェクト、および貼り付けの内容の[ProGuard_Rules_for_Android_Rome_SDK.txt](https://github.com/Microsoft/project-rome/blob/master/Android/ProGuard_Rules_for_Android_Rome_SDK.txt)します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-116">Create a file called *proguard-rules.txt* in the *App* folder of your project, and paste in the contents of [ProGuard_Rules_for_Android_Rome_SDK.txt](https://github.com/Microsoft/project-rome/blob/master/Android/ProGuard_Rules_for_Android_Rome_SDK.txt).</span></span>
+<span data-ttu-id="745fb-115">アプリで ProGuard を使用する場合は、これらの新しい API 用の ProGuard 規則を追加します。</span><span class="sxs-lookup"><span data-stu-id="745fb-115">If you wish to use ProGuard in your app, add the ProGuard Rules for these new APIs.</span></span> <span data-ttu-id="745fb-116">*proguard-rules.txt* という名前のファイルをプロジェクトの *App* フォルダーに作成し、[ProGuard_Rules_for_Android_Rome_SDK.txt](https://github.com/Microsoft/project-rome/blob/master/Android/ProGuard_Rules_for_Android_Rome_SDK.txt) の内容を貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="745fb-116">Create a file called *proguard-rules.txt* in the *App* folder of your project, and paste in the contents of [ProGuard_Rules_for_Android_Rome_SDK.txt](https://github.com/Microsoft/project-rome/blob/master/Android/ProGuard_Rules_for_Android_Rome_SDK.txt).</span></span>
 
-<span data-ttu-id="3dbb1-117">プロジェクトの*AndroidManifest.xml*ファイルを内部で次のアクセス許可を追加、`<manifest>`要素 (既に存在するがないとき) 場合。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-117">In your project's *AndroidManifest.xml* file, add the following permissions inside the `<manifest>` element (if they are not already present).</span></span> <span data-ttu-id="3dbb1-118">これにより、インターネットに接続するデバイスで Bluetooth の検出を有効にして、アプリのアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-118">This gives your app permission to connect to the Internet and to enable Bluetooth discovery on your device.</span></span>
+<span data-ttu-id="745fb-117">プロジェクトの *AndroidManifest.xml* ファイルで、`<manifest>` 要素の内側に次のアクセス許可を追加します (まだ存在しない場合)。</span><span class="sxs-lookup"><span data-stu-id="745fb-117">In your project's *AndroidManifest.xml* file, add the following permissions inside the `<manifest>` element (if they are not already present).</span></span> <span data-ttu-id="745fb-118">これにより、インターネットに接続して、デバイスで Bluetooth 検出を有効にするためのアクセス許可がアプリに付与されます。</span><span class="sxs-lookup"><span data-stu-id="745fb-118">This gives your app permission to connect to the Internet and to enable Bluetooth discovery on your device.</span></span>
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -58,9 +58,9 @@ dependencies {
 ```
 
 > [!NOTE]
-> <span data-ttu-id="3dbb1-119">Bluetooth 関連のアクセス許可は、Bluetooth の検出を使用するために必要なだけ接続されているデバイス プラットフォームの他の機能は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-119">The Bluetooth-related permissions are only necessary for using Bluetooth discovery; they are not needed for the other features in the Connected Devices Platform.</span></span> <span data-ttu-id="3dbb1-120">さらに、`ACCESS_COARSE_LOCATION`は Android Sdk 21 で必要な以降のみです。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-120">Additionally, `ACCESS_COARSE_LOCATION` is only required on Android SDKs 21 and later.</span></span> <span data-ttu-id="3dbb1-121">以降では、Android Sdk 23、開発者が実行時に場所へのアクセスを許可するユーザーを求めもする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-121">On Android SDKs 23 and later, the developer must also prompt the user to grant location access at runtime.</span></span>
+> <span data-ttu-id="745fb-119">Bluetooth 関連のアクセス許可は、Bluetooth 検出を使用するために必要なだけであり、Connected Devices Platform の他の機能には必要ありません。</span><span class="sxs-lookup"><span data-stu-id="745fb-119">The Bluetooth-related permissions are only necessary for using Bluetooth discovery; they are not needed for the other features in the Connected Devices Platform.</span></span> <span data-ttu-id="745fb-120">また、`ACCESS_COARSE_LOCATION` は Android SDK 21 以降でのみ必要です。</span><span class="sxs-lookup"><span data-stu-id="745fb-120">Additionally, `ACCESS_COARSE_LOCATION` is only required on Android SDKs 21 and later.</span></span> <span data-ttu-id="745fb-121">Android SDK 23 以降では、開発者はユーザーにプロンプトを表示して実行時に位置情報へのアクセスを許可する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="745fb-121">On Android SDKs 23 and later, the developer must also prompt the user to grant location access at runtime.</span></span>
 
-<span data-ttu-id="3dbb1-122">次には、アクティビティ クラスにライブ接続しているデバイス機能に希望します。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-122">Next, go to the activity class(es) where you would like the Connected Devices functionality to live.</span></span> <span data-ttu-id="3dbb1-123">インポート、次の名前空間。</span><span class="sxs-lookup"><span data-stu-id="3dbb1-123">Import the the following namespaces.</span></span>
+<span data-ttu-id="745fb-122">次に、Connected Devices 機能を有効にするアクティビティ クラスに移動します。</span><span class="sxs-lookup"><span data-stu-id="745fb-122">Next, go to the activity class(es) where you would like the Connected Devices functionality to live.</span></span> <span data-ttu-id="745fb-123">次の名前空間をインポートします。</span><span class="sxs-lookup"><span data-stu-id="745fb-123">Import the the following namespaces.</span></span>
 
 ```java
 import com.microsoft.connecteddevices;

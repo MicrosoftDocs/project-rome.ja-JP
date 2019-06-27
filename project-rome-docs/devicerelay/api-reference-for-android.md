@@ -1,17 +1,17 @@
 ---
 ms.openlocfilehash: 8e4a55e5bc537a82ef8b9d4cb5ef6eba0e6262fe
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
-ms.translationtype: MT
+ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58907024"
 ---
-# <a name="android-commanding-api-reference"></a><span data-ttu-id="c13a8-101">Android のコマンド実行の API リファレンス</span><span class="sxs-lookup"><span data-stu-id="c13a8-101">Android Commanding API reference</span></span>
+# <a name="android-commanding-api-reference"></a><span data-ttu-id="c400c-101">Android コマンド実行 API リファレンス</span><span class="sxs-lookup"><span data-stu-id="c400c-101">Android Commanding API reference</span></span>
 
-<span data-ttu-id="c13a8-102">次の名前空間では、アプリを検出し、リモート デバイスとアプリケーションでリモート アプリの起動およびメッセージングのリモート接続を許可します。</span><span class="sxs-lookup"><span data-stu-id="c13a8-102">The following namespaces allow apps to discover and connect with remote devices and applications through remote app launching and remote messaging.</span></span>
+<span data-ttu-id="c400c-102">アプリで次の名前空間を使用すると、リモート アプリ起動およびリモート メッセージングによって、リモートのデバイスおよびアプリケーションを検出したり、それらに接続したりできます。</span><span class="sxs-lookup"><span data-stu-id="c400c-102">The following namespaces allow apps to discover and connect with remote devices and applications through remote app launching and remote messaging.</span></span>
 
-## <a name="namespaces"></a><span data-ttu-id="c13a8-103">名前空間</span><span class="sxs-lookup"><span data-stu-id="c13a8-103">Namespaces</span></span>
+## <a name="namespaces"></a><span data-ttu-id="c400c-103">名前空間</span><span class="sxs-lookup"><span data-stu-id="c400c-103">Namespaces</span></span>
 
-#### <a name="connecteddeviceshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevices"></a>[<span data-ttu-id="c13a8-104">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="c13a8-104">ConnectedDevices</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices)
-#### <a name="remotesystemshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesremotesystems"></a>[<span data-ttu-id="c13a8-105">RemoteSystems</span><span class="sxs-lookup"><span data-stu-id="c13a8-105">RemoteSystems</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.remotesystems)
-#### <a name="remotesystemscommandinghttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesremotesystemscommanding"></a>[<span data-ttu-id="c13a8-106">RemoteSystems.Commanding</span><span class="sxs-lookup"><span data-stu-id="c13a8-106">RemoteSystems.Commanding</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.remotesystems.commanding)
+#### <a name="connecteddeviceshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevices"></a>[<span data-ttu-id="c400c-104">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="c400c-104">ConnectedDevices</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices)
+#### <a name="remotesystemshttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesremotesystems"></a>[<span data-ttu-id="c400c-105">RemoteSystems</span><span class="sxs-lookup"><span data-stu-id="c400c-105">RemoteSystems</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.remotesystems)
+#### <a name="remotesystemscommandinghttpsdocsmicrosoftcomjavaapicommicrosoftconnecteddevicesremotesystemscommanding"></a>[<span data-ttu-id="c400c-106">RemoteSystems.Commanding</span><span class="sxs-lookup"><span data-stu-id="c400c-106">RemoteSystems.Commanding</span></span>](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.remotesystems.commanding)
