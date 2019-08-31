@@ -1,7 +1,7 @@
 ---
 title: MCDUserNotificationUserActionState
-description: 通知をユーザーが実行されるアクションを記述する値が含まれています。
-keywords: microsoft、windows、グラフの通知、iOS に関する「方法」に関する「方法」の iPhone
+description: ユーザーが通知に対して行ったアクションを記述する値を格納します。
+keywords: microsoft、windows、Graph 通知、操作方法 iOS、操作方法 iPhone
 ms.openlocfilehash: 2baebeff7ccd43c7a5259c178434162908ee84c9
 ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
@@ -9,17 +9,17 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "59800804"
 ---
-# <a name="enum-mcdusernotificationuseractionstate"></a>列挙型 `MCDUserNotificationUserActionState`
+# <a name="enum-mcdusernotificationuseractionstate"></a>enum`MCDUserNotificationUserActionState`
 
 ```
 typedef NS_ENUM(NSInteger, MCDUserNotificationUserActionState)
 ```
 
-通知をユーザーが実行されるアクションを記述する値が含まれています。
+ユーザーが通知に対して行ったアクションを記述する値を格納します。
 
 |名前 | 値 | 説明 |
 |:-- |:-- |:-- |
-|   MCDUserNotificationUserActionStateNoInteraction |0| ユーザーは、任意のアクションを実行していません。|
-|   MCDUserNotificationUserActionStateActivated|1|ユーザーは、通知をアクティブ化します。|
-|   MCDUserNotificationUserActionStateDismissed|2| ユーザーが通知を閉じる。|
-|   MCDUserNotificationUserActionStateSnoozed|3| ユーザーは、通知を再います。|
+|   MCDUserNotificationUserActionStateNoInteraction |0| ユーザーは何の操作も行っていません。|
+|   MCDUserNotificationUserActionStateActivated|1|ユーザーが通知をアクティブ化しました。|
+|   MCDUserNotificationUserActionStateDismissed|2| ユーザーが通知を閉じました。|
+|   MCDUserNotificationUserActionStateSnoozed|3| ユーザーが通知を再通知しました。|

@@ -1,7 +1,7 @@
 ---
 title: MCDUserNotification
-description: このクラスは、グラフの通知を使用して、アプリ サーバーによって発行されたアプリのクライアントによって受信ユーザー通知を表します。
-keywords: microsoft、ios、グラフの通知、ios に関する「方法」に関する「方法」の iphone
+description: このクラスは、アプリケーションサーバーによって Graph 通知を使用して発行され、アプリクライアントによって受信されるユーザー通知を表します。
+keywords: microsoft、ios、graph 通知、操作方法 ios、操作方法 iphone
 ms.openlocfilehash: 5ca1360c34e2bf9aa5d9847b8df2c462e2956b31
 ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
 ms.translationtype: MT
@@ -9,51 +9,51 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "58907894"
 ---
-# <a name="class-mcdusernotification"></a>クラス `MCDUserNotification`
+# <a name="class-mcdusernotification"></a>講義`MCDUserNotification`
 
 ```
 @interface MCDUserNotification : NSObject
 ```
 
 
-このクラスは、1 人のユーザー通知のインスタンスを表します。 ユーザー通知が作成され、同じログインしているユーザーのすべてのデバイス エンドポイントに分散し、ユーザーを対象としたアプリケーション サーバーによって発行されました。
-アプリのクライアントで受信した後、ユーザーに通知を生成して、対応するプラットフォームのローカル通知 Api を使用して visual 通知バナーの表示などのエクスペリエンス可能性があります。
+このクラスは、1つのユーザー通知インスタンスを表します。 ユーザー通知は、ユーザーを対象としたアプリサーバーによって作成および発行され、同じログインユーザーのすべてのデバイスエンドポイントに配布されます。
+ユーザー通知は、アプリクライアントによって受信されると、対応するプラットフォームのローカル通知 Api を使用して視覚的通知バナーを生成して表示するなどのエクスペリエンスになります。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="notificationid"></a>notificationId
-`@property(nonatomic, readonly, nonnull) NSString* notificationId;` 開発者が指定したを一意に取得このユーザー通知の id。
+`@property(nonatomic, readonly, nonnull) NSString* notificationId;`このユーザー通知に対して指定された一意の id を取得します。
 
-### <a name="groupid"></a>GroupId
-`@property(nonatomic, readonly, nonnull) NSString* groupId;` 開発者が指定したを取得します。 このユーザーの通知グループ id。
+### <a name="groupid"></a>groupId
+`@property(nonatomic, readonly, nonnull) NSString* groupId;`このユーザー通知の開発者が指定したグループ id を取得します。
 
 ### <a name="expirationtime"></a>expirationTime
-`@property(nonatomic, readonly, nonnull) NSDate* expirationTime;` このユーザー通知の有効期限を取得します。
+`@property(nonatomic, readonly, nonnull) NSDate* expirationTime;`このユーザー通知の有効期限を取得します。
 
 ### <a name="status"></a>status
-`@property(nonatomic, readonly) MCDUserNotificationStatus status;` ユーザー通知の状態を取得します。
+`@property(nonatomic, readonly) MCDUserNotificationStatus status;`ユーザー通知の状態を取得します。
 
 ### <a name="changetime"></a>changeTime
-`@property(nonatomic, readonly, nonnull) NSDate* changeTime;` 変更が行われた時刻を取得します。
+`@property(nonatomic, readonly, nonnull) NSDate* changeTime;`変更が行われた時刻を取得します。
 
 ### <a name="priority"></a>priority
-`@property(nonatomic, readonly) MCDUserNotificationPriority priority;` 開発者が指定したを取得します。 このユーザー通知の優先順位。
+`@property(nonatomic, readonly) MCDUserNotificationPriority priority;`このユーザー通知に対して指定された開発者の優先順位を取得します。
 
 ### <a name="content"></a>content
-`@property(nonatomic, readonly, nonnull) NSString* content;` この通知は開発者が定義されている任意のデータをコンテンツ ペイロードを取得します。
+`@property(nonatomic, readonly, nonnull) NSString* content;`この通知のコンテンツペイロードを取得します。これは、開発者が任意のデータを定義したものです。
 
-###  <a name="readstate"></a>ReadState
-`@property(nonatomic, assign, readwrite) MCDUserNotificationReadState readState;` このユーザーを示す通知が、通知は、読み取り、または未読の読み取りの状態の値を取得します。
+###  <a name="readstate"></a>readState
+`@property(nonatomic, assign, readwrite) MCDUserNotificationReadState readState;`通知が開封されたか未読であることを示す、このユーザー通知の読み取り状態の値を取得します。
 
 ### <a name="useractionstate"></a>userActionState
-`@property(nonatomic, assign, readwrite) MCDUserNotificationUserActionState userActionState;` かどうか、通知がない操作、消去された、アクティブ化、または再を判断するユーザー通知のユーザー アクションの状態の値を取得します。 
+`@property(nonatomic, assign, readwrite) MCDUserNotificationUserActionState userActionState;`通知が対話、破棄、アクティブ化、または再通知されていないかどうかを判断するユーザー通知のユーザー操作状態の値を取得します。 
 
 ## <a name="methods"></a>メソッド
 
 ### <a name="saveasync"></a>saveAsync
 `- (void)saveAsync:(nonnull void (^)(MCDUserNotificationUpdateStatus* _Nullable, NSError* _Nullable))completion;`
 
-これは、ユーザー通知の変更を発行するときに呼び出す必要があります。 アプリが、UserNotification の更新可能なプロパティを変更するたびに、このメソッドを呼び出す必要があります。
+これは、ユーザー通知の変更を発行するときに呼び出す必要があります。 アプリケーションが UserNotification の更新可能なプロパティを変更するたびに、このメソッドを呼び出す必要があります。
 
 #### <a name="parameters"></a>パラメーター
-* `completion` 完了時に実行するコード ブロックです。
+* `completion`完了時に実行するコードブロック。
