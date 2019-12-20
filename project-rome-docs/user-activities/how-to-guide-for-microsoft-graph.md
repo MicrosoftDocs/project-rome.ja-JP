@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: 8fd5cb9176bbde99598a95b51c1f2bba513ae187
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+title: Microsoft Graph のユーザー アクティビティ REST API の使用
+ms.openlocfilehash: efb5b591ca4c1f3024e1fb19dceee783dc75dc8c
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59801114"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207901"
 ---
 # <a name="using-microsoft-graphs-user-activities-rest-apis"></a>Microsoft Graph のユーザー アクティビティ REST API の使用
 

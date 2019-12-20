@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: 4a5620319d06e4a9cbe22be3cb1c4de733c473c3
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+title: iOS デバイス リレー API リファレンス
+ms.openlocfilehash: 45ab0473a5e95fcc210bce72f342b3bd29949ac5
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "58907164"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207851"
 ---
 # <a name="ios-device-relay-api-reference"></a>iOS デバイス リレー API リファレンス
 

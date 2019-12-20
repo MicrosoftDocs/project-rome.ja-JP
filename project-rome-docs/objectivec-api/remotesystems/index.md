@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: 41b9bbc7f5ace516d947c3fe4d58b97654ac90bd
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+title: RemoteSystems 名前空間
+ms.openlocfilehash: d8ffcf1456bc717a9758c105932b6fc26553905f
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906734"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207691"
 ---
 # <a name="remotesystems-namespace"></a>RemoteSystems 名前空間
 ```

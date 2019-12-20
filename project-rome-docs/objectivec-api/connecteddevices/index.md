@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: 3d84623d3ba50a48c9ef5ab0a68c4d7b4fed363d
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+title: ConnectedDevices 名前空間
+ms.openlocfilehash: 2f464105ed8aee12971d3ec352ba4e12150573a0
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906694"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207861"
 ---
 # <a name="connecteddevices-namespace"></a>ConnectedDevices 名前空間
 ```
