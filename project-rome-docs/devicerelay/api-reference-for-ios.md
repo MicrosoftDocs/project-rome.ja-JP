@@ -1,17 +1,18 @@
 ---
-ms.openlocfilehash: 4a5620319d06e4a9cbe22be3cb1c4de733c473c3
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+title: iOS デバイス リレー API リファレンス
+ms.openlocfilehash: 45ab0473a5e95fcc210bce72f342b3bd29949ac5
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "58907164"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207851"
 ---
-# <a name="ios-device-relay-api-reference"></a><span data-ttu-id="fb7cf-101">iOS デバイス リレー API リファレンス</span><span class="sxs-lookup"><span data-stu-id="fb7cf-101">iOS Device Relay API reference</span></span>
+# <a name="ios-device-relay-api-reference"></a><span data-ttu-id="0bdfc-102">iOS デバイス リレー API リファレンス</span><span class="sxs-lookup"><span data-stu-id="0bdfc-102">iOS Device Relay API reference</span></span>
 
-<span data-ttu-id="fb7cf-102">アプリで次の API を使用すると、リモート アプリ起動およびリモート メッセージングによって、リモートのデバイスおよびアプリケーションを検出したり、それらに接続したりできます。</span><span class="sxs-lookup"><span data-stu-id="fb7cf-102">The following APIs allow apps to discover and connect with remote devices and applications through remote app launching and remote messaging.</span></span>
+<span data-ttu-id="0bdfc-103">アプリで次の API を使用すると、リモート アプリ起動およびリモート メッセージングによって、リモートのデバイスおよびアプリケーションを検出したり、それらに接続したりできます。</span><span class="sxs-lookup"><span data-stu-id="0bdfc-103">The following APIs allow apps to discover and connect with remote devices and applications through remote app launching and remote messaging.</span></span>
 
-## <a name="api-groups"></a><span data-ttu-id="fb7cf-103">API グループ</span><span class="sxs-lookup"><span data-stu-id="fb7cf-103">API groups</span></span>
+## <a name="api-groups"></a><span data-ttu-id="0bdfc-104">API グループ</span><span class="sxs-lookup"><span data-stu-id="0bdfc-104">API groups</span></span>
 
-#### <a name="connecteddevicesobjectivec-apiconnecteddevicesindexmd"></a>[<span data-ttu-id="fb7cf-104">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="fb7cf-104">ConnectedDevices</span></span>](../objectivec-api/connecteddevices/index.md)
-#### <a name="remotesystemsobjectivec-apiremotesystemsindexmd"></a>[<span data-ttu-id="fb7cf-105">RemoteSystems</span><span class="sxs-lookup"><span data-stu-id="fb7cf-105">RemoteSystems</span></span>](../objectivec-api/remotesystems/index.md)
-#### <a name="remotesystemscommandingobjectivec-apiremotesystemscommandingindexmd"></a>[<span data-ttu-id="fb7cf-106">RemoteSystems.Commanding</span><span class="sxs-lookup"><span data-stu-id="fb7cf-106">RemoteSystems.Commanding</span></span>](../objectivec-api/remotesystems.commanding/index.md)
+#### <a name="connecteddevicesobjectivec-apiconnecteddevicesindexmd"></a>[<span data-ttu-id="0bdfc-105">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="0bdfc-105">ConnectedDevices</span></span>](../objectivec-api/connecteddevices/index.md)
+#### <a name="remotesystemsobjectivec-apiremotesystemsindexmd"></a>[<span data-ttu-id="0bdfc-106">RemoteSystems</span><span class="sxs-lookup"><span data-stu-id="0bdfc-106">RemoteSystems</span></span>](../objectivec-api/remotesystems/index.md)
+#### <a name="remotesystemscommandingobjectivec-apiremotesystemscommandingindexmd"></a>[<span data-ttu-id="0bdfc-107">RemoteSystems.Commanding</span><span class="sxs-lookup"><span data-stu-id="0bdfc-107">RemoteSystems.Commanding</span></span>](../objectivec-api/remotesystems.commanding/index.md)
