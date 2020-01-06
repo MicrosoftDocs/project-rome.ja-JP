@@ -1,20 +1,22 @@
 ---
+title: iOS 用 API リファレンス
 ms.custom: seodec18
-ms.openlocfilehash: ba801109d7262bdd482e81ba63d733c0ddd1ceef
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: cb07557c76f58cbcdd3c43c83adb2fe4344e1544
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906954"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207771"
 ---
-# <a name="usernotifications-namespace"></a>UserNotifications 名前空間
+# <a name="api-reference-for-ios"></a>iOS 用 API リファレンス
 ```
 usernotifications.h
 ```
-UserNotifications 名前空間には、Microsoft Graph 通知を介してアプリ サーバーによって公開されたユーザー対象通知をアプリが受信および管理できるようにする API が含まれています。 
+iOS 用 UserNotifications 名前空間には、Microsoft Graph 通知を介してアプリ サーバーによって公開されたユーザー対象通知をアプリが受信および管理できるようにする API が含まれています。 
 
 ### <a name="api-groups"></a>API グループ
+[ConnectedDevices](../../objectivec-api/connecteddevices/index.md)
 
-#### <a name="connecteddevicesobjectivec-apiconnecteddevicesindexmd"></a>[ConnectedDevices](../../objectivec-api/connecteddevices/index.md)
-#### <a name="userdataobjectivec-apiuserdataindexmd"></a>[UserData](../../objectivec-api/userdata/index.md)
-#### <a name="graph-notification-apisusernotificationsindexmd"></a>[Graph 通知 API](usernotifications/index.md)
+[UserData](../../objectivec-api/userdata/index.md)
+
+[Graph 通知 API](usernotifications/index.md)

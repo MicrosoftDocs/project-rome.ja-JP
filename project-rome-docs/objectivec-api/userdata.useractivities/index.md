@@ -1,12 +1,13 @@
 ---
-ms.openlocfilehash: 89331a72af004a432d880f89120f8c5a18af5d6a
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+title: UserActivities 名前空間
+ms.openlocfilehash: 2c8e6a52738a7d28acaaa88ae922a0553606329a
+ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906884"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75207701"
 ---
-# <a name="usernotifications-namespace"></a>UserNotifications 名前空間
+# <a name="useractivities-namespace"></a>UserActivities 名前空間
 ```
 ConnectedDevicesUserDataUserActivities.h
 ```
