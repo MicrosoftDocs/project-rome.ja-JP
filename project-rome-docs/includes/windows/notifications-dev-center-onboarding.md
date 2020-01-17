@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6c87f1a68699de7852af56d7536f08b1a5f9bc14
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.openlocfilehash: 325f0d041408b301c61648bd5c030ae0c7c4f59c
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "58907564"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76118100"
 ---
 ### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでクロスデバイス エクスペリエンスのためにアプリを登録する
 次に、[Microsoft デベロッパー ダッシュボードのクロスデバイス エクスペリエンス機能](https://developer.microsoft.com/dashboard/crossplatform/web)用にアプリを登録する必要があります。 これは、上記の手順で説明した MSA および AAD アプリ登録とは異なる手続きです。 このプロセスの主な目的は、プラットフォーム固有のアプリ ID を、Connected Devices Platform によって認識されるクロスプラットフォームのアプリ ID にマップすること、またそれと同時に、Microsoft Graph 通知において、各 OS プラットフォームに対応したネイティブのプッシュ通知サービスを使用して通知を送信するのを認可することです。 この場合は、Graph 通知が WNS (Windows 通知サービス) 経由で Windows UWP アプリ エンドポイントに通知を送信できるようにします。 次に示すように、デベロッパー センターのダッシュボードに移動し、左側のナビゲーション ウィンドウから [Cross-Device Experiences] (クロスデバイス エクスペリエンス) に移動して、[configuring a new cross-device app] (新しいクロスデバイス アプリの構成) を選択します。
@@ -24,7 +24,7 @@ ms.locfileid: "58907564"
 * Graph 通知やその他の Connected Devices Platform の機能は、主要プラットフォームの各ネイティブ通知プラットフォーム、具体的には WNS (Windows UWP)、GCM (Android)、および APNS (iOS) を利用してアプリ クライアント エンドポイントに通知を送信します。 ユーザーをターゲットにした通知を発行したときに Graph 通知がアプリ サーバーの通知を配信できるよう、これらの通知プラットフォームの資格情報を指定します。 次のように表示されます。 
 ![クロスデバイス エクスペリエンス – プッシュ資格情報](../../notifications/media/dev_center_portal/dev_center_portal_5_push_credentials.png)
 > [!NOTE] 
-> Windows UWP アプリの場合、WNS プッシュ通知の有効化は、Microsoft Graph 通知を使用するための前提条件です。 詳細については、[WNS の概要](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)に関する記事を参照してください。 オンボーディングが完了したら、Windows デベロッパー センターから Connected Device Platform にプッシュ資格情報を提供できるようになります。 
+> Windows UWP アプリの場合、WNS プッシュ通知の有効化は、Microsoft Graph 通知を使用するための前提条件です。 詳細については、[WNS の概要](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)に関する記事を参照してください。 オンボーディングが完了したら、Windows デベロッパー センターから Connected Device Platform にプッシュ資格情報を提供できるようになります。 
 * 最後の手順では、クロスデバイス アプリ ドメインを検証します。これには、登録したアプリのクロスデバイス アプリ ID のように機能するこのドメインの所有権をアプリが持っていることを証明する検証プロセスとしての役割があります。 次のように表示されます。  
 ![クロスデバイス エクスペリエンス – ドメインの確認](../../notifications/media/dev_center_portal/dev_center_portal_6_domain_verification.png) これで、オンボーディングの準備は万端です! 次のセクションに進んでください。 
 
