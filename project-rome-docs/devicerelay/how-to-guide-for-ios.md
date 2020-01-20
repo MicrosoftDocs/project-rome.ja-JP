@@ -5,12 +5,12 @@ ms.topic: article
 keywords: microsoft, windows, project rome, コマンド実行, ios
 ms.assetid: b5d426db-a0ca-4888-b2cb-cb7fdb1c6c0d
 ms.localizationpriority: medium
-ms.openlocfilehash: c9c3e8bf580884c6f0c3b6ccdf177f163f05c03a
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.openlocfilehash: 09479f0caa232215dfce51628432529d0e322536
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66755810"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115556"
 ---
 # <a name="implementing-device-relay-for-ios"></a>iOS のデバイス リレーの実装
 
@@ -182,8 +182,8 @@ Project Rome の機能は、Connected Devices Platform と呼ばれる基盤プ�
 
 iOS アプリは Connected Devices ポータルを使用して、他のデバイス上のアプリ サービスと対話できます。 これにより、他のデバイスと通信するための多くの方法が提供されます&mdash;アプリをホスト デバイスの前面に出す必要はまったくありません。
 
-#### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスをセットアップする
-このガイドでは、[Windows 用の Roman テスト アプリ](http://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、iOS アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。
+#### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスを設定する
+このガイドでは、[Windows 用の Roman テスト アプリ](https://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、iOS アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。
 
 独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
 

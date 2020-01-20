@@ -3,16 +3,16 @@ title: クロスデバイス アプリケーションを構築する
 description: Project Rome を使用した、Windows 10 アプリケーション対応のクロスデバイスおよびクロスプラットフォームの機能について説明します。
 ms.topic: overview
 ms.custom: seodec2018, RS5
-ms.openlocfilehash: 28e76debcb8d3d74333827062e2345e078374b46
-ms.sourcegitcommit: a79123257cd2dc7214fcf691849ea6f56b3b2b70
+ms.openlocfilehash: 977d64749544d1991a40eff5d80a1cd6186aba97
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66755730"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115548"
 ---
 # <a name="project-rome"></a>Project Rome
 
-[Project Rome](https://developer.microsoft.com/en-us/windows/project-rome) は、Microsoft が提供するアプリのクロスデバイス エクスペリエンス プラットフォームです。 
+[Project Rome](https://developer.microsoft.com/windows/project-rome) は、Microsoft が提供するアプリのクロスデバイス エクスペリエンス プラットフォームです。 
 
 このサイトには、Project Rome の開発者向けドキュメント、およびその他の有用なリソースへのリンクが含まれています。
 
@@ -22,9 +22,9 @@ Project Rome を使用するサンプル アプリケーションについては
 
 ## <a name="about-project-rome"></a>Project Rome について
 
-Project Rome を使用する開発者は、複数のデバイスで実行可能で、ユーザーがデバイスを切り替えると、一緒に移動するアプリを作成できます。
+Project Rome を使用する開発者は、複数のデバイスで実行可能で、かつデバイスを切り替える際にユーザーと一緒に切り替え先のデバイスに移動できるアプリを作成できます。
 
-Project Rome には、Microsoft Graph およびプラットフォーム固有のネイティブ SDK を介して公開される機能が含まれています。 これらの機能により、複数のクロスデバイス機能とコネクテッド デバイス機能が有効になり、ログインしたユーザー ID を軸としてアプリが動作するようにできます。 Project Rome に関連付けられた機能には、ユーザーのアクティビティ、通知、デバイス リレー、近距離共有などがありますが、これらに限定されるものではありません。
+Project Rome には、Microsoft Graph およびプラットフォーム固有のネイティブ SDK を介して公開される機能が含まれています。 これらの機能により、複数のクロスデバイス機能とコネクテッド デバイス機能が有効になり、ログインしたユーザー ID を軸としてアプリを一元管理できます。 Project Rome に関連付けられた機能には、ユーザーのアクティビティ、通知、デバイス リレー、近距離共有などがありますが、これらに限定されるものではありません。
 
 ## <a name="choosing-between-native-apis-and-graph-apis"></a>ネイティブ API と Graph API の使い分け
 
@@ -40,7 +40,7 @@ Project Rome には、Microsoft Graph およびプラットフォーム固有の
 
 Project Rome は現在、以下のプラットフォームに対して実装されています。 サンプルと SDK のダウンロードについては、各リンク先をご覧ください。
 
-[windows-sdk]:             https://developer.microsoft.com/en-us/windows/downloads
+[windows-sdk]:             https://developer.microsoft.com/windows/downloads
 [windows-sdk-badge]:       https://img.shields.io/badge/sdk-April%202018%20Update-brightgreen.svg
 [windows-drsample]:        https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/RemoteSystems
 [windows-afsample]:        https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserActivity 
@@ -85,15 +85,15 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 | **MSGraph**                       | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 | [![REST][graph-relay-badge]][graph-relay]<br> [![REST][graph-activities-badge]][graph-activities]<br>[![REST][graph-notification-badge]][graph-notification]          | [デバイス リレー][graph-relay-sample]<br>[アクティビティ/タイムライン][graph-activities-sample]<br>[Graph 通知][graph-notification-sample]
 
 ## <a name="project-rome-blog-posts"></a>Project Rome のブログ記事
-* [Project Rome によるクロスデバイスのエクスペリエンス (英語)](https://blogs.windows.com/buildingapps/2016/10/11/cross-device-experience-with-project-rome/#iQTseFlAMJRopU9k.97)
+* [Project Rome によるクロスデバイスのエクスペリエンス](https://blogs.windows.com/buildingapps/2016/10/11/cross-device-experience-with-project-rome/#iQTseFlAMJRopU9k.97)
 
 * [ソーシャル化:Project Rome、マップ、およびソーシャル ネットワークの統合 (英語)](https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series/#SCfoEZ1q8c1yBMei.97)
 
-* [Project Rome Android SDK の発表 (英語)](https://blogs.windows.com/buildingapps/2017/02/08/announcing-project-rome-android-sdk/#obDkvwkXOGa3tcTx.97)
+* [Project Rome Android SDK の発表](https://blogs.windows.com/buildingapps/2017/02/08/announcing-project-rome-android-sdk/#obDkvwkXOGa3tcTx.97)
 
 * [Android 用 Project Rome の更新:アプリ サービスのサポートが開始 (英語)](https://blogs.windows.com/buildingapps/2017/03/23/project-rome-android-update-now-app-services-support/#DBm1Ic4JX8vXv2h0.97)
 
-* [Project Rome による Android 用リモート制御コンパニオン アプリの構築 (英語)](https://blog.xamarin.com/building-remote-control-companion-app-android-project-rome/)
+* [Project Rome による Android 用リモート制御コンパニオン アプリの構築](https://devblogs.microsoft.com/xamarin/building-remote-control-companion-app-android-project-rome/)
 
 * [Windows 10 Creators Update の新しい共有エクスペリエンス (英語)](https://blogs.windows.com/buildingapps/2017/04/06/new-share-experience-windows-10-creators-update/#OGskrWcLLlrCTCSH.97)
 
@@ -101,7 +101,7 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 
 ## <a name="other-resources"></a>その他のリソース
 
-* [Web とアプリのリンク](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking)
+* [Web とアプリのリンク](https://docs.microsoft.com/windows/uwp/launch-resume/web-to-app-linking)
 
 * [//Build 2016 のトーク内容](https://channel9.msdn.com/Events/Build/2016/B831)
 
@@ -109,5 +109,5 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 
 ## <a name="give-feedback"></a>フィードバックの送信
 
-|[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/183208-connected-apps-and-devices-project-rome)|[フィードバック Hub](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)|[お問い合わせ先](mailto:projectrometeam@microsoft.com)|
+|[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/183208-connected-apps-and-devices-project-rome)|[フィードバック Hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)|[お問い合わせ](mailto:projectrometeam@microsoft.com)|
 |-----|-----|-----|

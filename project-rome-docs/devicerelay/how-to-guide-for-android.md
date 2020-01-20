@@ -5,12 +5,12 @@ ms.topic: article
 keywords: microsoft, windows, project rome, コマンド実行, android
 ms.assetid: 2fd14dd0-0f1f-49ee-83e3-468737810c81
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ca9caf60c59c619d1f7ec4e7b3af529acbb2ffc
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.openlocfilehash: bb58b8340dcd8158a201ce670ef0b69ba0272b6f
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66755754"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115566"
 ---
 # <a name="implementing-device-relay-for-android"></a>Android のデバイス リレーの実装
 
@@ -215,8 +215,8 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
 
 Android アプリは Connected Devices ポータルを使用して、他のデバイス上のアプリ サービスと対話できます。 これにより、他のデバイスと通信するための多くの方法が提供されます&mdash;アプリをホスト デバイスの前面に出す必要はまったくありません。 
 
-#### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスをセットアップする
-このガイドでは、[Windows 用の Roman テスト アプリ](http://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、Android アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。 
+#### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスを設定する
+このガイドでは、[Windows 用の Roman テスト アプリ](https://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、Android アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。 
 
 独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
 
