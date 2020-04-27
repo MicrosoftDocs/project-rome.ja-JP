@@ -5,10 +5,10 @@ ms.topic: include
 ms.assetid: 9f679e13-b1b3-40f8-bd44-679e4dffc0d4
 ms.localizationpriority: medium
 ms.openlocfilehash: eafd435f0cd9eabc5aa121cdb5288bd0b522df60
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "59801797"
 ---
 ### <a name="add-the-sdk"></a>SDK の追加

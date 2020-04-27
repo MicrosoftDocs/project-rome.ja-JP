@@ -1,10 +1,10 @@
 ---
 title: Project Rome SDK を使用して通知を受信する
 ms.openlocfilehash: ac86a6abb25a46a5f2c758e0bd6caaaaabeae620
-ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75207811"
 ---
 # <a name="receiving-notifications-using-the-project-rome-sdk"></a>Project Rome SDK を使用して通知を受信する

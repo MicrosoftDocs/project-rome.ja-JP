@@ -5,10 +5,10 @@ ms.topic: include
 ms.assetid: dc4d7bbd-bc87-42b1-9924-52c7bfcd5b5f
 ms.localizationpriority: medium
 ms.openlocfilehash: f085486eece082366dddc00d86f0c4959d09a5cf
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "58907304"
 ---
 ### <a name="register-your-app-for-push-notifications"></a>プッシュ通知のためにアプリを登録する

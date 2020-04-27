@@ -3,7 +3,7 @@ ms.openlocfilehash: 325f0d041408b301c61648bd5c030ae0c7c4f59c
 ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "76118100"
 ---
 ### <a name="register-your-app-in-microsoft-windows-dev-center-for-cross-device-experiences"></a>Microsoft Windows デベロッパー センターでクロスデバイス エクスペリエンスのためにアプリを登録する

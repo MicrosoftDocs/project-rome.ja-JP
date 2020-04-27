@@ -5,10 +5,10 @@ ms.topic: include
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d1d764c4aae562a1fcafdb490db5a14522cda6
-ms.sourcegitcommit: e95423df0e4427377ab74dbd12b0056233181d32
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "66755749"
 ---
 ## <a name="preliminary-setup-for-the-connected-devices-platform-and-notifications"></a>Connected Devices Platform と通知の準備段階のセットアップ

@@ -1,10 +1,10 @@
 ---
 title: Microsoft Graph のデバイス リレー REST API を使用する
 ms.openlocfilehash: 887ebff8788ac4300036512761df80c6b8e5e97f
-ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75207821"
 ---
 # <a name="using-microsoft-graphs-device-relay-rest-apis"></a>Microsoft Graph のデバイス リレー REST API を使用する

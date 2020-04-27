@@ -1,10 +1,10 @@
 ---
 title: Windows のユーザー アクティビティの実装
 ms.openlocfilehash: 1f164e42fed00f8d738711a04b91ef2209acfab1
-ms.sourcegitcommit: 5670ff536ea9bfcd678cfde54f262a1ec5c8add4
+ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75207911"
 ---
 # <a name="implementing-user-activities-for-windows"></a>Windows のユーザー アクティビティの実装
