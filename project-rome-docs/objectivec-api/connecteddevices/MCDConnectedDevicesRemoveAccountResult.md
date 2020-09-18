@@ -1,17 +1,17 @@
 ---
 title: MCDConnectedDevicesRemoveAccountResult
-description: Result of MCDConnectedDevicesAccountManager.removeAccountAsync()
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 78cb3ef38184e455a3e82d78deb9f4caf7ad0439
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDConnectedDevicesRemoveAccountResult クラスについて説明します。 このクラスは、MCDConnectedDevicesAccountManager removeAccountAsync () の結果です。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 756cb1364402d4784e5cc7c89cf7ad781563500b
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59800656"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761086"
 ---
-# <a name="class-mcdconnecteddevicesremoveaccountresult"></a><span data-ttu-id="11be5-104">クラス `MCDConnectedDevicesRemoveAccountResult`</span><span class="sxs-lookup"><span data-stu-id="11be5-104">class `MCDConnectedDevicesRemoveAccountResult`</span></span> 
+# <a name="class-mcdconnecteddevicesremoveaccountresult"></a><span data-ttu-id="c7711-105">講義 `MCDConnectedDevicesRemoveAccountResult`</span><span class="sxs-lookup"><span data-stu-id="c7711-105">class `MCDConnectedDevicesRemoveAccountResult`</span></span> 
 
 ```
 @interface MCDConnectedDevicesRemoveAccountResult : NSObject
 ```  
-<span data-ttu-id="11be5-105">Result of MCDConnectedDevicesAccountManager.removeAccountAsync()</span><span class="sxs-lookup"><span data-stu-id="11be5-105">Result of MCDConnectedDevicesAccountManager.removeAccountAsync()</span></span>
+<span data-ttu-id="c7711-106">MCDConnectedDevicesAccountManager の結果 () removeAccountAsync ()</span><span class="sxs-lookup"><span data-stu-id="c7711-106">Result of MCDConnectedDevicesAccountManager.removeAccountAsync()</span></span>

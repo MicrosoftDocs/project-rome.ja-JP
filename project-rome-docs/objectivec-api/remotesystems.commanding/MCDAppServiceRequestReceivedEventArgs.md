@@ -1,24 +1,24 @@
 ---
 title: MCDAppServiceRequestReceivedEventArgs
-description: 「要求を受信」のイベントに関連付けられたデータが含まれています。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 5fa7a3b2742d5ecacd7c6a90e39e86f4c46f2218
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDAppServiceRequestReceivedEventArgs クラスについて説明します。 このクラスには、"要求を受信しました" イベントに関連付けられたデータが含まれています。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 9a4a64ae163a0cc553196914da2f42d8d32e6ade
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59800644"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760766"
 ---
-# <a name="class-mcdappservicerequestreceivedeventargs"></a><span data-ttu-id="0037e-104">クラス `MCDAppServiceRequestReceivedEventArgs`</span><span class="sxs-lookup"><span data-stu-id="0037e-104">class `MCDAppServiceRequestReceivedEventArgs`</span></span> 
+# <a name="class-mcdappservicerequestreceivedeventargs"></a><span data-ttu-id="88cd1-105">講義 `MCDAppServiceRequestReceivedEventArgs`</span><span class="sxs-lookup"><span data-stu-id="88cd1-105">class `MCDAppServiceRequestReceivedEventArgs`</span></span> 
 
 ```
 @interface MCDAppServiceRequestReceivedEventArgs : NSObject
 ```  
-<span data-ttu-id="0037e-105">「要求を受信」のイベントに関連付けられたデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="0037e-105">Contains data associated with a "request received" event.</span></span>
+<span data-ttu-id="88cd1-106">"要求を受信しました" イベントに関連付けられたデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="88cd1-106">Contains data associated with a "request received" event.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="0037e-106">プロパティ</span><span class="sxs-lookup"><span data-stu-id="0037e-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="88cd1-107">Properties</span><span class="sxs-lookup"><span data-stu-id="88cd1-107">Properties</span></span>
 
-### <a name="request"></a><span data-ttu-id="0037e-107">要求</span><span class="sxs-lookup"><span data-stu-id="0037e-107">request</span></span>
+### <a name="request"></a><span data-ttu-id="88cd1-108">request</span><span class="sxs-lookup"><span data-stu-id="88cd1-108">request</span></span>
 `@property(nonatomic, readonly, nonnull) MCDAppServiceRequest* request;`
 
-<span data-ttu-id="0037e-108">リモート デバイスによって送信される要求。</span><span class="sxs-lookup"><span data-stu-id="0037e-108">The request sent by the remote device.</span></span>
+<span data-ttu-id="88cd1-109">リモートデバイスによって送信された要求。</span><span class="sxs-lookup"><span data-stu-id="88cd1-109">The request sent by the remote device.</span></span>
