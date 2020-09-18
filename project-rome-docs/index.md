@@ -3,12 +3,12 @@ title: クロスデバイス アプリケーションを構築する
 description: Project Rome を使用した、Windows 10 アプリケーション対応のクロスデバイスおよびクロスプラットフォームの機能について説明します。
 ms.topic: overview
 ms.custom: seodec2018, RS5
-ms.openlocfilehash: 977d64749544d1991a40eff5d80a1cd6186aba97
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 0c00816de9111790bf20c98e48293d653490de3c
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "76115548"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760926"
 ---
 # <a name="project-rome"></a>Project Rome
 
@@ -105,9 +105,10 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 
 * [//Build 2016 のトーク内容](https://channel9.msdn.com/Events/Build/2016/B831)
 
-* [MS Dev Show ポッドキャスト](http://msdevshow.com/2016/11/project-rome-with-shawn-henry/)
+* [MS Dev Show ポッドキャスト](https://msdevshow.com/2016/11/project-rome-with-shawn-henry/)
 
-## <a name="give-feedback"></a>フィードバックの送信
+## <a name="give-feedback"></a>フィードバックを送る
 
-|[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/183208-connected-apps-and-devices-project-rome)|[フィードバック Hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)|[お問い合わせ](mailto:projectrometeam@microsoft.com)|
-|-----|-----|-----|
+|[フィードバック Hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)|[お問い合わせ](mailto:projectrometeam@microsoft.com)|
+|-----|-----|
+

@@ -1,53 +1,53 @@
 ---
 title: MCDRemoteSystemAuthorizationKindFilter
-description: リモート システムの承認の種類に基づいてフィルター処理するために使用するクラスです。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: da68c7a0eacd2018332d5e2fe5c8e3c906f473f8
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDRemoteSystemAuthorizationKindFilter クラスについて説明します。 このクラスは、承認の種類に基づいてリモートシステムをフィルター処理するために使用されます。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: a48c9aeacf262146a12da6fd691e853cb7dde199
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801254"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760706"
 ---
-# <a name="class-mcdremotesystemauthorizationkindfilter"></a>クラス `MCDRemoteSystemAuthorizationKindFilter` 
+# <a name="class-mcdremotesystemauthorizationkindfilter"></a>講義 `MCDRemoteSystemAuthorizationKindFilter` 
 
 ```
 @interface MCDRemoteSystemAuthorizationKindFilter : NSObject<MCDRemoteSystemFilter>
 ```  
 
-リモート システムの承認の種類に基づいてフィルター処理するために使用するクラスです。
+承認の種類に基づいてリモートシステムをフィルター処理するために使用されるクラス。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
-### <a name="kind"></a>種類
+### <a name="kind"></a>kind
 `@property(nonatomic, readonly) MCDRemoteSystemAuthorizationKind kind;`
 
-承認の種類をフィルター処理します。
+フィルター処理の対象となる承認の種類。
 
 ## <a name="constructors"></a>コンストラクター
 
 ### <a name="filterwithkind"></a>filterWithKind
 `+ (nullable instancetype)filterWithKind:(MCDRemoteSystemAuthorizationKind)authorizationKind;`
 
-MCDRemoteSystemAuthorizationKind でフィルター処理するこのクラスの新しいインスタンス。
+MCDRemoteSystemAuthorizationKind でフィルター処理された、このクラスの新しいインスタンス。
 
 #### <a name="parameters"></a>パラメーター 
 * `authorizationKind` 
 
-承認の種類をフィルター処理します。
+フィルター処理の対象となる承認の種類。
 
 #### <a name="returns"></a>戻り値
-指定された承認フィルターを使用して MCDRemoteSystemAuthorizationKindFilter オブジェクトを返します。
+指定された承認フィルターを持つ MCDRemoteSystemAuthorizationKindFilter オブジェクトを返します。
 
 ### <a name="initwithkind"></a>initWithKind
 `- (nullable instancetype)initWithKind:(MCDRemoteSystemAuthorizationKind)authorizationKind;`
 
-MCDRemoteSystemAuthorizationKind でこのクラスの新しいインスタンス。
+MCDRemoteSystemAuthorizationKind を持つこのクラスの新しいインスタンス。
 
 #### <a name="parameters"></a>パラメーター 
 * `authorizationKind` 
 
-承認の種類をフィルター処理します。
+フィルター処理の対象となる承認の種類。
 
 #### <a name="returns"></a>戻り値
-AuthorizationKind 初期化 MCDRemoteSystemAuthorizationKindFilter オブジェクトを返します。
+AuthorizationKind で初期化された MCDRemoteSystemAuthorizationKindFilter オブジェクトを返します。

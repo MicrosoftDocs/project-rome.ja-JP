@@ -1,15 +1,15 @@
 ---
 title: MCDUserDataFeedPlatforms
-description: MCDUserDataFeedSyncScope の有効なプラットフォームを提供します。
-keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 7474c5896fec97a94799423ba0748bd2814d2c7a
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDUserDataFeedPlatforms クラスについて説明します。 このクラスは、MCDUserDataFeedSyncScope の有効なプラットフォームを提供します。
+keywords: microsoft、windows、ユーザーアクティビティ、iOS、iPhone、、接続デバイス、プロジェクトローマ
+ms.openlocfilehash: 0f11f695e0c9806dc43ac00e5da92f705758d73d
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801219"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760976"
 ---
-# <a name="class-mcduserdatafeedplatforms"></a>クラス `MCDUserDataFeedPlatforms`
+# <a name="class-mcduserdatafeedplatforms"></a>講義 `MCDUserDataFeedPlatforms`
 
 ```
 @interface MCDUserDataFeedPlatforms : NSObject
@@ -17,34 +17,34 @@ ms.locfileid: "59801219"
 This class is responsible for providing the valid platform for the MCDUserDataFeedSyncScope.
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="all"></a>all
 `@property(class, nonatomic, readonly, nonnull) NSString* all;`
 
-プラットフォームのすべてのオブジェクト
+すべてのプラットフォームオブジェクト
 
 ### <a name="android"></a>Android
 `@property(class, nonatomic, readonly, nonnull) NSString* android;`
 
-Android プラットフォームのオブジェクト
+Android platform オブジェクト
 
 ### <a name="ios"></a>iOS
 `@property(class, nonatomic, readonly, nonnull) NSString* iOS;`
 
-iOS プラットフォーム オブジェクト
+iOS platform オブジェクト
 
 ### <a name="windowsuwp"></a>windowsUWP
 `@property(class, nonatomic, readonly, nonnull) NSString* windowsUWP;`
 
-UWP プラットフォーム オブジェクト
+UWP プラットフォームオブジェクト
 
 ### <a name="windows32"></a>windows32
 `@property(class, nonatomic, readonly, nonnull) NSString* windows32;`
 
-Windows32 プラットフォーム オブジェクト
+Windows32 platfrom.details.heap.alignedallocate オブジェクト
 
-### <a name="linux"></a>Linux
+### <a name="linux"></a>linux
 `@property(class, nonatomic, readonly, nonnull) NSString* linux;`
 
-Linux プラットフォーム オブジェクト
+Linux platfrom.details.heap.alignedallocate オブジェクト

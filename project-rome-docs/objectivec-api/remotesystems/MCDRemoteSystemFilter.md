@@ -1,18 +1,18 @@
 ---
 title: MCDRemoteSystemFilter
-description: リモート システム検出フィルターとして機能するオブジェクトのプロトコルです。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 1878296d42d14e63106db1863c861d830f4c9b05
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDRemoteSystemFilter プロトコルについて説明します。 リモートシステム探索フィルターとして機能するオブジェクトのプロトコルです。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 174df8bc1bd613b6f6cf9ec0621082826a939d1e
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801524"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760686"
 ---
-# <a name="protocol-mcdremotesystemfilter"></a>プロトコル `MCDRemoteSystemFilter`
+# <a name="protocol-mcdremotesystemfilter"></a>プロトコール `MCDRemoteSystemFilter`
 
 ```
 @protocol MCDRemoteSystemFilter <NSObject>
 ```
 
-リモート システム検出フィルターとして機能するオブジェクトのプロトコルです。
+リモートシステム探索フィルターとして機能するオブジェクトのプロトコル。

@@ -1,27 +1,27 @@
 ---
 title: MCDLaunchUriProvider
-description: ''
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 4cbfaa9fd1e88345f4ce35987508b061e479854e
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDLaunchUriProvider プロトコルについて説明します。 このプロトコルは、アプリケーションを起動することによって URI の処理を管理するために使用されます。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 3339f9b5c8ab14dddf519618795c4150b69dfe3e
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58907464"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760756"
 ---
-# <a name="protocol-mcdlaunchuriprovider"></a>プロトコル `MCDLaunchUriProvider`
+# <a name="protocol-mcdlaunchuriprovider"></a>プロトコール `MCDLaunchUriProvider`
 
 ```
 @protocol MCDLaunchUriProvider <NSObject>
 ```
 
-このクラスは、アプリケーションの起動を通じて、URI の処理を管理します。
+このクラスは、アプリケーションの起動によって URI の処理を管理します。
 
-## <a name="properties"></a>プロパティ 
+## <a name="properties"></a>Properties 
 ### <a name="supportedurischemes"></a>supportedUriSchemes
 `@property(nonatomic, readonly, strong, nullable) NSArray<NSString*>* supportedUriSchemes;`
 
-表す文字列の配列には、URI スキームがサポートされています。
+サポートされている URI スキームを表す文字列の配列。
 
 ## <a name="methods"></a>メソッド
 
@@ -32,9 +32,9 @@ ms.locfileid: "58907464"
               completion:(nonnull void (^)(BOOL, NSError* _Nullable))completionBlock;
 ```
 
-リモート デバイスがこのデバイス上の URI を起動しようとした場合、このメソッドが呼び出されます。
+このメソッドは、リモートデバイスがこのデバイスで URI を起動しようとしたときに呼び出されます。
 
 #### <a name="parameters"></a>パラメーター 
 * `uri` 起動する URI。
-* `options` URI を起動するためのオプションのセット。 フォールバック URI は、設定できる有効なオプションの 1 つだけです。
-* `completionBlock` 完了時に実行するコード ブロックです。
+* `options` URI を起動するためのオプションのセット。 フォールバック URI は、設定可能なオプションの1つにすぎません。
+* `completionBlock` 完了時に実行するコードブロック。

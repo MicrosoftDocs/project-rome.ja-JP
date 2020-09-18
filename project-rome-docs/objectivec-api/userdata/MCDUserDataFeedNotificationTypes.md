@@ -1,37 +1,37 @@
 ---
 title: MCDUserDataFeedNotificationTypes
-description: このクラスは、通知の種類を提供する担当
-keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 49f13fd2dbb13c439993f79a2b7275d4a705826a
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDUserDataFeedNotificationTypes クラスについて説明します。 このクラスは、通知の種類を提供します。
+keywords: microsoft、windows、ユーザーアクティビティ、iOS、iPhone、、接続デバイス、プロジェクトローマ
+ms.openlocfilehash: a9bb9b41309e32a429926c52769da9bc767ef5bc
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801145"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760986"
 ---
-# <a name="class-mcduserdatafeednotificationtypes"></a>クラス `MCDUserDataFeedNotificationTypes`
+# <a name="class-mcduserdatafeednotificationtypes"></a>講義 `MCDUserDataFeedNotificationTypes`
 
 ```
 @interface MCDUserDataFeedNotificationTypes : NSObject
 ```
 
-このクラスは、MCDUserDataFeedSyncScope.notificationType 有効な通知の種類を提供します。
+このクラスは、MCDUserDataFeedSyncScope の有効な通知の種類を提供します。
 
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="notificationwithpayload"></a>notificationWithPayload
 `@property(class, nonatomic, readonly, nonnull) NSString* notificationWithPayload;`
 
-受信したプッシュ通知を表します。  ドメイン/サーバー制限以外のプッシュ通知を rescrictions はありません。
+受信プッシュ通知を表します。  ドメイン/サーバーの制限以外のプッシュ通知には、何も行われません。
 
 ### <a name="notificationonly"></a>notificationOnly
 `@property(class, nonatomic, readonly, nonnull) NSString* notificationOnly;`
 
-場合でも、データがプッシュ通知に含まれている可能性がありますが、データを受信する同期のみをシステムに伝える通知にすべてのプッシュ通知を降格します。
+プッシュ通知にデータが含まれていてもデータを受信するようにシステムに指示するだけで、すべてのプッシュ通知を通知に降格します。
 
 
 ### <a name="nonotification"></a>noNotification
 `@property(class, nonatomic, readonly, nonnull) NSString* noNotification;`
 
-新しいユーザー データの通知を防ぐため、UserDataFeed.startSync が呼び出されたときに、またはその他の方法でサーバーと対話するときに新しいデータの受信のみ
+新しいユーザーデータの通知を禁止する、UserDataFeed が呼び出されたとき、または他の方法でサーバーと対話するときに、新しいデータのみを受信する

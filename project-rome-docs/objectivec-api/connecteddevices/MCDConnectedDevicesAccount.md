@@ -1,35 +1,35 @@
 ---
 title: MCDConnectedDevicesAccount
-description: このクラスは、アプリによって認識されている単一のユーザー アカウントを表します。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: e9b43bb76e46f3a027247b1d4d564c6e1571bae4
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDConnectedDevicesAccount クラスについて説明します。 このクラスは、アプリによって認識される1つのユーザーアカウントを表します。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: b3004681c2bcbb0ad9d5b1dcb15fe8a711773767
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59800934"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761046"
 ---
-# <a name="class-mcdconnecteddevicesaccount"></a>クラス `MCDConnectedDevicesAccount`
+# <a name="class-mcdconnecteddevicesaccount"></a>講義 `MCDConnectedDevicesAccount`
 
 ```
 @interface MCDConnectedDevicesAccount : NSObject
 ```  
 
-このクラスは、アプリによって認識されている単一のユーザー アカウントを表します。
+このクラスは、アプリによって認識される1つのユーザーアカウントを表します。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="anonymousaccount"></a>anonymousAccount
 `+ (nullable instancetype)anonymousAccount;`
 
-匿名アカウントのシングルトン インスタンス。
+匿名アカウントのシングルトンインスタンス。
 
 ### <a name="accountid"></a>accountId
 `@property(nonatomic, readonly, copy, nonnull) NSString* accountId;`
 
-このユーザー アカウントの一意の識別子。
+このユーザーアカウントの一意の識別子。
 
-### <a name="type"></a>type
+### <a name="type"></a>型
 `@property(nonatomic, readonly) MCDConnectedDevicesAccountType type;`
 
 アカウントの種類を記述する MCDConnectedDevicesAccountType 値。
@@ -39,30 +39,30 @@ ms.locfileid: "59800934"
 ### <a name="accountwithaccountid"></a>accountWithAccountId
 `+ (nullable instancetype)accountWithAccountId:(nullable NSString*)accountId type:(MCDConnectedDevicesAccountType)type;`
 
-このユーザー アカウントの一意の識別子では、このクラスの新しいインスタンス。
+このユーザーアカウントの一意の識別子を持つ、このクラスの新しいインスタンス。
 
 #### <a name="parameters"></a>パラメーター 
 
 * `accountId` 
 
-このユーザー アカウントの一意の識別子の文字列。
+このユーザーアカウントの一意の識別子文字列。
 
 `type` 
 
-アカウントの MCDConnectedDevicesAccountType (依存、アカウントがどの ID プロバイダーから)。
+アカウントの MCDConnectedDevicesAccountType (アカウントの元の ID プロバイダーによって異なります)。
 
 #### <a name="returns"></a>戻り値
-アカウント識別子を含む MCDConnectedDevicesAccount オブジェクトを返します。
+アカウント識別子を持つ MCDConnectedDevicesAccount オブジェクトを返します。
 
 ### <a name="initwithaccountid"></a>initWithAccountId
 `- (nullable instancetype)initWithAccountId:(nullable NSString*)accountId type:(MCDConnectedDevicesAccountType)type;`
 
-このユーザー アカウントの一意の識別子では、このクラスの新しいインスタンス。
+このユーザーアカウントの一意の識別子を持つ、このクラスの新しいインスタンス。
 
 #### <a name="parameters"></a>パラメーター 
 * `type`
 
-アカウントの MCDConnectedDevicesAccountType (依存、アカウントがどの ID プロバイダーから)。
+アカウントの MCDConnectedDevicesAccountType (アカウントの元の ID プロバイダーによって異なります)。
 
 #### <a name="returns"></a>戻り値
-アカウント識別子を使用して初期化 MCDConnectedDevicesAccount オブジェクトを返します。
+アカウント識別子を使用して初期化された MCDConnectedDevicesAccount オブジェクトを返します。

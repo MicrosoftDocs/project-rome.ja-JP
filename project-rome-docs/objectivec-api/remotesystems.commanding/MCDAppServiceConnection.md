@@ -1,102 +1,102 @@
 ---
 title: MCDAppServiceConnection
-description: このクラスは、特定のリモート アプリ サービスへの接続を管理します。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 22e253f137642ad609a22af33aa62e2ef9543503
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDAppServiceConnection クラスについて説明します。 このクラスは、特定のリモートアプリサービスへの接続を管理します。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 2d9153eeddb9010ac40ab37d9adb433edd11b0ca
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58908544"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761056"
 ---
-# <a name="class-mcdappserviceconnection"></a>クラス `MCDAppServiceConnection`
+# <a name="class-mcdappserviceconnection"></a>講義 `MCDAppServiceConnection`
 
 ```
 @interface MCDAppServiceConnection : NSObject
 ```
-このクラスは、特定のリモート アプリ サービスへの接続を管理します。
+このクラスは、特定のリモートアプリサービスへの接続を管理します。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="appserviceinfo"></a>appServiceInfo
 `@property(nonatomic, retain, nonnull) MCDAppServiceInfo* appServiceInfo;`
 
-ターゲット app service に接続するための詳細を提供します。
+接続先の app service に関する詳細を提供します。
 
 ### <a name="requestreceived"></a>requestReceived 
 `@property(nonatomic, readonly, nonnull) MCDEvent<MCDAppServiceConnection*, MCDAppServiceRequestReceivedEventArgs*>* requestReceived;`
 
-リモート アプリからサービス要求を受信したときのイベントです。
+リモートアプリからサービス要求を受信したときのイベントです。
 
 ### <a name="serviceclosed"></a>serviceClosed 
 `@property(nonatomic, readonly, nonnull) MCDEvent<MCDAppServiceConnection*, MCDAppServiceClosedEventArgs*>* serviceClosed;`
 
-App service への接続を閉じたときのイベントです。
+App service への接続が終了したときのイベントです。
 
 ## <a name="constructors"></a>コンストラクター
 
 ### <a name="init"></a>Init
 `- (nullable instancetype)init;`
 
-作成し、このクラスの新しいインスタンスを初期化します。
+このクラスの新しいインスタンスを作成して初期化します。
 
 #### <a name="returns"></a>戻り値
-初期化された[MCDAppServiceConnection](MCDAppServiceConnection.md)成功した場合、それ以外の場合の nil します。
+成功した場合は初期化された [MCDAppServiceConnection](MCDAppServiceConnection.md) 。それ以外の場合は nil。
 
 ### <a name="initwithappserviceinfo"></a>initWithAppServiceInfo
-- (null 許容 instancetype) initWithAppServiceInfo:(nonnull MCDAppServiceInfo*) appServiceInfo;
+- (nullable instancetype) initWithAppServiceInfo: (null 以外の MCDAppServiceInfo *) appServiceInfo;
 
 #### <a name="parameters"></a>パラメーター
-* `appServiceInfo` アプリ サービスの説明。
+* `appServiceInfo` App service の説明。
 
 #### <a name="returns"></a>戻り値
-返しますが、初期化された[MCDAppServiceConnection](MCDAppServiceConnection.md)成功した場合、それ以外の場合の nil します。
+成功した場合は初期化された [MCDAppServiceConnection](MCDAppServiceConnection.md) を返し、それ以外の場合は nil を返します。
 
 ### <a name="appserviceconnectionwithappserviceinfo"></a>appServiceConnectionWithAppServiceInfo
 `+ (nullable instancetype)appServiceConnectionWithAppServiceInfo:(nonnull MCDAppServiceInfo*) appServiceInfo;`
 
-作成し、アプリ サービスの情報をこのクラスの新しいインスタンスを初期化します。
+App service 情報を使用して、このクラスの新しいインスタンスを作成して初期化します。
 
 #### <a name="parameters"></a>パラメーター
 * `appServiceInfo` 
 
-アプリ サービスの説明。
+App service の説明。
 
 #### <a name="returns"></a>戻り値
-返しますが、初期化された[MCDAppServiceConnection](MCDAppServiceConnection.md)成功した場合、それ以外の場合の nil します。
+成功した場合は初期化された [MCDAppServiceConnection](MCDAppServiceConnection.md) を返し、それ以外の場合は nil を返します。
 
 ## <a name="methods"></a>メソッド
 
 ### <a name="openremoteasync"></a>openRemoteAsync
 `- (void)openRemoteAsync:(nonnull MCDRemoteSystemConnectionRequest*)connectionRequest completion:(nonnull void (^)(MCDAppServiceConnectionStatus, NSError* _Nullable))completion;`
 
-指定したリモート デバイス上でアプリケーションのアプリのサービス接続を開きます。 開き、接続に失敗した場合、例外がスローされます。
+指定したリモートデバイスまたはアプリケーションで、app service 接続を開きます。 接続が開けなかった場合は、例外がスローされます。
 
->**注:** このメソッドは、次のいずれかに該当する場合、例外がスローされました。
-> * 接続が既に開いているか、開く処理です。
-> * アプリ サービスの説明では、設定されていないかがクリアされました。
+>**注:** 次のいずれかに該当する場合、このメソッドは例外をスローします。
+> * 接続は既に開いているか、開いています。
+> * App service の説明が設定されていないか、消去されています。
 > * プラットフォームが初期化されていません。
-> * アプリは、メソッド、接続の「要求を受信しました」のイベントをサブスクライブしているもののが指定されていない、 **MCDNotificationProvider**プラットフォームを初期化するときにします。 すべてのホスティング シナリオが必要です、 **MCDNotificationProvider**します。
+> * アプリは、接続の "request received" イベントに対してメソッドをサブスクライブしましたが、プラットフォームの初期化時に **MCDNotificationProvider** が提供されていません。 すべてのホスティングシナリオには **MCDNotificationProvider**が必要です。
 
 #### <a name="parameters"></a>パラメーター
 * `connectionRequest` 
 
-どのリモート システムまたはターゲットへのリモート アプリを示す接続要求。
+対象とするリモートシステムまたはリモートアプリを示す接続要求。
 
 ### <a name="sendmessageasync"></a>sendMessageAsync
 `- (void)sendMessageAsync:(nonnull NSDictionary*)message completion:(nonnull void (^)(MCDAppServiceResponse* _Nonnull, NSError* _Nullable))completion;`
 
-リモート アプリ サービスにメッセージを送信し、応答のリッスンを開始します。  このメソッドは、1 つのメッセージと応答を実行し、永続的な接続を確立できません。  また、接続が正常に開かれた後にのみ呼び出す必要があります。
+リモートの app service にメッセージを送信し、応答のリッスンを開始します。  このメソッドは、1つのメッセージ/応答を実行し、永続的な接続を確立しません。  接続が正常に開かれた後にのみ呼び出す必要があります。
 
 #### <a name="parameters"></a>パラメーター
 * `message` 
 
 App service に送信されるデータのキーと値のセット。
 
-### <a name="close"></a>close
+### <a name="close"></a>閉じる
 `- (void)close;`
 
-リモートの app service への接続を閉じます。 閉じているか、ユーザーまたはシステムによって停止されるたびに、クライアント アプリはこのメソッドを呼び出す必要があります。
+リモートの app service への接続を閉じます。 クライアントアプリは、ユーザーまたはシステムによって閉じられるか停止されるたびに、このメソッドを呼び出す必要があります。
 
 ### <a name="sendstatelessmessageasync"></a>sendStatelessMessageAsync
 ```
@@ -106,10 +106,10 @@ App service に送信されるデータのキーと値のセット。
                        completion:(nonnull void (^)(MCDStatelessAppServiceResponse* _Nonnull, NSError* _Nullable))completion;
 ```
 
-指定したリモート アプリ サービスにメッセージを送信し、応答のリッスンを開始します。
+指定されたリモートアプリサービスにメッセージを送信し、応答のリッスンを開始します。
 
 #### <a name="parameters"></a>パラメーター
 * `message` App service に送信されるデータのキーと値のセット。
-* `appServiceInfo` ターゲット app service のわかりやすい情報です。
-* `connectionRequest` 接続するため、app service を指定する接続要求。
-* `completion` 完了時の非同期コールバック。
+* `appServiceInfo` ターゲット app service の説明情報。
+* `connectionRequest` 接続先の app service を指定する接続要求です。
+* `completion` 非同期完了コールバック。

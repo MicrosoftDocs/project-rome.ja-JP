@@ -1,26 +1,26 @@
 ---
 title: MCDConnectedDevicesNotificationRegistrationState
-description: クラウドの登録の状態を通信するために使用される値。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: be390f4f8e5d3c026d35bb8998e2818b9db05e86
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDConnectedDevicesNotificationRegistrationState クラスについて説明します。 これらの値は、クラウド登録の状態を伝えるために使用されます。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 8b69443b53532280df3deeef51025f18e70fecac
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59800714"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761116"
 ---
-# <a name="class-mcdconnecteddevicesnotificationregistrationstate"></a>クラス `MCDConnectedDevicesNotificationRegistrationState` 
+# <a name="class-mcdconnecteddevicesnotificationregistrationstate"></a>講義 `MCDConnectedDevicesNotificationRegistrationState` 
 
 ```
 typedef NS_ENUM(NSUInteger, MCDConnectedDevicesNotificationRegistrationState)
 ```  
-クラウドの登録の状態を通信するために使用される値。
+クラウド登録の状態を伝えるために使用される値。
 
 ## <a name="fields"></a>フィールド
 
-| 名前                              |   値     | 説明 |
+| 名前                              |   [値]     | 説明 |
 |:----------------------------------|:------|:-------------------------------|
-| MCDConnectedDevicesNotificationRegistrationStateUnregistered | 0 | 登録が開始されていることはありません。
+| MCDConnectedDevicesNotificationRegistrationStateUnregistered | 0 | 登録が開始されていません。
 | MCDConnectedDevicesNotificationRegistrationStateRegistered | 1 | 登録が完了しました。 |
-| MCDConnectedDevicesNotificationRegistrationStateExpiring | 2 | 登録の有効期限が近づいてし、そのため、アプリが必要があります登録をもう一度実行します。 |
-| MCDConnectedDevicesNotificationRegistrationStateExpired | 3 | 登録の有効期限が切れており、そのため、アプリが必要がありますの登録をもう一度実行します。 |
+| MCDConnectedDevicesNotificationRegistrationStateExpiring | 2 | 登録の有効期限が間もなく切れます。アプリで登録を再度実行する必要があります。 |
+| MCDConnectedDevicesNotificationRegistrationStateExpired | 3 | 登録の有効期限が切れているため、アプリで登録を再度実行する必要があります。 |

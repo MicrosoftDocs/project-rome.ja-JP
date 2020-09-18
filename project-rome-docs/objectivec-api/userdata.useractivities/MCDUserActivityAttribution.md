@@ -1,63 +1,63 @@
 ---
 title: MCDUserActivityAttribution
-description: このクラスは、ユーザーの利用状況のグラフィカル要素を管理します。
-keywords: microsoft、windows、ユーザー アクティビティ、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 94ae2f5afef24a1f4e320014ac930d67b657b0d7
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDUserActivityAttribution クラスについて説明します。 このクラスは、ユーザーアクティビティのグラフィカル要素を管理します。
+keywords: microsoft、windows、ユーザーアクティビティ、iOS、iPhone、、接続デバイス、プロジェクトローマ
+ms.openlocfilehash: e4cf9f078215e987c2f0e8068c4afdf640409acc
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801544"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760196"
 ---
-# <a name="class-mcduseractivityattribution"></a>クラス `MCDUserActivityAttribution`
+# <a name="class-mcduseractivityattribution"></a>講義 `MCDUserActivityAttribution`
 
 ```
 @interface MCDUserActivityAttribution : NSObject
 ```
 
-このクラスは、ユーザーの利用状況のグラフィカル要素を管理します。
+このクラスは、ユーザーアクティビティのグラフィカル要素を管理します。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="iconuri"></a>iconUri
 `+ (nullable instancetype)attributionWithIconUri:(nonnull NSString*)iconUri;`
 
-アイコン イメージの URI。
+アイコンイメージの URI。
 
-### <a name="alternatetext"></a>AlternateText
+### <a name="alternatetext"></a>alternateText
 `@property(nonatomic, copy, nonnull) NSString* alternateText;`
 
-(スクリーン リーダーで使用する) のアイコンの画像を説明するテキスト。
+アイコンイメージを説明するテキスト。スクリーンリーダーで使用します。
 
 ### <a name="addimagequery"></a>addImageQuery
 `@property(nonatomic, assign) BOOL addImageQuery;`
 
-Windows イメージから指定された URI にクエリ文字列を追加するを許可するかどうかを判断します**IconUri**イメージを取得するときにします。 クエリ文字列には、ユーザーの表示、ハイ コントラスト設定、およびユーザーの言語の DPI に基づく最適なイメージを選択するのに役立つ情報が含まれています。 このクエリ文字列は、スケール、コントラスト設定、および言語を指定します。たとえば、 **IconUri** "www.website.com/images/hello.png"の値になります"www.website.com/images/hello.png?ms-scale=100 & ms コントラスト = 標準 & ms lang = en-米国"。
+イメージを取得するときに、 **IconUri** から提供されたイメージ URI に Windows がクエリ文字列を追加できるようにするかどうかを決定します。 クエリ文字列には、ユーザーのディスプレイの DPI、ハイコントラストの設定、およびユーザーの言語に基づいて最適なイメージを選択するのに役立つ情報が含まれています。 このクエリ文字列は、スケール、コントラスト設定、および言語を指定します。たとえば、 **IconUri** 値 "www.website.com/images/hello.png" は、"www.website.com/images/hello.png? ms-scale = 100&ms-contrast = standard&ms-lang = en-us" になります。
 
 ## <a name="constructors"></a>コンストラクター
 
 ### <a name="useractivityattributionwithiconuri"></a>userActivityAttributionWithIconUri
 `+ (nullable instancetype)userActivityAttributionWithIconUri:(nonnull NSString*)iconUri;`
 
-アイコンの URI をこのクラスのインスタンスを作成します。
+アイコン URI を使用して、このクラスのインスタンスを作成します。
 
 #### <a name="parameters"></a>パラメーター
 * `iconUri` 
 
-作成されたインスタンスに属している、アイコンの URI の文字列値。
+作成されたインスタンスに属するアイコン URI の文字列値。
 
 #### <a name="returns"></a>戻り値
-アイコンの uri を使用して初期化 MCDUserActivityAttribution オブジェクトを返します。
+アイコン uri で初期化された MCDUserActivityAttribution オブジェクトを返します。
 
 ### <a name="attributionwithiconuri"></a>attributionWithIconUri
 `+ (nullable instancetype)attributionWithIconUri:(nonnull NSString*)iconUri;`
 
-アイコンの uri への帰属をこのクラスのインスタンスを作成します。
+アイコン uri に対する属性を使用して、このクラスのインスタンスを作成します。
 
 #### <a name="parameters"></a>パラメーター
 * `iconUri` 
 
-作成されたインスタンスに属している、アイコンの URI の文字列値。
+作成されたインスタンスに属するアイコン URI の文字列値。
 
 #### <a name="returns"></a>戻り値
-MCDUserActivityAttribution オブジェクト属性とアイコンの uri を返します。
+アイコンの uri を持つ MCDUserActivityAttribution オブジェクト属性を返します。

@@ -1,15 +1,15 @@
 ---
 title: UserNotificationChannel
-description: このクラスは、ユーザー通知のライフサイクルを管理します。
+description: UserNotificationChannel クラスについて説明します。 このクラスは、ユーザー通知のライフサイクルを管理します。
 keywords: microsoft、windows、Graph 通知、操作方法ウィンドウ
-ms.openlocfilehash: ee30f0eab2bb212dddf1de401a91f0487c512705
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: f5347878da2d82035db1dbb63cca015180f66a34
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801444"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760936"
 ---
-# <a name="class-usernotificationchannel"></a>講義`UserNotificationChannel`
+# <a name="class-usernotificationchannel"></a>講義 `UserNotificationChannel`
 
 ```C#
 public sealed class UserNotificationChannel : IUserNotificationChannel

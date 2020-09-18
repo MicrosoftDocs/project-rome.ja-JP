@@ -1,25 +1,25 @@
 ---
 title: MCDConnectedDevicesAddAccountResult
-description: MCDConnectedDevicesAccountManager.addAccountAsync() の結果。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 7f86554d0e59cef894c7bf5b885eea4db7883f27
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDConnectedDevicesAddAccountResult クラスについて説明します。 「アカウント操作の状態の追加」のプロパティを参照してください。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 72f03113e85768bcfdf325dab7040b011c9ecb23
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801684"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761026"
 ---
-# <a name="class-mcdconnecteddevicesaddaccountresult"></a>クラス `MCDConnectedDevicesAddAccountResult` 
+# <a name="class-mcdconnecteddevicesaddaccountresult"></a>講義 `MCDConnectedDevicesAddAccountResult` 
 
 ```
 @interface MCDConnectedDevicesAddAccountResult : NSObject
 ```  
-MCDConnectedDevicesAccountManager.addAccountAsync() の結果。
+AddAccountAsync () の結果。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="status"></a>status
 
 `@property(nonatomic, readonly) MCDConnectedDevicesAccountAddedStatus status;`
 
-操作の状態のアカウントを追加します。
+アカウント操作の状態を追加します。

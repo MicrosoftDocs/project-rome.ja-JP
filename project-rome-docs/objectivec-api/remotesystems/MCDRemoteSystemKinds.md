@@ -1,62 +1,62 @@
 ---
 title: MCDRemoteSystemKinds
-description: リモート システムのデバイスの種類を表す文字列フィールドが含まれています。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 701bc4662fc8d46009889645bab6e4ee83fdb959
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDRemoteSystemKinds クラスについて説明します。 このクラスには、リモートシステムデバイスの種類を表す文字列フィールドが含まれています。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: 978188b1a17c1acdd257fdc97c64fd17b3a1f618
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801274"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760666"
 ---
-# <a name="class-mcdremotesystemkinds"></a>クラス `MCDRemoteSystemKinds` 
+# <a name="class-mcdremotesystemkinds"></a>講義 `MCDRemoteSystemKinds` 
 
 ```
 @interface MCDRemoteSystemKinds : NSObject
 ```
 
-リモート システムのデバイスの種類を表す文字列フィールドが含まれています。
+リモートシステムデバイスの種類を表す文字列フィールドが含まれています。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="desktop"></a>デスクトップ
 `@property(class, readonly, readonly, nonnull) NSString* desktop;`
 
-デスクトップ デバイスの種類の正規名。
+デスクトップデバイスの種類の正規名。
 
-### <a name="holographic"></a>Holographic
+### <a name="holographic"></a>holographic
 `@property(class, readonly, readonly, nonnull) NSString* holographic;`
 
-Holographic デバイスの種類の正規名。
+Holographic デバイスタイプの正規名。
 
 ### <a name="hub"></a>ハブ
 `@property(class, readonly, readonly, nonnull) NSString* hub;`
 
-ハブのデバイスの種類の正規名。
+ハブデバイスタイプの正規名。
 
-### <a name="phone"></a>[電話]
+### <a name="phone"></a>phone
 `@property(class, readonly, readonly, nonnull) NSString* phone;`
 
-Phone デバイスの種類の正規名。
+Phone デバイスタイプの正規名。
 
-### <a name="xbox"></a>Xbox
+### <a name="xbox"></a>本体
 `@property(class, readonly, readonly, nonnull) NSString* xbox;`
 
-Xbox デバイスの種類の正規名。
+Xbox デバイスタイプの正規名。
 
-### <a name="laptop"></a>ノート PC
+### <a name="laptop"></a>本体
 `@property(class, readonly, readonly, nonnull) NSString* laptop;`
 
-ラップトップ コンピューター デバイスの種類の正規名。
+ラップトップデバイスの標準の名前。
 
-> **注:** Surface Book を含め、すべての Microsoft Surface デバイスでは、タブレット デバイスと見なされます。
+> **注:** Surface Book を含むすべての Microsoft Surface デバイスは、タブレットデバイスと見なされます。
 
 ### <a name="iot"></a>iot
 `@property(class, readonly, readonly, nonnull) NSString* iot;`
 
-IoT デバイスの種類の正規名。
+IoT デバイスの標準の名前。
 
 ### <a name="tablet"></a>タブレット
 `@property(class, readonly, readonly, nonnull) NSString* tablet;`
 
-タブレット デバイスの種類の正規名。
+タブレットデバイスの標準の名前。

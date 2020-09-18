@@ -1,63 +1,63 @@
 ---
 title: MCDRemoteSystem
-description: リモート システムを表すクラス。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 5f0ab2108d4efa486b992bf7bc8c8847692623da
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: MCDRemoteSystem クラスとそのプロパティについて説明します。 このクラスは、リモートシステムを表すために使用されます。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: e211de33117f48cc221152cf40645015693dcddc
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801764"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760996"
 ---
-# <a name="class-mcdremotesystem"></a>クラス `MCDRemoteSystem` 
+# <a name="class-mcdremotesystem"></a>講義 `MCDRemoteSystem` 
 
 ```
 @interface MCDRemoteSystem : NSObject
 ```  
 
-リモート システムを表すクラス。
+リモートシステムを表すクラス。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
-### <a name="kind"></a>種類
+### <a name="kind"></a>kind
 `@property(nonatomic, readonly, nonnull) NSString* kind;`
 
-このリモート システムのデバイスの種類。
+このリモートシステムのデバイスの種類。
 
 ### <a name="systemid"></a>systemId
 `@property(nonatomic, readonly, nonnull) NSString* systemId;`
 
-このリモート システムの識別子。
+このリモートシステムの識別子。
 
 ### <a name="displayname"></a>displayName
 `@property(nonatomic, readonly, nonnull) NSString* displayName;`
 
-リモート システムの名前。
+指定されたリモートシステムの名前。
 
 ### <a name="status"></a>status
 `@property(nonatomic, readonly) MCDRemoteSystemStatus status;`
 
-このリモート システムの可用性の状態です。
+このリモートシステムの可用性の状態。
 
 > [!NOTE]
-WNS プレゼンスは、Windows デバイスと通知の種類として WNS を使用している場合、アプリケーションの可用性をレポートに使用されます。  デバイスは使用可能な (Windows) と見なされる場合、または基になるアプリのいずれかのレポートの自分の存在「使用可能な」とマークされます RemoteSystem 利用可能な (iOS と Android)。 
+WNS プレゼンスは、通知の種類として WNS を使用する Windows デバイスとアプリの可用性をレポートするために使用されます。  デバイスが使用可能と見なされた場合 (Windows の場合)、または基になるアプリの1つが利用可能として表示される場合 (iOS と Android)、RemoteSystem は "利用可能" とマークされます。 
 
 ### <a name="manufacturerdisplayname"></a>manufacturerDisplayName
 `@property(nonatomic, readonly, nonnull) NSString* manufacturerDisplayName;`
 
-リモート システムの製造元の名前。
+指定されたリモートシステムの製造元名。
 
 ### <a name="modeldisplayname"></a>modelDisplayName
 `@property(nonatomic, readonly, nonnull) NSString* modelDisplayName;`
 
-リモート システムのモデル名。
+指定されたリモートシステムのモデル名。
 
 ### <a name="apps"></a>アプリ
 `@property(nonatomic, readonly, nonnull) NSArray<MCDRemoteSystemApp*>* apps;`
 
-このリモート システム上の接続で利用可能なアプリケーションの配列。
+このリモートシステム上の接続に使用できるアプリケーションの配列。
 
-### <a name="platform"></a>プラットフォーム
+### <a name="platform"></a>platform
 `@property(nonatomic, readonly) MCDRemoteSystemPlatform platform;`
 
-リモート システムの使用状況を管理する MCDRemoteSystemPlatform します。
+リモートシステムアクティビティを管理する MCDRemoteSystemPlatform。

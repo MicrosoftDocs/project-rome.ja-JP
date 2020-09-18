@@ -1,15 +1,15 @@
 ---
 title: MCDUserNotificationChannel
-description: このクラスは、ユーザー通知のライフサイクルを管理します。
+description: MCDUserNotificationChannel クラスについて説明します。 このクラスは、ユーザー通知のライフサイクルを管理します。
 keywords: microsoft、windows、device relay、how to iOS、how to iPhone
-ms.openlocfilehash: 234e1af807ac816918fe1de37a18dc07f73fca09
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+ms.openlocfilehash: dc7e451494014cdcdebd056b00e57cfdf5f0757f
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801244"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760876"
 ---
-# <a name="class-mcdusernotificationchannel"></a>講義`MCDUserNotificationChannel`
+# <a name="class-mcdusernotificationchannel"></a>講義 `MCDUserNotificationChannel`
 
 ```
 @interface MCDUserNotificationChannel : NSObject
