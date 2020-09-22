@@ -1,11 +1,12 @@
 ---
 title: RemoteSystems 名前空間
-ms.openlocfilehash: d8ffcf1456bc717a9758c105932b6fc26553905f
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: RemoteSystems 名前空間内のこの API を使用して、クライアント アプリがリモート デバイスとアプリケーションに関する情報を検出できるようにします。
+ms.openlocfilehash: d0bbaec35181856b0acbbeb12893bac3f6f611e4
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207691"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760636"
 ---
 # <a name="remotesystems-namespace"></a>RemoteSystems 名前空間
 ```

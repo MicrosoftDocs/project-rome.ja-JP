@@ -1,11 +1,12 @@
 ---
 title: Android ユーザー通知 API のリファレンス
-ms.openlocfilehash: dbe280e07d878bed0a744b9c8464e9965ffd6cf2
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: Android ユーザー通知 API を使用して、Microsoft Graph 通知を介してアプリ サーバーによって公開されたユーザー通知を受信および管理します。
+ms.openlocfilehash: 5c923aee38090f4addfdf149d9b300086ed2f3bf
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207841"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760896"
 ---
 # <a name="android-user-notifications-api-reference"></a>Android ユーザー通知 API のリファレンス
 

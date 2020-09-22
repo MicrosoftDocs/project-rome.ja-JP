@@ -1,11 +1,12 @@
 ---
 title: ConnectedDevices 名前空間
-ms.openlocfilehash: 2f464105ed8aee12971d3ec352ba4e12150573a0
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: ConnectedDevices 名前空間内のこの API を使用して、クライアント アプリがプラットフォームに登録できるようにします。
+ms.openlocfilehash: 468c0d397528d536d6ed0b6e8cde107c4f9be911
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207861"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761066"
 ---
 # <a name="connecteddevices-namespace"></a>ConnectedDevices 名前空間
 ```

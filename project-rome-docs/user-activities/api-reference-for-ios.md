@@ -1,11 +1,12 @@
 ---
 title: iOS ユーザー アクティビティ API リファレンス
-ms.openlocfilehash: add35bfa2fc79f668f0db352c76935e22613920c
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: iOS ユーザー アクティビティ API を使用すると、Windows スタイルのユーザー アクティビティを作成および公開します。
+ms.openlocfilehash: b632c71d98fdac7f05bd2aee102cec5d2c8ef59a
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207871"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760096"
 ---
 # <a name="ios-user-activities-api-reference"></a>iOS ユーザー アクティビティ API リファレンス
 

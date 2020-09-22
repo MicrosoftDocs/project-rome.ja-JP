@@ -1,11 +1,12 @@
 ---
 title: Android 近距離共有 API リファレンス
-ms.openlocfilehash: 2cca8c282fe89bea3911a8496556b246933e562a
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: Android 近距離共有 API を使用すると、Android アプリで Windows ベースの近距離共有機能を実装できます。
+ms.openlocfilehash: 5cbb0abb6e1e84ce70ae8ea57629e5859cab4629
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207791"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760916"
 ---
 # <a name="android-nearby-sharing-api-reference"></a>Android 近距離共有 API リファレンス
 

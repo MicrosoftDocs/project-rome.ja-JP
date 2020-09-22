@@ -1,13 +1,15 @@
 ---
 title: UserActivities 名前空間
-ms.openlocfilehash: 2c8e6a52738a7d28acaaa88ae922a0553606329a
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: UserActivities 名前空間内のこの API を使用して、Windows スタイルのユーザー アクティビティをアプリケーションが作成および公開できるようにします。
+ms.openlocfilehash: 081b7061697bf7f6024dbf97556963c9de60d037
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207701"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760176"
 ---
 # <a name="useractivities-namespace"></a>UserActivities 名前空間
+
 ```
 ConnectedDevicesUserDataUserActivities.h
 ```

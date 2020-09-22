@@ -1,11 +1,12 @@
 ---
 title: Windows のリモート セッションの実装
-ms.openlocfilehash: 742c18c5178369fdf5016c7a89fb46a70c03b2a9
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: Windows アプリのリモート セッションを実装する方法について説明します。
+ms.openlocfilehash: 57509a652ff3c7ee93c9a48b398effe87ded089a
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207891"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760156"
 ---
 # <a name="implementing-remote-sessions-for-windows"></a>Windows のリモート セッションの実装
 
@@ -13,4 +14,4 @@ Project Rome の Windows 関連の操作方法および API ページは、Micro
 
 [Windows 用ハウツー ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/remote-sessions)
 
-[Windows用 API リファレンス](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)
+[Windows 用 API リファレンス](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)

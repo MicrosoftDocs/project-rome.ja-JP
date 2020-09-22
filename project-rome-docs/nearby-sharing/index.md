@@ -1,15 +1,15 @@
 ---
 title: 近くのデバイスにファイルを送信する - 近距離共有
-description: Bluetooth または WiFi を使用して近くのデバイスにファイルまたは Web サイトを送信します。
+description: 近距離共有について説明します。 近距離共有は、Bluetooth または WiFi を使用して近くのデバイスにファイルまたは Web サイトを送信するために使用されます。
 ms.localizationpriority: medium
 ms.topic: overview
 ms.custom: seodec2018
-ms.openlocfilehash: ab9692f6992d8d5c8d6ee4998f93473b6b13f5c4
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 675e30b24474e34755833cef564fd56311bbaef4
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "59801474"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760906"
 ---
 # <a name="nearby-sharing"></a>近距離共有
 

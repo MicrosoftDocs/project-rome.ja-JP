@@ -1,11 +1,12 @@
 ---
 title: UserData 名前空間
-ms.openlocfilehash: 90605ce75896b649b8c9e690d114747f3a85301f
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: UserData 名前空間内のこの API を使用して、アプリケーションのユーザー データと Connected Devices Platform バックエンドを同期します。
+ms.openlocfilehash: 851c1020b33352ad3fb61822eb9514d26db5b9c0
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207661"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760956"
 ---
 # <a name="userdata-namespace"></a>UserData 名前空間
 

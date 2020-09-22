@@ -1,11 +1,12 @@
 ---
 title: iOS デバイス リレー API リファレンス
-ms.openlocfilehash: 45ab0473a5e95fcc210bce72f342b3bd29949ac5
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: iOS デバイス リレー API を使用して、リモート アプリ起動およびリモート メッセージングによって、リモートのデバイスおよびアプリケーションを検出したり、それらに接続したりします。
+ms.openlocfilehash: 63e231003d23e5d97134b94a43bf0c2dd82475b0
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207851"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760816"
 ---
 # <a name="ios-device-relay-api-reference"></a>iOS デバイス リレー API リファレンス
 

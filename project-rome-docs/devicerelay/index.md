@@ -1,14 +1,14 @@
 ---
 title: リモートでアクションを開始する - デバイス リレー
-description: ローカル デバイスを使用してリモート デバイスでアクションを開始します。
+description: ローカル デバイスを使用して、リモート デバイスで、リモート アプリの起動などのアクションを開始する方法について説明します。
 ms.topic: overview
 ms.custom: seodec2018
-ms.openlocfilehash: ac8df447549b643207f796e0eeca05012c210897
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 03de94e48b379758261b4aec887818b5637acdf2
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "59801464"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760786"
 ---
 # <a name="device-relay"></a>デバイス リレー
 

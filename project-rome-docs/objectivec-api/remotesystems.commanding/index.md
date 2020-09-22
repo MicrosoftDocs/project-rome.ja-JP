@@ -1,18 +1,19 @@
 ---
 title: RemoteSystems.Commanding 名前空間
-ms.openlocfilehash: b881297d32b66f60f882a866c7e775a08cc55f00
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: RemoteSystems 名前空間内のこの API を使用して、リモート デバイスへのコマンドの送信、リモートでのアプリの起動、リモート メッセージングの実行を行います。
+ms.openlocfilehash: 7e7cf3a089178121beb72ab81494fa1209d1d677
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207761"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90761006"
 ---
 # <a name="remotesystemscommanding-namespace"></a>RemoteSystems.Commanding 名前空間
 ```
 ConnectedDevicesRemoteSystemsCommanding.h
 ```
 
-RemoteSystems 名前空間には、クライアント アプリケーションがリモート デバイスにコマンドを送信できるようにする API が含まれています。  アクションには、リモート アプリの起動、リモート メッセージングが含まれます。
+RemoteSystems 名前空間には、クライアント アプリがリモート デバイスにコマンドを送信できるようにする API が含まれています。 アクションには、リモート アプリの起動、リモート メッセージングが含まれます。
 
 #### <a name="mcdappserviceclosedeventargs"></a>[MCDAppServiceClosedEventArgs](MCDAppServiceClosedEventArgs.md)
 #### <a name="mcdappserviceclosedstatus"></a>[MCDAppServiceClosedStatus](MCDAppServiceClosedStatus.md)
