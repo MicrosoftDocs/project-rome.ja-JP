@@ -1,18 +1,19 @@
 ---
 title: iOS ユーザー アクティビティ API リファレンス
-ms.openlocfilehash: add35bfa2fc79f668f0db352c76935e22613920c
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+description: iOS ユーザー アクティビティ API を使用すると、Windows スタイルのユーザー アクティビティを作成および公開します。
+ms.openlocfilehash: b632c71d98fdac7f05bd2aee102cec5d2c8ef59a
+ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75207871"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90760096"
 ---
-# <a name="ios-user-activities-api-reference"></a><span data-ttu-id="5b851-102">iOS ユーザー アクティビティ API リファレンス</span><span class="sxs-lookup"><span data-stu-id="5b851-102">iOS User Activities API reference</span></span>
+# <a name="ios-user-activities-api-reference"></a><span data-ttu-id="9175b-103">iOS ユーザー アクティビティ API リファレンス</span><span class="sxs-lookup"><span data-stu-id="9175b-103">iOS User Activities API reference</span></span>
 
-<span data-ttu-id="5b851-103">次の API を使用すると、アプリで Windows スタイルのユーザー アクティビティを作成および公開できます。</span><span class="sxs-lookup"><span data-stu-id="5b851-103">The following APIs allow an app to create and publish Windows-style User Activities.</span></span>
+<span data-ttu-id="9175b-104">次の API を使用すると、アプリで Windows スタイルのユーザー アクティビティを作成および公開できます。</span><span class="sxs-lookup"><span data-stu-id="9175b-104">The following APIs allow an app to create and publish Windows-style User Activities.</span></span>
 
-## <a name="api-groups"></a><span data-ttu-id="5b851-104">API グループ</span><span class="sxs-lookup"><span data-stu-id="5b851-104">API groups</span></span>
+## <a name="api-groups"></a><span data-ttu-id="9175b-105">API グループ</span><span class="sxs-lookup"><span data-stu-id="9175b-105">API groups</span></span>
 
-### <a name="connecteddevices"></a>[<span data-ttu-id="5b851-105">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="5b851-105">ConnectedDevices</span></span>](../objectivec-api/connecteddevices/index.md)
-### <a name="useractivities"></a>[<span data-ttu-id="5b851-106">UserActivities</span><span class="sxs-lookup"><span data-stu-id="5b851-106">UserActivities</span></span>](../objectivec-api/userdata.useractivities/index.md)
-### <a name="userdata"></a>[<span data-ttu-id="5b851-107">UserData</span><span class="sxs-lookup"><span data-stu-id="5b851-107">UserData</span></span>](../objectivec-api/userdata/index.md)
+### <a name="connecteddevices"></a>[<span data-ttu-id="9175b-106">ConnectedDevices</span><span class="sxs-lookup"><span data-stu-id="9175b-106">ConnectedDevices</span></span>](../objectivec-api/connecteddevices/index.md)
+### <a name="useractivities"></a>[<span data-ttu-id="9175b-107">UserActivities</span><span class="sxs-lookup"><span data-stu-id="9175b-107">UserActivities</span></span>](../objectivec-api/userdata.useractivities/index.md)
+### <a name="userdata"></a>[<span data-ttu-id="9175b-108">UserData</span><span class="sxs-lookup"><span data-stu-id="9175b-108">UserData</span></span>](../objectivec-api/userdata/index.md)
