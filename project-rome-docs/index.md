@@ -3,12 +3,12 @@ title: クロスデバイス アプリケーションを構築する
 description: Project Rome を使用した、Windows 10 アプリケーション対応のクロスデバイスおよびクロスプラットフォームの機能について説明します。
 ms.topic: overview
 ms.custom: seodec2018, RS5
-ms.openlocfilehash: 0c00816de9111790bf20c98e48293d653490de3c
-ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
+ms.openlocfilehash: 13dcef5e158cf0cfd122afaef5f376ed06267790
+ms.sourcegitcommit: 5bf261d8d6ebe89d6d075d851f9255c806f5a649
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90760926"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716695"
 ---
 # <a name="project-rome"></a>Project Rome
 
@@ -85,6 +85,8 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 | **MSGraph**                       | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 | [![REST][graph-relay-badge]][graph-relay]<br> [![REST][graph-activities-badge]][graph-activities]<br>[![REST][graph-notification-badge]][graph-notification]          | [デバイス リレー][graph-relay-sample]<br>[アクティビティ/タイムライン][graph-activities-sample]<br>[Graph 通知][graph-notification-sample]
 
 ## <a name="project-rome-blog-posts"></a>Project Rome のブログ記事
+* [Android および iOS 向けの Project Rome SDK バージョン 1.0 を発表します。](https://blogs.windows.com/windowsdeveloper/2019/01/29/announcing-project-rome-sdk-for-android-and-ios-version-1-0/)
+
 * [Project Rome によるクロスデバイスのエクスペリエンス](https://blogs.windows.com/buildingapps/2016/10/11/cross-device-experience-with-project-rome/#iQTseFlAMJRopU9k.97)
 
 * [ソーシャル化:Project Rome、マップ、およびソーシャル ネットワークの統合 (英語)](https://blogs.windows.com/buildingapps/2016/10/27/going-social-project-rome-maps-social-network-integration-app-dev-on-xbox-series/#SCfoEZ1q8c1yBMei.97)
@@ -99,13 +101,31 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 
 * [AppUriHandlers を使用した Web とアプリのリンク](https://blogs.windows.com/buildingapps/2016/10/14/web-to-app-linking-with-appurihandlers/#fIh7USaxBYS8JqfT.97)
 
-## <a name="other-resources"></a>その他のリソース
+* [Project Rome:デバイス、アプリ、プラットフォームの垣根を越えたユーザー エンゲージメントの促進](https://blogs.windows.com/windowsdeveloper/2017/05/16/project-rome-driving-user-engagement-across-devices-apps-platforms/#jsUX3bEM6c8SpkIF.97)
+
+* [UWP と Project Rome を使って接続アプリを構築する](https://docs.microsoft.com/archive/msdn-magazine/2018/may/universal-windows-platform-building-connected-apps-with-uwp-and-project-rome)
+
+* [Project Rome: デバイス、アプリ、プラットフォームの垣根を越えたユーザー エンゲージメントの促進 (英語)](https://blogs.windows.com/windowsdeveloper/2017/05/16/project-rome-driving-user-engagement-across-devices-apps-platforms/#hZYfcfYVCFfBv0pS.97)
+
+* [Microsoft Graph 通知を使用した、ヒューマン セントリックな通知エクスペリエンスの有効化](https://docs.microsoft.com/graph/notifications-concept-overview)
+
+## <a name="podcasts-and-recordings"></a>ポッドキャストと録音/録画
+
+* [Project Rome を Microsoft //Build 2018 で体験](https://channel9.msdn.com/Events/Build/2018/BRK2417)
+
+* [Build 2017: Channel 9 ライブ: Project Rome の Q&A (英語)](https://channel9.msdn.com/Events/Build/2017/C9R11)
+
+* [Build 2017: MS Dev Show: Project Rome (英語)](https://channel9.msdn.com/Shows/msdevshow/Episode-153-Project-Rome-with-Vikas-Bhatia-and-Shawn-Henry)
+
+* [MS Dev Show ポッドキャスト: Shawn Henry が語る Project Rome (2016 年 11 月 8 日) (英語)](https://msdevshow.com/2016/11/project-rome-with-shawn-henry/)
 
 * [Web とアプリのリンク](https://docs.microsoft.com/windows/uwp/launch-resume/web-to-app-linking)
 
-* [//Build 2016 のトーク内容](https://channel9.msdn.com/Events/Build/2016/B831)
+* [Build 2016: 接続されたアプリとデバイスによるユーザー エンゲージメントの促進 (英語)](https://channel9.msdn.com/Events/Build/2016/B831)
 
-* [MS Dev Show ポッドキャスト](https://msdevshow.com/2016/11/project-rome-with-shawn-henry/)
+* [One Dev Minute: Project Rome でクロスデバイス アプリの作成](https://www.youtube.com/watch?v=7jn-kooKE8U)
+
+* [Microsoft Graph と通知の概要](https://www.youtube.com/watch?v=cmpPFhrS8ZA)
 
 ## <a name="give-feedback"></a>フィードバックを送る
 
