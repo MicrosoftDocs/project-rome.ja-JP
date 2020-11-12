@@ -3,16 +3,16 @@ title: クロスデバイス アプリケーションを構築する
 description: Project Rome を使用した、Windows 10 アプリケーション対応のクロスデバイスおよびクロスプラットフォームの機能について説明します。
 ms.topic: overview
 ms.custom: seodec2018, RS5
-ms.openlocfilehash: 13dcef5e158cf0cfd122afaef5f376ed06267790
-ms.sourcegitcommit: 5bf261d8d6ebe89d6d075d851f9255c806f5a649
+ms.openlocfilehash: cecb6f126dd7ec52c0e0f65280392f579a1c173c
+ms.sourcegitcommit: 17c24f7a0d5a9b6ae586dd294d6b073f1b60b580
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91716695"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94508198"
 ---
 # <a name="project-rome"></a>Project Rome
 
-[Project Rome](https://developer.microsoft.com/windows/project-rome) は、Microsoft が提供するアプリのクロスデバイス エクスペリエンス プラットフォームです。 
+[Project Rome](https://developer.microsoft.com/windows/project-rome) は、Microsoft が提供するアプリのクロスデバイス エクスペリエンス プラットフォームです。
 
 このサイトには、Project Rome の開発者向けドキュメント、およびその他の有用なリソースへのリンクが含まれています。
 
@@ -28,7 +28,7 @@ Project Rome には、Microsoft Graph およびプラットフォーム固有の
 
 ## <a name="choosing-between-native-apis-and-graph-apis"></a>ネイティブ API と Graph API の使い分け
 
-シナリオによっては、ネイティブ プラットフォームの SDK と Microsoft Graph を介した REST API の*両方*から利用可能です。 一般に、REST API を使用すると Project Rome の機能を素早く簡単に実装できます。 ただし、プラットフォーム固有の実装を使用することで、次のような利点が得られます。
+シナリオによっては、ネイティブ プラットフォームの SDK と Microsoft Graph を介した REST API の *両方* から利用可能です。 一般に、REST API を使用すると Project Rome の機能を素早く簡単に実装できます。 ただし、プラットフォーム固有の実装を使用することで、次のような利点が得られます。
 
 * プラットフォーム SDK は、サーバー側の情報が変更されたときにアプリを更新するために、ネイティブ言語のオブジェクト モデル、ローカル記憶域、および発行-サブスクライブ パターンを提供します。
 * アプリが Windows (UWP または Win32 アプリ) で実行されている場合、ユーザーの既定のアカウントを使用する機能や、ユーザーのエンゲージメントを自動的に追跡する機能など、プラットフォーム SDK の多数の追加機能を使用できます。
@@ -43,7 +43,7 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 [windows-sdk]:             https://developer.microsoft.com/windows/downloads
 [windows-sdk-badge]:       https://img.shields.io/badge/sdk-April%202018%20Update-brightgreen.svg
 [windows-drsample]:        https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/RemoteSystems
-[windows-afsample]:        https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserActivity 
+[windows-afsample]:        https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserActivity
 
 [winredist-sdk]:           https://www.nuget.org/packages/Microsoft.ConnectedDevices.UserNotifications
 [winredist-sdk-badge]:     https://img.shields.io/nuget/v/Microsoft.ConnectedDevices.UserNotifications.svg
@@ -57,8 +57,8 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 [ios-sdk-badge]:           https://img.shields.io/cocoapods/v/ProjectRomeSdk.svg
 [ios-sample]:              https://github.com/microsoft/project-rome/tree/master/iOS/samples
 
-[android-sdk]:             https://bintray.com/connecteddevices/maven/com.microsoft.connecteddevices%3Aconnecteddevices-sdk/_latestVersion
-[android-sdk-badge]:       https://api.bintray.com/packages/connecteddevices/maven/com.microsoft.connecteddevices%3Aconnecteddevices-sdk/images/download.svg
+[android-sdk]:             https://github.com/microsoft/project-rome/tree/mvn-repo/com/microsoft/connecteddevices/connecteddevices-sdk
+[android-sdk-badge]:       https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fraw.github.com%2Fmicrosoft%2Fproject-rome%2Fmvn-repo%2Fcom%2Fmicrosoft%2Fconnecteddevices%2Fconnecteddevices-sdk%2Fmaven-metadata.xml
 [android-sample]:          https://github.com/microsoft/project-rome/tree/master/Android/samples
 
 [graph-relay]:             https://developer.microsoft.com/graph/docs/api-reference/beta/resources/project_rome_overview
@@ -78,7 +78,7 @@ Project Rome は現在、以下のプラットフォームに対して実装さ�
 |   プラットフォーム                        | 機能                                                         |           SDK パッケージ                          |   サンプル                                       |
 | :-------------------------------- | :--------------------------------------------------------------- |:---------------------------------------------- | :---------------------------------------------- |
 | **Windows SDK**                   | デバイス リレー、アクティビティ/タイムライン                                | [![SDK][windows-sdk-badge]][windows-sdk]       | [Windows デバイス リレー用 Project Rome サンプル][windows-drsample] <br> [Windows アクティビティ用 Project Rome サンプル][windows-afsample]
-| **Windows (プレビュー)**             |                                    Microsoft Graph 通知 | [![Nuget][winredist-sdk-badge]][winredist-sdk] | [Windows 用 Graph 通知サンプル][winredist-sample] 
+| **Windows (プレビュー)**             |                                    Microsoft Graph 通知 | [![Nuget][winredist-sdk-badge]][winredist-sdk] | [Windows 用 Graph 通知サンプル][winredist-sample]
 | **Android**             | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 (プレビュー) | [![Maven][android-sdk-badge]][android-sdk]     | [Android 用 Project Rome サンプル][android-sample]
 | **iOS**                 | デバイス リレー、アクティビティ/タイムライン、Microsoft Graph 通知 (プレビュー) | [![CocoaPod][ios-sdk-badge]][ios-sdk]          | [iOS 用 Project Rome サンプル][ios-sample]
 | **Android 用 Xamarin (プレビュー)** | デバイス リレー                                                     | [![Nuget][xamarin-sdk-badge]][xamarin-sdk]     | [Android 用 Xamarin サンプル][xamarin-sample]
