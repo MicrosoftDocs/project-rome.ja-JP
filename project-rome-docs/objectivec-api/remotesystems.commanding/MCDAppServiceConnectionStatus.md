@@ -1,29 +1,29 @@
 ---
 title: MCDAppServiceConnectionStatus
-description: リモート アプリ サービスへの接続の状態を記述する値が含まれています。
-keywords: microsoft、windows、iOS、iPhone、objectiveC に接続されているデバイス、プロジェクトのローマ
-ms.openlocfilehash: 5beba7ae30d8ffd9149c5e8a599eacc38213b6d2
-ms.sourcegitcommit: 945a0f4bda02e3b4eb9a665379c2af9bd5285a53
+description: リモートの app service への接続の状態を示す値を格納します。
+keywords: microsoft、windows、iOS、iPhone、、、、および接続されているデバイス、プロジェクトローマ
+ms.openlocfilehash: cf272326ce5c88f7c847a2a03eafe5b8bbbaa56e
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59801454"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901640"
 ---
-# <a name="enum-mcdappserviceconnectionstatus"></a>列挙型 `MCDAppServiceConnectionStatus`
+# <a name="enum-mcdappserviceconnectionstatus"></a>enum `MCDAppServiceConnectionStatus`
 
 ```
 typedef NS_ENUM(NSInteger, MCDAppServiceConnectionStatus)
 ```
 
-リモート アプリ サービスへの接続の状態を記述する値が含まれています。 参照してください[作成し、app service を使用](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)Windows デバイス上の app services についてはします。
+リモートの app service への接続の状態を示す値を格納します。 Windows デバイス上の app services の詳細については、「 [app service の作成と使用](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) 」を参照してください。
 
 |名前   |値   |説明   |
 |--------|-------|-------------|
-|MCDAppServiceConnectionStatusSuccess | 0| App service への接続を正常に開きました。|
-|MCDAppServiceConnectionStatusAppNotInstalled | 1| デバイスでは、接続の試みを app service のパッケージがインストールされていません。 App service への接続を開こうとする前に、パッケージがインストールされていることを確認します。|
-|MCDAppServiceConnectionStatusAppUnavailable | 2| 接続の試みを app service のパッケージは一時的にご利用いただけません。 後でもう一度接続しようとしてください。|
-|MCDAppServiceConnectionStatusAppServiceUnavailable | 3| 指定したパッケージ ID を持つアプリがインストールされ、使用できるが、アプリは、指定した app service のサポートを宣言しません。 App service の名前と、アプリのバージョンが正しいことを確認します。|
-|MCDAppServiceConnectionStatusUnknown | 4| 不明な理由で、接続を確立できませんでした。|
-|MCDAppServiceConnectionStatusRemoteSystemUnavailable | 5| 対象のリモート デバイスまたはアプリケーションでは、接続の使用できなくします。|
-|MCDAppServiceConnectionStatusRemoteSystemNotSupportedByApp | 6|リモート接続をサポートするためには、クライアント アプリが構成されていません。|
-|MCDAppServiceConnectionStatusNotAuthorized | 7| クライアント デバイスは、リモート接続をサポートする権限がありません。 これは、MCDAppServiceConnection に無効なトークンが渡されるために発生する可能性があります。|
+|MCDAppServiceConnectionStatusSuccess | 0| App service への接続が正常に開かれました。|
+|MCDAppServiceConnectionStatusAppNotInstalled | 1| 接続を試行した app service のパッケージがデバイスにインストールされていません。 App service への接続を開こうとする前に、パッケージがインストールされていることを確認してください。|
+|MCDAppServiceConnectionStatusAppUnavailable | 2| 接続を試行した app service のパッケージが一時的に使用できなくなっています。 後でもう一度接続してください。|
+|MCDAppServiceConnectionStatusAppServiceUnavailable | 3| 指定されたパッケージ ID を持つアプリがインストールされ、使用できますが、指定された app service のサポートはアプリによって宣言されていません。 App service の名前とアプリのバージョンが正しいことを確認します。|
+|MCDAppServiceConnectionStatusUnknown | 4| 不明な理由により、接続を確立できませんでした。|
+|MCDAppServiceConnectionStatusRemoteSystemUnavailable | 5| ターゲットのリモートデバイスまたはアプリケーションが接続に使用できなくなりました。|
+|MCDAppServiceConnectionStatusRemoteSystemNotSupportedByApp | 6|クライアントアプリがリモート接続をサポートするように構成されていません。|
+|MCDAppServiceConnectionStatusNotAuthorized | 7| クライアントデバイスは、リモート接続をサポートすることが許可されていません。 これは、MCDAppServiceConnection に無効なトークンが渡されたことが原因で発生する可能性があります。|
