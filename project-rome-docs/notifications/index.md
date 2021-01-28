@@ -1,18 +1,18 @@
 ---
 title: Microsoft Graph 通知
-description: アプリケーションに Microsoft Graph 通知を含めて、人中心の方法でユーザーの注目を引き戻しましょう。
+description: アプリケーションに Microsoft Graph 通知を含めて、人中心の方法でユーザーと再びやり取りします。
 ms.localizationpriority: medium
 ms.topic: overview
 ms.custom: seodec2018
-ms.openlocfilehash: 23aefb0e9f75721977e3ab9f1002bebf264a5b09
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 8a44c645a60848c9bc3c92e61675993eb63f3bc1
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "58906764"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901630"
 ---
 # <a name="microsoft-graph-notifications"></a>Microsoft Graph 通知
-通知は、ユーザーの注目を引き戻す最も効果的な方法です。 それによってユーザーの注意を引き、ユーザーをアプリに戻すことができます。 マルチデバイス時代のユーザーは、アプリが存在するプラットフォームやデバイスが何であろうと、どこからでもアプリやサービスにアクセスできます。
+通知は、ユーザーと再びやり取りするのに最も効果的な方法です。 それによってユーザーの注意を引き、ユーザーをアプリに戻すことができます。 マルチデバイス時代のユーザーは、アプリが存在するプラットフォームやデバイスが何であろうと、どこからでもアプリやサービスにアクセスできます。
 通知のシナリオは、ユーザーがどこにいても通知を受け取れるようにすることを第一の目的とする、「人中心」の形で設計する必要があります。 主要なプラットフォームで提供されている既存の通知ソリューションは、デバイスを対象とするのに優れています。 Microsoft Graph 通知は、ユーザーを対象にできるようにすることでこれを改善します。 ユーザーとエンドポイント間のマッピング、ユーザーのさまざまなエンドポイント全体での通知状態の同期などといった面倒な作業は、Microsoft Graph 通知に任せることができます。
 
 ## <a name="why-integrate-with-microsoft-graph-notifications"></a>Microsoft Graph 通知と統合する理由
@@ -34,7 +34,7 @@ Microsoft Graph の通知 API を使用すると、通知の状態を更新し�
 このガイドには、Graph 通知を使用するための具体的な手順 (クロスプラットフォームのアプリ ID とモバイル プッシュの資格情報の登録など) が含まれています。 Microsoft Graph を初めて使用するユーザーのために、Microsoft アカウント (MSA) (一般ユーザー向けアプリケーション用)、または職場や学校のアカウント用の Azure Active Directory (AAD) に対してアプリを登録する手順が含まれています。 MSA と AAD は、Microsoft Graph のワークロードを通知以外にも利用してより豊富なビジネス シナリオを実現できるようにするためのユーザー ID です。 
 
 ### <a name="microsoft-graph-apis"></a>Microsoft Graph API
-Graph 通知を使用する場合、通知を送信するためにアプリ サーバーが Microsoft Graph API (ベータ版) を使用することが期待されています。 アプリ サーバー側の統合について詳しくは、API の使用法に関する [API リファレンス ドキュメント](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/notifications-api-overview)を参照してください。 
+Graph 通知を使用する場合、通知を送信するためにアプリ サーバーが Microsoft Graph API (ベータ版) を使用することが期待されています。 アプリ サーバー側の統合について詳しくは、API の使用法に関する [API リファレンス ドキュメント](/graph/api/resources/notifications-api-overview)を参照してください。 
 
 ### <a name="client-side-sdk"></a>クライアント側 SDK
 クライアント側の Graph 通知統合を開始し、ネイティブ SDK を使用して通知の受信と管理を開始するには、左側のナビゲーション ウィンドウで任意の開発プラットフォームを選択してください。 

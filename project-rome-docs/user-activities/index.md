@@ -4,17 +4,17 @@ description: Windows スタイルのユーザー アクティビティを作成�
 ms.localizationpriority: medium
 ms.topic: overview
 ms.custom: seodec2018
-ms.openlocfilehash: b4aedfbc769e69397c6a3932db434c43864e04f8
-ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
+ms.openlocfilehash: a2bd1649b93bb9044c42ab21142aab1782790553
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90760036"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901650"
 ---
 # <a name="user-activities"></a>ユーザー アクティビティ
 
 ユーザー アクティビティ機能を使用すると、アプリで Windows スタイルのユーザー アクティビティを作成して公開できます。
 
-ユーザー アクティビティは、アプリ内のユーザーのタスクの状態を追跡するクラウド ベースの構成要素です。 さまざまなデバイスやプラットフォームにわたって、後でアクティビティを表示して再開できます。 ユーザー アクティビティの詳細については、「[デバイス間でもユーザーのアクティビティを継続する (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)」を参照してください。
+ユーザー アクティビティは、アプリ内のユーザーのタスクの状態を追跡するクラウド ベースの構成要素です。 さまざまなデバイスやプラットフォームにわたって、後でアクティビティを表示して再開できます。 ユーザー アクティビティの詳細については、「[デバイス間でもユーザーのアクティビティを継続する (UWP)](/windows/uwp/launch-resume/useractivities)」を参照してください。
 
 デバイスでユーザー アクティビティを開始するには、左側のナビゲーション ウィンドウで任意の開発プラットフォームを選択してください。
