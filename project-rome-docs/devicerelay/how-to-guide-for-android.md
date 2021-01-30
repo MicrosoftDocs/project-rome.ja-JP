@@ -5,12 +5,12 @@ ms.topic: article
 keywords: microsoft, windows, project rome, コマンド実行, android
 ms.assetid: 2fd14dd0-0f1f-49ee-83e3-468737810c81
 ms.localizationpriority: medium
-ms.openlocfilehash: bb58b8340dcd8158a201ce670ef0b69ba0272b6f
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: ce261c6571e4606ddcb8e1c2b75d989db51d8d9f
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "76115566"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901573"
 ---
 # <a name="implementing-device-relay-for-android"></a>Android のデバイス リレーの実装
 
@@ -162,7 +162,7 @@ public void stopWatcher() {
 
 次のコードは、これらのデバイスのいずれかを選択し (UI コントロールを使って行われるのが理想的です)、**RemoteLauncher** を使用して、アプリと互換性のある URI を渡してそのデバイス上でアプリを起動する方法を示しています。 
 
-重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス_または_そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。 
+重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス _または_ そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。 
 
 前のセクションで説明したように、検出はまずデバイス レベルで行われます (**RemoteSystem** はデバイスを表します) が、**RemoteSystem** インスタンスの `getApplications` メソッドを呼び出して **RemoteSystemApp** オブジェクトの配列を取得することができます。これらのオブジェクトが表すのは、(前述の準備手順で独自のアプリを登録したのと同様に) Connected Devices Platform を使用するように登録されている、リモート デバイス上のアプリです。 **RemoteSystem** と **RemoteSystemApp** のどちらを使用しても、URI を起動するために必要な **RemoteSystemConnectionRequest** を作成できます。
 
@@ -209,7 +209,7 @@ private void launchUri(final String uri, final RemoteSystem target, final long m
 ```
 送信する URI に応じて、特定の状態または構成でリモート デバイス上でアプリを起動できます。 これにより、映画を観るなどのユーザー タスクを、中断することなく別のデバイス上で継続することができます。 
 
-ユース ケースによっては、ターゲット システム上のどのアプリも URI を処理できない、または複数のアプリがそれを処理できる状況への対応が必要な場合があります。 **[RemoteLauncher](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。
+ユース ケースによっては、ターゲット システム上のどのアプリも URI を処理できない、または複数のアプリがそれを処理できる状況への対応が必要な場合があります。 **[RemoteLauncher](/java/api/com.microsoft.connecteddevices.commanding._remote_launcher)** クラスと **[RemoteLauncherOptions](/java/api/com.microsoft.connecteddevices.commanding._remote_launcher_options)** クラスは、これを行う方法を説明します。
 
 ### <a name="b-remote-app-services"></a>B) リモート アプリ サービス
 
@@ -218,7 +218,7 @@ Android アプリは Connected Devices ポータルを使用して、他のデ�
 #### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスを設定する
 このガイドでは、[Windows 用の Roman テスト アプリ](https://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、Android アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。 
 
-独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
+独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
 
 #### <a name="open-an-app-service-connection-on-the-client-device"></a>クライアント デバイス上でアプリ サービス接続を開く
 Android アプリは、リモートのデバイスまたはアプリケーションへの参照を取得する必要があります。 起動のセクションと同様、このシナリオでは **RemoteSystemConnectionRequest** を使用する必要があります。これは **RemoteSystem** から、またはシステム上の利用可能なアプリを表す **RemoteSystemApp** から作成できます。
@@ -230,7 +230,7 @@ Android アプリは、リモートのデバイスまたはアプリケーショ
 // connection is opened.
 private RemoteSystem target = null;
 ```
-さらにアプリは、*アプリ サービス名*と*パッケージ識別子*の 2 つの文字列を使用して、そのターゲットであるアプリ サービスを識別する必要があります。 これらはアプリ サービス プロバイダーのソース コードに含まれています。この文字列を Windows アプリ サービス用に取得する方法については、[アプリ サービスの作成と利用 (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 これらの文字列が合わさって **AppServiceDescription** になり、これが **AppServiceConnection** インスタンスに渡されます。
+さらにアプリは、*アプリ サービス名* と *パッケージ識別子* の 2 つの文字列を使用して、そのターゲットであるアプリ サービスを識別する必要があります。 これらはアプリ サービス プロバイダーのソース コードに含まれています。この文字列を Windows アプリ サービス用に取得する方法については、[アプリ サービスの作成と利用 (UWP)](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 これらの文字列が合わさって **AppServiceDescription** になり、これが **AppServiceConnection** インスタンスに渡されます。
 
 ```Java
 // this is defined below
@@ -302,7 +302,7 @@ private void openAppServiceConnection()
 private Map<String, Object> mMessagePayload = null;
 ```
 > [!NOTE]
-> アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **Map** を受信側プラットフォームでそれに対応するコンストラクトに変換します。 たとえば、このアプリから Windows アプリ サービスに送信される **[Map](https://developer.android.com/reference/java/util/Map)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) オブジェクトに変換されます。 反対方向に渡される情報には、逆の変換が行われます。
+> アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **Map** を受信側プラットフォームでそれに対応するコンストラクトに変換します。 たとえば、このアプリから Windows アプリ サービスに送信される **[Map](https://developer.android.com/reference/java/util/Map)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet) オブジェクトに変換されます。 反対方向に渡される情報には、逆の変換が行われます。
 
 次のメソッドは、Windows 用の Roman テスト アプリのアプリ サービスによって解釈できるメッセージを作成します。
 
@@ -421,5 +421,5 @@ private void closeAppServiceConnection()
 ### <a name="related-topics"></a>関連トピック
 * [API リファレンス ページ](api-reference-for-android.md) 
 * [Android サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/Android/samples) 
-* [リモート アプリ サービスとの通信 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
-* [アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [リモート アプリ サービスとの通信 (UWP)](/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
+* [アプリ サービスの作成と利用 (UWP)](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
