@@ -1,12 +1,12 @@
 ---
 title: Android ユーザー通知 API のリファレンス
 description: Android ユーザー通知 API を使用して、Microsoft Graph 通知を介してアプリ サーバーによって公開されたユーザー通知を受信および管理します。
-ms.openlocfilehash: 5c923aee38090f4addfdf149d9b300086ed2f3bf
-ms.sourcegitcommit: 14b4f362bc0c924dff6493490c80624273d49d23
+ms.openlocfilehash: dadca17d7d336b35d9311fb2549566f6e2024874
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90760896"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901390"
 ---
 # <a name="android-user-notifications-api-reference"></a>Android ユーザー通知 API のリファレンス
 
@@ -14,6 +14,6 @@ ms.locfileid: "90760896"
 
 ## <a name="namespaces"></a>名前空間
 
-#### <a name="connecteddevices"></a>[ConnectedDevices](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices)
+#### <a name="connecteddevices"></a>[ConnectedDevices](/java/api/com.microsoft.connecteddevices)
 #### <a name="usernotifications"></a>[UserNotifications]( https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.usernotifications)
-#### <a name="userdata"></a>[UserData](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.userdata)
+#### <a name="userdata"></a>[UserData](/java/api/com.microsoft.connecteddevices.userdata)

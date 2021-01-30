@@ -4,18 +4,18 @@ description: インクルード ファイル
 ms.topic: include
 ms.assetid: 9fb27596-e9a3-443a-9c12-9e02a893e32c
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ff12ef8b0773f1bd0e1960c285012f7e62fdc9
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 5b565b3eeaffb350f9296e38bf8bf9d46a58a64d
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "59801798"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98948530"
 ---
 ### <a name="associate-the-connected-devices-platform-with-the-native-push-notification-for-each-mobile-platform"></a>Connected Devices Platform を各モバイル プラットフォームのネイティブのプッシュ通知に関連付けます。 
 
 既に触れたように、アプリ クライアントは、登録プロセスの間、各モバイル プラットフォームで使用されているネイティブのプッシュ通知パイプラインに関する情報を、クライアント側 SDK と Connected Devices Platform に提供する必要があります。これは、ユーザーをターゲットにした通知をアプリ サーバーが Microsoft Graph API を使って発行したときに、Graph の通知サービスが個々のアプリ クライアント エンドポイントに通知を拡散できるようにするためです。
 
-上記の手順では、`null` *notificationProvider* パラメーターを使用してプラットフォームを初期化しました。 ここでは、 **[NotificationProvider](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core._notification_provider)** を実装するオブジェクトを作成して渡す必要があります。 主な注意点は、`getNotificationRegistrationAsync` メソッドが **[NotificationRegistration](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.core._notification_registration)** インスタンスを返す必要があることです。 **NotificationRegistration** の役割は、通知サービス用のアクセス トークン (および関連情報) を Connected Devices Platform に提供することです。
+上記の手順では、`null` *notificationProvider* パラメーターを使用してプラットフォームを初期化しました。 ここでは、 **[NotificationProvider](/java/api/com.microsoft.connecteddevices.core._notification_provider)** を実装するオブジェクトを作成して渡す必要があります。 主な注意点は、`getNotificationRegistrationAsync` メソッドが **[NotificationRegistration](/java/api/com.microsoft.connecteddevices.core._notification_registration)** インスタンスを返す必要があることです。 **NotificationRegistration** の役割は、通知サービス用のアクセス トークン (および関連情報) を Connected Devices Platform に提供することです。
 
 ```java
 private NotificationRegistration mNotificationRegistration;
@@ -62,4 +62,3 @@ public void onMessageReceived(String from, Bundle data) {
 ```
 
 アプリで Connected Devices Platform からの通知を処理できるようになりました。
-

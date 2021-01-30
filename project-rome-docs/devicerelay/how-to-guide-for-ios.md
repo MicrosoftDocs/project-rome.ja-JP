@@ -5,12 +5,12 @@ ms.topic: article
 keywords: microsoft, windows, project rome, コマンド実行, ios
 ms.assetid: b5d426db-a0ca-4888-b2cb-cb7fdb1c6c0d
 ms.localizationpriority: medium
-ms.openlocfilehash: 09479f0caa232215dfce51628432529d0e322536
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 33dd7e0148c5c7e4ff9d254b4039b95129ac6c69
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "76115556"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901561"
 ---
 # <a name="implementing-device-relay-for-ios"></a>iOS のデバイス リレーの実装
 
@@ -139,7 +139,7 @@ Project Rome の機能は、Connected Devices Platform と呼ばれる基盤プ�
 
 次のコードは、**MCDRemoteSystem** オブジェクトのいずれかを選択し (UI コントロールを使って行われるのが理想的です)、**MCDRemoteLauncher** を使用して、アプリと互換性のある URI を渡してそのデバイス上でアプリを起動する方法を示しています。
 
-重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス_または_そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。
+重要な注意点として、リモート起動でターゲットにできるのはリモート デバイス _または_ そのデバイス上の特定のリモート アプリケーションであり、前者の場合、指定された URI を、ホスト デバイスがその URI スキーム用の既定のアプリで起動します。
 
 前のセクションで説明したように、検出はまずデバイス レベルで行われます (**MCDRemoteSystem** はデバイスを表します) が、**MCDRemoteSystem** インスタンスの `getApplications` メソッドを呼び出して **MCDRemoteSystemApp** オブジェクトの配列を取得することができます。これらのオブジェクトが表すのは、(前述の準備手順で独自のアプリを登録したのと同様に) Connected Devices Platform を使用するように登録されている、リモート デバイス上のアプリです。 **MCDRemoteSystem** と **MCDRemoteSystemApp** のどちらを使用しても、URI を起動するために必要な **MCDRemoteSystemConnectionRequest** を作成できます。
 
@@ -185,12 +185,12 @@ iOS アプリは Connected Devices ポータルを使用して、他のデバイ
 #### <a name="set-up-the-app-service-on-the-target-device"></a>ターゲット デバイスでアプリ サービスを設定する
 このガイドでは、[Windows 用の Roman テスト アプリ](https://aka.ms/romeapp)をターゲット アプリ サービスとして使用します。 したがって、次のコードにより、iOS アプリは特定のリモート システム上でその特定のアプリ サービスを探します。 このシナリオをテストする場合は、Windows デバイス上で Roman テスト アプリをダウンロードし、先の準備手順で使用したのと同じ MSA でサインインしていることを確認してください。
 
-独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
+独自の UWP アプリ サービスを記述する方法については、[アプリ サービスの作成と利用 (UWP)](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 サービスに Connected Devices との互換性を持たせるために、いくつかの変更を加える必要があります。 これを行う方法については、[リモート アプリ サービスに関する UWP ガイド](/windows/uwp/launch-resume/communicate-with-a-remote-app-service)を参照してください。 
 
 #### <a name="open-an-app-service-connection-on-the-client-device"></a>クライアント デバイス上でアプリ サービス接続を開く
 iOS アプリは、リモートのデバイスまたはアプリケーションへの参照を取得する必要があります。 起動のセクションと同様、このシナリオでは **MCDRemoteSystemConnectionRequest** を使用する必要があります。これは **MCDRemoteSystem** から、またはシステム上の利用可能なアプリを表す **MCDRemoteSystemApp** から作成できます。
 
-さらにアプリは、*アプリ サービス名*と*パッケージ識別子*の 2 つの文字列によって、そのターゲットであるアプリ サービスを識別する必要があります。 これらはアプリ サービス プロバイダーのソース コードに含まれています。詳細については、[アプリ サービスの作成と利用 (UWP)](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 これらの文字列が合わさって **MCDAppServiceDescription** になり、これが **MCDAppServiceConnection** インスタンスに渡されます。
+さらにアプリは、*アプリ サービス名* と *パッケージ識別子* の 2 つの文字列によって、そのターゲットであるアプリ サービスを識別する必要があります。 これらはアプリ サービス プロバイダーのソース コードに含まれています。詳細については、[アプリ サービスの作成と利用 (UWP)](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) に関するページを参照してください。 これらの文字列が合わさって **MCDAppServiceDescription** になり、これが **MCDAppServiceConnection** インスタンスに渡されます。
 
 ```ObjectiveC
 // Step #1:  Establish an app service connection
@@ -244,7 +244,7 @@ iOS アプリは、リモートのデバイスまたはアプリケーション�
 送信するメッセージを格納する変数を宣言します。 iOS では、リモート アプリ サービスに送信するメッセージは **NSDictionary** 型になります。
 
 > [!NOTE]
-> アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **NSDictionary** を、受信側プラットフォームでの同等のコンストラクトに変換します。 たとえば、このアプリから Windows アプリ サービスに送信される **[NSDictionary](https://developer.apple.com/documentation/foundation/nsdictionary)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset) オブジェクトに変換されます。 反対方向に渡される情報には、逆の変換が行われます。
+> アプリが他のプラットフォーム上のアプリ サービスと通信するとき、Connected Devices Platform はこの **NSDictionary** を、受信側プラットフォームでの同等のコンストラクトに変換します。 たとえば、このアプリから Windows アプリ サービスに送信される **[NSDictionary](https://developer.apple.com/documentation/foundation/nsdictionary)** は、アプリ サービスが解釈できる (.NET Framework の) [**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet) オブジェクトに変換されます。 反対方向に渡される情報には、逆の変換が行われます。
 
 次のメソッドは、Windows 用の Roman テスト アプリのアプリ サービスによって解釈できるメッセージを作成します。
 
@@ -335,5 +335,5 @@ Roman アプリの場合、応答にはそれが作成された日付が含ま�
 ## <a name="related-topics"></a>関連トピック
 * [API リファレンス ページ](api-reference-for-ios.md) 
 * [iOS サンプル アプリ](https://github.com/Microsoft/project-rome/tree/master/iOS/samples) 
-* [リモート アプリ サービスとの通信 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
-* [アプリ サービスの作成と利用 (UWP)](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [リモート アプリ サービスとの通信 (UWP)](/windows/uwp/launch-resume/communicate-with-a-remote-app-service)
+* [アプリ サービスの作成と利用 (UWP)](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)

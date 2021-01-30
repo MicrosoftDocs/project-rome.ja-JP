@@ -5,16 +5,16 @@ ms.topic: article
 keywords: microsoft, windows, project rome, ユーザー アクティビティ, android
 ms.assetid: 8cfb7544-913c-48c0-8528-52b93ba8b0c6
 ms.localizationpriority: medium
-ms.openlocfilehash: 67f793341a108853d5b36e062fd04f441efff473
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: ab9cd29451ca9af511b2bd5f94e423f1ba01b46e
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "59801534"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901670"
 ---
 # <a name="implementing-user-activities-for-android"></a>Android のユーザー アクティビティの実装
 
-ユーザー アクティビティは、アプリケーション内でのユーザーのタスクを表すデータ構造です。 タスクのスナップショットを保存して後で続行することを可能にします。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能は Windows ユーザーに、ユーザーの最近のアクティビティすべてを、テキストとグラフィックスを使ったカードで表現したスクロール可能リストで表示します。 ユーザー アクティビティ全般の詳細については、[デバイス間でのユーザー アクティビティの継続](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)に関する記事を参照してください。 アクティビティの作成または更新の推奨されるタイミングについては、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
+ユーザー アクティビティは、アプリケーション内でのユーザーのタスクを表すデータ構造です。 タスクのスナップショットを保存して後で続行することを可能にします。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能は Windows ユーザーに、ユーザーの最近のアクティビティすべてを、テキストとグラフィックスを使ったカードで表現したスクロール可能リストで表示します。 ユーザー アクティビティ全般の詳細については、[デバイス間でのユーザー アクティビティの継続](/windows/uwp/launch-resume/useractivities)に関する記事を参照してください。 アクティビティの作成または更新の推奨されるタイミングについては、[ユーザー アクティビティのベスト プラクティス](/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
 Android アプリは Project Rome SDK によって、タイムラインなどの Windows 機能で使用するユーザー アクティビティを発行できるだけでなく、エンドポイントとして機能して、Windows デバイス上のタイムラインと同様にアクティビティをユーザーに読み戻すこともできます。 これによりクロスデバイス アプリは、プラットフォームの枠を超えて、デバイスではなくユーザーをフォローするエクスペリエンスを提供することができます。  
 
@@ -177,7 +177,7 @@ operation.whenCompleteAsync(new AsyncOperation.ResultBiConsumer<Void, Throwable>
 ```
 
 > [!TIP] 
-> 上記のプロパティに加えて、他にも多くの機能を構成できます。 UserActivity のさまざまなカスタマイズ方法の詳細については、 **[UserActivity](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity)** 、 **[UserActivityVisualElements](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_visual_elements)** 、および **[UserActivityAttribution](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_attribution)** の各クラスを参照してください。 ユーザー アクティビティの設計方法に関する推奨事項の詳細については、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
+> 上記のプロパティに加えて、他にも多くの機能を構成できます。 UserActivity のさまざまなカスタマイズ方法の詳細については、**[UserActivity](/java/api/com.microsoft.connecteddevices.useractivities._user_activity)**、**[UserActivityVisualElements](/java/api/com.microsoft.connecteddevices.useractivities._user_activity_visual_elements)**、および **[UserActivityAttribution](/java/api/com.microsoft.connecteddevices.useractivities._user_activity_attribution)** の各クラスを参照してください。 ユーザー アクティビティの設計方法に関する推奨事項の詳細については、[ユーザー アクティビティのベスト プラクティス](/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
 ### <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティの更新
 
@@ -204,7 +204,7 @@ mActivitySession = null;
 Log.d("UserActivityFragment", "Stopping");
 ```
 
-**UserActivitySession** は、**UserActivitySessionHistoryItem** (次のセクションで説明します) を作成する方法と考えることができます。 ユーザーが新しいページに移動するたびに新しい **UserActivity**を作成する代わりに、ページごとに新しいセッションを作成するだけで済みます。 これにより、より直感的で整ったアクティビティ読み取りエクスペリエンスが実現します。
+**UserActivitySession** は、**UserActivitySessionHistoryItem** (次のセクションで説明します) を作成する方法と考えることができます。 ユーザーが新しいページに移動するたびに新しい **UserActivity** を作成する代わりに、ページごとに新しいセッションを作成するだけで済みます。 これにより、より直感的で整ったアクティビティ読み取りエクスペリエンスが実現します。
 
 ### <a name="read-user-activities"></a>ユーザー アクティビティの読み取り
 
@@ -238,4 +238,4 @@ operation.whenCompleteAsync(new AsyncOperation.ResultBiConsumer<UserActivitySess
 });
 ```
 
-この時点で、アプリには **UserActivitySessionHistoryItem** の設定済みリストがあるはずです。 これらはそれぞれ、基になる **UserActivity** を提供でき (詳細は **[UserActivitySessionHistoryItem](https://docs.microsoft.com/java/api/com.microsoft.connecteddevices.useractivities._user_activity_session_history_item)** を参照)、これをユーザーに表示することができます。
+この時点で、アプリには **UserActivitySessionHistoryItem** の設定済みリストがあるはずです。 これらはそれぞれ、基になる **UserActivity** を提供でき (詳細は **[UserActivitySessionHistoryItem](/java/api/com.microsoft.connecteddevices.useractivities._user_activity_session_history_item)** を参照)、これをユーザーに表示することができます。

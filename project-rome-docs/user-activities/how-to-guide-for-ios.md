@@ -5,16 +5,16 @@ ms.topic: article
 keywords: microsoft, windows, project rome, ユーザー アクティビティ, ios
 ms.assetid: 445f1dd4-f3c7-46e4-a7cd-42a1fb411172
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc19463a5e036ab76288760aa70d86f1861675b
-ms.sourcegitcommit: 7e022438d0414d8f24ee2c048bb018c80b1ea921
+ms.openlocfilehash: 95345d8fb4d8dd600ec0dc447ea38c29612402d1
+ms.sourcegitcommit: 79c254e48c00d7a050864b90ddb2b727f67b0e8a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "59801674"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901680"
 ---
 # <a name="implementing-user-activities-for-ios"></a>iOS のユーザー アクティビティの実装
 
-ユーザー アクティビティは、アプリケーション内でのユーザーのタスクを表すデータ構造です。 現在のタスクのスナップショットを保存して後で続行することを可能にします。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能は Windows ユーザーに、ユーザーの最近のアクティビティすべてを、テキストとグラフィックスを使ったカードで表現したスクロール可能リストで表示します。 ユーザー アクティビティ全般の詳細については、[デバイス間でのユーザー アクティビティの継続](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)に関する記事を参照してください。 アクティビティの作成または更新の推奨されるタイミングについては、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
+ユーザー アクティビティは、アプリケーション内でのユーザーのタスクを表すデータ構造です。 現在のタスクのスナップショットを保存して後で続行することを可能にします。 [Windows タイムライン](https://blogs.windows.com/windowsexperience/2018/04/27/make-the-most-of-your-time-with-the-new-windows-10-update/)機能は Windows ユーザーに、ユーザーの最近のアクティビティすべてを、テキストとグラフィックスを使ったカードで表現したスクロール可能リストで表示します。 ユーザー アクティビティ全般の詳細については、[デバイス間でのユーザー アクティビティの継続](/windows/uwp/launch-resume/useractivities)に関する記事を参照してください。 アクティビティの作成または更新の推奨されるタイミングについては、[ユーザー アクティビティのベスト プラクティス](/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
 iOS アプリは Project Rome SDK によって、タイムラインなどの Windows 機能で使用するユーザー アクティビティを発行できるだけでなく、エンドポイントとして機能して、タイムラインと同様にアクティビティをユーザーに読み戻すこともできます。 これによりクロスデバイス アプリは、プラットフォームの枠を完全に超えて、デバイスではなくユーザーをフォローするエクスペリエンスを提示することができます。
 
@@ -143,7 +143,7 @@ mDisplayText = "Created by OneSDK Sample App";
 mActivationUri = "http://contoso.com");
 ```
 > [!TIP] 
-> 上記のプロパティに加えて、他にも多くの機能を構成できます。 UserActivity のさまざまなカスタマイズ方法の詳細については、 **[MCDUserActivity](../objectivec-api/userdata.useractivities/MCDUserActivity.md)** 、 **[MCDUserActivityVisualElements](../objectivec-api/userdata.useractivities/MCDUserActivityVisualElements.md)** 、および **[MCDUserActivityAttribution](../objectivec-api/userdata.useractivities/MCDUserActivityAttribution.md)** の各クラスを参照してください。 ユーザー アクティビティの設計方法に関する推奨事項の詳細については、[ユーザー アクティビティのベスト プラクティス](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
+> 上記のプロパティに加えて、他にも多くの機能を構成できます。 UserActivity のさまざまなカスタマイズ方法の詳細については、**[MCDUserActivity](../objectivec-api/userdata.useractivities/MCDUserActivity.md)**、**[MCDUserActivityVisualElements](../objectivec-api/userdata.useractivities/MCDUserActivityVisualElements.md)**、および **[MCDUserActivityAttribution](../objectivec-api/userdata.useractivities/MCDUserActivityAttribution.md)** の各クラスを参照してください。 ユーザー アクティビティの設計方法に関する推奨事項の詳細については、[ユーザー アクティビティのベスト プラクティス](/windows/uwp/launch-resume/useractivities-best-practices) ガイドを参照してください。
 
 ## <a name="update-an-existing-user-activity"></a>既存のユーザー アクティビティの更新
 
@@ -181,7 +181,7 @@ mActivationUri = "http://contoso.com");
 ```
 
 
-**MCDUserActivitySession** は、**MCDUserActivitySessionHistoryItem** (次のセクションで説明します) を作成する方法と考えることができます。 ユーザーが新しいページに移動するたびに新しい **MCDUserActivity**を作成する代わりに、ページごとに新しいセッションを作成するだけで済みます。 これにより、より直感的で整ったアクティビティ読み取りエクスペリエンスが実現します。
+**MCDUserActivitySession** は、**MCDUserActivitySessionHistoryItem** (次のセクションで説明します) を作成する方法と考えることができます。 ユーザーが新しいページに移動するたびに新しい **MCDUserActivity** を作成する代わりに、ページごとに新しいセッションを作成するだけで済みます。 これにより、より直感的で整ったアクティビティ読み取りエクスペリエンスが実現します。
 
 ## <a name="read-user-activities"></a>ユーザー アクティビティの読み取り
 
